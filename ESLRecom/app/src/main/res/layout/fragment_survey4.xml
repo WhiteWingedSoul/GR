@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="4/ Bạn giao tiếp bằng tiếng Anh có tốt không ?"
+            android:textSize="18dp"
+            android:fontFamily="serif" />
+
+        <RadioGroup
+            android:id="@+id/answerGroup"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp">
+
+            <RadioButton
+                android:text="\tHoàn toàn không nói được"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/answer_a" />
+
+            <RadioButton
+                android:text="\tNói còn chậm, phát âm chưa chuẩn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/answer_b" />
+
+            <RadioButton
+                android:text="\tNói chuyện được tương đối, phát âm ổn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/answer_c" />
+
+            <RadioButton
+                android:text="\tSử dụng tiếng Anh tự nhiên trong cuộc sống hằng ngày"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/answer_d" />
+
+            <RadioButton
+                android:text="\tGiao tiếp dễ dàng như người bản xứ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/answer_e" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/backButton"
+            android:layout_gravity="bottom|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="60dp"
+            android:text="Back"/>
+
+        <TextView
+            android:id="@+id/nextButton"
+            android:layout_gravity="bottom|right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="60dp"
+            android:text="Next"/>
+    </FrameLayout>
+
+
+</LinearLayout>
