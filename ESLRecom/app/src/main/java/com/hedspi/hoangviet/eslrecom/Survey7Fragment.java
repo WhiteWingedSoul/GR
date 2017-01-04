@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.models.UserProfile;
+
 /**
  * Created by hoangviet on 11/20/16.
  */

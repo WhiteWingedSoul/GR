@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/configButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_assignment_black_48dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:tint="@color/colorAccent"/>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.8"
+        android:layout_marginTop="80dp"
+        android:paddingBottom="140dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/app_icon">
+
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="90dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorSmoothText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="E-Learning"
+                android:textColor="@color/colorSmoothText"
+                android:textSize="35dp"
+                android:textStyle="italic"
+                android:fontFamily="cursive" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:background="@color/colorSmoothText" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/recommendButton"
+                android:theme="@style/ColoredButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tôi nên học tiếng Anh thế nào ?"
+                style="@style/ColoredButton"
+                android:textAllCaps="false" />
+        </FrameLayout>
+
+    </LinearLayout>
+</FrameLayout>

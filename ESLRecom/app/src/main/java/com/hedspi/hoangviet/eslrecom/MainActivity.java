@@ -7,6 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.Book;
+
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
@@ -15,14 +22,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+//
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.fragment, Survey1Fragment.newInstance()).commit();
+        //fragmentManager.beginTransaction().add(R.id.fragment, Survey1Fragment.newInstance()).commit();
+        fragmentManager.beginTransaction().add(R.id.fragment, MainFragment.newInstance()).commit();
+
+        // DUMP DATA TO FIREBASE
+        //DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        //    database.child("books").setValue(DatabaseManager.getInstance(this).getListLevelTest());
+
     }
 
     @Override

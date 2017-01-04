@@ -9,8 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
  * Created by hoangviet on 11/20/16.

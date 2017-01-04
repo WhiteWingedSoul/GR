@@ -7,8 +7,8 @@ class BooksSpider(scrapy.Spider):
 	def start_requests(self):
 		urls = [
 		#'http://www.worldcat.org/search?q=learn+english&fq=+%28%28x0%3Abook+x4%3Aprintbook%29+OR+%28x0%3Abook+x4%3Adigital%29%29+%3E+yr%3A2016+%3E+ln%3Aeng+%3E+-fm%3Afic&dblist=638',
-		#'http://www.worldcat.org/search?q=su%3AEnglish+language&dblist=638&fq=%28%28x0%3Abook+x4%3Aprintbook%29+OR+%28x0%3Abook+x4%3Adigital%29%29+%3E+ln%3Aeng+%3E+-fm%3Afic+%3E+yr%3A2016&qt=facet_yr%3A',
-		'http://www.worldcat.org/search?q=su%3AEnglish+language&dblist=638&fq=%28%28x0%3Abook+x4%3Aprintbook%29+OR+%28x0%3Abook+x4%3Adigital%29%29+%3E+ln%3Aeng+%3E+-fm%3Afic+%3E+yr%3A2015&qt=facet_yr%3A',
+		'http://www.worldcat.org/search?q=su%3AEnglish+language&dblist=638&fq=%28%28x0%3Abook+x4%3Aprintbook%29+OR+%28x0%3Abook+x4%3Adigital%29%29+%3E+ln%3Aeng+%3E+-fm%3Afic+%3E+yr%3A2016&qt=facet_yr%3A',
+		#'http://www.worldcat.org/search?q=su%3AEnglish+language&dblist=638&fq=%28%28x0%3Abook+x4%3Aprintbook%29+OR+%28x0%3Abook+x4%3Adigital%29%29+%3E+ln%3Aeng+%3E+-fm%3Afic+%3E+yr%3A2015&qt=facet_yr%3A',
 		]
 
 		for url in urls:

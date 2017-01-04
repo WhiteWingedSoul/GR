@@ -2,15 +2,15 @@ package com.hedspi.hoangviet.eslrecom;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
  * Created by hoangviet on 11/20/16.
