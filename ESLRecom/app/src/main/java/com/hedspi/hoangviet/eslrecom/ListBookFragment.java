@@ -18,7 +18,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.hedspi.hoangviet.eslrecom.models.Book;
 import com.squareup.picasso.Picasso;
 
@@ -41,15 +43,11 @@ public class ListBookFragment extends Fragment {
             //GenericTypeIndicator<ArrayList<Book>> t = new GenericTypeIndicator<ArrayList<Book>>() {};
             //listBook.clear();
             //listBook.addAll((List<Book>)dataSnapshot.getValue(t));
-
-            final Book book = dataSnapshot.getValue(Book.class);
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
+            if(dataSnapshot.getValue()!=null) {
+                final Book book = dataSnapshot.getValue(Book.class);
+                if (book!=null)
                     adapter.updateAdapter(book);
-                }
-            });
-
+            }
         }
 
         @Override
@@ -71,13 +69,47 @@ public class ListBookFragment extends Fragment {
 
     private void letDoTheGodWork() throws IOException{
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        database.child("bookProfiles-count").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue()!=null) {
+
+                    ArrayList<Long> bookProfileIDsList = new ArrayList<Long>();
+                    for(DataSnapshot child : dataSnapshot.getChildren()){
+                        bookProfileIDsList.add((long)child.getValue());
+                    }
+//                    GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
+//                    bookProfileIDsList.clear();
+//                    bookProfileIDsList.addAll(dataSnapshot.getValue(t));
+                    DatabaseManager.setBookProfilesCount(bookProfileIDsList.size());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
         database.child("books-count").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                adapter.clearData();
-                for(int i=0;i<(long)dataSnapshot.getValue();i++){
-                    database.child("books").child(""+i).removeEventListener(readBookData);
-                    database.child("books").child(""+i).addValueEventListener(readBookData);
+                if (dataSnapshot.getValue() != null) {
+                    adapter.clearData();
+                    ArrayList<Long> bookIDsList = new ArrayList<Long>();
+
+                    for(DataSnapshot child : dataSnapshot.getChildren()){
+                        bookIDsList.add((long)child.getValue());
+                    }
+
+                    //GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
+                    //bookIDsList.clear();
+                    //bookIDsList.addAll(dataSnapshot.getValue(t));
+
+                    DatabaseManager.setBooksCount(bookIDsList.size());
+                    for (int i=0;i<bookIDsList.size();i++) {
+                        database.child("books").child("" + bookIDsList.get(i)).removeEventListener(readBookData);
+                        database.child("books").child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
+                    }
                 }
             }
 

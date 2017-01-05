@@ -33,8 +33,13 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().add(R.id.fragment, MainFragment.newInstance()).commit();
 
         // DUMP DATA TO FIREBASE
-        //DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        //    database.child("books").setValue(DatabaseManager.getInstance(this).getListLevelTest());
+//        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+//        database.removeValue();
+//        for(Book book:DatabaseManager.getInstance(this).getListLevelTest()) {
+//            database.child("books").child(""+book.getId()).setValue(book);
+//            database.child("books-count").child(""+book.getId()).setValue(book.getId());
+//        }
+
 
     }
 

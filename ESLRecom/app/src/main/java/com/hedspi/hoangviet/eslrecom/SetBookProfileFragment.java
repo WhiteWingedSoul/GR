@@ -36,6 +36,11 @@ import java.util.List;
 public class SetBookProfileFragment extends Fragment {
     private View view;
     private Book book;
+    private RadioGroup.OnCheckedChangeListener levelListener1;
+    private RadioGroup.OnCheckedChangeListener levelListener2;
+    private RadioGroup.OnCheckedChangeListener testListener1;
+    private RadioGroup.OnCheckedChangeListener testListener2;
+
 
     public static SetBookProfileFragment newInstance(Book book){
         SetBookProfileFragment fragment = new SetBookProfileFragment();
@@ -134,73 +139,91 @@ public class SetBookProfileFragment extends Fragment {
         bookProfile.setBook(book);
         final RadioGroup levelGroup1 = (RadioGroup) view.findViewById(R.id.levelanswerGroup1);
         final RadioGroup levelGroup2 = (RadioGroup) view.findViewById(R.id.levelanswerGroup2);
-        levelGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        levelListener1 = new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                levelGroup2.clearCheck();
-                switch(i) {
-                    case R.id.l_answer_a:
-                        bookProfile.setLevelPreference(Preference.BEGINNER);
-                        break;
-                    case R.id.l_answer_b:
-                        bookProfile.setLevelPreference(Preference.BASIC);
-                        break;
-                    case R.id.l_answer_c:
-                        bookProfile.setLevelPreference(Preference.INTERMEDIATE);
-                        break;
+                if (i != -1) {
+                    levelGroup2.setOnCheckedChangeListener(null);
+                    levelGroup2.clearCheck();
+                    levelGroup2.setOnCheckedChangeListener(levelListener2);
+                    switch (i) {
+                        case R.id.l_answer_a:
+                            bookProfile.setLevelPreference(Preference.BEGINNER);
+                            break;
+                        case R.id.l_answer_b:
+                            bookProfile.setLevelPreference(Preference.BASIC);
+                            break;
+                        case R.id.l_answer_c:
+                            bookProfile.setLevelPreference(Preference.INTERMEDIATE);
+                            break;
+                    }
                 }
             }
-        });
-
-        levelGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        };
+        levelListener2 = new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                levelGroup1.clearCheck();
-                switch(i) {
-                    case R.id.l_answer_d:
-                        bookProfile.setLevelPreference(Preference.ADVANCE);
-                        break;
-                    case R.id.l_answer_e:
-                        bookProfile.setLevelPreference(Preference.MASTER);
-                        break;
+                if(i!=-1) {
+                    levelGroup1.setOnCheckedChangeListener(null);
+                    levelGroup1.clearCheck();
+                    levelGroup1.setOnCheckedChangeListener(levelListener1);
+                    switch (i) {
+                        case R.id.l_answer_d:
+                            bookProfile.setLevelPreference(Preference.ADVANCE);
+                            break;
+                        case R.id.l_answer_e:
+                            bookProfile.setLevelPreference(Preference.MASTER);
+                            break;
+                    }
                 }
             }
-        });
+        };
+        levelGroup1.setOnCheckedChangeListener(levelListener1);
+        levelGroup2.setOnCheckedChangeListener(levelListener2);
 
         final RadioGroup testGroup1 = (RadioGroup) view.findViewById(R.id.testanswerGroup1);
         final RadioGroup testGroup2 = (RadioGroup) view.findViewById(R.id.testanswerGroup2);
-        testGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        testListener1 = new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                testGroup2.clearCheck();
-                switch(i) {
-                    case R.id.t_answer_a:
-                        bookProfile.setTestPreference(Preference.NONE);
-                        break;
-                    case R.id.t_answer_b:
-                        bookProfile.setTestPreference(Preference.IELTS);
-                        break;
-                    case R.id.t_answer_c:
-                        bookProfile.setTestPreference(Preference.TOEFL);
-                        break;
+                if (i != -1) {
+                    testGroup2.setOnCheckedChangeListener(null);
+                    testGroup2.clearCheck();
+                    testGroup2.setOnCheckedChangeListener(testListener2);
+                    switch (i) {
+                        case R.id.t_answer_a:
+                            bookProfile.setTestPreference(Preference.NONE);
+                            break;
+                        case R.id.t_answer_b:
+                            bookProfile.setTestPreference(Preference.IELTS);
+                            break;
+                        case R.id.t_answer_c:
+                            bookProfile.setTestPreference(Preference.TOEFL);
+                            break;
+                    }
                 }
             }
-        });
-
-        testGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        };
+        testListener2 = new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                testGroup1.clearCheck();
-                switch(i) {
-                    case R.id.t_answer_d:
-                        bookProfile.setTestPreference(Preference.TOEIC);
-                        break;
-                    case R.id.t_answer_e:
-                        bookProfile.setTestPreference(Preference.iTEC);
-                        break;
+                if(i!=-1) {
+                    testGroup1.setOnCheckedChangeListener(null);
+                    testGroup1.clearCheck();
+                    testGroup1.setOnCheckedChangeListener(testListener1);
+                    switch (i) {
+                        case R.id.t_answer_d:
+                            bookProfile.setTestPreference(Preference.TOEIC);
+                            break;
+                        case R.id.t_answer_e:
+                            bookProfile.setTestPreference(Preference.iTEC);
+                            break;
+                    }
                 }
             }
-        });
+        };
+        testGroup1.setOnCheckedChangeListener(testListener1);
+        testGroup2.setOnCheckedChangeListener(testListener2);
         final RadioGroup timeGroup1 = (RadioGroup) view.findViewById(R.id.timeanswerGroup);
         timeGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -305,7 +328,13 @@ public class SetBookProfileFragment extends Fragment {
                 if(bookProfile.getTestPreference()!=0 && bookProfile.getLevelPreference()!=0
                         && bookProfile.getTimePreference()!=0 && bookProfile.getLearnSubjectPreference().size()!=0){
                     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-                    database.child("book-profiles").setValue(bookProfile);
+                    long booksProfileCount = DatabaseManager.getBookProfilesCount();
+
+                    database.child("book-profiles").child(""+book.getId()).setValue(bookProfile);
+                    database.child("books").child(""+book.getId()).removeValue();
+                    booksProfileCount = booksProfileCount + 1;
+                    database.child("books-count").child(""+book.getId()).removeValue();
+                    database.child("bookProfiles-count").child(""+booksProfileCount).setValue(book.getId());
                     getActivity().getSupportFragmentManager().popBackStack();
                 }
             }

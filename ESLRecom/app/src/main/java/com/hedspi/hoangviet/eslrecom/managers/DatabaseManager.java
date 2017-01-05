@@ -38,6 +38,8 @@ public class DatabaseManager {
     private DatabaseHelper dbHelper;
 
     private static DatabaseReference database = null;
+    private static long booksCount;
+    private static long bookProfilesCount;
 
     DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     private static final String DB_NAME = "esldatabase";
@@ -54,6 +56,22 @@ public class DatabaseManager {
             database = FirebaseDatabase.getInstance().getReference();
         }
         return database;
+    }
+
+    public static long getBooksCount() {
+        return booksCount;
+    }
+
+    public static void setBooksCount(long booksCount) {
+        DatabaseManager.booksCount = booksCount;
+    }
+
+    public static long getBookProfilesCount() {
+        return bookProfilesCount;
+    }
+
+    public static void setBookProfilesCount(long bookProfilesCount) {
+        DatabaseManager.bookProfilesCount = bookProfilesCount;
     }
 
     public static DatabaseManager getInstance(Context context){

@@ -275,7 +275,7 @@ Geschichte."
                 android:id="@+id/levelanswerGroup1"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:text=" Mới học"
@@ -307,7 +307,7 @@ Geschichte."
                 android:id="@+id/levelanswerGroup2"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:text=" Nâng cao"
@@ -362,7 +362,7 @@ Geschichte."
                 android:id="@+id/testanswerGroup1"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:text="Không"
@@ -394,7 +394,7 @@ Geschichte."
                 android:id="@+id/testanswerGroup2"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:text=" TOEIC"
@@ -449,7 +449,7 @@ Geschichte."
                 android:id="@+id/timeanswerGroup"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <RadioButton
                     android:text=" dưới 1h/ngày"
