@@ -1,5 +1,7 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import com.hedspi.hoangviet.eslrecom.commons.Preference;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,7 @@ public class UserProfile implements Serializable {
     private double speakingScore;
     private double overallScore;
     private int timeCanSpend;
-    private String testPreference;
+    private int testPreference;
     private List<String> learnList = new ArrayList<>();
 
     public static final double BEGINNER = 0;
@@ -25,18 +27,10 @@ public class UserProfile implements Serializable {
     public static final double ADVANCE = 0.8;
     public static final double MASTER = 1;
 
-    public static final int LITTLE = 1;
-    public static final int NORMAL = 2;
-    public static final int ALOT = 3;
-
-    public static final double MATCH_SCORE_OVERALL = 0.6213;
-    public static final double MATCH_SCORE_READING = 0.22131;
-    public static final double MATCH_SCORE_LISTENING = 0.22131;
-    public static final double MATCH_SCORE_WRITTING = 0.22131;
-    public static final double MATCH_SCORE_SPEAKING = 0.22131;
-    public static final double MATCH_SCORE_LEARNLIST = 0.884239;
-    public static final double MATCH_SCORE_TIMESPEND = 0;
-    public static final double MATCH_SCORE_TESTPREFER = 0;
+    public static final double MATCH_SCORE_OVERALL = 0.37;
+    public static final double MATCH_SCORE_LEARNLIST = 0.78;
+    public static final double MATCH_SCORE_TIMESPEND = 0.2;
+    public static final double MATCH_SCORE_TESTPREFER = 0.33;
 
     public double getReadingScore() {
         return readingScore;
@@ -87,11 +81,11 @@ public class UserProfile implements Serializable {
         this.timeCanSpend = timeCanSpend;
     }
 
-    public String getTestPreference() {
+    public int getTestPreference() {
         return testPreference;
     }
 
-    public void setTestPreference(String testPreference) {
+    public void setTestPreference(int testPreference) {
         this.testPreference = testPreference;
     }
 
@@ -111,85 +105,19 @@ public class UserProfile implements Serializable {
         this.learnTimeScore = learnTimeScore;
     }
 
-    public List<String> getSearchQuery(){
-        List<String> listQuery = new ArrayList<>();
-        String query;
-        for(String learnType : getLearnList()) {
-            query = getOverallPreference() + " english " + learnType;
-            listQuery.add(query);
-
-            if (getTestPreference()!=null){
-                query = getOverallPreference() + " " +getTestPreference() + " " + learnType;
-                listQuery.add(query);
-            }
-        }
-        return listQuery;
-    }
-
-    public String getReadingPreference(){
+    public int getOverallPreference(){
         if(getOverallScore() == 0)
-            return "beginner";
+            return Preference.BEGINNER;
         else if(getOverallScore()<=0.3)
-            return "basic";
+            return Preference.BASIC;
         else if (getOverallScore()<=0.6)
-            return "intermediate";
+            return Preference.INTERMEDIATE;
         else if (getOverallScore()<=0.9)
-            return "advance";
-        else return "high level";
-    }
-
-    public String getWrittingPreference(){
-        if(getOverallScore() == 0)
-            return "begin";
-        else if(getOverallScore()<=0.3)
-            return "basic";
-        else if (getOverallScore()<=0.6)
-            return "intermediate";
-        else if (getOverallScore()<=0.9)
-            return "advance";
-        else return "high level";
-    }
-    public String getListeningPreference(){
-        if(getOverallScore() == 0)
-            return "begin";
-        else if(getOverallScore()<=0.3)
-            return "basic";
-        else if (getOverallScore()<=0.6)
-            return "intermediate";
-        else if (getOverallScore()<=0.9)
-            return "advanced";
-        else return "high level";
-    }
-    public String getSpeakingPreference(){
-        if(getOverallScore() == 0)
-            return "begin";
-        else if(getOverallScore()<=0.3)
-            return "basic";
-        else if (getOverallScore()<=0.6)
-            return "intermediate";
-        else if (getOverallScore()<=0.9)
-            return "advanced";
-        else return "high level";
-    }
-    public String getOverallPreference(){
-        if(getOverallScore() == 0)
-            return "begin";
-        else if(getOverallScore()<=0.3)
-            return "basic";
-        else if (getOverallScore()<=0.6)
-            return "intermediate";
-        else if (getOverallScore()<=0.9)
-            return "advanced";
-        else return "high level";
+            return Preference.ADVANCE;
+        else return Preference.MASTER;
     }
 
     public double getBestMatch(){
-        if (getTestPreference()==null){
-         return MATCH_SCORE_LEARNLIST+MATCH_SCORE_LISTENING+MATCH_SCORE_OVERALL+MATCH_SCORE_READING+MATCH_SCORE_SPEAKING
-                 +MATCH_SCORE_TIMESPEND+MATCH_SCORE_WRITTING;
-        }else{
-            return MATCH_SCORE_LEARNLIST+MATCH_SCORE_LISTENING+MATCH_SCORE_OVERALL+MATCH_SCORE_READING+MATCH_SCORE_SPEAKING
-                    +MATCH_SCORE_TIMESPEND+MATCH_SCORE_WRITTING+MATCH_SCORE_TESTPREFER;
-        }
+        return MATCH_SCORE_LEARNLIST+MATCH_SCORE_OVERALL +MATCH_SCORE_TIMESPEND+MATCH_SCORE_TESTPREFER;
     }
 }

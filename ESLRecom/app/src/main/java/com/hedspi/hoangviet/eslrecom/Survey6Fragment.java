@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
@@ -54,19 +55,19 @@ public class Survey6Fragment extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
                     case R.id.answer_a:
-                        profile.setTestPreference(null);
+                        profile.setTestPreference(Preference.NONE);
                         break;
                     case R.id.answer_b:
-                        profile.setTestPreference("IELTS");
+                        profile.setTestPreference(Preference.IELTS);
                         break;
                     case R.id.answer_c:
-                        profile.setTestPreference("TOEFL");
+                        profile.setTestPreference(Preference.TOEFL);
                         break;
                     case R.id.answer_d:
-                        profile.setTestPreference("TOEIC");
+                        profile.setTestPreference(Preference.TOEIC);
                         break;
                     case R.id.answer_e:
-                        profile.setTestPreference("iTEP");
+                        profile.setTestPreference(Preference.iTEC);
                         break;
                 }
             }

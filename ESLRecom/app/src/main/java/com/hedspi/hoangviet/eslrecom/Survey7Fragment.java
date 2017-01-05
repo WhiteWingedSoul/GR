@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
@@ -54,13 +55,13 @@ public class Survey7Fragment extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
                     case R.id.answer_a:
-                        profile.setTimeCanSpend(UserProfile.LITTLE);
+                        profile.setTimeCanSpend(Preference.LESS1);
                         break;
                     case R.id.answer_b:
-                        profile.setTimeCanSpend(UserProfile.NORMAL);
+                        profile.setTimeCanSpend(Preference.FROM1TO3);
                         break;
                     case R.id.answer_c:
-                        profile.setTimeCanSpend(UserProfile.ALOT);
+                        profile.setTimeCanSpend(Preference.MORE3);
                         break;
                 }
             }

@@ -15,8 +15,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hedspi.hoangviet.eslrecom.libraries.GooglePlayElement;
 import com.hedspi.hoangviet.eslrecom.libraries.GooglePlayWrapper;
+import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.Book;
+import com.hedspi.hoangviet.eslrecom.models.BookProfile;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 import com.squareup.picasso.Picasso;
@@ -68,109 +76,113 @@ public class ResultFragment extends Fragment {
     }
 
     private void letDoTheGodWork() throws IOException{
-        GooglePlayWrapper manager = new GooglePlayWrapper();
-        List<GooglePlayElement> listResult = new ArrayList<>();
+
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         final List<MatchResult> listMatchResult = new ArrayList<>();
-        for(String query : profile.getSearchQuery()) {
-            Log.d("LOG","query: "+query);
-            List<GooglePlayElement> result = manager.searchBook(query);
-            listResult.addAll(result);
-        }
+        final List<BookProfile> listBookProfile = new ArrayList<>();
 
-        for(GooglePlayElement result : listResult){
-            MatchResult matchResult = new MatchResult();
-            matchResult.setElement(result);
-            matchResult.setMatchScore(contextMatching(matchResult, result));
-
-            listMatchResult.add(matchResult);
-        }
-
-        Collections.sort(listMatchResult, new Comparator<MatchResult>() {
+        database.child("book-profiles").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public int compare(MatchResult result2, MatchResult result1)
-            {
-                return  Double.compare(result1.getMatchScore(), result2.getMatchScore());
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue()!=null) {
+
+                    for(DataSnapshot child : dataSnapshot.getChildren()){
+                        listBookProfile.add(child.getValue(BookProfile.class));
+                    }
+
+                    for(BookProfile bookProfile:listBookProfile){
+
+                        double matchScore = contextMatching(bookProfile);
+                        if(matchScore>0){
+                            MatchResult matchResult = new MatchResult();
+                            matchResult.setBook(bookProfile.getBook());
+                            matchResult.setMatchScore(matchScore);
+
+                            listMatchResult.add(matchResult);
+                        }
+                    }
+
+                    Collections.sort(listMatchResult, new Comparator<MatchResult>() {
+                        @Override
+                        public int compare(MatchResult result2, MatchResult result1)
+                        {
+                            return  Double.compare(result1.getMatchScore(), result2.getMatchScore());
+                        }
+                    });
+
+
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            adapter.updateAdapter(listMatchResult);
+                            adapter.notifyDataSetChanged();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
 
 
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
 
-                adapter.updateAdapter(listMatchResult);
-                adapter.notifyDataSetChanged();
-            }
-        });
     }
 
-    private double contextMatching(MatchResult matchResult, GooglePlayElement result){
+    private double contextMatching(BookProfile bookProfile){
         double matchRate = 0;
 
-        matchResult.setOverallMatch(matchOverall(result));
-        matchResult.setReadingMatch(matchReading(result));
-        matchResult.setSpeakingMatch(matchSpeaking(result));
-        matchResult.setWrittingMatch(matchWritting(result));
-        matchResult.setListeningMatch(matchListening(result));
-        //matchResult.setTestPreferMatch(matchTestPrefer(result));
-        //matchResult.setTimeSpendMatch(matchTimeSpend(result));
-        matchResult.setLearnListMatch(matchLearnList(result));
+        double levelMatchScore = matchOverall(bookProfile);
+        double testMatchScore = matchTestPrefer(bookProfile);
+        double timeMatchScore = matchTimeSpend(bookProfile);
+        double learnListMatchScore = matchLearnList(bookProfile);
 
-        matchRate = matchResult.getOverallMatch() +
-                matchResult.getReadingMatch() +
-                matchResult.getWrittingMatch() +
-                matchResult.getListeningMatch() +
-                matchResult.getSpeakingMatch() +
-                matchResult.getLearnListMatch();
+        matchRate = levelMatchScore + testMatchScore + timeMatchScore + learnListMatchScore;
 
         return matchRate*100/profile.getBestMatch();
     }
 
-    private double matchOverall(GooglePlayElement result){
-        if(result.getelementDescription().contains(profile.getOverallPreference()) ||
-                result.getElementName().contains(profile.getOverallPreference()))
+    private double matchOverall(BookProfile bookProfile){
+        if(bookProfile.getLevelPreference() == profile.getOverallPreference())
             return UserProfile.MATCH_SCORE_OVERALL;
         else
             return 0;
     }
 
-    private double matchReading(GooglePlayElement result){
-        if( (result.getelementDescription().contains(profile.getOverallPreference()) && result.getelementDescription().contains("read"))  ||
-                (result.getElementName().contains(profile.getOverallPreference()) && result.getElementName().contains("read")) )
-            return UserProfile.MATCH_SCORE_READING;
+    private double matchTestPrefer(BookProfile bookProfile){
+        if(bookProfile.getTestPreference() == profile.getTestPreference())
+            return UserProfile.MATCH_SCORE_TESTPREFER;
         else
             return 0;
     }
 
-    private double matchWritting(GooglePlayElement result){
-        if( (result.getelementDescription().contains(profile.getOverallPreference()) && result.getelementDescription().contains("writing"))  ||
-                (result.getElementName().contains(profile.getOverallPreference()) && result.getElementName().contains("writing")) )
-            return UserProfile.MATCH_SCORE_READING;
+    private double matchTimeSpend(BookProfile bookProfile){
+        if(bookProfile.getTimePreference() == profile.getTimeCanSpend())
+            return UserProfile.MATCH_SCORE_TIMESPEND;
         else
             return 0;
     }
-    private double matchListening(GooglePlayElement result){
-        if( (result.getelementDescription().contains(profile.getOverallPreference()) && result.getelementDescription().contains("listen"))  ||
-                (result.getElementName().contains(profile.getOverallPreference()) && result.getElementName().contains("listen")) )
-            return UserProfile.MATCH_SCORE_READING;
-        else
-            return 0;
-    }
-    private double matchSpeaking(GooglePlayElement result){
-        if( (result.getelementDescription().contains(profile.getOverallPreference()) && result.getelementDescription().contains("speak"))  ||
-                (result.getElementName().contains(profile.getOverallPreference()) && result.getElementName().contains("speak")) )
-            return UserProfile.MATCH_SCORE_READING;
-        else
-            return 0;
-    }
-    private double matchLearnList(GooglePlayElement result){
-        double score = 0;
-        for(String learnType : profile.getLearnList()){
-            if(result.getelementDescription().contains(learnType) ||
-                    result.getElementName().contains(learnType))
-                return UserProfile.MATCH_SCORE_LEARNLIST;
+
+    private double matchLearnList(BookProfile bookProfile){
+        double learnlistScore = 0;
+        int userLearnListCount = profile.getLearnList().size();
+        int bookLearnListCount = bookProfile.getLearnSubjectPreference().size();
+        int matchCount = 0;
+        for(String userLearnType : profile.getLearnList()){
+            for(String bookLearnType : bookProfile.getLearnSubjectPreference()){
+                if (userLearnType.equals(bookLearnType)){
+                    matchCount++;
+                    break;
+                }
+            }
         }
-        return 0;
+
+        learnlistScore = ((double)matchCount/userLearnListCount)+((double)matchCount/bookLearnListCount);
+        learnlistScore = learnlistScore*UserProfile.MATCH_SCORE_LEARNLIST/2;
+        return learnlistScore;
     }
 
     @Override
@@ -221,11 +233,11 @@ public class ResultFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             MatchResultHolder vh = (MatchResultHolder) holder;
             final MatchResult matchResult = mList.get(position);
-            Picasso.with(getActivity()).load(matchResult.getElement().getElementImgUrl())
+            Picasso.with(getActivity()).load(matchResult.getBook().getCoverLink())
                     .fit()
                     .into(vh.bookIcon);
-            vh.title.setText(matchResult.getElement().getElementName());
-            vh.description.setText(matchResult.getElement().getelementDescription());
+            vh.title.setText(matchResult.getBook().getName());
+            vh.description.setText(matchResult.getBook().getSummary());
 
             vh.matchRate.setText("Match: "+String.format("%.3f", matchResult.getMatchScore())+" %");
         }

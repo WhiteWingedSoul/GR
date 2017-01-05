@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
@@ -79,7 +80,7 @@ public class Survey1Fragment extends Fragment {
                         profile.setListeningScore(0);
                         profile.setWrittingScore(0);
                         profile.setSpeakingScore(0);
-                        profile.setTestPreference(null);
+                        profile.setTestPreference(Preference.NONE);
                         getActivity().getSupportFragmentManager()
                                 .beginTransaction().setCustomAnimations(
                                 R.anim.slide_in_right, R.anim.slide_out_left,

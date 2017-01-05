@@ -17,7 +17,6 @@ public class Preference {
     public static int TOEIC = 4;
     public static int iTEC = 5;
 
-
     public static int LESS1= 1;
     public static int FROM1TO3 = 2;
     public static int MORE3= 3;
