@@ -1,4 +1,4 @@
-package com.hedspi.hoangviet.eslrecom;
+package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**

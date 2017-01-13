@@ -1,4 +1,4 @@
-package com.hedspi.hoangviet.eslrecom;
+package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,18 +10,20 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.R;
+import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
  * Created by hoangviet on 11/20/16.
  */
 
-public class Survey3Fragment extends Fragment {
+public class Survey7Fragment extends Fragment {
     private View view;
     private UserProfile profile;
 
-    public static Survey3Fragment newInstance(UserProfile profile){
-        Survey3Fragment fragment = new Survey3Fragment();
+    public static Survey7Fragment newInstance(UserProfile profile){
+        Survey7Fragment fragment = new Survey7Fragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("profile", profile);
         fragment.setArguments(bundle);
@@ -39,7 +41,7 @@ public class Survey3Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
         if(view == null)
-            view = inflater.inflate(R.layout.fragment_survey3, viewGroup, false);
+            view = inflater.inflate(R.layout.fragment_survey7, viewGroup, false);
 
         return view;
     }
@@ -54,19 +56,13 @@ public class Survey3Fragment extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
                     case R.id.answer_a:
-                        profile.setWrittingScore(UserProfile.BEGINNER);
+                        profile.setTimeCanSpend(Preference.LESS1);
                         break;
                     case R.id.answer_b:
-                        profile.setWrittingScore(UserProfile.BASIC);
+                        profile.setTimeCanSpend(Preference.FROM1TO3);
                         break;
                     case R.id.answer_c:
-                        profile.setWrittingScore(UserProfile.INTERMEDIATE);
-                        break;
-                    case R.id.answer_d:
-                        profile.setWrittingScore(UserProfile.ADVANCE);
-                        break;
-                    case R.id.answer_e:
-                        profile.setWrittingScore(UserProfile.MASTER);
+                        profile.setTimeCanSpend(Preference.MORE3);
                         break;
                 }
             }
@@ -81,7 +77,7 @@ public class Survey3Fragment extends Fragment {
                             .beginTransaction().setCustomAnimations(
                             R.anim.slide_in_right, R.anim.slide_out_left,
                             R.anim.slide_in_left, R.anim.slide_out_right)
-                            .replace(R.id.fragment, Survey4Fragment.newInstance(profile))
+                            .replace(R.id.fragment, Survey8Fragment.newInstance(profile))
                             .addToBackStack(null)
                             .commit();
                 }

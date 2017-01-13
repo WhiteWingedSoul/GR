@@ -1,4 +1,4 @@
-package com.hedspi.hoangviet.eslrecom;
+package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -18,8 +18,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.MainActivity;
+import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.hedspi.hoangviet.eslrecom.models.Book;
 import com.squareup.picasso.Picasso;
@@ -32,7 +33,7 @@ import java.util.List;
  * Created by hoangviet on 11/20/16.
  */
 
-public class ListBookFragment extends Fragment {
+public class ListTobeAddedBookFragment extends Fragment {
     private View view;
     private RecyclerView recyclerView;
     private MatchResultAdapter adapter;
@@ -56,8 +57,8 @@ public class ListBookFragment extends Fragment {
         }
     };
 
-    public static ListBookFragment newInstance(){
-        ListBookFragment fragment = new ListBookFragment();
+    public static ListTobeAddedBookFragment newInstance(){
+        ListTobeAddedBookFragment fragment = new ListTobeAddedBookFragment();
 
         return fragment;
     }
@@ -69,27 +70,7 @@ public class ListBookFragment extends Fragment {
 
     private void letDoTheGodWork() throws IOException{
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child("bookProfiles-count").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue()!=null) {
 
-                    ArrayList<Long> bookProfileIDsList = new ArrayList<Long>();
-                    for(DataSnapshot child : dataSnapshot.getChildren()){
-                        bookProfileIDsList.add((long)child.getValue());
-                    }
-//                    GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
-//                    bookProfileIDsList.clear();
-//                    bookProfileIDsList.addAll(dataSnapshot.getValue(t));
-                    DatabaseManager.setBookProfilesCount(bookProfileIDsList.size());
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
         database.child("books-count").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -198,13 +179,9 @@ public class ListBookFragment extends Fragment {
             vh.itemLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    getActivity().getSupportFragmentManager()
-                            .beginTransaction().setCustomAnimations(
-                            R.anim.slide_in_right, R.anim.slide_out_left,
-                            R.anim.slide_in_left, R.anim.slide_out_right)
-                            .replace(R.id.fragment, SetBookProfileFragment.newInstance(book))
-                            .addToBackStack(null)
-                            .commit();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("book", book);
+                    ((MainActivity)mContext).startActivity(MainActivity.TO_BE_ADDED, bundle);
                 }
             });
         }

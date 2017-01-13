@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="\t Bạn mong muốn được cải thiện những kĩ năng nào ?"
+            android:text="@string/survey8q"
             android:textSize="18dp"
             android:fontFamily="serif" />
 
@@ -27,49 +27,49 @@
             android:paddingRight="20dp">
 
             <CheckBox
-                android:text="\tĐọc hiểu"
+                android:text="@string/survey8a1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_a" />
 
             <CheckBox
-                android:text="\tNghe hiểu"
+                android:text="@string/survey8a2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_b" />
 
             <CheckBox
-                android:text="\tHội thoại"
+                android:text="@string/survey8a3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_c" />
 
             <CheckBox
-                android:text="\tPhát âm"
+                android:text="@string/survey8a4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_d" />
 
             <CheckBox
-                android:text="\tTừ vựng"
+                android:text="@string/survey8a5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_e" />
 
             <CheckBox
-                android:text="\tNgữ pháp"
+                android:text="@string/survey8a6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_f" />
 
             <CheckBox
-                android:text="\tViết văn"
+                android:text="@string/survey8a7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -91,7 +91,7 @@
             android:padding="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="60dp"
-            android:text="Back"/>
+            android:text="@string/back"/>
 
         <TextView
             android:id="@+id/nextButton"
@@ -101,7 +101,7 @@
             android:padding="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="60dp"
-            android:text="Finish"/>
+            android:text="@string/finish"/>
     </FrameLayout>
 
 </LinearLayout>

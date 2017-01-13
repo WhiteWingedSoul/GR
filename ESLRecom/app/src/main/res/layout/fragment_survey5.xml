@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-            android:text="5/ Khả năng nghe tiếng Anh của bạn như thế nào ?"
+            android:text="@string/survey5q"
             android:textSize="18dp"
             android:fontFamily="serif" />
 
@@ -28,35 +28,35 @@
             android:paddingRight="20dp">
 
             <RadioButton
-                android:text="\tHoàn toàn không nghe được"
+                android:text="@string/survey5a1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_a" />
 
             <RadioButton
-                android:text="\tNghe được những câu nói chậm đơn giản"
+                android:text="@string/survey5a2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_b" />
 
             <RadioButton
-                android:text="\tNghe được những cuộc nói chuyện không quá nhanh"
+                android:text="@string/survey5a3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_c" />
 
             <RadioButton
-                android:text="\tNghe hiểu hội thoại tự nhiên trong cuộc sống"
+                android:text="@string/survey5a4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/answer_d" />
 
             <RadioButton
-                android:text="\tThông dịch được cho người nước ngoài"
+                android:text="@string/survey5a5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/answer_e" />
@@ -76,7 +76,7 @@
             android:padding="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="60dp"
-            android:text="Back"/>
+            android:text="@string/back"/>
 
         <TextView
             android:id="@+id/nextButton"
@@ -86,7 +86,7 @@
             android:padding="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="60dp"
-            android:text="Next"/>
+            android:text="@string/next"/>
     </FrameLayout>
 
 

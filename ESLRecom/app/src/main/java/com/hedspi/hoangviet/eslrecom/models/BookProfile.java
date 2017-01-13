@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by viet on 1/4/17.
  */
 
-public class BookProfile {
+public class BookProfile implements Serializable{
     private int id;
     private Book book;
     private int levelPreference = 0;

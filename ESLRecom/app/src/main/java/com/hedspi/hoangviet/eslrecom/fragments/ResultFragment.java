@@ -1,4 +1,4 @@
-package com.hedspi.hoangviet.eslrecom;
+package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,10 +19,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.hedspi.hoangviet.eslrecom.libraries.GooglePlayElement;
-import com.hedspi.hoangviet.eslrecom.libraries.GooglePlayWrapper;
+import com.hedspi.hoangviet.eslrecom.MainActivity;
+import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.Book;
 import com.hedspi.hoangviet.eslrecom.models.BookProfile;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
@@ -93,7 +91,7 @@ public class ResultFragment extends Fragment {
                     for(BookProfile bookProfile:listBookProfile){
 
                         double matchScore = contextMatching(bookProfile);
-                        if(matchScore>0){
+                        if(matchScore>DatabaseManager.getPreference().getDecisionBoundary()){
                             MatchResult matchResult = new MatchResult();
                             matchResult.setBook(bookProfile.getBook());
                             matchResult.setMatchScore(matchScore);
@@ -142,26 +140,26 @@ public class ResultFragment extends Fragment {
 
         matchRate = levelMatchScore + testMatchScore + timeMatchScore + learnListMatchScore;
 
-        return matchRate*100/profile.getBestMatch();
+        return matchRate*100/DatabaseManager.getPreference().getBestMatch();
     }
 
     private double matchOverall(BookProfile bookProfile){
         if(bookProfile.getLevelPreference() == profile.getOverallPreference())
-            return UserProfile.MATCH_SCORE_OVERALL;
+            return DatabaseManager.getPreference().getOverallScore();
         else
             return 0;
     }
 
     private double matchTestPrefer(BookProfile bookProfile){
         if(bookProfile.getTestPreference() == profile.getTestPreference())
-            return UserProfile.MATCH_SCORE_TESTPREFER;
+            return DatabaseManager.getPreference().getTestScore();
         else
             return 0;
     }
 
     private double matchTimeSpend(BookProfile bookProfile){
         if(bookProfile.getTimePreference() == profile.getTimeCanSpend())
-            return UserProfile.MATCH_SCORE_TIMESPEND;
+            return DatabaseManager.getPreference().getTimeScore();
         else
             return 0;
     }
@@ -181,7 +179,7 @@ public class ResultFragment extends Fragment {
         }
 
         learnlistScore = ((double)matchCount/userLearnListCount)+((double)matchCount/bookLearnListCount);
-        learnlistScore = learnlistScore*UserProfile.MATCH_SCORE_LEARNLIST/2;
+        learnlistScore = learnlistScore* DatabaseManager.getPreference().getLearnPreferenceScore()/2;
         return learnlistScore;
     }
 
@@ -239,7 +237,17 @@ public class ResultFragment extends Fragment {
             vh.title.setText(matchResult.getBook().getName());
             vh.description.setText(matchResult.getBook().getSummary());
 
-            vh.matchRate.setText("Match: "+String.format("%.3f", matchResult.getMatchScore())+" %");
+            vh.matchRate.setText(getResources().getString(R.string.match)+String.format("%.3f", matchResult.getMatchScore())+" %");
+
+            vh.itemLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("book", matchResult.getBook());
+                    ((MainActivity)mContext).startActivity(MainActivity.VIEW, bundle);
+                }
+            });
         }
 
         @Override
@@ -252,6 +260,7 @@ public class ResultFragment extends Fragment {
 
     class MatchResultHolder extends RecyclerView.ViewHolder{
         //public CardView frameLayout;
+        public View itemLayout;
         public ImageView bookIcon;
         public TextView matchRate;
         public TextView title;
@@ -261,6 +270,7 @@ public class ResultFragment extends Fragment {
             super(view);
 
 //            frameLayout = (CardView) view.findViewById(R.id.frameLayout);
+            itemLayout = view.findViewById(R.id.itemLayout);
             bookIcon = (ImageView) view.findViewById(R.id.bookIcon);
             title = (TextView) view.findViewById(R.id.title);
             description = (TextView) view.findViewById(R.id.description);

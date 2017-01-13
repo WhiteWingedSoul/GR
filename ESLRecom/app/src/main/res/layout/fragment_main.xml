@@ -6,13 +6,28 @@
     android:layout_height="match_parent"
     android:background="#fff">
 
+    <TextView
+        android:id="@+id/languageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/chooseLanguage"/>
+
+    <Spinner
+        android:id="@+id/languageSpinner"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Spinner>
+
     <ImageView
         android:id="@+id/configButton"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:src="@drawable/ic_assignment_black_48dp"
         android:layout_gravity="right"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="12dp"
         android:tint="@color/colorAccent"/>
 
@@ -21,7 +36,7 @@
         android:layout_height="350dp"
         android:layout_gravity="center_horizontal"
         android:alpha="0.8"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:paddingBottom="140dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
@@ -83,7 +98,7 @@
                 android:theme="@style/ColoredButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tôi nên học tiếng Anh thế nào ?"
+                android:text="@string/startSurvey"
                 style="@style/ColoredButton"
                 android:textAllCaps="false" />
         </FrameLayout>

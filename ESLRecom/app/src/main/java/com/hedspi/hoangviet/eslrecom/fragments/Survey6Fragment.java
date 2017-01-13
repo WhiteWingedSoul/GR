@@ -1,4 +1,4 @@
-package com.hedspi.hoangviet.eslrecom;
+package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
@@ -17,12 +18,15 @@ import com.hedspi.hoangviet.eslrecom.models.UserProfile;
  * Created by hoangviet on 11/20/16.
  */
 
-public class Survey1Fragment extends Fragment {
+public class Survey6Fragment extends Fragment {
     private View view;
     private UserProfile profile;
 
-    public static Survey1Fragment newInstance(){
-        Survey1Fragment fragment = new Survey1Fragment();
+    public static Survey6Fragment newInstance(UserProfile profile){
+        Survey6Fragment fragment = new Survey6Fragment();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("profile", profile);
+        fragment.setArguments(bundle);
 
         return fragment;
     }
@@ -31,13 +35,13 @@ public class Survey1Fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        profile = new UserProfile();
+        profile = (UserProfile) getArguments().getSerializable("profile");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
         if(view == null)
-            view = inflater.inflate(R.layout.fragment_survey1, viewGroup, false);
+            view = inflater.inflate(R.layout.fragment_survey6, viewGroup, false);
 
         return view;
     }
@@ -52,19 +56,19 @@ public class Survey1Fragment extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
                     case R.id.answer_a:
-                        profile.setLearnTimeScore(UserProfile.BEGINNER);
+                        profile.setTestPreference(Preference.NONE);
                         break;
                     case R.id.answer_b:
-                        profile.setLearnTimeScore(UserProfile.BASIC);
+                        profile.setTestPreference(Preference.IELTS);
                         break;
                     case R.id.answer_c:
-                        profile.setLearnTimeScore(UserProfile.INTERMEDIATE);
+                        profile.setTestPreference(Preference.TOEFL);
                         break;
                     case R.id.answer_d:
-                        profile.setLearnTimeScore(UserProfile.ADVANCE);
+                        profile.setTestPreference(Preference.TOEIC);
                         break;
                     case R.id.answer_e:
-                        profile.setLearnTimeScore(UserProfile.MASTER);
+                        profile.setTestPreference(Preference.iTEC);
                         break;
                 }
             }
@@ -75,28 +79,13 @@ public class Survey1Fragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(radioGroup.getCheckedRadioButtonId() != -1){
-                    if (radioGroup.getCheckedRadioButtonId() == R.id.answer_a){
-                        profile.setReadingScore(0);
-                        profile.setListeningScore(0);
-                        profile.setWrittingScore(0);
-                        profile.setSpeakingScore(0);
-                        profile.setTestPreference(Preference.NONE);
-                        getActivity().getSupportFragmentManager()
-                                .beginTransaction().setCustomAnimations(
-                                R.anim.slide_in_right, R.anim.slide_out_left,
-                                R.anim.slide_in_left, R.anim.slide_out_right)
-                                .replace(R.id.fragment, Survey7Fragment.newInstance(profile))
-                                .addToBackStack(null)
-                                .commit();
-                    }else{
-                        getActivity().getSupportFragmentManager()
-                                .beginTransaction().setCustomAnimations(
-                                R.anim.slide_in_right, R.anim.slide_out_left,
-                                R.anim.slide_in_left, R.anim.slide_out_right)
-                                .replace(R.id.fragment, Survey2Fragment.newInstance(profile))
-                                .addToBackStack(null)
-                                .commit();
-                    }
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction().setCustomAnimations(
+                            R.anim.slide_in_right, R.anim.slide_out_left,
+                            R.anim.slide_in_left, R.anim.slide_out_right)
+                            .replace(R.id.fragment, Survey7Fragment.newInstance(profile))
+                            .addToBackStack(null)
+                            .commit();
                 }
             }
         });

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/changeWeight"
+        android:textStyle="bold"
+        android:textColor="@color/colorDefaultText"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="serif"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorSmoothText" />
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/overall"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorDefaultText"
+            android:paddingBottom="5dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/levelScore"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:digits="0123456789."
+            android:maxLines="1"
+            android:gravity="center"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/test"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorDefaultText"
+            android:paddingBottom="5dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/testScore"
+            android:layout_width="100dp"
+            android:digits="0123456789."
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:maxLines="1"
+            android:gravity="center"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/time"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorDefaultText"
+            android:paddingBottom="5dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/timeScore"
+            android:layout_width="100dp"
+            android:digits="0123456789."
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:maxLines="1"
+            android:gravity="center"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/learnPreference"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorDefaultText"
+            android:paddingBottom="5dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/preferenceScore"
+            android:layout_width="100dp"
+            android:digits="0123456789."
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:maxLines="1"
+            android:gravity="center"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorSmoothText" />
+
+    <TextView
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/changeDecision"
+        android:textStyle="bold"
+        android:textColor="@color/colorDefaultText"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="serif"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/colorSmoothText" />
+
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/decision"
+            android:textSize="17dp"
+            android:layout_weight="1"
+            android:textColor="@color/colorDefaultText"
+            android:paddingBottom="5dp" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/decisionScore"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:digits="0123456789."
+            android:padding="5dp"
+            android:layout_marginRight="5dp"
+            android:maxLines="1"
+            android:gravity="center"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/saveButton"
+        android:theme="@style/ColoredButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update"
+        style="@style/ColoredButton"
+        android:textAllCaps="false" />
+
+</LinearLayout>

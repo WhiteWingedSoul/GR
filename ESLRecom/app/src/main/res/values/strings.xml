@@ -1,3 +1,112 @@
 <resources>
     <string name="app_name">ESL Recom</string>
+    <string name="back">"Back"</string>
+    <string name="next">"Next"</string>
+    <string name="finish">"Finish"</string>
+    <string name="by">"by "</string>
+    <string name="genreform">"Genre/Form: "</string>
+    <string name="docType">"Document Type: "</string>
+    <string name="summary">"Summary: \n\t"</string>
+    <string name="bookInfo">"About this book"</string>
+    <string name="content">"Content: "</string>
+    <string name="subject">"Subject: "</string>
+    <string name="createBookProfile">"Review this book"</string>
+    <string name="saveBookProfile">"Save book profile"</string>
+    <string name="startSurvey">"Recommend me a book !"</string>
+    <string name="recommendResult">"You should check out these books below."</string>
+    <string name="updateBookProfile">"Update book profile"</string>
+    <string name="addBookProfile">"Add book profile"</string>
+    <string name="setting">"Setting"</string>
+    <string name="chooseLanguage">"Choose your language:"</string>
+    <string name="overall">Language level score:</string>
+    <string name="test">Proficiency Test score:</string>
+    <string name="time">Time to Spend score:</string>
+    <string name="learnPreference">Learn Preference score:</string>
+    <string name="changeWeight">Adjust attribute weight</string>
+    <string name="changeDecision">Adjust the decision boundary</string>
+    <string name="decision">Decision Boundary:</string>
+    <string name="update">Update</string>
+    <string name="updated">Setting updated!</string>
+    <string name="match">"Match: "</string>
+
+    <string name="profile1t">"Appropriate level:"</string>
+    <string name="profile1c1">" Beginner"</string>
+    <string name="profile1c2">" Basic"</string>
+    <string name="profile1c3">" Average"</string>
+    <string name="profile1c4">" Advance"</string>
+    <string name="profile1c5">" Master"</string>
+    <string name="profile2t">"Test theme:"</string>
+    <string name="profile2c1">" None"</string>
+    <string name="profile2c2">" IELTS"</string>
+    <string name="profile2c3">" TOEFL"</string>
+    <string name="profile2c4">" TOEIC"</string>
+    <string name="profile2c5">" iTEP"</string>
+    <string name="profile3t">"How much time should user spend to read this book ?"</string>
+    <string name="profile3c1">" below 1 hour/day"</string>
+    <string name="profile3c2">" 1-3hrs/day"</string>
+    <string name="profile3c3">" above 3hrs/day"</string>
+    <string name="profile4t">"Theme:"</string>
+    <string name="profile4c1">"\tReading"</string>
+    <string name="profile4c2">"\tListening"</string>
+    <string name="profile4c3">"\tSpeaking"</string>
+    <string name="profile4c4">"\tPronounce"</string>
+    <string name="profile4c5">"\tVocabulary"</string>
+    <string name="profile4c6">"\tGrammar"</string>
+    <string name="profile4c7">"\tWritting"</string>
+
+    <string name="survey1q">"1/ How long have you been learning English ?"</string>
+    <string name="survey1a1">"\tNever"</string>
+    <string name="survey1a2">"\tFor less than 1 year"</string>
+    <string name="survey1a3">"\tAbout 1 to 5 years"</string>
+    <string name="survey1a4">"\tMore than 5 years"</string>
+    <string name="survey1a5">"\tEnglish is my first language"</string>
+    <string name="survey2q">"2/ How good is your reading skill ?"</string>
+    <string name="survey2a1">"\tI can't read English"</string>
+    <string name="survey2a2">"\tCan understand simple phrases"</string>
+    <string name="survey2a3">"\tCan understand structured short paragraphs"</string>
+    <string name="survey2a4">"\tHas a full grasp of English articles"</string>
+    <string name="survey2a5">"\tCan comprehend advanced reading material written in English"</string>
+    <string name="survey3q">"3/ How is your writting skill ?"</string>
+    <string name="survey3a1">"\tI can't write English"</string>
+    <string name="survey3a2">"\tCan write short sentences"</string>
+    <string name="survey3a3">"\tCan write short paragraphs"</string>
+    <string name="survey3a4">"\tCan write an essay in English"</string>
+    <string name="survey3a5">"\tCan compose a advanced reading material in English"</string>
+    <string name="survey4q">"4/ Can you communicate in English ?"</string>
+    <string name="survey4a1">"\tI can't"</string>
+    <string name="survey4a2">"\tYes but i'm still slow/my pronounciation is still bad"</string>
+    <string name="survey4a3">"\tYes i can speak adequate English "</string>
+    <string name="survey4a4">"\tI use English in my everyday life"</string>
+    <string name="survey4a5">"\tI speak just like a native"</string>
+    <string name="survey5q">"5/ How good is your listening skill ?"</string>
+    <string name="survey5a1">"\tI can't understand English at all"</string>
+    <string name="survey5a2">"\tOnly if they speak slowly and clearly"</string>
+    <string name="survey5a3">"\tI'm good as long as it isnt too fast"</string>
+    <string name="survey5a4">"\tI can understand everyday life English"</string>
+    <string name="survey5a5">"\tI can interpret for English speaker"</string>
+    <string name="survey6q">"\t Are you trying to compete in any language proficiency test ?"</string>
+    <string name="survey6a1">"\tNone"</string>
+    <string name="survey6a2">"\tIELTS"</string>
+    <string name="survey6a3">"\tTOEFL"</string>
+    <string name="survey6a4">"\tTOEIC"</string>
+    <string name="survey6a5">"\tiTEP"</string>
+    <string name="survey7q">"\t The average time you can spend a day to learn English ?"</string>
+    <string name="survey7a1">"\tLess than 1 hour"</string>
+    <string name="survey7a2">"\tAbout 1 to 3 hours"</string>
+    <string name="survey7a3">"\tMore than 3 hours"</string>
+    <string name="survey8q">"\t Which skills are you trying to improve ?"</string>
+    <string name="survey8a1">"\tReading"</string>
+    <string name="survey8a2">"\tListening"</string>
+    <string name="survey8a3">"\tSpeaking"</string>
+    <string name="survey8a4">"\tPronounce"</string>
+    <string name="survey8a5">"\tVocabulary"</string>
+    <string name="survey8a6">"\tGrammar"</string>
+    <string name="survey8a7">"\tWritting"</string>
+
+
+    <string-array name="language">
+        <item>Tiếng Việt</item>
+        <item>English</item>
+    </string-array>
+
 </resources>

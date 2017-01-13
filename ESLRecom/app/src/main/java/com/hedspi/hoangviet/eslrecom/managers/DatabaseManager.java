@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.Book;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
@@ -40,6 +41,7 @@ public class DatabaseManager {
     private static DatabaseReference database = null;
     private static long booksCount;
     private static long bookProfilesCount;
+    private static Preference preference;
 
     DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     private static final String DB_NAME = "esldatabase";
@@ -64,6 +66,14 @@ public class DatabaseManager {
 
     public static void setBooksCount(long booksCount) {
         DatabaseManager.booksCount = booksCount;
+    }
+
+    public static Preference getPreference() {
+        return preference;
+    }
+
+    public static void setPreference(Preference preference) {
+        DatabaseManager.preference = preference;
     }
 
     public static long getBookProfilesCount() {

@@ -80,7 +80,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thông tin về cuốn sách"
+            android:text="@string/bookInfo"
             android:textStyle="bold"
             android:textColor="@color/colorDefaultText"
             android:paddingBottom="5dp"
@@ -155,7 +155,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nội dung:"
+                    android:text="@string/content"
                     android:textSize="13dp"
                     android:ellipsize="end" />
                 <TextView
@@ -207,7 +207,7 @@ Why do we care?"
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Chủ đề:"
+                    android:text="@string/subject"
                     android:textSize="13dp"
                     android:ellipsize="end" />
                 <TextView
@@ -237,7 +237,7 @@ Geschichte."
             android:background="#fff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Xây dựng profile sách"
+            android:text="@string/createBookProfile"
             android:textStyle="bold"
             android:textColor="@color/colorDefaultText"
             android:paddingBottom="5dp"
@@ -265,7 +265,7 @@ Geschichte."
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Trình độ phù hợp để đọc:"
+                android:text="@string/profile1t"
                 android:textSize="15dp"
                 android:textColor="@color/colorDefaultText"
                 android:paddingBottom="5dp"
@@ -278,7 +278,7 @@ Geschichte."
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text=" Mới học"
+                    android:text="@string/profile1c1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -286,7 +286,7 @@ Geschichte."
                     android:id="@+id/l_answer_a" />
 
                 <RadioButton
-                    android:text=" Cơ bản"
+                    android:text="@string/profile1c2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -294,7 +294,7 @@ Geschichte."
                     android:id="@+id/l_answer_b" />
 
                 <RadioButton
-                    android:text=" Trung bình"
+                    android:text="@string/profile1c3"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -310,7 +310,7 @@ Geschichte."
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text=" Nâng cao"
+                    android:text="@string/profile1c4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -318,7 +318,7 @@ Geschichte."
                     android:id="@+id/l_answer_d" />
 
                 <RadioButton
-                    android:text=" Thành thạo"
+                    android:text="@string/profile1c5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -352,7 +352,7 @@ Geschichte."
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chủ đề về đề thi:"
+                android:text="@string/profile2t"
                 android:textSize="15dp"
                 android:textColor="@color/colorDefaultText"
                 android:paddingBottom="5dp"
@@ -365,7 +365,7 @@ Geschichte."
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text="Không"
+                    android:text="@string/profile2c1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -373,7 +373,7 @@ Geschichte."
                     android:id="@+id/t_answer_a" />
 
                 <RadioButton
-                    android:text=" IELTS"
+                    android:text="@string/profile2c2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -381,7 +381,7 @@ Geschichte."
                     android:id="@+id/t_answer_b" />
 
                 <RadioButton
-                    android:text=" TOEFL"
+                    android:text="@string/profile2c3"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -397,7 +397,7 @@ Geschichte."
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text=" TOEIC"
+                    android:text="@string/profile2c4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -405,7 +405,7 @@ Geschichte."
                     android:id="@+id/t_answer_d" />
 
                 <RadioButton
-                    android:text=" iTEP"
+                    android:text="@string/profile2c5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -439,7 +439,7 @@ Geschichte."
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Thời lượng phù  để đọc sách:"
+                android:text="@string/profile3t"
                 android:textSize="15dp"
                 android:textColor="@color/colorDefaultText"
                 android:paddingBottom="5dp"
@@ -452,7 +452,7 @@ Geschichte."
                 android:layout_height="wrap_content">
 
                 <RadioButton
-                    android:text=" dưới 1h/ngày"
+                    android:text="@string/profile3c1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -460,7 +460,7 @@ Geschichte."
                     android:id="@+id/tm_answer_a" />
 
                 <RadioButton
-                    android:text=" 1-3h/ngày"
+                    android:text="@string/profile3c2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -468,7 +468,7 @@ Geschichte."
                     android:id="@+id/tm_answer_b" />
 
                 <RadioButton
-                    android:text=" trên 3h/ngày"
+                    android:text="@string/profile3c3"
                     android:layout_width="match_parent"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -499,7 +499,7 @@ Geschichte."
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Content:"
+                android:text="@string/profile4t"
                 android:textSize="15dp"
                 android:textColor="@color/colorDefaultText"
                 android:paddingBottom="5dp"
@@ -510,7 +510,7 @@ Geschichte."
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <CheckBox
-                    android:text="\tĐọc hiểu"
+                    android:text="@string/profile4c1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -518,7 +518,7 @@ Geschichte."
                     android:id="@+id/answer_a" />
 
                 <CheckBox
-                    android:text="\tNghe hiểu"
+                    android:text="@string/profile4c2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -526,7 +526,7 @@ Geschichte."
                     android:id="@+id/answer_b" />
 
                 <CheckBox
-                    android:text="\tHội thoại"
+                    android:text="@string/profile4c3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -541,7 +541,7 @@ Geschichte."
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:text="\tPhát âm"
+                    android:text="@string/profile4c4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -549,7 +549,7 @@ Geschichte."
                     android:layout_weight="1"/>
 
                 <CheckBox
-                    android:text="\tTừ vựng"
+                    android:text="@string/profile4c5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -557,7 +557,7 @@ Geschichte."
                     android:layout_weight="1"/>
 
                 <CheckBox
-                    android:text="\tNgữ pháp"
+                    android:text="@string/profile4c6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -573,7 +573,7 @@ Geschichte."
 
             </LinearLayout>
             <CheckBox
-                android:text="\tViết văn"
+                android:text="@string/profile4c7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -593,7 +593,7 @@ Geschichte."
             android:theme="@style/ColoredButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lưu book profile"
+            android:text="@string/saveBookProfile"
             style="@style/ColoredButton"
             android:textAllCaps="false" />
 
