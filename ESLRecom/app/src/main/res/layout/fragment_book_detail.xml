@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+
+            <ImageView
+                android:id="@+id/bookIcon"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:src="@color/cardview_dark_background"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Read and Write a letter by English"
+                    android:layout_marginTop="20dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/colorDefaultText"
+                    android:textStyle="bold"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="by Alex Wong"
+                    android:textSize="13dp"
+                    android:textColor="@color/colorDefaultText"
+                    android:paddingBottom="5dp"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/publisher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Oxford ; New York, NY : Oxford University Press, 2016."
+                    android:textSize="13dp"
+                    android:paddingBottom="5dp"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/editionformat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Print book : English : First edition"
+                    android:textSize="13dp"
+                    android:ellipsize="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSmoothText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bookInfo"
+            android:textStyle="bold"
+            android:textColor="@color/colorDefaultText"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="serif"
+            android:id="@+id/textView" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorSmoothText" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingRight="5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/genreform"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Genre/Form: History"
+                        android:textSize="13dp"
+                        android:ellipsize="end" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/docType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Document Type: Book"
+                        android:textSize="13dp"
+                        android:ellipsize="end" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/contentLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/content"
+                    android:textSize="13dp"
+                    android:ellipsize="end" />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What is English? --
+Origins --
+Authorities --
+Standards --
+Varieties --
+Global Englishes --
+Why do we care?"
+                    android:textSize="13dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorSmoothText" />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:text="Summary:\n 	Simon Horobin investigates the evolution of the English language, examining how the language continues to adapt even today, as English continues to find new speakers and new uses. Engaging with contemporary concerns about correctness, Horobin considers whether such changes are improvements--or evidence of slipping standards\--Amazon.com."
+                android:textSize="13dp"
+                android:ellipsize="end" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@color/colorSmoothText" />
+
+            <LinearLayout
+                android:id="@+id/subjectLayout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/subject"
+                    android:textSize="13dp"
+                    android:ellipsize="end" />
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:id="@+id/subjects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="English language -- History.
+English language -- Grammar, Historical.
+Historical linguistics.
+English language.
+Englisch.
+Weltsprache.
+Geschichte."
+                    android:textSize="13dp"
+                    android:ellipsize="end" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorSmoothText" />
+
+
+    </LinearLayout>
+</ScrollView>
