@@ -89,9 +89,8 @@ public class ResultFragment extends Fragment {
                     }
 
                     for(BookProfile bookProfile:listBookProfile){
-
                         double matchScore = contextMatching(bookProfile);
-                        if(matchScore>DatabaseManager.getPreference().getDecisionBoundary()){
+                        if (matchScore > DatabaseManager.getPreference().getDecisionBoundary()) {
                             MatchResult matchResult = new MatchResult();
                             matchResult.setBook(bookProfile.getBook());
                             matchResult.setMatchScore(matchScore);
@@ -140,7 +139,7 @@ public class ResultFragment extends Fragment {
 
         matchRate = levelMatchScore + testMatchScore + timeMatchScore + learnListMatchScore;
 
-        return matchRate*100/DatabaseManager.getPreference().getBestMatch();
+        return matchRate/DatabaseManager.getPreference().getBestMatch();
     }
 
     private double matchOverall(BookProfile bookProfile){
@@ -199,6 +198,8 @@ public class ResultFragment extends Fragment {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
+        TextView decisionBoundary = (TextView)view.findViewById(R.id.decisionBoundary);
+        decisionBoundary.setText(getResources().getString(R.string.decision)+" > "+DatabaseManager.getPreference().getDecisionBoundary());
         adapter = new MatchResultAdapter(getActivity());
         recyclerView.setAdapter(adapter);
     }

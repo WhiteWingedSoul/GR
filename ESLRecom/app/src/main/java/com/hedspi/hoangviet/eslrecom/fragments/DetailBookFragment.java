@@ -122,6 +122,20 @@ public class DetailBookFragment extends Fragment {
             subjectLayout.setVisibility(View.VISIBLE);
             subjects.setText(book.getSubjects());
         }
+
+        View buyerLayout = view.findViewById(R.id.buyerLayout);
+        TextView buyerName = (TextView) view.findViewById(R.id.buyerName);
+        TextView buyerPrice = (TextView) view.findViewById(R.id.buyerPrice);
+        TextView buyerLink = (TextView) view.findViewById(R.id.buyerLink);
+        if (book.getSellerName() == null || book.getSellerName().equals("")){
+            buyerLayout.setVisibility(View.GONE);
+        }else{
+            buyerLayout.setVisibility(View.VISIBLE);
+            buyerName.setText(book.getSellerName());
+            buyerPrice.setText(book.getSellerPrice());
+            buyerLink.setText(book.getSellerLink());
+
+        }
     }
 
     @Override

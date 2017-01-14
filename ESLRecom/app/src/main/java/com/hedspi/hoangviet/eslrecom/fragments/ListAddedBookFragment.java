@@ -69,31 +69,40 @@ public class ListAddedBookFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    private void letDoTheGodWork() throws IOException{
-        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child("bookProfiles-count").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() != null) {
-                    adapter.clearData();
-                    ArrayList<Long> bookIDsList = new ArrayList<Long>();
+    private ValueEventListener getProfileCount = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            if (dataSnapshot.getValue() != null) {
+                final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+                ArrayList<Long> bookIDsList = new ArrayList<Long>();
 
-                    for(DataSnapshot child : dataSnapshot.getChildren()){
-                        bookIDsList.add((long)child.getValue());
-                    }
+                for(DataSnapshot child : dataSnapshot.getChildren()){
+                    bookIDsList.add((long)child.getValue());
+                }
 
-                    for (int i=0;i<bookIDsList.size();i++) {
-                        database.child("book-profiles").child("" + bookIDsList.get(i)).removeEventListener(readBookData);
-                        database.child("book-profiles").child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
-                    }
+                for (int i=0;i<bookIDsList.size();i++) {
+                    database.child("book-profiles").child("" + bookIDsList.get(i)).removeEventListener(readBookData);
+                    database.child("book-profiles").child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
                 }
             }
+        }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+        }
+    };
+
+    private void letDoTheGodWork() throws IOException{
+        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        database.child("bookProfiles-count").addValueEventListener(getProfileCount);
+    }
+
+    @Override
+    public void onDestroy() {
+        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        database.child("bookProfiles-count").removeEventListener(getProfileCount);
+        super.onDestroy();
     }
 
     @Override
