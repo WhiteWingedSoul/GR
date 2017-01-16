@@ -87,7 +87,6 @@ public class ExperFragment extends Fragment {
         ExpertViewPagerAdapter adapter = new ExpertViewPagerAdapter(getActivity().getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
-
         tabLayout = (TabLayout) view.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 

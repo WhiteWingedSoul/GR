@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class ResultFragment extends Fragment {
     private UserProfile profile;
     private RecyclerView recyclerView;
     private MatchResultAdapter adapter;
+    private ProgressDialog progress;
 
     public static ResultFragment newInstance(UserProfile profile){
         ResultFragment fragment = new ResultFragment();
@@ -56,7 +58,10 @@ public class ResultFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        progress = ProgressDialog.show(getActivity(), "", getResources().getString(R.string.caculating), false);
+
         profile = (UserProfile) getArguments().getSerializable("profile");
+
 
         new AsyncTask<Void, Void, Void>(){
             @Override
@@ -114,6 +119,7 @@ public class ResultFragment extends Fragment {
 
                             adapter.updateAdapter(listMatchResult);
                             adapter.notifyDataSetChanged();
+                            progress.hide();
                         }
                     });
                 }

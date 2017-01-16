@@ -31,6 +31,8 @@
     <string name="buyThisbook">Buy this book</string>
     <string name="seller">"Seller: "</string>
     <string name="price">"Price: "</string>
+    <string name="caculating">"Calculating result..."</string>
+    <string name="loading">"Loading book infos..."</string>
 
     <string name="profile1t">"Appropriate level:"</string>
     <string name="profile1c1">" Beginner"</string>

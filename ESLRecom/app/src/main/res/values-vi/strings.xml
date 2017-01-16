@@ -31,6 +31,8 @@
     <string name="buyThisbook">Mua cuốn sách này</string>
     <string name="seller">"Nơi bán: "</string>
     <string name="price">"Giá tiền: "</string>
+    <string name="caculating">"Đang tính toán kết quả..."</string>
+    <string name="loading">"Đang tải thông tin sách..."</string>
 
     <string name="profile1t">"Trình độ phù hợp để đọc:"</string>
     <string name="profile1c1">" Mới học"</string>

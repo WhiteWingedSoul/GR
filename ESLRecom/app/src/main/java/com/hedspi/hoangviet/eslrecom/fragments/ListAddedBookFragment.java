@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -47,8 +48,9 @@ public class ListAddedBookFragment extends Fragment {
             //listBook.addAll((List<Book>)dataSnapshot.getValue(t));
             if(dataSnapshot.getValue()!=null) {
                 final BookProfile bookProfile = dataSnapshot.getValue(BookProfile.class);
-                if (bookProfile!=null)
+                if (bookProfile!=null) {
                     adapter.updateAdapter(bookProfile);
+                }
             }
         }
 
@@ -84,6 +86,7 @@ public class ListAddedBookFragment extends Fragment {
                     database.child("book-profiles").child("" + bookIDsList.get(i)).removeEventListener(readBookData);
                     database.child("book-profiles").child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
                 }
+
             }
         }
 
@@ -155,8 +158,17 @@ public class ListAddedBookFragment extends Fragment {
         }
 
         public void updateAdapter(BookProfile bookProfile){
-            mList.add(bookProfile);
-            notifyItemInserted(bookProfile.getId());
+            boolean notAdded = true;
+            for(BookProfile profile:mList){
+                if (profile.getId() == bookProfile.getId()){
+                    notAdded = false;
+                    break;
+                }
+            }
+            if (notAdded) {
+                mList.add(bookProfile);
+                notifyItemInserted(bookProfile.getId());
+            }
         }
 
         public void clearData(){

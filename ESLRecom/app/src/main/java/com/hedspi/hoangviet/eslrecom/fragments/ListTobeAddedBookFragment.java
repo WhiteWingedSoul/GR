@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class ListTobeAddedBookFragment extends Fragment {
     private View view;
     private RecyclerView recyclerView;
     private MatchResultAdapter adapter;
+    private ProgressDialog progress;
 
     private final ValueEventListener readBookData = new ValueEventListener() {
         @Override
@@ -66,6 +68,8 @@ public class ListTobeAddedBookFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        progress = ProgressDialog.show(getActivity(), "", getResources().getString(R.string.loading), false);
     }
 
     private void letDoTheGodWork() throws IOException{
@@ -91,6 +95,7 @@ public class ListTobeAddedBookFragment extends Fragment {
                         database.child("books").child("" + bookIDsList.get(i)).removeEventListener(readBookData);
                         database.child("books").child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
                     }
+                    progress.hide();
                 }
             }
 

@@ -290,6 +290,37 @@ public class UpdateBookProfileFragment extends Fragment {
         final CheckBox answer_f = (CheckBox) view.findViewById(R.id.answer_f);
         final CheckBox answer_g = (CheckBox) view.findViewById(R.id.answer_g);
 
+        for (String subject : bookProfile.getLearnSubjectPreference()){
+            if (subject.equals("reading")) {
+                answer_a.setChecked(true);
+                continue;
+            }
+            if (subject.equals("listening")) {
+                answer_b.setChecked(true);
+                continue;
+            }
+            if (subject.equals("speaking")) {
+                answer_c.setChecked(true);
+                continue;
+            }
+            if (subject.equals("pronounce")) {
+                answer_d.setChecked(true);
+                continue;
+            }
+            if (subject.equals("vocabulary")) {
+                answer_e.setChecked(true);
+                continue;
+            }
+            if (subject.equals("grammar")) {
+                answer_f.setChecked(true);
+                continue;
+            }
+            if (subject.equals("writting")) {
+                answer_g.setChecked(true);
+                continue;
+            }
+        }
+
         answer_a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
