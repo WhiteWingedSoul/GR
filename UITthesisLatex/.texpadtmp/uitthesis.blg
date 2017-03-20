@@ -1,25 +1,23 @@
 This is BibTeX, Version 0.99d (TeX Live 2016)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.aux
+The top-level auxiliary file: /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux
 A level-1 auxiliary file: Phieubangiao/Phieubangiao.aux
 A level-1 auxiliary file: Acknowledgement/acknowledgement.aux
 A level-1 auxiliary file: Abstract/abstract.aux
-A level-1 auxiliary file: Modau/chapter1.aux
-A level-1 auxiliary file: GioithieuvebaitoanPLVB/chapter1.aux
-A level-1 auxiliary file: BasicVectormize/chapter1.aux
-A level-1 auxiliary file: WordEmberding_Doc2Vec/chapter1.aux
-A level-1 auxiliary file: CaiDat/chapter1.aux
-A level-1 auxiliary file: KetQua/chapter1.aux
+A level-1 auxiliary file: ProblemState/chapter1.aux
+A level-1 auxiliary file: TheoryBasis/chapter1.aux
+A level-1 auxiliary file: DesignAnalysis/chapter1.aux
+A level-1 auxiliary file: Result/chapter1.aux
 A level-1 auxiliary file: Conclusions/conclusions.aux
 A level-1 auxiliary file: Appendix1/appendix1.aux
 A level-1 auxiliary file: Appendix2/appendix2.aux
 A level-1 auxiliary file: Appendix3/appendix3.aux
 The style file: plain.bst
-I found no \citation commands---while reading file /Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.aux
+I found no \citation commands---while reading file /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux
 Database file #1: ../security.bib
 You've used 0 entries,
             2118 wiz_defined-function locations,
-            510 strings with 4432 characters,
+            508 strings with 4390 characters,
 and the built_in function-call counts, 18 in all, are:
 = -- 0
 > -- 0

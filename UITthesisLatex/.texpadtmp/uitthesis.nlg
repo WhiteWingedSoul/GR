@@ -7,6 +7,6 @@ Scanning style file /usr/local/texlive/2016/texmf-dist/makeindex/nomencl/nomencl
 ** Input style error (file = /usr/local/texlive/2016/texmf-dist/makeindex/nomencl/nomencl.ist, line = 72):
    -- Unknown specifier lethead_flag.
 ...done (10 attributes redefined, 3 ignored).
-Scanning input file /Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.nlo...done (0 entries accepted, 0 rejected).
-Nothing written in /Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.nls.
-Transcript written in /Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.nlg.
+Scanning input file /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.nlo...done (0 entries accepted, 0 rejected).
+Nothing written in /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.nls.
+Transcript written in /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.nlg.

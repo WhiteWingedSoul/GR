@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  20 MAR 2017 01:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  20 MAR 2017 15:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1004,7 +1004,7 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 ))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Modau/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/GioithieuvebaitoanPLVB/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/BasicVectormize/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/WordEmberding_Doc2Vec/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/CaiDat/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/KetQua/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
+ (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/ProblemState/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/TheoryBasis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/DesignAnalysis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Result/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
 \openout1 = `uitthesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -1055,7 +1055,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 40.
 LaTeX Info: Redefining \pageref on input line 40.
 LaTeX Info: Redefining \nameref on input line 40.
- (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.out) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.out)
+ (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.out) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.out)
 \@outlinefile=\write5
 \openout5 = `uitthesis.out'.
 
@@ -1154,7 +1154,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 52.
 
-(/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.toc)
+(/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.toc)
 \tf@toc=\write6
 \openout6 = `uitthesis.toc'.
 
@@ -1163,9 +1163,9 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 
 
 ]
-\openout2 = `Modau/chapter1.aux'.
+\openout2 = `ProblemState/chapter1.aux'.
 
- (./Modau/chapter1.tex
+ (./ProblemState/chapter1.tex
 Ch\uhorn \ohorn ng 1.
 
 Package hyperref Warning: Composite letter `\textdotbelow+\abreve'
@@ -1224,14 +1224,84 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 7.
 
-) [1
+
+Package hyperref Warning: Composite letter `\textdotbelow+\abreve'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 8.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\abreve' on input line 8.
+
+
+Package hyperref Warning: Composite letter `\textacute+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 8.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 8.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\dj' on input line 8.
+
+
+Package hyperref Warning: Composite letter `\textasciigrave+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciigrave' on input line 8.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 8.
+
+[1
 
 
 
 ]
-\openout2 = `GioithieuvebaitoanPLVB/chapter1.aux'.
 
- (./GioithieuvebaitoanPLVB/chapter1.tex
+Package hyperref Warning: Composite letter `\textdotbelow+i'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 17.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 17.
+
+
+Package hyperref Warning: Composite letter `\textacute+\ohorn'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 17.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ohorn' on input line 17.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 17.
+
+
+Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 17.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 17.
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+\openout2 = `TheoryBasis/chapter1.aux'.
+
+ (./TheoryBasis/chapter1.tex
 Ch\uhorn \ohorn ng 2.
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
@@ -1284,14 +1354,14 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 12.
 
-) [2
+) [3
 
 
 
 ]
-\openout2 = `BasicVectormize/chapter1.aux'.
+\openout2 = `DesignAnalysis/chapter1.aux'.
 
- (./BasicVectormize/chapter1.tex
+ (./DesignAnalysis/chapter1.tex
 Ch\uhorn \ohorn ng 3.
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
@@ -1338,14 +1408,14 @@ Package hyperref Warning: Composite letter `\textacute+\ocircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 7.
 
-) [3
+) [4
 
 
 
 ]
-\openout2 = `WordEmberding_Doc2Vec/chapter1.aux'.
+\openout2 = `Result/chapter1.aux'.
 
- (./WordEmberding_Doc2Vec/chapter1.tex
+ (./Result/chapter1.tex
 Ch\uhorn \ohorn ng 4.
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
@@ -1378,17 +1448,11 @@ Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 7.
 
-) [4
+) [5
 
 
 
 ]
-\openout2 = `CaiDat/chapter1.aux'.
-
- (./CaiDat/chapter1.tex)
-\openout2 = `KetQua/chapter1.aux'.
-
- (./KetQua/chapter1.tex)
 \openout2 = `Conclusions/conclusions.aux'.
 
  (./Conclusions/conclusions.tex
@@ -1432,11 +1496,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 2.
 
-) [5
-
-
-
-
+) [6
 
 
 
@@ -1449,7 +1509,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
  (./Appendix2/appendix2.tex)
 \openout2 = `Appendix3/appendix3.aux'.
 
- (./Appendix3/appendix3.tex) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.bbl (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.brf)
+ (./Appendix3/appendix3.tex) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.bbl (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.brf)
 \tf@brf=\write7
 \openout7 = `uitthesis.brf'.
 
@@ -1471,8 +1531,8 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
- [6
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
+ [7
 
 
 
@@ -1488,28 +1548,28 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
- (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Modau/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/GioithieuvebaitoanPLVB/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/BasicVectormize/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/WordEmberding_Doc2Vec/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/CaiDat/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/KetQua/chapter1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Downloads/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
+ (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/ProblemState/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/TheoryBasis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/DesignAnalysis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Result/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `uitthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 98B5B74FA9109730F33BD5CFA2BE7E78;5094.
 Package rerunfilecheck Info: File `uitthesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 8798497306A83C77067422B364A3B07F;838.
  ) 
 Here is how much of TeX's memory you used:
- 13486 strings out of 493014
- 199780 string characters out of 6133351
- 416546 words of memory out of 5000000
+ 13473 strings out of 493014
+ 199454 string characters out of 6133351
+ 415205 words of memory out of 5000000
  16643 multiletter control sequences out of 15000+600000
  25206 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,8n,45p,853b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,8n,45p,1144b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/vntex/t5.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/urwvn/uhvr8v.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb>
-Output written on /Users/viet/Downloads/UITthesisLatex/.texpadtmp/uitthesis.pdf (12 pages, 78271 bytes).
+Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (13 pages, 84563 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
