@@ -1,0 +1,25 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces V\IeC {\'\i } d\IeC {\d u} c\IeC {\^a}y quy\IeC {\'\ecircumflex }t \IeC {\dj }\IeC {\d i}nh\relax }}{8}{figure.caption.3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces M\IeC {\^o} h\IeC {\`\i }nh kh\IeC {\^o}ng gian Vector\relax }}{12}{figure.caption.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Task nh\IeC {\d \acircumflex }n 5-gram h\IeC {\d \ohorn }p l\IeC {\d \ecircumflex }\relax }}{17}{figure.caption.5}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces S\IeC {\h \uhorn } d\IeC {\d u}ng t-SNE tr\IeC {\^e}n kh\IeC {\^o}ng gian WordEmbedding\relax }}{17}{figure.caption.6}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces C\IeC {\'a}c t\IeC {\`\uhorn } g\IeC {\`\acircumflex }n nhau trong kh\IeC {\^o}ng gian WordEmbedding\relax }}{18}{figure.caption.7}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces M\IeC {\^o} h\IeC {\`\i }nh CBOW\relax }}{19}{figure.caption.8}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces M\IeC {\^o} h\IeC {\`\i }nh CBOW v\IeC {\'\ohorn }i context ch\IeC {\h i} g\IeC {\`\ocircumflex }m m\IeC {\d \ocircumflex }t t\IeC {\`\uhorn }\relax }}{20}{figure.caption.9}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces M\IeC {\^o} h\IeC {\`\i }nh CBOW chu\IeC {\h \acircumflex }n\relax }}{23}{figure.caption.10}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces M\IeC {\^o} h\IeC {\`\i }nh Skip-gram\relax }}{24}{figure.caption.11}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces So s\IeC {\'a}nh doc2vec(tr\IeC {\'a}i) v\IeC {\`a} word2vec(ph\IeC {\h a}i)\relax }}{27}{figure.caption.12}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces V\IeC {\'\i } d\IeC {\d u} v\IeC {\`\ecircumflex } Bloom filter v\IeC {\'\ohorn }i $k=3$ v\IeC {\`a} $m=18$\relax }}{29}{figure.caption.13}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces C\IeC {\'a}c t\IeC {\`\uhorn } "g\IeC {\`\acircumflex }n" nh\IeC {\'\acircumflex }t v\IeC {\'\ohorn }i \textbf {vua}\relax }}{40}{figure.caption.14}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces C\IeC {\'a}c t\IeC {\`\uhorn } "g\IeC {\`\acircumflex }n" nh\IeC {\'\acircumflex }t v\IeC {\'\ohorn }i \textbf {ch\IeC {\`\ocircumflex }ng}\relax }}{41}{figure.caption.15}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces C\IeC {\'a}c t\IeC {\`\uhorn } "g\IeC {\`\acircumflex }n" nh\IeC {\'\acircumflex }t v\IeC {\'\ohorn }i \textbf {y t\IeC {\'\ecircumflex }}\relax }}{41}{figure.caption.16}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Confusion Matrix c\IeC {\h u}a module ph\IeC {\^a}n lo\IeC {\d a}i\relax }}{43}{figure.caption.17}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

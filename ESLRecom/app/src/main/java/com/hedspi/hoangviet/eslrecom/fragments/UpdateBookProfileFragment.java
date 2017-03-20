@@ -19,8 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
-import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.Book;
+import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.BookProfile;
 import com.squareup.picasso.Picasso;
 
@@ -65,7 +64,7 @@ public class UpdateBookProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         bookProfile = (BookProfile) getArguments().getSerializable("bookProfile");
-        Book book = bookProfile.getBook();
+        Material book = bookProfile.getBook();
         ImageView bookIcon = (ImageView) view.findViewById(R.id.bookIcon);
         Picasso.with(getActivity()).load(book.getCoverLink())
                 .fit()

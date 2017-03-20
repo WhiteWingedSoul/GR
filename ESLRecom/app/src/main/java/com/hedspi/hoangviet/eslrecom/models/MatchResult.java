@@ -1,13 +1,11 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
-import com.hedspi.hoangviet.eslrecom.libraries.GooglePlayElement;
-
 /**
  * Created by hoangviet on 11/21/16.
  */
 
 public class MatchResult {
-    private Book book;
+    private Material book;
     private double matchScore;
 
     public double getMatchScore() {
@@ -18,11 +16,11 @@ public class MatchResult {
         this.matchScore = matchScore;
     }
 
-    public Book getBook() {
+    public Material getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(Material book) {
         this.book = book;
     }
 }

@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -20,11 +21,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
+import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
+import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -142,16 +153,43 @@ public class MainFragment extends Fragment {
         recommendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction().setCustomAnimations(
-                        R.anim.slide_in_right, R.anim.slide_out_left,
-                        R.anim.slide_in_left, R.anim.slide_out_right)
-                        .replace(R.id.fragment, Survey1Fragment.newInstance())
-                        .addToBackStack(null)
-                        .commit();
+                getTagListFromServer();
+
             }
         });
 
+    }
+
+    private void getTagListFromServer(){
+        if (DatabaseManager.getTagList() == null) {
+            final ProgressDialog progress = ProgressDialog.show(getActivity(), "", getResources().getString(R.string.loading), false);
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child(Common.TAG).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.getValue() != null) {
+                        List<Tag> list = new ArrayList<>();
+                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            list.add(child.getValue(Tag.class));
+                        }
+                        DatabaseManager.setTagList(list);
+                        progress.hide();
+                        getActivity().getSupportFragmentManager()
+                                .beginTransaction().setCustomAnimations(
+                                R.anim.slide_in_right, R.anim.slide_out_left,
+                                R.anim.slide_in_left, R.anim.slide_out_right)
+                                .replace(R.id.fragment, Survey1Fragment.newInstance())
+                                .addToBackStack(null)
+                                .commit();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    progress.hide();
+                }
+            });
+        }
     }
 
     private void setLocale(String lang) {

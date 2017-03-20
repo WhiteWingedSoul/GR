@@ -1,6 +1,5 @@
 package com.hedspi.hoangviet.eslrecom.fragments;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -22,8 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
-import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.Book;
 import com.hedspi.hoangviet.eslrecom.models.BookProfile;
 import com.squareup.picasso.Picasso;
 
@@ -43,9 +40,9 @@ public class ListAddedBookFragment extends Fragment {
     private final ValueEventListener readBookData = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
-            //GenericTypeIndicator<ArrayList<Book>> t = new GenericTypeIndicator<ArrayList<Book>>() {};
+            //GenericTypeIndicator<ArrayList<Material>> t = new GenericTypeIndicator<ArrayList<Material>>() {};
             //listBook.clear();
-            //listBook.addAll((List<Book>)dataSnapshot.getValue(t));
+            //listBook.addAll((List<Material>)dataSnapshot.getValue(t));
             if(dataSnapshot.getValue()!=null) {
                 final BookProfile bookProfile = dataSnapshot.getValue(BookProfile.class);
                 if (bookProfile!=null) {

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BookProfile implements Serializable{
     private int id;
-    private Book book;
+    private Material book;
     private int levelPreference = 0;
     private int timePreference = 0;
     private int testPreference = 0;
@@ -24,11 +24,11 @@ public class BookProfile implements Serializable{
         this.id = id;
     }
 
-    public Book getBook() {
+    public Material getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(Material book) {
         this.book = book;
     }
 

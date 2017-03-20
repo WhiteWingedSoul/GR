@@ -26,54 +26,10 @@
             android:paddingLeft="30dp"
             android:paddingRight="20dp">
 
-            <CheckBox
-                android:text="@string/survey8a1"
+            <com.hedspi.hoangviet.eslrecom.libraries.TagCompletionView
+                android:id="@+id/autoCompleteText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_a" />
-
-            <CheckBox
-                android:text="@string/survey8a2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_b" />
-
-            <CheckBox
-                android:text="@string/survey8a3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_c" />
-
-            <CheckBox
-                android:text="@string/survey8a4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_d" />
-
-            <CheckBox
-                android:text="@string/survey8a5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_e" />
-
-            <CheckBox
-                android:text="@string/survey8a6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_f" />
-
-            <CheckBox
-                android:text="@string/survey8a7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/answer_g" />
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </LinearLayout>

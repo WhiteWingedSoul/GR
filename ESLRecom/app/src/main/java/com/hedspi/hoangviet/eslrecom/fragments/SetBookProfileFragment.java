@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.Book;
+import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.BookProfile;
 import com.squareup.picasso.Picasso;
 
@@ -29,14 +29,14 @@ import com.squareup.picasso.Picasso;
 
 public class SetBookProfileFragment extends Fragment {
     private View view;
-    private Book book;
+    private Material book;
     private RadioGroup.OnCheckedChangeListener levelListener1;
     private RadioGroup.OnCheckedChangeListener levelListener2;
     private RadioGroup.OnCheckedChangeListener testListener1;
     private RadioGroup.OnCheckedChangeListener testListener2;
 
 
-    public static SetBookProfileFragment newInstance(Book book){
+    public static SetBookProfileFragment newInstance(Material book){
         SetBookProfileFragment fragment = new SetBookProfileFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("book", book);
@@ -63,7 +63,7 @@ public class SetBookProfileFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        book = (Book) getArguments().getSerializable("book");
+        book = (Material) getArguments().getSerializable("book");
         ImageView bookIcon = (ImageView) view.findViewById(R.id.bookIcon);
         Picasso.with(getActivity()).load(book.getCoverLink())
                 .fit()

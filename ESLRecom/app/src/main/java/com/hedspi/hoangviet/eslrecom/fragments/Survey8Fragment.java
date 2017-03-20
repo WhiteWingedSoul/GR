@@ -2,17 +2,29 @@ package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.hedspi.hoangviet.eslrecom.R;
+import com.hedspi.hoangviet.eslrecom.libraries.TagCompletionView;
+import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by hoangviet on 11/20/16.
@@ -50,104 +62,49 @@ public class Survey8Fragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final CheckBox answer_a = (CheckBox) view.findViewById(R.id.answer_a);
-        final CheckBox answer_b = (CheckBox) view.findViewById(R.id.answer_b);
-        final CheckBox answer_c = (CheckBox) view.findViewById(R.id.answer_c);
-        final CheckBox answer_d = (CheckBox) view.findViewById(R.id.answer_d);
-        final CheckBox answer_e = (CheckBox) view.findViewById(R.id.answer_e);
-        final CheckBox answer_f = (CheckBox) view.findViewById(R.id.answer_f);
-        final CheckBox answer_g = (CheckBox) view.findViewById(R.id.answer_g);
+        final TagCompletionView autoCompleteTextView = (TagCompletionView) view.findViewById(R.id.autoCompleteText);
+        autoCompleteTextView.setThreshold(1);
+        autoCompleteTextView.setSplitChar(' ');
+        autoCompleteTextView.setTokenLimit(5);
+        autoCompleteTextView.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        answer_a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            }
+
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("reading");
-                }else{
-                    profile.getLearnList().remove("reading");
-                }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
-        answer_b.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("listening");
-                }else{
-                    profile.getLearnList().remove("listening");
-                }
-            }
-        });
-        answer_c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("speaking");
-                }else{
-                    profile.getLearnList().remove("speaking");
-                }
-            }
-        });
-        answer_d.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("pronounce");
-                }else{
-                    profile.getLearnList().remove("pronounce");
-                }
-            }
-        });
-        answer_e.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("vocabulary");
-                }else{
-                    profile.getLearnList().remove("vocabulary");
-                }
-            }
-        });
-        answer_f.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("grammar");
-                }else{
-                    profile.getLearnList().remove("grammar");
-                }
-            }
-        });
-        answer_g.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b){
-                    profile.getLearnList().add("writting");
-                }else{
-                    profile.getLearnList().remove("writting");
-                }
-            }
-        });
+        List<String> tagName = new ArrayList<>();
+        for(Tag tag: DatabaseManager.getTagList()){
+            tagName.add(tag.getName());
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                getActivity(), android.R.layout.simple_list_item_1, tagName);
+        autoCompleteTextView.setAdapter(adapter);
 
         TextView nextButton = (TextView) view.findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                if(answer_a.isChecked() || answer_b.isChecked() || answer_b.isChecked() || answer_c.isChecked()
-                        || answer_d.isChecked() || answer_e.isChecked() || answer_f.isChecked() || answer_g.isChecked()){
-                    getActivity().getSupportFragmentManager()
-                            .beginTransaction().setCustomAnimations(
-                            R.anim.slide_in_right, R.anim.slide_out_left,
-                            R.anim.slide_in_left, R.anim.slide_out_right)
-                            .replace(R.id.fragment, ResultFragment.newInstance(profile))
-                            .addToBackStack(null)
-                            .commit();
-                }
+            public void onClick(View v) {
+                profile.setLearnList(autoCompleteTextView.getObjects());
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction().setCustomAnimations(
+                        R.anim.slide_in_right, R.anim.slide_out_left,
+                        R.anim.slide_in_left, R.anim.slide_out_right)
+                        .replace(R.id.fragment, ResultFragment.newInstance(profile))
+                        .addToBackStack(null)
+                        .commit();
             }
         });
+
     }
-
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);

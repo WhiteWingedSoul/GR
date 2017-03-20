@@ -13,9 +13,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.fragments.MainFragment;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,15 +42,15 @@ public class MainActivity extends AppCompatActivity {
         //fragmentManager.beginTransaction().add(R.id.fragment, Survey1Fragment.newInstance()).commit();
         fragmentManager.beginTransaction().add(R.id.fragment, MainFragment.newInstance(), ""+FRAG_MAIN).commit();
 
-        // DUMP DATA TO FIREBASE
+////         DUMP DATA TO FIREBASE
 //        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 //        database.removeValue();
-//        for(Book book:DatabaseManager.getInstance(this).getListLevelTest()) {
-//            database.child("books").child(""+book.getId()).setValue(book);
-//            database.child("books-count").child(""+book.getId()).setValue(book.getId());
+//        for(Material material:DatabaseManager.getInstance(this).getListLevelTest()) {
+//            database.child(Common.MATERIAL).child(""+material.getId()).setValue(material);
+//            database.child(Common.MATERIAL_COUNT).child(""+material.getId()).setValue(material.getId());
 //        }
 
-        //INIT FIRST WEIGHT/VALUE
+//        INIT FIRST WEIGHT/VALUE
 //        Preference preference = new Preference();
 //        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 //        preference.setLearnPreferenceScore(UserProfile.MATCH_SCORE_LEARNLIST);

@@ -22,8 +22,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
+import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.Book;
+import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -43,11 +44,11 @@ public class ListTobeAddedBookFragment extends Fragment {
     private final ValueEventListener readBookData = new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot dataSnapshot) {
-            //GenericTypeIndicator<ArrayList<Book>> t = new GenericTypeIndicator<ArrayList<Book>>() {};
+            //GenericTypeIndicator<ArrayList<Material>> t = new GenericTypeIndicator<ArrayList<Material>>() {};
             //listBook.clear();
-            //listBook.addAll((List<Book>)dataSnapshot.getValue(t));
+            //listBook.addAll((List<Material>)dataSnapshot.getValue(t));
             if(dataSnapshot.getValue()!=null) {
-                final Book book = dataSnapshot.getValue(Book.class);
+                final Material book = dataSnapshot.getValue(Material.class);
                 if (book!=null)
                     adapter.updateAdapter(book);
             }
@@ -75,25 +76,33 @@ public class ListTobeAddedBookFragment extends Fragment {
     private void letDoTheGodWork() throws IOException{
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
-        database.child("books-count").addValueEventListener(new ValueEventListener() {
+        database.child(Common.MATERIAL_COUNT).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getValue() != null) {
+//                    adapter.clearData();
+//                    ArrayList<Long> bookIDsList = new ArrayList<Long>();
+//
+//                    for(DataSnapshot child : dataSnapshot.getChildren()){
+//                        bookIDsList.add((long)child.getValue());
+//                    }
+//
+//                    //GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
+//                    //bookIDsList.clear();
+//                    //bookIDsList.addAll(dataSnapshot.getValue(t));
+//
+//                    DatabaseManager.setMaterialCount(bookIDsList.size());
+//                    for (int i=0;i<bookIDsList.size();i++) {
+//                        database.child(Common.MATERIAL).child("" + bookIDsList.get(i)).removeEventListener(readBookData);
+//                        database.child(Common.MATERIAL).child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
+//                    }
+//                    progress.hide();
+
                     adapter.clearData();
-                    ArrayList<Long> bookIDsList = new ArrayList<Long>();
-
                     for(DataSnapshot child : dataSnapshot.getChildren()){
-                        bookIDsList.add((long)child.getValue());
-                    }
-
-                    //GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
-                    //bookIDsList.clear();
-                    //bookIDsList.addAll(dataSnapshot.getValue(t));
-
-                    DatabaseManager.setBooksCount(bookIDsList.size());
-                    for (int i=0;i<bookIDsList.size();i++) {
-                        database.child("books").child("" + bookIDsList.get(i)).removeEventListener(readBookData);
-                        database.child("books").child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
+                        final Material book = child.getValue(Material.class);
+                        if (book!=null)
+                            adapter.updateAdapter(book);
                     }
                     progress.hide();
                 }
@@ -148,14 +157,14 @@ public class ListTobeAddedBookFragment extends Fragment {
 
     class MatchResultAdapter extends RecyclerView.Adapter{
         private Context mContext;
-        private List<Book> mList = new ArrayList<>();
+        private List<Material> mList = new ArrayList<>();
 
         public MatchResultAdapter(Context context){
             super();
             mContext = context;
         }
 
-        public void updateAdapter(Book book){
+        public void updateAdapter(Material book){
             mList.add(book);
             notifyItemInserted(book.getId());
         }
@@ -173,7 +182,7 @@ public class ListTobeAddedBookFragment extends Fragment {
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             MatchResultHolder vh = (MatchResultHolder) holder;
-            final Book book = mList.get(position);
+            final Material book = mList.get(position);
             Picasso.with(getActivity()).load(book.getCoverLink())
                     .fit()
                     .into(vh.bookIcon);

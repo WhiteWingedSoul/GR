@@ -1,9 +1,10 @@
 import sqlite3
+import json
 
 db = sqlite3.connect("data.db")
 
 c = db.cursor()
-c.execute('''create table books
+c.execute('''create table if not exists books
 			(id integer primary key,
 			 name text,
 			 author text,
@@ -19,6 +20,10 @@ c.execute('''create table books
 			 note text,
 			 description text,
 			 content text,
-			 abstract text
+			 abstract text,
+			 onlineName text,
+			 onlineText text,
+			 tag text
 			)''')
-c.close()
+
+#sqlitebiter file db.json -o db.db

@@ -1,22 +1,17 @@
 package com.hedspi.hoangviet.eslrecom.managers;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
-import com.hedspi.hoangviet.eslrecom.models.Book;
+import com.hedspi.hoangviet.eslrecom.models.Material;
+import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.stmt.DeleteBuilder;
-import com.j256.ormlite.stmt.QueryBuilder;
-import com.j256.ormlite.stmt.UpdateBuilder;
 import com.j256.ormlite.support.ConnectionSource;
-import com.j256.ormlite.table.TableUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,8 +22,7 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by hoangviet on 1/8/16.
@@ -39,13 +33,14 @@ public class DatabaseManager {
     private DatabaseHelper dbHelper;
 
     private static DatabaseReference database = null;
-    private static long booksCount;
+    private static long materialCount;
     private static long bookProfilesCount;
     private static Preference preference;
+    private static List<Tag> tagList;
 
     DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     private static final String DB_NAME = "esldatabase";
-    private static final String DB_FILE = "demo.sqlite";
+    private static final String DB_FILE = "data.db";
     private static final int DB_VERSION = 1;
 
     private DatabaseManager(Context context){
@@ -60,12 +55,20 @@ public class DatabaseManager {
         return database;
     }
 
-    public static long getBooksCount() {
-        return booksCount;
+    public static List<Tag> getTagList() {
+        return tagList;
     }
 
-    public static void setBooksCount(long booksCount) {
-        DatabaseManager.booksCount = booksCount;
+    public static void setTagList(List<Tag> tagList) {
+        DatabaseManager.tagList = tagList;
+    }
+
+    public static long getMaterialCount() {
+        return materialCount;
+    }
+
+    public static void setMaterialCount(long materialCount) {
+        DatabaseManager.materialCount = materialCount;
     }
 
     public static Preference getPreference() {
@@ -91,10 +94,10 @@ public class DatabaseManager {
         return mInstance;
     }
 
-    public ArrayList<Book> getListLevelTest(){
-        ArrayList<Book> list = new ArrayList<Book>();
+    public ArrayList<Material> getListLevelTest(){
+        ArrayList<Material> list = new ArrayList<Material>();
         try {
-            list = (ArrayList) dbHelper.getBookDao().queryForAll();
+            list = (ArrayList) dbHelper.getMaterialDao().queryForAll();
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -105,7 +108,7 @@ public class DatabaseManager {
     //***************** HELPER ***********************//
 
     class DatabaseHelper extends OrmLiteSqliteOpenHelper{
-        private Dao<Book, Integer> bookDao;
+        private Dao<Material, Integer> materialDao;
 
         public DatabaseHelper(Context context){
             super(context, DB_NAME, null, DB_VERSION);
@@ -168,29 +171,21 @@ public class DatabaseManager {
 
         @Override
         public void onUpgrade(SQLiteDatabase database, ConnectionSource source, int oldVersion, int newVersion){
-            /*try {
-                TableUtils.dropTable(source, UserCurrentPosition.class, true);
-                TableUtils.dropTable(source, UserCurrentLevels.class, true);
-                TableUtils.dropTable(source, UserDayProgress.class, true);
-                TableUtils.dropTable(source, WordProgress.class, true);
-            }catch (SQLException e){
-                e.printStackTrace();
-            }*/
             copyDatabase();
             onCreate(database, source);
             Log.d("LOG","Database updated!");
         }
 
-        public Dao<Book, Integer> getBookDao() throws SQLException{
-            if(bookDao == null)
-                bookDao = getDao(Book.class);
-            return bookDao;
+        public Dao<Material, Integer> getMaterialDao() throws SQLException{
+            if(materialDao == null)
+                materialDao = getDao(Material.class);
+            return materialDao;
         }
 
         @Override
         public void close(){
             super.close();
-            bookDao = null;
+            materialDao = null;
         }
 
         public void checkDatabase(){

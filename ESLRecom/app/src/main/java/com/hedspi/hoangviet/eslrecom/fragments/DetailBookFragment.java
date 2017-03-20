@@ -7,20 +7,11 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.hedspi.hoangviet.eslrecom.R;
-import com.hedspi.hoangviet.eslrecom.commons.Preference;
-import com.hedspi.hoangviet.eslrecom.models.Book;
-import com.hedspi.hoangviet.eslrecom.models.BookProfile;
+import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -29,9 +20,9 @@ import com.squareup.picasso.Picasso;
 
 public class DetailBookFragment extends Fragment {
     private View view;
-    private Book book;
+    private Material book;
 
-    public static DetailBookFragment newInstance(Book book){
+    public static DetailBookFragment newInstance(Material book){
         DetailBookFragment fragment = new DetailBookFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("book", book);
@@ -58,7 +49,7 @@ public class DetailBookFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        book = (Book) getArguments().getSerializable("book");
+        book = (Material) getArguments().getSerializable("book");
         ImageView bookIcon = (ImageView) view.findViewById(R.id.bookIcon);
         Picasso.with(getActivity()).load(book.getCoverLink())
                 .fit()

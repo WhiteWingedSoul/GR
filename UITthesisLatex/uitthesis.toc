@@ -1,0 +1,64 @@
+\select@language {vietnam}
+\contentsline {chapter}{M\d {u}c l\d {u}c}{vi}{chapter*.1}
+\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{ix}{chapter*.2}
+\contentsline {chapter}{\numberline {1}M\IeC {\h \ohorn } \IeC {\dj }\IeC {\`\acircumflex }u}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}M\IeC {\d u}c ti\IeC {\^e}u v\IeC {\`a} n\IeC {\d \ocircumflex }i dung nghi\IeC {\^e}n c\IeC {\'\uhorn }u c\IeC {\h u}a \IeC {\dj }\IeC {\`\ocircumflex } \IeC {\'a}n}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}K\IeC {\'\ecircumflex }t qu\IeC {\h a} \IeC {\dj }\IeC {\d a}t \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}B\IeC {\`a}i to\IeC {\'a}n ph\IeC {\^a}n lo\IeC {\d a}i v\IeC {\u a}n b\IeC {\h a}n}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}T\IeC {\h \ocircumflex }ng quan v\IeC {\`\ecircumflex } b\IeC {\`a}i to\IeC {\'a}n ph\IeC {\^a}n lo\IeC {\d a}i v\IeC {\u a}n b\IeC {\h a}n}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}T\IeC {\'o}m t\IeC {\'\abreve }t c\IeC {\'a}c ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p ph\IeC {\^a}n lo\IeC {\d a}i v\IeC {\u a}n b\IeC {\h a}n th\IeC {\uhorn }\IeC {\`\ohorn }ng d\IeC {\`u}ng}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Na\IeC {\"\i }ve Bayes (NB)}{4}{subsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.1.1}\IeC {\'Y} t\IeC {\uhorn }\IeC {\h \ohorn }ng}{4}{subsubsection.2.2.1.1}
+\contentsline {subsubsection}{\numberline {2.2.1.2}C\IeC {\^o}ng th\IeC {\'\uhorn }c}{4}{subsubsection.2.2.1.2}
+\contentsline {subsection}{\numberline {2.2.2}Ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p K\IeC {\textendash }Nearest Neighbor (kNN)}{5}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}\IeC {\'Y} t\IeC {\uhorn }\IeC {\h \ohorn }ng}{6}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2}C\IeC {\^o}ng th\IeC {\'\uhorn }c}{6}{subsubsection.2.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Support vector Machine (SVM)}{6}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}\IeC {\'Y} t\IeC {\uhorn }\IeC {\h \ohorn }ng}{6}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}C\IeC {\^o}ng th\IeC {\'\uhorn }c}{7}{subsubsection.2.2.3.2}
+\contentsline {subsection}{\numberline {2.2.4}Neural Network (NNet)}{7}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Decision Tree v\IeC {\`a} Random Forest}{8}{subsection.2.2.5}
+\contentsline {subsubsection}{\numberline {2.2.5.1}C\IeC {\^a}y quy\IeC {\'\ecircumflex }t \IeC {\dj }\IeC {\d i}nh (Decision Tree)}{8}{subsubsection.2.2.5.1}
+\contentsline {subsubsection}{\numberline {2.2.5.2}R\IeC {\`\uhorn }ng ng\IeC {\~\acircumflex }u nhi\IeC {\^e}n (Random Forest)}{9}{subsubsection.2.2.5.2}
+\contentsline {section}{\numberline {2.3}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{10}{section.2.3}
+\contentsline {chapter}{\numberline {3}Bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n v\IeC {\u a}n b\IeC {\h a}n trong kh\IeC {\^o}ng gian vector}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}M\IeC {\^o} h\IeC {\`\i }nh kh\IeC {\^o}ng gian vector (Vector Space Model)}{11}{section.3.1}
+\contentsline {section}{\numberline {3.2}D\IeC {\`u}ng kh\IeC {\^o}ng gian vector bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n v\IeC {\u a}n b\IeC {\h a}n}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n v\IeC {\u a}n b\IeC {\h a}n v\IeC {\`\ecircumflex } d\IeC {\d a}ng vector s\IeC {\h \uhorn } d\IeC {\d u}ng ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p Latent Dirichlet Allocation (LDA)}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}Nh\IeC {\d \acircumflex }n x\IeC {\'e}t}{14}{section.3.4}
+\contentsline {section}{\numberline {3.5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{15}{section.3.5}
+\contentsline {chapter}{\numberline {4}Vector h\IeC {\'o}a t\IeC {\`\uhorn } v\IeC {\`a} v\IeC {\u a}n b\IeC {\h a}n s\IeC {\h \uhorn } d\IeC {\d u}ng bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n ph\IeC {\^a}n t\IeC {\'a}n (distributed representation) }{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Word distributed representation}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Word2Vec}{19}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}CBOW}{19}{subsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Single word context}{19}{subsubsection.4.2.1.1}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Multi-word context }{23}{subsubsection.4.2.1.2}
+\contentsline {subsection}{\numberline {4.2.2}Skip-gram}{24}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Doc2vec - ph\IeC {\uhorn }\IeC {\ohorn }ng \IeC {\'a}n vector h\IeC {\'o}a v\IeC {\u a}n b\IeC {\h a}n}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}\IeC {\DJ }i\IeC {\h \ecircumflex }m m\IeC {\d a}nh c\IeC {\h u}a word2vec v\IeC {\`a} doc2vec}{27}{section.4.4}
+\contentsline {section}{\numberline {4.5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{27}{section.4.5}
+\contentsline {chapter}{\numberline {5}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{28}{chapter.5}
+\contentsline {section}{\numberline {5.1}Model vector h\IeC {\'o}a v\IeC {\u a}n b\IeC {\h a}n \IeC {\'\uhorn }ng d\IeC {\d u}ng Doc2Vec}{28}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u}{28}{subsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.1}Ti\IeC {\`\ecircumflex }n x\IeC {\h \uhorn } l\IeC {\'y}}{28}{subsubsection.5.1.1.1}
+\contentsline {subsection}{\numberline {5.1.2}L\IeC {\d o}c b\IeC {\h o} tr\IeC {\`u}ng l\IeC {\d \abreve }p d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u}{28}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}M\IeC {\^o} t\IeC {\h a} gi\IeC {\h a}i thu\IeC {\d \acircumflex }t}{29}{subsubsection.5.1.2.1}
+\contentsline {subsubsection}{\numberline {5.1.2.2}False-positives trong Bloom filter}{30}{subsubsection.5.1.2.2}
+\contentsline {subsubsection}{\numberline {5.1.2.3}C\IeC {\'\acircumflex }u h\IeC {\`\i }nh gi\IeC {\'a} tr\IeC {\d i} cho Bloom filter}{30}{subsubsection.5.1.2.3}
+\contentsline {subsubsection}{\numberline {5.1.2.4}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t th\IeC {\d \uhorn }c t\IeC {\'\ecircumflex }}{31}{subsubsection.5.1.2.4}
+\contentsline {subsection}{\numberline {5.1.3}Hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n m\IeC {\^o} h\IeC {\`\i }nh Doc2Vec}{32}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Module ph\IeC {\^a}n lo\IeC {\d a}i:}{35}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u}{35}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t th\IeC {\d \uhorn }c t\IeC {\'\ecircumflex }}{36}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n s\IeC {\h \uhorn } d\IeC {\d u}ng}{36}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}S\IeC {\h \uhorn } d\IeC {\d u}ng module}{38}{subsubsection.5.2.2.2}
+\contentsline {section}{\numberline {5.3}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{39}{section.5.3}
+\contentsline {chapter}{\numberline {6}K\IeC {\'\ecircumflex }t qu\IeC {\h a} v\IeC {\`a} nh\IeC {\d \acircumflex }n x\IeC {\'e}t}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}M\IeC {\^o} h\IeC {\`\i }nh doc2vec-word2vec}{40}{section.6.1}
+\contentsline {section}{\numberline {6.2}Module ph\IeC {\^a}n lo\IeC {\d a}i}{42}{section.6.2}
+\contentsline {chapter}{\numberline {7}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{44}{chapter.7}
+\contentsline {chapter}{PH\IeC {\d U} L\IeC {\d U}C 1: T\IeC {\h \ocircumflex }ng quan v\IeC {\`\ecircumflex } m\IeC {\d a}ng neural}{45}{appendix*.18}
+\contentsline {chapter}{PH\IeC {\d U} L\IeC {\d U}C 2 : One-hot encoding v\IeC {\`a} c\IeC {\'a}c bi\IeC {\d \ecircumflex }n ph\IeC {\'a}p c\IeC {\h a}i thi\IeC {\d \ecircumflex }n t\IeC {\'\ocircumflex }c \IeC {\dj }\IeC {\d \ocircumflex } t\IeC {\'\i }nh to\IeC {\'a}n trong Word2Vec}{50}{appendix*.20}
+\contentsline {chapter}{PH\IeC {\d U} L\IeC {\d U}C 3 : S\IeC {\h \uhorn } d\IeC {\d u}ng v\IeC {\`a} x\IeC {\^a}y d\IeC {\d \uhorn }ng c\IeC {\^a}y quy\IeC {\'\ecircumflex }t \IeC {\dj }\IeC {\d i}nh}{56}{appendix*.22}
+\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{60}{appendix*.23}

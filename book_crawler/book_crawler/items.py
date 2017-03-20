@@ -25,4 +25,5 @@ class BookItem(scrapy.Item):
     description = scrapy.Field()
     content = scrapy.Field()
     abstract = scrapy.Field()
-
+    onlineName = scrapy.Field()
+    onlineLink = scrapy.Field()
