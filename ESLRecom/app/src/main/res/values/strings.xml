@@ -7,15 +7,15 @@
     <string name="genreform">"Genre/Form: "</string>
     <string name="docType">"Document Type: "</string>
     <string name="summary">"Summary: \n\t"</string>
-    <string name="bookInfo">"About this book"</string>
+    <string name="bookInfo">"About this material"</string>
     <string name="content">"Content: "</string>
     <string name="subject">"Subject: "</string>
-    <string name="createBookProfile">"Review this book"</string>
-    <string name="saveBookProfile">"Save book profile"</string>
-    <string name="startSurvey">"Recommend me a book !"</string>
-    <string name="recommendResult">"You should check out these books below."</string>
-    <string name="updateBookProfile">"Update book profile"</string>
-    <string name="addBookProfile">"Add book profile"</string>
+    <string name="createBookProfile">"Review this material"</string>
+    <string name="saveBookProfile">"Save material profile"</string>
+    <string name="startSurvey">"Recommend me a material !"</string>
+    <string name="recommendResult">"You should check out these results below."</string>
+    <string name="updateBookProfile">"Update material profile"</string>
+    <string name="addBookProfile">"Add material profile"</string>
     <string name="setting">"Setting"</string>
     <string name="chooseLanguage">"Choose your language:"</string>
     <string name="overall">Language level score:</string>
@@ -28,11 +28,11 @@
     <string name="update">Update</string>
     <string name="updated">Setting updated!</string>
     <string name="match">"Match: "</string>
-    <string name="buyThisbook">Buy this book</string>
+    <string name="buyThisbook">Buy this material</string>
     <string name="seller">"Seller: "</string>
     <string name="price">"Price: "</string>
     <string name="caculating">"Calculating result..."</string>
-    <string name="loading">"Loading book infos..."</string>
+    <string name="loading">"Loading infos..."</string>
 
     <string name="profile1t">"Appropriate level:"</string>
     <string name="profile1c1">" Beginner"</string>
@@ -46,7 +46,7 @@
     <string name="profile2c3">" TOEFL"</string>
     <string name="profile2c4">" TOEIC"</string>
     <string name="profile2c5">" iTEP"</string>
-    <string name="profile3t">"How much time should user spend to read this book ?"</string>
+    <string name="profile3t">"How much time should user spend to read this material ?"</string>
     <string name="profile3c1">" below 1 hour/day"</string>
     <string name="profile3c2">" 1-3hrs/day"</string>
     <string name="profile3c3">" above 3hrs/day"</string>

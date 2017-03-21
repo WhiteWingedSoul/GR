@@ -5,11 +5,11 @@ package com.hedspi.hoangviet.eslrecom.commons;
  */
 
 public class Preference {
-    public static final int BEGINNER = 1;
-    public static final int BASIC = 2;
-    public static final int INTERMEDIATE = 3;
-    public static final int ADVANCE = 4;
-    public static final int MASTER = 5;
+    public static final String BEGINNER = "beginner";
+    public static final String ELEMENTARY = "elementary";
+    public static final String INTERMEDIATE = "intermediate";
+    public static final String ADVANCE = "advanced";
+    public static final String MASTER = "very advanced";
 
     public static final int NONE = 1;
     public static final int IELTS = 2;
@@ -22,8 +22,8 @@ public class Preference {
     public static final int MORE3= 3;
 
     private double overallScore;
-    private double testScore;
-    private double timeScore;
+//    private double testScore;
+//    private double timeScore;
     private double learnPreferenceScore;
     private double decisionBoundary;
 
@@ -35,7 +35,7 @@ public class Preference {
         this.overallScore = overallScore;
     }
 
-    public double getTestScore() {
+    /*public double getTestScore() {
         return testScore;
     }
 
@@ -49,7 +49,7 @@ public class Preference {
 
     public void setTimeScore(double timeScore) {
         this.timeScore = timeScore;
-    }
+    }*/
 
     public double getLearnPreferenceScore() {
         return learnPreferenceScore;
@@ -68,6 +68,6 @@ public class Preference {
     }
 
     public double getBestMatch(){
-        return overallScore+testScore+timeScore+learnPreferenceScore;
+        return overallScore+learnPreferenceScore;// +testScore+timeScore ;
     }
 }

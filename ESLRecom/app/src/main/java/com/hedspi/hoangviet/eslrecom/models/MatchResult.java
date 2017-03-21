@@ -5,7 +5,7 @@ package com.hedspi.hoangviet.eslrecom.models;
  */
 
 public class MatchResult {
-    private Material book;
+    private Material material;
     private double matchScore;
 
     public double getMatchScore() {
@@ -16,11 +16,11 @@ public class MatchResult {
         this.matchScore = matchScore;
     }
 
-    public Material getBook() {
-        return book;
+    public Material getMaterial() {
+        return material;
     }
 
-    public void setBook(Material book) {
-        this.book = book;
+    public void setMaterial(Material material) {
+        this.material = material;
     }
 }

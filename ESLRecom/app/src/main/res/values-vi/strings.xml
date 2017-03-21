@@ -11,9 +11,9 @@
     <string name="content">"Nội dung: "</string>
     <string name="subject">"Chủ đề: "</string>
     <string name="createBookProfile">"Đánh giá cuốn sách này"</string>
-    <string name="saveBookProfile">"Lưu book profile"</string>
+    <string name="saveBookProfile">"Lưu material profile"</string>
     <string name="startSurvey">"Tôi nên học tiếng Anh thế nào ?"</string>
-    <string name="recommendResult">"Bạn có thể tham khảo những cuốn sách học tiếng Anh sau đây"</string>
+    <string name="recommendResult">"Bạn có thể tham khảo những tài liệu tiếng Anh sau đây"</string>
     <string name="updateBookProfile">"Cập nhập Book Profile"</string>
     <string name="addBookProfile">"Thêm mới Book Profile"</string>
     <string name="setting">"Cài đặt"</string>
@@ -32,7 +32,7 @@
     <string name="seller">"Nơi bán: "</string>
     <string name="price">"Giá tiền: "</string>
     <string name="caculating">"Đang tính toán kết quả..."</string>
-    <string name="loading">"Đang tải thông tin sách..."</string>
+    <string name="loading">"Đang tải thông tin ..."</string>
 
     <string name="profile1t">"Trình độ phù hợp để đọc:"</string>
     <string name="profile1c1">" Mới học"</string>

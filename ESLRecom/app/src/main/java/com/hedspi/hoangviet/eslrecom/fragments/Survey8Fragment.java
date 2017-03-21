@@ -31,7 +31,6 @@ import java.util.List;
  */
 
 public class Survey8Fragment extends Fragment {
-    private View view;
     private UserProfile profile;
 
     public static Survey8Fragment newInstance(UserProfile profile){
@@ -52,8 +51,7 @@ public class Survey8Fragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
-        if(view == null)
-            view = inflater.inflate(R.layout.fragment_survey8, viewGroup, false);
+        View view = inflater.inflate(R.layout.fragment_survey8, viewGroup, false);
 
         return view;
     }

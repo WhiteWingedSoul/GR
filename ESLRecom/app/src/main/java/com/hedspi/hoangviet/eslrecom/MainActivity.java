@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 //        preference.setTimeScore(UserProfile.MATCH_SCORE_TIMESPEND);
 //        preference.setTestScore(UserProfile.MATCH_SCORE_TESTPREFER);
 //        preference.setOverallScore(UserProfile.MATCH_SCORE_OVERALL);
-//        preference.setDecisionBoundary(0.7);
+//        preference.setDecisionBoundary(0.1);
 //        databaseReference.child("preference").setValue(preference);
 
 

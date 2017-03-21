@@ -133,13 +133,13 @@ public class MainFragment extends Fragment {
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
-                        getActivity().getSupportFragmentManager()
-                                .beginTransaction().setCustomAnimations(
-                                R.anim.slide_in_right, R.anim.slide_out_left,
-                                R.anim.slide_in_left, R.anim.slide_out_right)
-                                .replace(R.id.fragment, ExperFragment.newInstance())
-                                .addToBackStack(null)
-                                .commit();
+//                        getActivity().getSupportFragmentManager()
+//                                .beginTransaction().setCustomAnimations(
+//                                R.anim.slide_in_right, R.anim.slide_out_left,
+//                                R.anim.slide_in_left, R.anim.slide_out_right)
+//                                .replace(R.id.fragment, ExperFragment.newInstance())
+//                                .addToBackStack(null)
+//                                .commit();
                     }
 
                     @Override

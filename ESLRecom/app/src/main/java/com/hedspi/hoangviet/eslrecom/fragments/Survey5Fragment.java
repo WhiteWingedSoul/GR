@@ -82,7 +82,7 @@ public class Survey5Fragment extends Fragment {
                             .beginTransaction().setCustomAnimations(
                             R.anim.slide_in_right, R.anim.slide_out_left,
                             R.anim.slide_in_left, R.anim.slide_out_right)
-                            .replace(R.id.fragment, Survey6Fragment.newInstance(profile))
+                            .replace(R.id.fragment, Survey8Fragment.newInstance(profile))
                             .addToBackStack(null)
                             .commit();
                 }

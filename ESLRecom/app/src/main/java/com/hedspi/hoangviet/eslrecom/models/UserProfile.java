@@ -17,8 +17,8 @@ public class UserProfile implements Serializable {
     private double listeningScore;
     private double speakingScore;
     private double overallScore;
-    private int timeCanSpend;
-    private int testPreference;
+//    private int timeCanSpend;
+//    private int testPreference;
     private List<String> learnList = new ArrayList<>();
 
     public static final double BEGINNER = 0;
@@ -29,8 +29,8 @@ public class UserProfile implements Serializable {
 
     public static final double MATCH_SCORE_OVERALL = 0.37;
     public static final double MATCH_SCORE_LEARNLIST = 0.78;
-    public static final double MATCH_SCORE_TIMESPEND = 0.2;
-    public static final double MATCH_SCORE_TESTPREFER = 0.33;
+//    public static final double MATCH_SCORE_TIMESPEND = 0.2;
+//    public static final double MATCH_SCORE_TESTPREFER = 0.33;
 
     public double getReadingScore() {
         return readingScore;
@@ -73,21 +73,21 @@ public class UserProfile implements Serializable {
         this.overallScore = overallScore;
     }
 
-    public int getTimeCanSpend() {
-        return timeCanSpend;
-    }
-
-    public void setTimeCanSpend(int timeCanSpend) {
-        this.timeCanSpend = timeCanSpend;
-    }
-
-    public int getTestPreference() {
-        return testPreference;
-    }
-
-    public void setTestPreference(int testPreference) {
-        this.testPreference = testPreference;
-    }
+//    public int getTimeCanSpend() {
+//        return timeCanSpend;
+//    }
+//
+//    public void setTimeCanSpend(int timeCanSpend) {
+//        this.timeCanSpend = timeCanSpend;
+//    }
+//
+//    public int getTestPreference() {
+//        return testPreference;
+//    }
+//
+//    public void setTestPreference(int testPreference) {
+//        this.testPreference = testPreference;
+//    }
 
     public List<String> getLearnList() {
         return learnList;
@@ -105,19 +105,17 @@ public class UserProfile implements Serializable {
         this.learnTimeScore = learnTimeScore;
     }
 
-    public int getOverallPreference(){
+    public String getOverallPreference(){
         if(getOverallScore() == 0)
             return Preference.BEGINNER;
         else if(getOverallScore()<=0.3)
-            return Preference.BASIC;
-        else if (getOverallScore()<=0.6)
+            return Preference.ELEMENTARY;
+        else if (getOverallScore()<=0.75)
             return Preference.INTERMEDIATE;
-        else if (getOverallScore()<=0.9)
-            return Preference.ADVANCE;
-        else return Preference.MASTER;
+        else return Preference.ADVANCE;
     }
 
     public double getBestMatch(){
-        return MATCH_SCORE_LEARNLIST+MATCH_SCORE_OVERALL +MATCH_SCORE_TIMESPEND+MATCH_SCORE_TESTPREFER;
+        return MATCH_SCORE_LEARNLIST+MATCH_SCORE_OVERALL; //+MATCH_SCORE_TIMESPEND+MATCH_SCORE_TESTPREFER;
     }
 }

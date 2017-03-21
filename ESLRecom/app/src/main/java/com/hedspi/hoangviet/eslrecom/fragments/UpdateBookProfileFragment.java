@@ -131,11 +131,11 @@ public class UpdateBookProfileFragment extends Fragment {
 
         final RadioGroup levelGroup1 = (RadioGroup) view.findViewById(R.id.levelanswerGroup1);
         final RadioGroup levelGroup2 = (RadioGroup) view.findViewById(R.id.levelanswerGroup2);
-        switch (bookProfile.getLevelPreference()){
+        /*switch (bookProfile.getLevelPreference()){
             case Preference.BEGINNER:
                 ((RadioButton)view.findViewById(R.id.l_answer_a)).setChecked(true);
                 break;
-            case Preference.BASIC:
+            case Preference.ELEMENTARY:
                 ((RadioButton)view.findViewById(R.id.l_answer_b)).setChecked(true);
                 break;
             case Preference.INTERMEDIATE:
@@ -148,7 +148,7 @@ public class UpdateBookProfileFragment extends Fragment {
                 ((RadioButton)view.findViewById(R.id.l_answer_e)).setChecked(true);
                 break;
 
-        }
+        }*/
         levelListener1 = new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -156,17 +156,17 @@ public class UpdateBookProfileFragment extends Fragment {
                     levelGroup2.setOnCheckedChangeListener(null);
                     levelGroup2.clearCheck();
                     levelGroup2.setOnCheckedChangeListener(levelListener2);
-                    switch (i) {
+                    /*switch (i) {
                         case R.id.l_answer_a:
                             bookProfile.setLevelPreference(Preference.BEGINNER);
                             break;
                         case R.id.l_answer_b:
-                            bookProfile.setLevelPreference(Preference.BASIC);
+                            bookProfile.setLevelPreference(Preference.ELEMENTARY);
                             break;
                         case R.id.l_answer_c:
                             bookProfile.setLevelPreference(Preference.INTERMEDIATE);
                             break;
-                    }
+                    }*/
                 }
             }
         };
@@ -177,14 +177,14 @@ public class UpdateBookProfileFragment extends Fragment {
                     levelGroup1.setOnCheckedChangeListener(null);
                     levelGroup1.clearCheck();
                     levelGroup1.setOnCheckedChangeListener(levelListener1);
-                    switch (i) {
+                    /*switch (i) {
                         case R.id.l_answer_d:
                             bookProfile.setLevelPreference(Preference.ADVANCE);
                             break;
                         case R.id.l_answer_e:
                             bookProfile.setLevelPreference(Preference.MASTER);
                             break;
-                    }
+                    }*/
                 }
             }
         };

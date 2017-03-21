@@ -7,3 +7,18 @@
 \chapter{Phân tích thiết kế xây dựng hệ thống} \label{design-analysis}
 
 
+\section{Xây dựng hồ sơ người dùng}
+User profile thể hiện trình độ và nguyện vọng của người dùng. Những thông tin này sẽ được dùng trong quá trình matching với các tập dữ liệu bằng thuật toán Context-matching . \\
+Một user profile sẽ gồm có các thuộc tính sau:
+\begin{itemize}
+\item Thời điểm bắt đầu học\item Trình độ nghe hiểu\item Trình độ đọc hiểu\item Trình độ nói\item Trình độ viết văn\item Mục đích học của người dùng\\
+\end{itemize}Hệ thống sẽ đưa ra tập câu hỏi với các đáp án cho sẵn để xác định profile người dùng :
+\begin{itemize}\item Bạn học tiếng Anh được bao lâu rồi ?\item Trình độ đọc hiểu của bạn thế nào ?\item Bạn viết tiếng Anh tốt đến mức nào ?\item Bạn giao tiếp bằng tiếng Anh có tốt không ?\item Khả năng nghe tiếng Anh của bạn như thế nào ?\item Bạn mong muốn được cải thiện những kĩ năng nào ?	
+\end{itemize}
+Câu hỏi 1-5 cho ta trình độ của người dùng, mỗi câu hỏi có 5 đáp án tương ứng với các mức: mới học, cơ bản, trung cấp, nâng cao, thành thạo. Dựa vào câu trả lời của người dùng, ta xác định được thuộc tính trong user profile về các kĩ năng đọc, nghe, viết, nói.
+Thêm vào đó, để đánh giá chung năng lực của người dùng. Mỗi đáp án được gán với 1 mức điểm đánh giá năng lực tương ứng : a - 0, b - 0.3, c - 0.6, d - 0.85, e - 1. Gọi d là điểm đánh giá của từng câu hỏi, ta có d = điểm đánh giá đáp án x trọng số câu hỏi. Từ đây ta tính được điểm đánh giá trình độ của người dùng bằng tổng d1+d2+d3+d4+d5. Trình độ người dùng sẽ được phân loại vào các mức: mới học (điểm=0), sơ cấp (điểm<=0.3), trung cấp(điểm<=0.6), cao cấp(điểm<=0.85) và thành thạo(điểm<=1)
+Vd. Anh A học tiếng Anh được trên 5 năm, anh A có thể đọc được tài liệu tiếng Anh chuyên ngành, viết được đoạn văn ngắn bằng tiếng Anh, nghe hiểu hội thoại tự nhiên trong cuộc sống và giao tiếp như người bản xứ. Điểm trình độ của anh A sẽ là : 0.8*0.1 + 1*0.225+0.6*0.225+0.85*0.225+1*0.225 = 0.85625. => Trình độ của anh A nằm ở mức độ thành thạo.
+Câu hỏi cuối cho ta nguyện vọng học của người dùng. Nguyện vọng sẽ ảnh hưởng đến việc chọn cuốn sách dựa trên kĩ năng mà nó cung cấp.
+\section{Xây dựng mạng từ khoá}
+
+

@@ -22,9 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
+import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.BookProfile;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
+import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 import com.squareup.picasso.Picasso;
 
@@ -44,6 +45,8 @@ public class ResultFragment extends Fragment {
     private RecyclerView recyclerView;
     private MatchResultAdapter adapter;
     private ProgressDialog progress;
+    private List<Material> listMaterialProfile;
+    private List<MatchResult> listMatchResult ;
 
     public static ResultFragment newInstance(UserProfile profile){
         ResultFragment fragment = new ResultFragment();
@@ -67,7 +70,7 @@ public class ResultFragment extends Fragment {
             @Override
             protected Void doInBackground(Void... voids) {
                 try{
-                    letDoTheGodWork();
+                    getAllMaterials();
                 }catch (IOException e){
                     e.printStackTrace();
                 }
@@ -76,52 +79,65 @@ public class ResultFragment extends Fragment {
             }
         }.execute();
 
+
+
     }
 
-    private void letDoTheGodWork() throws IOException{
+    private void runFirstMatching(){
+        listMatchResult = new ArrayList<>();
+        for(Material material:listMaterialProfile){
+            double matchScore = contextMatching(material);
+            if (matchScore > DatabaseManager.getPreference().getDecisionBoundary()) {
+                MatchResult matchResult = new MatchResult();
+                matchResult.setMaterial(material);
+                matchResult.setMatchScore(matchScore);
+
+                listMatchResult.add(matchResult);
+            }
+        }
+
+        Collections.sort(listMatchResult, new Comparator<MatchResult>() {
+            @Override
+            public int compare(MatchResult result2, MatchResult result1)
+            {
+                return  Double.compare(result1.getMatchScore(), result2.getMatchScore());
+            }
+        });
+
+
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+                adapter.updateAdapter(listMatchResult);
+                adapter.notifyDataSetChanged();
+                progress.hide();
+            }
+        });
+    }
+
+    private void getAllMaterials() throws IOException{
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        final List<MatchResult> listMatchResult = new ArrayList<>();
-        final List<BookProfile> listBookProfile = new ArrayList<>();
+        listMaterialProfile = new ArrayList<>();
 
-        database.child("book-profiles").addListenerForSingleValueEvent(new ValueEventListener() {
+
+        database.child(Common.MATERIAL).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getValue()!=null) {
 
                     for(DataSnapshot child : dataSnapshot.getChildren()){
-                        listBookProfile.add(child.getValue(BookProfile.class));
+                        listMaterialProfile.add(child.getValue(Material.class));
                     }
 
-                    for(BookProfile bookProfile:listBookProfile){
-                        double matchScore = contextMatching(bookProfile);
-                        if (matchScore > DatabaseManager.getPreference().getDecisionBoundary()) {
-                            MatchResult matchResult = new MatchResult();
-                            matchResult.setBook(bookProfile.getBook());
-                            matchResult.setMatchScore(matchScore);
+                    runFirstMatching();
 
-                            listMatchResult.add(matchResult);
-                        }
-                    }
+                    //TODO
+                    //for now let's just focus on kansei on the tags
+                    // build User Preference: Material class with List<Object> attributes
+                    // choose between showing 1 or 10 at a time
 
-                    Collections.sort(listMatchResult, new Comparator<MatchResult>() {
-                        @Override
-                        public int compare(MatchResult result2, MatchResult result1)
-                        {
-                            return  Double.compare(result1.getMatchScore(), result2.getMatchScore());
-                        }
-                    });
-
-
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-
-                            adapter.updateAdapter(listMatchResult);
-                            adapter.notifyDataSetChanged();
-                            progress.hide();
-                        }
-                    });
                 }
             }
 
@@ -135,27 +151,28 @@ public class ResultFragment extends Fragment {
 
     }
 
-    private double contextMatching(BookProfile bookProfile){
+    private double contextMatching(Material material){
         double matchRate = 0;
 
-        double levelMatchScore = matchOverall(bookProfile);
-        double testMatchScore = matchTestPrefer(bookProfile);
-        double timeMatchScore = matchTimeSpend(bookProfile);
-        double learnListMatchScore = matchLearnList(bookProfile);
+        double levelMatchScore = matchOverall(material);
+//        double testMatchScore = matchTestPrefer(bookProfile);
+//        double timeMatchScore = matchTimeSpend(bookProfile);
+        double learnListMatchScore = matchLearnList(material);
 
-        matchRate = levelMatchScore + testMatchScore + timeMatchScore + learnListMatchScore;
+        matchRate = levelMatchScore + learnListMatchScore; //+ testMatchScore + timeMatchScore ;
 
         return matchRate/DatabaseManager.getPreference().getBestMatch();
     }
 
-    private double matchOverall(BookProfile bookProfile){
-        if(bookProfile.getLevelPreference() == profile.getOverallPreference())
+    private double matchOverall(Material material){
+        String level = profile.getOverallPreference();
+        if (material.getName().contains(level) || material.getTag().contains(level))
             return DatabaseManager.getPreference().getOverallScore();
         else
             return 0;
     }
 
-    private double matchTestPrefer(BookProfile bookProfile){
+    /*private double matchTestPrefer(BookProfile bookProfile){
         if(bookProfile.getTestPreference() == profile.getTestPreference())
             return DatabaseManager.getPreference().getTestScore();
         else
@@ -167,23 +184,22 @@ public class ResultFragment extends Fragment {
             return DatabaseManager.getPreference().getTimeScore();
         else
             return 0;
-    }
+    }*/
 
-    private double matchLearnList(BookProfile bookProfile){
+    private double matchLearnList(Material material){
+        //First test try: use only word people input to compare
+        // if word exists in material tag or name -> its matched!
         double learnlistScore = 0;
         int userLearnListCount = profile.getLearnList().size();
-        int bookLearnListCount = bookProfile.getLearnSubjectPreference().size();
         int matchCount = 0;
+        learnlistScore = ((double)matchCount/userLearnListCount);
         for(String userLearnType : profile.getLearnList()){
-            for(String bookLearnType : bookProfile.getLearnSubjectPreference()){
-                if (userLearnType.equals(bookLearnType)){
-                    matchCount++;
-                    break;
-                }
+            if (material.getName().contains(userLearnType) || material.getTag().contains(userLearnType)) {
+                matchCount++;
+                learnlistScore += material.getKeywordImportantScore(userLearnType);
             }
         }
 
-        learnlistScore = ((double)matchCount/userLearnListCount)+((double)matchCount/bookLearnListCount);
         learnlistScore = learnlistScore* DatabaseManager.getPreference().getLearnPreferenceScore()/2;
         return learnlistScore;
     }
@@ -238,20 +254,22 @@ public class ResultFragment extends Fragment {
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             MatchResultHolder vh = (MatchResultHolder) holder;
             final MatchResult matchResult = mList.get(position);
-            Picasso.with(getActivity()).load(matchResult.getBook().getCoverLink())
+            Picasso.with(getActivity()).load(matchResult.getMaterial().getCoverLink())
                     .fit()
+                    .placeholder(R.drawable.placeholder)
                     .into(vh.bookIcon);
-            vh.title.setText(matchResult.getBook().getName());
-            vh.description.setText(matchResult.getBook().getSummary());
+            vh.title.setText(matchResult.getMaterial().getName());
+            vh.description.setText(matchResult.getMaterial().getSummary());
 
-            vh.matchRate.setText(getResources().getString(R.string.match)+String.format("%.3f", matchResult.getMatchScore())+" %");
+//            vh.matchRate.setText(getResources().getString(R.string.match)+String.format("%.3f", matchResult.getMatchScore())+" %");
+            vh.matchRate.setVisibility(View.GONE);
 
             vh.itemLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("book", matchResult.getBook());
+                    bundle.putSerializable("book", matchResult.getMaterial());
                     ((MainActivity)mContext).startActivity(MainActivity.VIEW, bundle);
                 }
             });

@@ -1,9 +1,13 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by viet on 1/3/17.
@@ -232,5 +236,34 @@ public class Material implements Serializable {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public double getKeywordImportantScore(String keyword){
+        List<Tag> tagList = DatabaseManager.getTagList();
+        List<String> materialTagString = Arrays.asList(tag.trim().split(","));
+        List<Tag> materialTagList = new ArrayList<>();
+        if (tagList == null || tagList.size() == 0 || !tag.contains(keyword))
+            return 0;
+        else{
+            double totalScore = 0;
+            for (String tagString : materialTagString){
+                boolean added = false;
+                for (Tag tag : tagList){
+                    if (tag.getName().equals(tagString)){
+                        materialTagList.add(tag);
+                        added = true;
+                        totalScore += tag.getScore();
+                        break;
+                    }
+                }
+            }
+
+            for(Tag tag : materialTagList){
+                if (tag.getName().equals(keyword))
+                    return tag.getScore()/totalScore;
+            }
+
+            return 0;
+        }
     }
 }

@@ -140,17 +140,17 @@ public class SetBookProfileFragment extends Fragment {
                     levelGroup2.setOnCheckedChangeListener(null);
                     levelGroup2.clearCheck();
                     levelGroup2.setOnCheckedChangeListener(levelListener2);
-                    switch (i) {
+                    /*switch (i) {
                         case R.id.l_answer_a:
                             bookProfile.setLevelPreference(Preference.BEGINNER);
                             break;
                         case R.id.l_answer_b:
-                            bookProfile.setLevelPreference(Preference.BASIC);
+                            bookProfile.setLevelPreference(Preference.ELEMENTARY);
                             break;
                         case R.id.l_answer_c:
                             bookProfile.setLevelPreference(Preference.INTERMEDIATE);
                             break;
-                    }
+                    }*/
                 }
             }
         };
@@ -161,14 +161,14 @@ public class SetBookProfileFragment extends Fragment {
                     levelGroup1.setOnCheckedChangeListener(null);
                     levelGroup1.clearCheck();
                     levelGroup1.setOnCheckedChangeListener(levelListener1);
-                    switch (i) {
+                    /*switch (i) {
                         case R.id.l_answer_d:
                             bookProfile.setLevelPreference(Preference.ADVANCE);
                             break;
                         case R.id.l_answer_e:
                             bookProfile.setLevelPreference(Preference.MASTER);
                             break;
-                    }
+                    }*/
                 }
             }
         };

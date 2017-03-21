@@ -64,7 +64,7 @@
                     android:id="@+id/editionformat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Print book : English : First edition"
+                    android:text="Print material : English : First edition"
                     android:textSize="13dp"
                     android:ellipsize="end" />
 
