@@ -43,14 +43,14 @@ Mô hình thuật toán được biểu diễn ở hình sau :
   \end{center}
 \end{figure}
 \subsection{Tổng quan}	
-Cấu trúc cơ bản của thuật toán là {ON <event> IF <condition> THEN <action>}. Trong đó <event> có thể là context data cần tính (event khởi động), hoặc là kết quả trả về của một lần so sánh ở phía trên, <condition> là cách so sánh giữa một input context property với một output context property sẽ được báo cáo dưới đây, <action> là kết quả của việc đánh giá trên <condition> và nó có thể là việc tiếp tục so sánh input và output tiếp theo hoặc là giá trị Boolean quyết định độ phù hợp của context (action cuối cùng).
+Cấu trúc cơ bản của thuật toán là ${ON <event> IF <condition> THEN <action>}$. Trong đó $<event>$ có thể là context data cần tính (event khởi động), hoặc là kết quả trả về của một lần so sánh ở phía trên, $<condition>$ là cách so sánh giữa một input context property với một output context property sẽ được báo cáo dưới đây, $<action>$ là kết quả của việc đánh giá trên $<condition>$ và nó có thể là việc tiếp tục so sánh input và output tiếp theo hoặc là giá trị Boolean quyết định độ phù hợp của context (action cuối cùng).
 \subsection{Input context và output context }	
 Input context là nguyên mẫu để so sánh, các kết quả phù hợp là những kết quả phải có độ match với input context lớn nhất định. Output context là giải pháp tiềm năng cho vấn đề cần giải quyết trong bài toán, là một số lượng những thực thể đem so sánh với input context, được trích xuất từ cấu trúc dữ liệu. Từ input và output context, cần xây dựng một bộ các context properties là những thuộc tính bên trong quyết định context. Việc so sánh sẽ là so sánh giữa các context property.
-\subsection{Các giá trị sử dụng}	Giả sử áp dụng thuật toán cho bộ context properties [a1, b1, b2, c1, c2]. Ta có : 
+\subsection{Các giá trị sử dụng}	Giả sử áp dụng thuật toán cho bộ context properties $[a1, b1, b2, c1, c2]$. Ta có : 
 \begin{itemize}
-\item w: giá trị trong khoảng [0.10...1.00] phản ánh mức độ ưu tiên của thuộc tính \item e:  giá trị đánh giá xem thuộc tính ở input và output có match nhau không, e được biểu diễn trong khoảng [0...1]\item av: (e * w) -  giá trị thực tế đánh giá độ match của thuộc tính, nằm trong khoảng  [0.00...1.00]\item sav: av (a1) + av(b1) + av(b2) + av(c1) + av(c2) – tổng giá trị av \item mpv: giá trị sav cao nhất có thể đạt được. Nó thể hiện trường hợp mà tất cả các context property đều match nhau. \item rv: (sav / mpv) – giá trị trả về sau so sánh. Nó đánh giá tổng quan xem kết quả context match đến mức độ nào, nằm trong khoảng [0.00...1.00].  \item t: giá trị cho ngưỡng đạt [0.10...1.00]. Context match  phù hợp khi so sánh ta có giá trị rv > t. 
+\item $w$: giá trị trong khoảng $[0.10...1.00]$ phản ánh mức độ ưu tiên của thuộc tính \item $e$:  giá trị đánh giá xem thuộc tính ở input và output có match nhau không, $e$ được biểu diễn trong khoảng $[0...1]$\item $av = (e * w)$ :  giá trị thực tế đánh giá độ match của thuộc tính, nằm trong khoảng  $[0.00...1.00]$\item $sav = av(a_1) + av(b_1) + av(b_2) + av(c_1) + av(c_2)$ : tổng giá trị $av$ \item $mpv$: giá trị sav cao nhất có thể đạt được. Nó thể hiện trường hợp mà tất cả các context property đều match nhau. \item $rv = \dfrac{sav}{mpv}$ : giá trị trả về sau so sánh. Nó đánh giá tổng quan xem kết quả context match đến mức độ nào, nằm trong khoảng $[0.00...1.00]$.  \item $t$: giá trị cho ngưỡng đạt $[0.10...1.00]$. Context match  phù hợp khi so sánh ta có giá trị $rv > t$. 
  \end{itemize}\subsection{Các bước thực hiện thuật toán }	
- \begin{itemize}\item Bước 1: Đánh giá context match cho từng context property -> rút ra giá trị e . \item Bước 2: Thiết lập giá trị w đã được định sẵn cho từng context property\item Bước 3: Tính giá trị av của thuộc tính av = (e* w)\item Bước 4: Tính tổng các giá trị av của cả quá trình đánh giá (sav = (av (a1) + av (b1) + av (b2) + av (c1) + av (c2)))\item Bước 5: Tính giá trị sav cao nhất có thể đạt (mpv = (w(a1) + w( b1) +w(b2) + w(c1) + w(c2)))\item Bước 6: Tính giá trị kết quả trả về rv = (sav / mpv))\item Bước 7: Sử dụng giá trị ngưỡng đã có sẵn để xác định xem output context có match với input context hay không . IF (rv) >= (t) THEN context-match = true [1] or IF (rv) < (t) THEN context-match = false [0]
+ \begin{itemize}\item Bước 1: Đánh giá context match cho từng context property -> rút ra giá trị $e$ . \item Bước 2: Thiết lập giá trị $w$ đã được định sẵn cho từng context property\item Bước 3: Tính giá trị $av$ của thuộc tính $av = (e* w)$\item Bước 4: Tính tổng các giá trị $av$ của cả quá trình đánh giá $sav = av(a_1) + av(b_1) + av(b_2) + av(c_1) + av(c_2)$\item Bước 5: Tính giá trị $sav$ cao nhất có thể đạt $mpv = w(a_1) + w(b_1) +w(b_2) + w(c_1) + w(c_2)$\item Bước 6: Tính giá trị kết quả trả về $rv = \dfrac{sav}{mpv}$\item Bước 7: Sử dụng giá trị ngưỡng đã có sẵn để xác định xem output context có match với input context hay không . IF $(rv) >= (t)$ THEN $context-match = true$ [1] or IF $(rv) < (t)$ THEN $context-match = false$ [0]
  \end{itemize}
 \section{Kỹ thuật Kansei Engineering}
 
@@ -81,11 +81,32 @@ Mặc dù nhiều mô hình Kansei Engineering khác nhau phục vụ cho các b
   \end{center}
 \end{figure}
 
-Ý tưởng chung đằng sau mô hình Kansei Engineering là việc hình thành nên 2 miền không gian Kansei và miền không gian thuộc tính sản phẩm dựa trên một chủ đề cụ thể . 
+Bắt đầu từ việc chọn ra một miền chủ đề nhất định, trong đó bao gồm lựa chọn loại sản phẩm sẽ xét đến, đối tượng người dùng sử dụng và các đặc tả cụ thể khác. Tiếp theo đó, miền không gian Kansei và miền không gian thuộc tính sản phẩm sẽ được xác định. Chúng sẽ được phân tích trong bước tổng hợp để tìm ra mối quan hệ giữa thuộc tính của sản phẩm và cảm xúc của người dùng. Từ đó xác định được thuộc tính sản phẩm sẽ ảnh hưởng đến người dùng như thế nào.
 
-\subsubsection{Miền không gian Kansei}
-\subsubsection{Miền không gian thuộc tính sản phẩm}
+\subsubsection{Mở rộng miền không gian Kansei}
+
+Từ miền chủ đề đã xác định, các từ khoá Kansei Word sẽ được thu thập. Kansei Word là các danh từ, tính từ cảm xúc mà người dùng có thể sử dụng để miêu tả về sản phẩm. Số lượng từ khoá thu thập được sẽ đa dạng tuỳ theo từng loại chủ đề khác nhau, giao động từ 100 đến 1000 từ khoá khác nhau. Tuy nhiên, do yếu tố chủ quan của con người, một số từ khoá có thể mang ý nghĩa tương đồng hoặc gần giống nhau. Do vậy tập từ khoá này sau đó sẽ được phân tích để chọn ra được những từ khoá mang ý nghĩa tổng quát độc lập với nhau.
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.9]{semanticspan}
+    \else
+      \includegraphics[scale=0.9]{semanticspan}
+    \fi
+    \caption{Quy trình mở rộng miền không gian Kansei}
+    \label{SemanticSpanningPhase}
+  \end{center}
+\end{figure}
+
+\subsubsection{Mở rộng miền không gian thuộc tính sản phẩm}
+
+Tương tự như bước Mở rộng miền không gian Kansei, ở bước này, các thuộc tính của sản phẩm như hình thức, màu sắc, thể loại, nội dung..v..v... được thu thập từ các sản phẩm khác. Các sản phẩm được chọn để khai thác thuộc tính có thể là các sản phẩm đang lưu hành trên thị trường, đề xuất của khách hàng, hoặc thậm chí là ý tưởng thiết kế mới. Tương tự, do có thể có sự tương đồng giữa các thuộc tính gây ảnh hưởng đến độ chính xác  nên các thuộc tính được chọn ra là các thuộc tính tiêu biểu nhất của sản phẩm.
+
 \subsubsection{Tổng hợp}
+
+ahihi
 
 \section{Computerized Adaptive Testing}
 
