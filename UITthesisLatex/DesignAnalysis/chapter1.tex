@@ -6,7 +6,48 @@
 
 \chapter{Phân tích thiết kế xây dựng hệ thống} \label{design-analysis}
 
+\ifpdf
+    \graphicspath{{DesignAnalysis/Chapter1Figs/PNG/}{DesignAnalysis/Chapter1Figs/PDF/}{DesignAnalysis/Chapter1Figs/}}
+\else
+    \graphicspath{{DesignAnalysis/Chapter1Figs/EPS/}{DesignAnalysis/Chapter1Figs/}}
+\fi
+
 \section{Phân tích tổng quát hệ thống}
+
+Các yêu cầu của hệ thống:
+\begin{itemize}
+	\item Cung cấp các phương pháp để xác định được trình độ, nguyện vọng và các yếu tố ưu tiên khác trong việc học tiếng Anh của người dùng thông qua giao diện đơn giản, dễ tương tác. Qua đó, đưa ra được các kết quả tư vấn là tài liệu, sách, video, bài giảng Tiếng Anh..v..v... tương ứng.
+	\item Cung cấp giao diện quản lý cho quản trị viên dễ dàng thực hiện các thao tác quản lý thông tin người dùng, quản lý hệ cơ sở tri thức gồm tập câu hỏi kiểm tra và tài liệu tiếng Anh.
+\end{itemize}
+Qua việc khảo sát các hệ thống tư vấn đã và đang được triển khai, đồng thời để giải quyết các yêu cầu đặt ra ở trên, hệ thống đề xuất xây dựng trong đề tài này sẽ có cấu trúc gồm các thành phần sau:
+
+\begin{itemize}
+	\item \textbf{Module xác định trình độ:} có nhiệm vụ xác định trình độ của người sử dụng, thông qua việc thực hiện bài kiểm tra General English Test . Sử dụng kĩ thuật Computerized Adaptive Testing, các câu hỏi đưa ra cho người dùng sẽ được tuỳ biến sao cho độ khó phù hợp với năng lực của người dùng. Nhờ vậy, số lượng câu hỏi mà người dùng cần trả lời để xác định được trình độ của họ là ít hơn bài kiểm tra truyền thống, song vẫn cho ra kết quả chính xác như tương tự. Kết quả của bước này sẽ cho ra User level bao gồm trình độ đọc hiểu, vốn từ vựng và vốn ngữ pháp.
+	\item \textbf{Module xác định nguyện vọng:} có nhiệm vụ nhận input về nguyện vọng từ người dùng, cụ thể là chủ đề mà người dùng muốn học. Có thể đưa ra các gợi ý cho người dùng về các chủ đề phổ biến. Kết quả bước này sẽ cho ra User preference là các chủ đề người dùng muốn học dưới dạng keyword.
+	\item \textbf{Context-matching:} thực hiện nhận thông tin User level và User preference tổng hợp thành User profile. Sau đó sử dụng thuật toán Context-matching tiến hành matching với profile tài liệu và trả về những kết quả có độ khớp cao nhất.
+	\item \textbf{Kansei:}
+	\item \textbf{Hệ cơ sở tri thức:} sử dụng cơ sở dữ liệu online của Firebase làm cơ sở tri thức cho hệ thống. Nhiệm vụ của nó là trao đổi thông tin với client, cập nhập thông tin mới đảm bảo tính đồng bộ cho toàn hệ thống. \\Dữ liệu được lưu trữ bao gồm:
+		\begin{itemize}
+			\item Dữ liệu câu hỏi và đáp án General English Test
+			\item Thông tin người dùng : id, loại người dùng, trình độ, nguyện vọng.
+			\item Dữ liệu tài liệu học Tiếng Anh: tên, loại tài liệu, tác giả, miêu tả, nội dung ..v..v... và profile của tài liệu dưới dạng một tập keyword.
+		\end{itemize}
+\end{itemize}
+
+Sau đây là mô hình kiến trúc của ứng dụng:
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.5]{appflow}
+    \else
+      \includegraphics[scale=0.5]{appflow}
+    \fi
+    \caption{Mô hình kiến trúc ứng dụng}
+    \label{Appflow}
+  \end{center}
+\end{figure}
 
 
 

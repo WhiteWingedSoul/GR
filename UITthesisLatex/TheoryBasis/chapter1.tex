@@ -25,7 +25,6 @@ Phương pháp này thực hiện việc thu thập và đánh giá một lượ
 
 Hệ thống tư vấn trong tài liệu này áp dụng phương pháp lọc dựa trên nội dung, và cân nhắc thêm lọc cộng tác khi hệ thống đã phát triển sau này.
 
-
 \section{Thuật toán Context-matching}
 Thuật toán context-matching sử dụng để giải quyết bài toán cần Context-matching với Partial-matching ( khi mà khả năng đạt được “perfect match” là thấp ). Xây dựng các input context, output context và hàm đánh giá giữa các properties của chúng. Mục tiêu cuối cùng là một giá trị Boolean thể hiện sự phù hợp, hay không phù hợp của thực thể được tính đến.\\
 
@@ -57,12 +56,38 @@ Input context là nguyên mẫu để so sánh, các kết quả phù hợp là 
 
 \subsection{Tổng quan}
 
+Kansei Engineering là kỹ thuật tích hợp khía cạnh cảm xúc của con người vào trong quá trình xây dựng sản phẩm, nhằm mục đích tạo ra được sản phẩm phù hợp với yêu cầu và mong muốn của người dùng. Nó là việc mang lại sự hài lòng, thoả mãn cho người dùng một cách có khoa học. Để đạt được điều đó, trải nghiệm của người dùng dựa trên các sản phẩm tương tự được thu thập và phân tích, từ đó thiết lập mô hình dự đoán mối quan hệ giữa cảm xúc của con người và các đặc tính vật lý của sản phẩm.
+
+3 điểm chính được chú trọng trong Kansei Engineering đó là :
+\begin{itemize}
+	\item Làm thế nào để hiểu được cảm xúc nội tâm của người dùng
+	\item Làm thế nào để phản ánh hiểu biết đó vào trong việc phát triển sản phẩm
+	\item Làm thế nào để xây dựng một hệ thống có tổ chức theo định hướng Kansei Engineering
+\end{itemize}
+
 \subsection{Mô hình}
+Mặc dù nhiều mô hình Kansei Engineering khác nhau phục vụ cho các bài toán cụ thể khác nhau. Nhưng về cơ bản, tất cả đều tuân theo mô hình tổng quát sau đây:
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.9]{kanseimodel}
+    \else
+      \includegraphics[scale=0.9]{kanseimodel}
+    \fi
+    \caption{Mô hình tổng quát Kansei Engineering}
+    \label{KanseiModel}
+  \end{center}
+\end{figure}
+
+Ý tưởng chung đằng sau mô hình Kansei Engineering là việc hình thành nên 2 miền không gian Kansei và miền không gian thuộc tính sản phẩm dựa trên một chủ đề cụ thể . 
+
 \subsubsection{Miền không gian Kansei}
 \subsubsection{Miền không gian thuộc tính sản phẩm}
 \subsubsection{Tổng hợp}
 
-
+\section{Computerized Adaptive Testing}
 
 \section{Các cơ sở lý thuyết về công nghệ sử dụng}
 \subsection{Firebase}
@@ -114,5 +139,11 @@ Scrapy là một framework được viết bằng Python, nó cấp sẵn 1 cấ
   \end{center}
 \end{figure}
 
-\subsection{Thuật toán tf-idf}
-
+\subsection{Thuật toán $tf-idf$}
+Viết tắt của thuật ngữ tiếng Anh term frequency – inverse document frequency,$tf-idf$ là thuật toán dùng để tìm trọng số của một từ trong văn bản thu được qua thống kê thể hiện mức độ quan trọng của từ này trong một văn bản, mà bản thân văn bản đang xét nằm trong một tập hợp các văn bản.
+
+Nguyên lý cơ bản của $tf-idf$ là "độ quan trọng của một từ sẽ tăng lên cùng với số lần xuất hiện của nó trong văn bản và sẽ giảm xuống nếu như từ đó xuất hiện trong nhiều văn bản khác". Do đó trọng số của một từ $t$ trong tài liệu $f$ sẽ được tính bằng $tf * idf$, với $tf$ là độ phổ biến của từ $t$ trong tài liệu $f$ và $idf$ là nghịch đảo độ phổ biến của từ $t$ trong các tài liệu còn lại của tập tài liệu. Cụ thể theo công thức sau đây:
+
+\begin{equation}
+tf(t, d) * idf(t, D) = \dfrac{f_d(t)}{\max_{w \in d} f_d(w)} * \log{\dfrac{|D|}{|d \in D : t \in d|}}
+\end{equation}
