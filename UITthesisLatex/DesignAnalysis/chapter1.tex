@@ -13,7 +13,6 @@
 \fi
 
 \section{Phân tích tổng quát hệ thống}
-
 Các yêu cầu của hệ thống:
 \begin{itemize}
 	\item Cung cấp các phương pháp để xác định được trình độ, nguyện vọng và các yếu tố ưu tiên khác trong việc học tiếng Anh của người dùng thông qua giao diện đơn giản, dễ tương tác. Qua đó, đưa ra được các kết quả tư vấn là tài liệu, sách, video, bài giảng Tiếng Anh..v..v... tương ứng.
@@ -25,7 +24,7 @@ Qua việc khảo sát các hệ thống tư vấn đã và đang được tri�
 	\item \textbf{Module xác định trình độ:} có nhiệm vụ xác định trình độ của người sử dụng, thông qua việc thực hiện bài kiểm tra General English Test . Sử dụng kĩ thuật Computerized Adaptive Testing, các câu hỏi đưa ra cho người dùng sẽ được tuỳ biến sao cho độ khó phù hợp với năng lực của người dùng. Nhờ vậy, số lượng câu hỏi mà người dùng cần trả lời để xác định được trình độ của họ là ít hơn bài kiểm tra truyền thống, song vẫn cho ra kết quả chính xác như tương tự. Kết quả của bước này sẽ cho ra User level bao gồm trình độ đọc hiểu, vốn từ vựng và vốn ngữ pháp.
 	\item \textbf{Module xác định nguyện vọng:} có nhiệm vụ nhận input về nguyện vọng từ người dùng, cụ thể là chủ đề mà người dùng muốn học. Có thể đưa ra các gợi ý cho người dùng về các chủ đề phổ biến. Kết quả bước này sẽ cho ra User preference là các chủ đề người dùng muốn học dưới dạng keyword.
 	\item \textbf{Context-matching:} thực hiện nhận thông tin User level và User preference tổng hợp thành User profile. Sau đó sử dụng thuật toán Context-matching tiến hành matching với profile tài liệu và trả về những kết quả có độ khớp cao nhất.
-	\item \textbf{Kansei:}
+	\item \textbf{Kansei:} kết quả sau khi Context Matching sẽ được trả về cho người dùng đánh giá trên thang cảm xúc từ "rất thích" cho đến "rất ghét". Dựa vào đánh giá, những thuộc tính trong profile tài liệu ứng với "thích" sẽ được cập nhập vào User preference và lấy nó làm cơ sở context matching các kết quả tiếp theo.
 	\item \textbf{Hệ cơ sở tri thức:} sử dụng cơ sở dữ liệu online của Firebase làm cơ sở tri thức cho hệ thống. Nhiệm vụ của nó là trao đổi thông tin với client, cập nhập thông tin mới đảm bảo tính đồng bộ cho toàn hệ thống. \\Dữ liệu được lưu trữ bao gồm:
 		\begin{itemize}
 			\item Dữ liệu câu hỏi và đáp án General English Test
@@ -49,20 +48,46 @@ Sau đây là mô hình kiến trúc của ứng dụng:
   \end{center}
 \end{figure}
 
-
-
 \section{Xây dựng hồ sơ người dùng}
-User profile thể hiện trình độ và nguyện vọng của người dùng. Những thông tin này sẽ được dùng trong quá trình matching với các tập dữ liệu bằng thuật toán Context-matching . \\
-Một user profile sẽ gồm có các thuộc tính sau:
+User profile bao gồm trình độ và nguyện vọng của người dùng. Những thông tin này sẽ được dùng trong quá trình matching với các tập dữ liệu bằng thuật toán Context-matching . \\
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.7]{userprofile}
+    \else
+      \includegraphics[scale=0.7]{userprofile}
+    \fi
+    \caption{User profile}
+    \label{Userprofile}
+  \end{center}
+\end{figure}
+
+\subsection{Xác định trình độ người dùng}
+
+Để xác định trình độ Tiếng Anh của người dùng, tất cả các khía cạnh sau đây cần được khai thác:
 \begin{itemize}
-\item Thời điểm bắt đầu học\item Trình độ nghe hiểu\item Trình độ đọc hiểu\item Trình độ nói\item Trình độ viết văn\item Mục đích học của người dùng\\
-\end{itemize}Hệ thống sẽ đưa ra tập câu hỏi với các đáp án cho sẵn để xác định profile người dùng :
-\begin{itemize}\item Bạn học tiếng Anh được bao lâu rồi ?\item Trình độ đọc hiểu của bạn thế nào ?\item Bạn viết tiếng Anh tốt đến mức nào ?\item Bạn giao tiếp bằng tiếng Anh có tốt không ?\item Khả năng nghe tiếng Anh của bạn như thế nào ?\item Bạn mong muốn được cải thiện những kĩ năng nào ?	
+\item Thời điểm bắt đầu học\item Trình độ đọc hiểu\item Trình độ ngữ pháp\item Vốn từ vựng
 \end{itemize}
-Câu hỏi 1-5 cho ta trình độ của người dùng, mỗi câu hỏi có 5 đáp án tương ứng với các mức: mới học, cơ bản, trung cấp, nâng cao, thành thạo. Dựa vào câu trả lời của người dùng, ta xác định được thuộc tính trong user profile về các kĩ năng đọc, nghe, viết, nói.
-Thêm vào đó, để đánh giá chung năng lực của người dùng. Mỗi đáp án được gán với 1 mức điểm đánh giá năng lực tương ứng : a - 0, b - 0.3, c - 0.6, d - 0.85, e - 1. Gọi d là điểm đánh giá của từng câu hỏi, ta có d = điểm đánh giá đáp án x trọng số câu hỏi. Từ đây ta tính được điểm đánh giá trình độ của người dùng bằng tổng d1+d2+d3+d4+d5. Trình độ người dùng sẽ được phân loại vào các mức: mới học (điểm=0), sơ cấp (điểm<=0.3), trung cấp(điểm<=0.6), cao cấp(điểm<=0.85) và thành thạo(điểm<=1)
-Vd. Anh A học tiếng Anh được trên 5 năm, anh A có thể đọc được tài liệu tiếng Anh chuyên ngành, viết được đoạn văn ngắn bằng tiếng Anh, nghe hiểu hội thoại tự nhiên trong cuộc sống và giao tiếp như người bản xứ. Điểm trình độ của anh A sẽ là : 0.8*0.1 + 1*0.225+0.6*0.225+0.85*0.225+1*0.225 = 0.85625. => Trình độ của anh A nằm ở mức độ thành thạo.
-Câu hỏi cuối cho ta nguyện vọng học của người dùng. Nguyện vọng sẽ ảnh hưởng đến việc chọn cuốn sách dựa trên kĩ năng mà nó cung cấp.
+
+Bài kiểm tra tương tác CAT sẽ được sử dụng để đánh giá trình độ. Bài kiểm tra CAT trong đề tài được xây dựng dựa trên mô hình Thử tỉ lệ xác suất nối tiếp (Sequential probability ratio test). \\
+
+Nguyên lý căn bản nằm bên trong mô hình này là xác suất hợp lý rời rạc. Giả sử từ quan sát thực tế cho thấy thí sinh có trình độ tiếng Anh xuất sắc đạt trung bình 85/100 điểm trong bài thi, trong khi thí sinh có trình độ thấp chỉ đạt 25/100 điểm. Dưới góc nhìn hệ thống có thể coi nó như tập luật $if....else$ sau đây:\\
+
+\begin{enumerate}
+	\item Thí sinh có trình độ xuất sắc, đã nắm vững kiến thức và hiểu rõ câu hỏi cũng như phương pháp giải quyết, do vậy khả năng mà họ trả lời đúng câu hỏi sẽ là 85 \%. 
+		\subitem Prob(Correct|Master) = .85
+		\subitem Prob(Incorrect|Master) = .15
+	\item Ngược lại, thí sinh có trình độ thấp, trả lời phần lớn dựa trên may rủi, giác quan thứ 6 của bản thân, do vậy khả năng mà họ trả lời đúng câu hỏi sẽ là 35 \%. 
+		\subitem Prob(Correct|Nonmaster) = .35
+		\subitem Prob(Incorrect|Nonmaster) = .75
+\end{enumerate}  
+
+
+Trình độ ban đầu của người dùng sẽ được xác định qua câu hỏi "Bạn đã học tiếng Anh được bao lâu rồi". Trình độ của một người nào đó thường tỉ lệ thuận với thời gian họ bỏ ra để học.  do vậy ta có thể phần 
+
+
 \section{Xây dựng mạng từ khoá}
 
 

@@ -66,8 +66,7 @@ Kansei Engineering là kỹ thuật tích hợp khía cạnh cảm xúc của co
 \end{itemize}
 
 \subsection{Mô hình}
-Mặc dù nhiều mô hình Kansei Engineering khác nhau phục vụ cho các bài toán cụ thể khác nhau. Nhưng về cơ bản, tất cả đều tuân theo mô hình tổng quát sau đây:
-
+Mặc dù nhiều mô hình Kansei Engineering khác nhau phục vụ cho các bài toán cụ thể khác nhau. Nhưng về cơ bản, tất cả đều tuân theo mô hình tổng quát \cite{KE05} sau đây:
 \begin{figure}[H]
   \begin{center}
     %\leavevmode
@@ -81,11 +80,13 @@ Mặc dù nhiều mô hình Kansei Engineering khác nhau phục vụ cho các b
   \end{center}
 \end{figure}
 
-Bắt đầu từ việc chọn ra một miền chủ đề nhất định, trong đó bao gồm lựa chọn loại sản phẩm sẽ xét đến, đối tượng người dùng sử dụng và các đặc tả cụ thể khác. Tiếp theo đó, miền không gian Kansei và miền không gian thuộc tính sản phẩm sẽ được xác định. Chúng sẽ được phân tích trong bước tổng hợp để tìm ra mối quan hệ giữa thuộc tính của sản phẩm và cảm xúc của người dùng. Từ đó xác định được thuộc tính sản phẩm sẽ ảnh hưởng đến người dùng như thế nào.
+\textbf{Chọn miền chủ đề}\\
 
-\subsubsection{Mở rộng miền không gian Kansei}
+Chủ đề mang ý nghĩa là ý tưởng tổng quát đằng sau sản phẩm. việc lựa chọn miền chủ đề trong đó bao gồm lựa chọn loại sản phẩm sẽ xét đến, đối tượng người dùng sử dụng và các đặc tả cụ thể khác. Tiếp theo đó, miền không gian Kansei và miền không gian thuộc tính sản phẩm sẽ được xác định. Chúng sẽ được phân tích trong bước tổng hợp để tìm ra mối quan hệ giữa thuộc tính của sản phẩm và cảm xúc của người dùng. Từ đó xác định được thuộc tính sản phẩm sẽ ảnh hưởng đến người dùng như thế nào.\\
 
-Từ miền chủ đề đã xác định, các từ khoá Kansei Word sẽ được thu thập. Kansei Word là các danh từ, tính từ cảm xúc mà người dùng có thể sử dụng để miêu tả về sản phẩm. Số lượng từ khoá thu thập được sẽ đa dạng tuỳ theo từng loại chủ đề khác nhau, giao động từ 100 đến 1000 từ khoá khác nhau. Tuy nhiên, do yếu tố chủ quan của con người, một số từ khoá có thể mang ý nghĩa tương đồng hoặc gần giống nhau. Do vậy tập từ khoá này sau đó sẽ được phân tích để chọn ra được những từ khoá mang ý nghĩa tổng quát độc lập với nhau.
+\textbf{Mở rộng miền không gian Kansei}\\
+
+Osgood et al\cite{osgood} đề xuất rằng mọi vật đều có thể được miêu tả bằng miền không gian vector cảm xúc. Từ miền chủ đề đã xác định, các từ khoá Kansei Word sẽ được thu thập. Kansei Word là các danh từ, tính từ cảm xúc mà người dùng có thể sử dụng để miêu tả về sản phẩm. Số lượng từ khoá thu thập được sẽ đa dạng tuỳ theo từng loại chủ đề khác nhau, giao động từ 100 đến 1000 từ khoá khác nhau. Tuy nhiên, do yếu tố chủ quan của con người, một số từ khoá có thể mang ý nghĩa tương đồng hoặc gần giống nhau. Do vậy tập từ khoá này sau đó sẽ được nhóm lại với nhau bằng phương pháp thủ công hoặc toán học. cuối cùng, chúng phân tích để chọn ra được những từ khoá đại diện mang ý nghĩa tổng quát độc lập với nhau.
 
 \begin{figure}[H]
   \begin{center}
@@ -100,15 +101,69 @@ Từ miền chủ đề đã xác định, các từ khoá Kansei Word sẽ đư
   \end{center}
 \end{figure}
 
-\subsubsection{Mở rộng miền không gian thuộc tính sản phẩm}
+\textbf{Mở rộng miền không gian thuộc tính sản phẩm}\\
 
-Tương tự như bước Mở rộng miền không gian Kansei, ở bước này, các thuộc tính của sản phẩm như hình thức, màu sắc, thể loại, nội dung..v..v... được thu thập từ các sản phẩm khác. Các sản phẩm được chọn để khai thác thuộc tính có thể là các sản phẩm đang lưu hành trên thị trường, đề xuất của khách hàng, hoặc thậm chí là ý tưởng thiết kế mới. Tương tự, do có thể có sự tương đồng giữa các thuộc tính gây ảnh hưởng đến độ chính xác  nên các thuộc tính được chọn ra là các thuộc tính tiêu biểu nhất của sản phẩm.
+Tương tự như bước Mở rộng miền không gian Kansei, ở bước này, các thuộc tính của sản phẩm như hình thức, màu sắc, thể loại, nội dung..v..v... được thu thập từ các sản phẩm khác. Các sản phẩm được chọn để khai thác thuộc tính có thể là các sản phẩm đang lưu hành trên thị trường, đề xuất của khách hàng, hoặc thậm chí là ý tưởng thiết kế mới. Tương tự, do có thể có sự tương đồng giữa các thuộc tính gây ảnh hưởng đến độ chính xác  nên các thuộc tính được chọn ra là các thuộc tính tiêu biểu nhất của sản phẩm.\\
 
-\subsubsection{Tổng hợp}
+\textbf{Tổng hợp}\\
 
-ahihi
+Trong bước tổng hợp, 2 miền không gian từ khoá Kansei và thuộc tính sản phẩm sẽ được móc nối vào với nhau. Mỗi từ khoá Kansei Word sẽ tương ứng với một hoặc nhiều thuộc tính của sản phẩm, ảnh hưởng trực tiếp đến các thuộc tính đó. Như trong nghiên cứu về thiết kế lon bia của Ishihara et al. (1998)\cite{ishihira98} cho thấy rằng, cảm giác "đắng" của người uống chịu ảnh hưởng bởi màu sắc và hình dạng logo lon bia, với màu đen và logo vuông cho người uống cảm giác "rất đắng", trong khi màu trắng và logo hình bầu dục tạo cảm giác ngược lại.
+
+ \begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.9]{kanseisynthesis}
+    \else
+      \includegraphics[scale=0.9]{kanseisynthesis}
+    \fi
+    \caption{Pha tổng hợp}
+    \label{KanseiSynthesis}
+  \end{center}
+\end{figure}
+
+Có nhiều phương pháp tổng hợp, trong đó phổ biến là:
+\begin{itemize}
+	\item Category Identification
+	\item Regression Analysis/Quantification Theory Type I
+	\item Rough Sets Theory
+	\item Genetic Algorithm
+	\item Fuzzy Sets Theory\\
+\end{itemize}  
+
+\textbf{Kiểm tra độ chính xác}\\
+
+Trước khi mô hình đã xây dựng có thể đem vào sử dụng. Nó cần được phải được kiểm tra độ chính xác, đánh giá xem nó có đủ độ tin cậy và phù hợp với thực tế hay không. Trong trường hợp mô hình không đạt yêu cầu, cần có sự thay đổi trong các bước trên rồi tiếp tục quy trình đánh giá lại cho đến khi ra được kết quả đạt yêu cầu cuối cùng.	
 
 \section{Computerized Adaptive Testing}
+
+\subsection{Tổng quan}
+Computerized Adaptive Testing - Bài thi tương tác tuỳ biến qua máy tính là hình thức làm bài thi trên máy tính. Trong đó, nội dung và độ khó của câu hỏi sẽ được tuỳ chỉnh sao cho phù hợp với năng lực của thí sinh dự thi. Sau mỗi câu hỏi, trình độ của thí sinh được cập nhập, quyết định độ khó của câu hỏi tiếp theo. Nếu thí sinh trả lời tốt các câu hỏi trước đó, hệ thống sẽ đưa ra các câu hỏi có độ khó cao hơn. Ngược lại, nếu thí sinh trả lời sai nhiều, độ khó của câu hỏi tiếp theo sẽ được giảm xuống. Và khi đến một ngưỡng nhất định, đã xác định chắc chắn được trình độ của thí sinh thì bài kiểm tra sẽ được hoàn tất.\\
+
+ \begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.5]{cat}
+    \else
+      \includegraphics[scale=0.5]{cat}
+    \fi
+    \caption{Computerized Adaptive Test}
+    \label{ComputerizeAdaptiveTest}
+  \end{center}
+\end{figure}
+
+\subsection{Mô hình}
+Mô hình CAT cơ bản gồm 4 bước sau đây:
+\begin{itemize}
+	\item Chọn ra câu hỏi từ tập câu hỏi dựa vào trình độ thí sinh
+	\item Câu hỏi được chọn sẽ được thí sinh trả lời, đúng hoặc sai
+	\item Trình độ của thí sinh sẽ được cập nhập, dựa vào kết quả của tất cả những câu hỏi đã trả lời
+	\item Lặp lại quá trình trên cho đến khi một ngưỡng quy định trước đạt được.
+\end{itemize} 
+
+\subsection{Ưu điểm}
+Với phương thức khác hoàn toàn với bài kiểm tra trên giấy thông thường, với CAT mỗi thí sinh được nhận các bài thi hoàn toàn khác nhau. Hơn nữa, số lượng câu hỏi thí sinh cần phải trả lời sẽ được giảm thiểu. Thí sinh sẽ không phải trả lời những câu hỏi quá khó so cũng như quá dễ so với trình độ của họ, do đó thời gian làm bài trung bình sẽ ngắn hơn so với bài kiểm tra thông thường song vẫn cho ra kết quả chính xác tương tự.
 
 \section{Các cơ sở lý thuyết về công nghệ sử dụng}
 \subsection{Firebase}
@@ -166,5 +221,7 @@ Scrapy là một framework được viết bằng Python, nó cấp sẵn 1 cấ
 Nguyên lý cơ bản của $tf-idf$ là "độ quan trọng của một từ sẽ tăng lên cùng với số lần xuất hiện của nó trong văn bản và sẽ giảm xuống nếu như từ đó xuất hiện trong nhiều văn bản khác". Do đó trọng số của một từ $t$ trong tài liệu $f$ sẽ được tính bằng $tf * idf$, với $tf$ là độ phổ biến của từ $t$ trong tài liệu $f$ và $idf$ là nghịch đảo độ phổ biến của từ $t$ trong các tài liệu còn lại của tập tài liệu. Cụ thể theo công thức sau đây:
 
 \begin{equation}
-tf(t, d) * idf(t, D) = \dfrac{f_d(t)}{\max_{w \in d} f_d(w)} * \log{\dfrac{|D|}{|d \in D : t \in d|}}
+tf(t, d) * idf(t, D) = \dfrac{f_d(t)}{\max_{w \in d} f_d(w)} * \log{\dfrac{|D|}{|d \in D : t \in d|}}\\\\\\
 \end{equation}
+
+Lấy ví dụ một văn bản chứa 100 từ, trong đó từ "cat" xuất hiện 3 lần. Giá trị $tf$ của "cat" sẽ là   $\dfrac{3}{100} = 0.03$. Tiếp theo, giả dụ có 10 triệu văn bản và từ "cat" xuất hiện ở 1000 văn bản trong đó. Giá trị $idf$ sẽ là $\log{\dfrac{10,000,000}{1,000}} = 4$. Vậy trọng số $tf-idf$ của từ khoá "cat" sẽ là $0.03 * 4 = 0.12$.

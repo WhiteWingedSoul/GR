@@ -77,7 +77,6 @@ public class Material implements Serializable {
     @DatabaseField(columnName = TAG)
     private String tag;
 
-
     public int getId() {
         return id;
     }

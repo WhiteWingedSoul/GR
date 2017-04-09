@@ -1,3 +1,19 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{ishihira98}
+Ishihara~K. Ishihara, S. and M.~Nagamachi.
+\newblock Hierarchical kansei analysis of beer can using neural network.
+\newblock In {\em Proceedings of Human Factors in Organizational Design and
+  Management - VI}, pages 421--425, 1998.
+
+\bibitem{osgood}
+G.J.~Suci Osgood, C.E. and P.H. Tannenbaum.
+\newblock The measurement of meaning.
+
+\bibitem{KE05}
+Simon Schütte.
+\newblock Engineering emotional values in product design-kansei engineering in
+  development.
+\newblock {\em Linköpings Universitet}, pages 55--64, 2005.
 
 \end{thebibliography}

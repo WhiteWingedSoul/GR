@@ -15,18 +15,19 @@
 \contentsline {section}{\numberline {2.3}K\IeC {\~y} thu\IeC {\d \acircumflex }t Kansei Engineering}{6}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}T\IeC {\h \ocircumflex }ng quan}{6}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}M\IeC {\^o} h\IeC {\`\i }nh}{6}{subsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.2.1}M\IeC {\h \ohorn } r\IeC {\d \ocircumflex }ng mi\IeC {\`\ecircumflex }n kh\IeC {\^o}ng gian Kansei}{7}{subsubsection.2.3.2.1}
-\contentsline {subsubsection}{\numberline {2.3.2.2}M\IeC {\h \ohorn } r\IeC {\d \ocircumflex }ng mi\IeC {\`\ecircumflex }n kh\IeC {\^o}ng gian thu\IeC {\d \ocircumflex }c t\IeC {\'\i }nh s\IeC {\h a}n ph\IeC {\h \acircumflex }m}{8}{subsubsection.2.3.2.2}
-\contentsline {subsubsection}{\numberline {2.3.2.3}T\IeC {\h \ocircumflex }ng h\IeC {\d \ohorn }p}{8}{subsubsection.2.3.2.3}
-\contentsline {section}{\numberline {2.4}Computerized Adaptive Testing}{8}{section.2.4}
-\contentsline {section}{\numberline {2.5}C\IeC {\'a}c c\IeC {\ohorn } s\IeC {\h \ohorn } l\IeC {\'y} thuy\IeC {\'\ecircumflex }t v\IeC {\`\ecircumflex } c\IeC {\^o}ng ngh\IeC {\d \ecircumflex } s\IeC {\h \uhorn } d\IeC {\d u}ng}{8}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Firebase}{8}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Scrapy}{10}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n $tf-idf$}{10}{subsection.2.5.3}
-\contentsline {chapter}{\numberline {3}Ph\IeC {\^a}n t\IeC {\'\i }ch thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } x\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{11}{chapter.3}
-\contentsline {section}{\numberline {3.1}Ph\IeC {\^a}n t\IeC {\'\i }ch t\IeC {\h \ocircumflex }ng qu\IeC {\'a}t h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{11}{section.3.1}
-\contentsline {section}{\numberline {3.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\`\ocircumflex } s\IeC {\ohorn } ng\IeC {\uhorn }\IeC {\`\ohorn }i d\IeC {\`u}ng}{13}{section.3.2}
-\contentsline {section}{\numberline {3.3}X\IeC {\^a}y d\IeC {\d \uhorn }ng m\IeC {\d a}ng t\IeC {\`\uhorn } kho\IeC {\'a}}{14}{section.3.3}
-\contentsline {chapter}{\numberline {4} K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n }{15}{chapter.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{16}{chapter.5}
-\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{17}{appendix*.10}
+\contentsline {section}{\numberline {2.4}Computerized Adaptive Testing}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}T\IeC {\h \ocircumflex }ng quan}{9}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}M\IeC {\^o} h\IeC {\`\i }nh}{10}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}\IeC {\UHORN }u \IeC {\dj }i\IeC {\h \ecircumflex }m}{10}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}C\IeC {\'a}c c\IeC {\ohorn } s\IeC {\h \ohorn } l\IeC {\'y} thuy\IeC {\'\ecircumflex }t v\IeC {\`\ecircumflex } c\IeC {\^o}ng ngh\IeC {\d \ecircumflex } s\IeC {\h \uhorn } d\IeC {\d u}ng}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Firebase}{11}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Scrapy}{11}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n $tf-idf$}{12}{subsection.2.5.3}
+\contentsline {chapter}{\numberline {3}Ph\IeC {\^a}n t\IeC {\'\i }ch thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } x\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Ph\IeC {\^a}n t\IeC {\'\i }ch t\IeC {\h \ocircumflex }ng qu\IeC {\'a}t h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\`\ocircumflex } s\IeC {\ohorn } ng\IeC {\uhorn }\IeC {\`\ohorn }i d\IeC {\`u}ng}{16}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}X\IeC {\'a}c \IeC {\dj }\IeC {\d i}nh tr\IeC {\`\i }nh \IeC {\dj }\IeC {\d \ocircumflex } ng\IeC {\uhorn }\IeC {\`\ohorn }i d\IeC {\`u}ng}{16}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}X\IeC {\^a}y d\IeC {\d \uhorn }ng m\IeC {\d a}ng t\IeC {\`\uhorn } kho\IeC {\'a}}{17}{section.3.3}
+\contentsline {chapter}{\numberline {4} K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n }{18}{chapter.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{19}{chapter.5}
+\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{20}{appendix*.13}
