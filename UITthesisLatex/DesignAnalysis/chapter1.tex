@@ -71,23 +71,71 @@ User profile bao gồm trình độ và nguyện vọng của người dùng. Nh
 \item Thời điểm bắt đầu học\item Trình độ đọc hiểu\item Trình độ ngữ pháp\item Vốn từ vựng
 \end{itemize}
 
-Bài kiểm tra tương tác CAT sẽ được sử dụng để đánh giá trình độ. Bài kiểm tra CAT trong đề tài được xây dựng dựa trên mô hình Thử tỉ lệ xác suất nối tiếp (Sequential probability ratio test). \\
+Bài kiểm tra tương tác CAT sẽ được sử dụng để đánh giá trình độ.Phương thức chọn câu hỏi và đánh giá bài thi CAT trong đề tài được xây dựng dựa trên mô hình Thử tỉ lệ xác suất nối tiếp \cite{welchfrick} (Sequential probability ratio test).\\ 
 
-Nguyên lý căn bản nằm bên trong mô hình này là xác suất hợp lý rời rạc. Giả sử từ quan sát thực tế cho thấy thí sinh có trình độ tiếng Anh xuất sắc đạt trung bình 85/100 điểm trong bài thi, trong khi thí sinh có trình độ thấp chỉ đạt 25/100 điểm. Dưới góc nhìn hệ thống có thể coi nó như tập luật $if....else$ sau đây:\\
+Nguyên lý căn bản nằm bên trong mô hình này là xác suất hợp lý rời rạc. Giả sử từ quan sát thực tế cho thấy thí sinh có trình độ tiếng Anh xuất sắc đạt trung bình 85/100 điểm trong bài thi, trong khi thí sinh có trình độ thấp chỉ đạt 35/100 điểm. Dưới góc nhìn hệ thống có thể coi nó như tập luật $if....else$ sau đây:
 
 \begin{enumerate}
 	\item Thí sinh có trình độ xuất sắc, đã nắm vững kiến thức và hiểu rõ câu hỏi cũng như phương pháp giải quyết, do vậy khả năng mà họ trả lời đúng câu hỏi sẽ là 85 \%. 
-		\subitem Prob(Correct|Master) = .85
+		\subitem Prob(Correct|Master) = .85 ($P_m$)
 		\subitem Prob(Incorrect|Master) = .15
 	\item Ngược lại, thí sinh có trình độ thấp, trả lời phần lớn dựa trên may rủi, giác quan thứ 6 của bản thân, do vậy khả năng mà họ trả lời đúng câu hỏi sẽ là 35 \%. 
-		\subitem Prob(Correct|Nonmaster) = .35
+		\subitem Prob(Correct|Nonmaster) = .35 ($P_n$)
 		\subitem Prob(Incorrect|Nonmaster) = .75
 \end{enumerate}  
 
+Trong bài kiểm tra CAT, với câu hỏi bất kì phù hợp trình độ được chọn ra trong tập câu hỏi đưa cho thí sinh. Quan sát trả lời của thí sinh, xác suất khả năng trình độ sẽ được tính bằng:
 
-Trình độ ban đầu của người dùng sẽ được xác định qua câu hỏi "Bạn đã học tiếng Anh được bao lâu rồi". Trình độ của một người nào đó thường tỉ lệ thuận với thời gian họ bỏ ra để học.  do vậy ta có thể phần 
+\begin{equation}
+PR = \dfrac{P_m^s(1-P_m)^f}{P_m^s(1-P_m)^f}
+\end{equation}
+trong đó $P_m = $ khả năng thí sinh trình độ xuất sắc trả lời đúng câu hỏi
+
+$P_n = $ khả năng thí sinh trình độ thấp trả lời đúng câu hỏi
+
+$s = $ tổng số câu hỏi thí sinh trả lời đúng 
+
+$f = $ tổng số câu hỏi thí sinh trả lời sai 
+
+Giá trị $PR$ sau đó sẽ được đem so sánh với tập luật:
+\begin{itemize}
+	\item Nếu $PR > UBN$ (Upper Bound Nonmastery: giá trị ngưỡng trên của độ không thuần thục) -> trình độ người dùng thấp hơn câu hỏi hiện tại, chọn câu hỏi tiếp theo ở trình độ thấp hơn để tiếp tục đánh giá .
+	\item Nếu $PR < LBM$ (Lower Bound Mastery: giá trị ngưỡng dưới của độ thuần thục) -> trình độ người dùng nằm trên câu hỏi hiện tại, chọn câu hỏi tiếp theo ở trình độ cao hơn để tiếp tục đánh giá. 
+	\item Nếu $UBN < PR < LBM$, kết quả hiện tại chưa đủ để đánh giá trình độ người dùng, chọn câu hỏi tiếp theo ở cùng trình độ để tiếp tục đánh giá.  
+\end{itemize}
 
 
+Trình độ của thí sinh được xác định khi $PR$ lớn hơn giá trị $UBN$ hoặc nhỏ hơn giá trị $LBM$. Tuy nhiên, xét trong trường hợp thực tế có khả năng xảy ra việc số lượng câu hỏi thí sinh trả lời sai bằng với số lượng câu hỏi thí sinh trả lời đúng. Điều này dẫn đến tình trạng thí sinh trả lời một số lượng lớn câu hỏi nhưng vẫn không xác định được trình độ. Điều kiện dừng sẽ được đưa vào để giải quyết trường hợp đó.
+
+Hệ thống sẽ dừng bài kiểm tra đánh giá nếu như:
+\begin{itemize}
+	\item Nếu $PR > UBN$ và \textit{"độ khó hiện tại là thấp nhất"}
+	\item Nếu $PR < LBM$ \textit{"độ khó hiện tại là cao nhất"}
+	\item Nếu $UBN < PR < LBM$, số lượng câu hỏi hiện tại vượt \textit{ngưỡng câu hỏi}
+\end{itemize}
+
+Sau dây là mô hình đánh giá trình độ người dùng sử dụng trong đề tài:
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.8]{cat}
+    \else
+      \includegraphics[scale=0.8]{cat}
+    \fi
+    \caption{Mô hình bài kiểm tra tương tác}
+    \label{CATModel}
+  \end{center}
+\end{figure}
+
+Trước tiên, trình độ ban đầu của người dùng sẽ được xác định qua câu hỏi "Bạn đã học tiếng Anh được bao lâu rồi". Trình độ của một người nào đó thường tỉ lệ thuận với thời gian họ bỏ ra để học.  do vậy ta có thể phần nào phán đoán được thông qua thông tin thời gian học. Đây là bước tiền đề trước khi đi vào thực hiện bài thi.
+
+Tập câu hỏi đánh giá trình độ ban đầu, gồm hơn 70 câu hỏi lấy từ trang $EnglishJet$. Chúng được phân loại vào từng tập câu hỏi khác nhau theo các \textit{chủ đề}\{\textit{đọc hiểu, từ vựng, ngữ pháp}\} và \textit{trình độ}\{\textit{nhập môn, cơ bản, trung bình, khá, cao cấp}\}. Dựa trên trình độ hiện tại của người dùng, hệ thống sẽ chọn bất kì một câu hỏi trong tập câu hỏi cùng trình độ ra để kiểm tra. Sau khi kết thúc một chủ đề, trình độ hiện tại của người dùng sẽ được sử dụng làm trình độ ban đầu trong đánh giá chủ đề tiếp theo.
+
+ Việc đánh giá kết quả được thực hiện theo tập luật đã đề cập ở phía trên. Dựa vào quan sát thử nghiệm trong thực tế, hệ thống đề xuất trong đề tài sử dụng các giá trị $UBN = 0.02$, $LBM = 7$ và \textit{ngưỡng câu hỏi} $= 5$.
+ 
+ \subsection{Xác định nguyện vọng người dùng}
 \section{Xây dựng mạng từ khoá}
 
 
