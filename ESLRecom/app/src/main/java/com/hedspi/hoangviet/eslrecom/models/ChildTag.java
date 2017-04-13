@@ -1,5 +1,7 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -7,8 +9,11 @@ import java.io.Serializable;
  */
 
 public class ChildTag  implements Serializable{
+    @SerializedName("name")
     private String name;
+    @SerializedName("score")
     private int score;
+    @SerializedName("realScore")
     private int realScore;
 
     public String getName() {

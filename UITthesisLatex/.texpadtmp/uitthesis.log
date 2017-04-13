@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  10 APR 2017 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  11 APR 2017 19:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -48,35 +48,66 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/pbox/pbox.sty
+Package: pbox 2011/12/07 v1.2 Dynamic parboxes
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count88
+\calc@Bcount=\count89
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count90
+\calc@Cskip=\skip45
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\pb@xlen=\skip46
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen105
+\extrarowheight=\dimen106
+\NC@list=\toks15
+\extratabsurround=\skip47
+\backup@length=\skip48
+)
+\rotheadsize=\dimen107
+\c@nlinenum=\count91
+\TeXr@lab=\toks16
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip43
-\subfigcapskip=\skip44
-\subfigcaptopadj=\dimen103
-\subfigbottomskip=\skip45
-\subfigcapmargin=\dimen104
-\subfiglabelskip=\skip46
-\c@subfigure=\count88
-\c@lofdepth=\count89
-\c@subtable=\count90
-\c@lotdepth=\count91
+\subfigtopskip=\skip49
+\subfigcapskip=\skip50
+\subfigcaptopadj=\dimen108
+\subfigbottomskip=\skip51
+\subfigcapmargin=\dimen109
+\subfiglabelskip=\skip52
+\c@subfigure=\count92
+\c@lofdepth=\count93
+\c@subtable=\count94
+\c@lotdepth=\count95
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip47
-\subfig@bottom=\skip48
+\subfig@top=\skip53
+\subfig@bottom=\skip54
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip49
-\f@ncyO@elh=\skip50
-\f@ncyO@erh=\skip51
-\f@ncyO@olh=\skip52
-\f@ncyO@orh=\skip53
-\f@ncyO@elf=\skip54
-\f@ncyO@erf=\skip55
-\f@ncyO@olf=\skip56
-\f@ncyO@orf=\skip57
+\fancy@headwidth=\skip55
+\f@ncyO@elh=\skip56
+\f@ncyO@erh=\skip57
+\f@ncyO@olh=\skip58
+\f@ncyO@orh=\skip59
+\f@ncyO@elf=\skip60
+\f@ncyO@erf=\skip61
+\f@ncyO@olf=\skip62
+\f@ncyO@orf=\skip63
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/eucal.sty
 Package: eucal 2009/06/22 v3.00 Euler Script fonts
 LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
@@ -94,23 +125,21 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count92
+\Gread@gobject=\count96
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2015/12/30 v3.0k Driver-dependent file (DPC,SPQR)
 )) (/usr/local/texlive/2016/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
-\FN@temptoken=\toks15
-\footnotemargin=\dimen105
-\c@pp@next@reset=\count93
-\c@@fnserial=\count94
+\FN@temptoken=\toks17
+\footnotemargin=\dimen110
+\c@pp@next@reset=\count97
+\c@@fnserial=\count98
 Package footmisc Info: Declaring symbol style bringhurst on input line 855.
 Package footmisc Info: Declaring symbol style chicago on input line 863.
 Package footmisc Info: Declaring symbol style wiley on input line 872.
 Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
 Package footmisc Info: Declaring symbol style lamport* on input line 903.
 Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hologo.sty
@@ -144,13 +173,13 @@ Package ifvtex Info: VTeX not detected.
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks18
 ))
 Package hologo Info: Using driver `pdftex'.
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
  (/usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
@@ -464,8 +493,7 @@ Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
 Now handling font encoding T5 ...
 ... processing UTF-8 mapping file for font encoding T5
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/t5enc.dfu
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/t5enc.dfu
 File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00BB (decimal 187)
@@ -620,7 +648,8 @@ File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+2423 (decimal 9251)
 ))
 LaTeX Font Info:    Try loading font information for T5+cmr on input line 105.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/t5cmr.fd
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )) (/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/vncaps.tex
 File: vncaps.tex 2006/06/07 v1.1 Captions in Vietnamese
@@ -628,15 +657,15 @@ File: vncaps.tex 2006/06/07 v1.1 Captions in Vietnamese
 Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count95
+\etb@tempcnta=\count99
 )
-\csq@reset=\count96
-\csq@gtype=\count97
-\csq@glevel=\count98
-\csq@qlevel=\count99
-\csq@maxlvl=\count100
-\csq@tshold=\count101
-\csq@ltx@everypar=\toks19
+\csq@reset=\count100
+\csq@gtype=\count101
+\csq@glevel=\count102
+\csq@qlevel=\count103
+\csq@maxlvl=\count104
+\csq@tshold=\count105
+\csq@ltx@everypar=\toks21
  (/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2016/01/31 v5.1g csquotes generic definitions (JAW)
 )
@@ -646,192 +675,184 @@ Package csquotes Info: ... configuration file loaded successfully.
 File: csquotes.cfg 
 )) (/usr/local/texlive/2016/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
 Package: dirtytalk 2010/11/21 A package making "quoting" easier
-\c@dirtytalk@qdepth=\count102
+\c@dirtytalk@qdepth=\count106
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2016/03/10 v2.15b AMS math features
-\@mathmargin=\skip58
+\@mathmargin=\skip64
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
-\ex@=\dimen106
+\@emptytoks=\toks22
+\ex@=\dimen111
 )) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen107
+\pmbraise@=\dimen112
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count103
+\inf@bad=\count107
 LaTeX Info: Redefining \frac on input line 199.
-\uproot@=\count104
-\leftroot@=\count105
+\uproot@=\count108
+\leftroot@=\count109
 LaTeX Info: Redefining \overline on input line 297.
-\classnum@=\count106
-\DOTSCASE@=\count107
+\classnum@=\count110
+\DOTSCASE@=\count111
 LaTeX Info: Redefining \ldots on input line 394.
 LaTeX Info: Redefining \dots on input line 397.
 LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen108
+\big@size=\dimen113
 LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
-\macc@depth=\count108
-\c@MaxMatrixCols=\count109
+\macc@depth=\count112
+\c@MaxMatrixCols=\count113
 \dotsspace@=\muskip10
-\c@parentequation=\count110
-\dspbrk@lvl=\count111
-\tag@help=\toks21
-\row@=\count112
-\column@=\count113
-\maxfields@=\count114
-\andhelp@=\toks22
-\eqnshift@=\dimen109
-\alignsep@=\dimen110
-\tagshift@=\dimen111
-\tagwidth@=\dimen112
-\totwidth@=\dimen113
-\lineht@=\dimen114
-\@envbody=\toks23
-\multlinegap=\skip59
-\multlinetaggap=\skip60
-\mathdisplay@stack=\toks24
+\c@parentequation=\count114
+\dspbrk@lvl=\count115
+\tag@help=\toks23
+\row@=\count116
+\column@=\count117
+\maxfields@=\count118
+\andhelp@=\toks24
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks25
+\multlinegap=\skip65
+\multlinetaggap=\skip66
+\mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2739.
 LaTeX Info: Redefining \] on input line 2740.
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count115
-\float@exts=\toks25
+\c@float@type=\count119
+\float@exts=\toks27
 \float@box=\box28
-\@float@everytoks=\toks26
+\@float@everytoks=\toks28
 \@floatcapt=\box29
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count116
+\c@lips@count=\count120
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
- (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen115
-\extrarowheight=\dimen116
-\NC@list=\toks27
-\extratabsurround=\skip61
-\backup@length=\skip62
-)
-\TX@col@width=\dimen117
-\TX@old@table=\dimen118
-\TX@old@col=\dimen119
-\TX@target=\dimen120
-\TX@delta=\dimen121
-\TX@cols=\count117
-\TX@ftn=\toks28
+\TX@col@width=\dimen120
+\TX@old@table=\dimen121
+\TX@old@col=\dimen122
+\TX@target=\dimen123
+\TX@delta=\dimen124
+\TX@cols=\count121
+\TX@ftn=\toks29
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/ms/ragged2e.sty
 Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/ms/everysel.sty
 Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 )
-\CenteringLeftskip=\skip63
-\RaggedLeftLeftskip=\skip64
-\RaggedRightLeftskip=\skip65
-\CenteringRightskip=\skip66
-\RaggedLeftRightskip=\skip67
-\RaggedRightRightskip=\skip68
-\CenteringParfillskip=\skip69
-\RaggedLeftParfillskip=\skip70
-\RaggedRightParfillskip=\skip71
-\JustifyingParfillskip=\skip72
-\CenteringParindent=\skip73
-\RaggedLeftParindent=\skip74
-\RaggedRightParindent=\skip75
-\JustifyingParindent=\skip76
+\CenteringLeftskip=\skip67
+\RaggedLeftLeftskip=\skip68
+\RaggedRightLeftskip=\skip69
+\CenteringRightskip=\skip70
+\RaggedLeftRightskip=\skip71
+\RaggedRightRightskip=\skip72
+\CenteringParfillskip=\skip73
+\RaggedLeftParfillskip=\skip74
+\RaggedRightParfillskip=\skip75
+\JustifyingParfillskip=\skip76
+\CenteringParindent=\skip77
+\RaggedLeftParindent=\skip78
+\RaggedRightParindent=\skip79
+\JustifyingParindent=\skip80
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen122
-\lightrulewidth=\dimen123
-\cmidrulewidth=\dimen124
-\belowrulesep=\dimen125
-\belowbottomsep=\dimen126
-\aboverulesep=\dimen127
-\abovetopsep=\dimen128
-\cmidrulesep=\dimen129
-\cmidrulekern=\dimen130
-\defaultaddspace=\dimen131
-\@cmidla=\count118
-\@cmidlb=\count119
-\@aboverulesep=\dimen132
-\@belowrulesep=\dimen133
-\@thisruleclass=\count120
-\@lastruleclass=\count121
-\@thisrulewidth=\dimen134
+\heavyrulewidth=\dimen125
+\lightrulewidth=\dimen126
+\cmidrulewidth=\dimen127
+\belowrulesep=\dimen128
+\belowbottomsep=\dimen129
+\aboverulesep=\dimen130
+\abovetopsep=\dimen131
+\cmidrulesep=\dimen132
+\cmidrulekern=\dimen133
+\defaultaddspace=\dimen134
+\@cmidla=\count122
+\@cmidlb=\count123
+\@aboverulesep=\dimen135
+\@belowrulesep=\dimen136
+\@thisruleclass=\count124
+\@lastruleclass=\count125
+\@thisrulewidth=\dimen137
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen135
-\captionmargin@=\dimen136
-\captionwidth=\dimen137
-\caption@tempdima=\dimen138
-\caption@indent=\dimen139
-\caption@parindent=\dimen140
-\caption@hangindent=\dimen141
+\captionmargin=\dimen138
+\captionmargin@=\dimen139
+\captionwidth=\dimen140
+\caption@tempdima=\dimen141
+\caption@indent=\dimen142
+\caption@parindent=\dimen143
+\caption@hangindent=\dimen144
 )
-\c@ContinuedFloat=\count122
+\c@ContinuedFloat=\count126
 Package caption Info: float package is loaded.
 Package caption Info: subfigure package is loaded.
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip77
-\enit@outerparindent=\dimen142
-\enit@toks=\toks29
+\labelindent=\skip81
+\enit@outerparindent=\dimen145
+\enit@toks=\toks30
 \enit@inbox=\box30
-\enitdp@description=\count123
+\enitdp@description=\count127
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/easylist/easylist.sty
 Package: easylist 2014/01/11 v.1.4 Numbered items with a single command.
-\el@CounterTotal=\count124
-\el@Scratch=\count125
-\el@ControlCounter=\count126
-\el@CounterLevel=\count127
-\c@List1=\count128
-\c@List2=\count129
-\c@List3=\count130
-\c@List4=\count131
-\c@List5=\count132
-\c@List6=\count133
-\c@List7=\count134
-\c@List8=\count135
-\c@List9=\count136
-\c@List10=\count137
-\el@ProgressiveDimension=\dimen143
+\el@CounterTotal=\count128
+\el@Scratch=\count129
+\el@ControlCounter=\count130
+\el@CounterLevel=\count131
+\c@List1=\count132
+\c@List2=\count133
+\c@List3=\count134
+\c@List4=\count135
+\c@List5=\count136
+\c@List6=\count137
+\c@List7=\count138
+\c@List8=\count139
+\c@List9=\count140
+\c@List10=\count141
+\el@ProgressiveDimension=\dimen146
 \el@CounterBox=\box31
 \el@ControlBox=\box32
-\el@TotalMargin=\dimen144
-\el@LeftMove=\dimen145
+\el@TotalMargin=\dimen147
+\el@LeftMove=\dimen148
 )
-Package color Info: Redefining color red on input line 89.
-Package color Info: Redefining color green on input line 90.
+Package color Info: Redefining color red on input line 91.
+Package color Info: Redefining color green on input line 92.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count138
+\lst@mode=\count142
 \lst@gtempboxa=\box33
-\lst@token=\toks30
-\lst@length=\count139
-\lst@currlwidth=\dimen146
-\lst@column=\count140
-\lst@pos=\count141
-\lst@lostspace=\dimen147
-\lst@width=\dimen148
-\lst@newlines=\count142
-\lst@lineno=\count143
-\lst@maxwidth=\dimen149
+\lst@token=\toks31
+\lst@length=\count143
+\lst@currlwidth=\dimen149
+\lst@column=\count144
+\lst@pos=\count145
+\lst@lostspace=\dimen150
+\lst@width=\dimen151
+\lst@newlines=\count146
+\lst@lineno=\count147
+\lst@maxwidth=\dimen152
  (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count144
-\lst@skipnumbers=\count145
+\c@lstnumber=\count148
+\lst@skipnumbers=\count149
 \lst@framebox=\box34
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -839,9 +860,9 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/nomencl/nomencl.sty
 Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
-\nomlabelwidth=\dimen150
-\nom@tempdim=\dimen151
-\nomitemsep=\skip78
+\nomlabelwidth=\dimen153
+\nom@tempdim=\dimen154
+\nomitemsep=\skip82
 )
 \@nomenclaturefile=\write3
 \openout3 = `uitthesis.nlo'.
@@ -881,15 +902,15 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen152
-\Hy@linkcounter=\count146
-\Hy@pagecounter=\count147
+\@linkdim=\dimen155
+\Hy@linkcounter=\count150
+\Hy@pagecounter=\count151
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count148
+\Hy@SavedSpaceFactor=\count152
  (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
@@ -916,16 +937,16 @@ Package: backref 2012/07/25 v1.38 Bibliographical back referencing
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 ))
-\c@Hy@tempcnt=\count149
+\c@Hy@tempcnt=\count153
  (/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5044.
-\XeTeXLinkMargin=\dimen153
-\Fld@menulength=\count150
-\Field@Width=\dimen154
-\Fld@charsize=\dimen155
+\XeTeXLinkMargin=\dimen156
+\Fld@menulength=\count154
+\Field@Width=\dimen157
+\Fld@charsize=\dimen158
 Package hyperref Info: Hyper figures ON on input line 6296.
 Package hyperref Info: Link nesting OFF on input line 6303.
 Package hyperref Info: Hyper index ON on input line 6306.
@@ -935,18 +956,18 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6323.
 Package hyperref Info: PDF/A mode OFF on input line 6328.
 LaTeX Info: Redefining \ref on input line 6368.
 LaTeX Info: Redefining \pageref on input line 6372.
-\Hy@abspage=\count151
-\c@Item=\count152
-\c@Hfootnote=\count153
+\Hy@abspage=\count155
+\c@Item=\count156
+\c@Hfootnote=\count157
 )
 
 Package hyperref Message: Driver: hpdftex.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
-\Fld@listcount=\count154
-\c@bookmark@seq@number=\count155
-\Hy@SectionHShift=\skip79
+\Fld@listcount=\count158
+\c@bookmark@seq@number=\count159
+\Hy@SectionHShift=\skip83
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
@@ -958,22 +979,22 @@ File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 96.
 )
-\Gin@req@height=\dimen156
-\Gin@req@width=\dimen157
+\Gin@req@height=\dimen159
+\Gin@req@width=\dimen160
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count156
-\Gm@cntv=\count157
-\c@Gm@tempcnt=\count158
-\Gm@bindingoffset=\dimen158
-\Gm@wd@mp=\dimen159
-\Gm@odd@mp=\dimen160
-\Gm@even@mp=\dimen161
-\Gm@layoutwidth=\dimen162
-\Gm@layoutheight=\dimen163
-\Gm@layouthoffset=\dimen164
-\Gm@layoutvoffset=\dimen165
-\Gm@dimlist=\toks31
+\Gm@cnth=\count160
+\Gm@cntv=\count161
+\c@Gm@tempcnt=\count162
+\Gm@bindingoffset=\dimen161
+\Gm@wd@mp=\dimen162
+\Gm@odd@mp=\dimen163
+\Gm@even@mp=\dimen164
+\Gm@layoutwidth=\dimen165
+\Gm@layoutheight=\dimen166
+\Gm@layouthoffset=\dimen167
+\Gm@layoutvoffset=\dimen168
+\Gm@dimlist=\toks32
 )
 
 Package geometry Warning: Over-specification in `h'-direction.
@@ -984,7 +1005,7 @@ Package geometry Warning: Over-specification in `v'-direction.
     `height' (731.23582pt) is ignored.
 
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 246.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 248.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
@@ -993,68 +1014,70 @@ Package: fancybox 2010/05/15 1.4
 
 Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \@fancybox=\box35
-\shadowsize=\dimen166
+\shadowsize=\dimen169
 \@Sbox=\box36
-\do@VerbBox=\toks32
-\the@fancyput=\toks33
-\this@fancyput=\toks34
-\EndVerbatimTokens=\toks35
+\do@VerbBox=\toks33
+\the@fancyput=\toks34
+\this@fancyput=\toks35
+\EndVerbatimTokens=\toks36
 \Verbatim@Outfile=\write4
 \Verbatim@Infile=\read1
-))
+)
+\c@choice=\count163
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
  (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/ProblemState/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/TheoryBasis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/DesignAnalysis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Result/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
 \openout1 = `uitthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
  (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count159
-\scratchdimen=\dimen167
+\scratchcounter=\count164
+\scratchdimen=\dimen170
 \scratchbox=\box37
-\nofMPsegments=\count160
-\nofMParguments=\count161
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count162
-\MPscratchDim=\dimen168
-\MPnumerator=\count163
-\makeMPintoPDFobject=\count164
-\everyMPtoPDFconversion=\toks37
+\nofMPsegments=\count165
+\nofMParguments=\count166
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count167
+\MPscratchDim=\dimen171
+\MPnumerator=\count168
+\makeMPintoPDFobject=\count169
+\everyMPtoPDFconversion=\toks38
 ) ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 40.
+LaTeX Info: Redefining \selectfont on input line 39.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count165
+\c@lstlisting=\count170
 \AtBeginShipoutBox=\box38
-Package hyperref Info: Link coloring ON on input line 40.
+Package hyperref Info: Link coloring ON on input line 39.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count166
+\c@section@level=\count171
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
  (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.out) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.out)
 \@outlinefile=\write5
 \openout5 = `uitthesis.out'.
@@ -1104,16 +1127,16 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for T5+phv on input line 41.
+LaTeX Font Info:    Try loading font information for T5+phv on input line 40.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/t5phv.fd
 File: t5uhv.fd 2005/08/24 Fontinst v1.929 font definitions for T5/phv.
 )
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 41.
-LaTeX Font Info:    Try loading font information for U+msa on input line 41.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 40.
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 41.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [0
@@ -1147,12 +1170,12 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 52.
+(hyperref)                removing `\textdotbelow' on input line 51.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 52.
+(hyperref)                removing `\textdotbelow' on input line 51.
 
 (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.toc [5
 \FN@pp@footnotehinttrue 
@@ -1173,7 +1196,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Warning: Composite letter `\texttilde+e'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\texttilde' on input line 53.
+(hyperref)                removing `\texttilde' on input line 52.
 
 (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.lof)
 \tf@lof=\write7
@@ -1310,7 +1333,14 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 17.
 
-) [2]
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
 \openout2 = `TheoryBasis/chapter1.aux'.
 
  (./TheoryBasis/chapter1.tex
@@ -1422,7 +1452,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 28.
 
-<TheoryBasis/Chapter1Figs/contextmatch.png, id=255, 457.71pt x 198.0198pt>
+<TheoryBasis/Chapter1Figs/contextmatch.png, id=277, 457.71pt x 198.0198pt>
 File: TheoryBasis/Chapter1Figs/contextmatch.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/contextmatch.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/contextmatch.png used on input line 37.
@@ -1439,6 +1469,12 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 45.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [4 <./TheoryBasis/Chapter1Figs/contextmatch.png>]
 
@@ -1499,6 +1535,12 @@ Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 60.
 
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [5]
 
 Package hyperref Warning: Composite letter `\texttilde+y'
@@ -1522,22 +1564,43 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 72.
 
-<TheoryBasis/Chapter1Figs/kanseimodel.png, id=270, 349.305pt x 381.425pt>
+<TheoryBasis/Chapter1Figs/kanseimodel.png, id=292, 349.305pt x 381.425pt>
 File: TheoryBasis/Chapter1Figs/kanseimodel.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/kanseimodel.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseimodel.png used on input line 89.
 (pdftex.def)             Requested size: 314.37158pt x 343.27931pt.
- [6] [7 <./TheoryBasis/Chapter1Figs/kanseimodel.png>] <TheoryBasis/Chapter1Figs/semanticspan.png, id=283, 378.41376pt x 250.9375pt>
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7 <./TheoryBasis/Chapter1Figs/kanseimodel.png>] <TheoryBasis/Chapter1Figs/semanticspan.png, id=305, 378.41376pt x 250.9375pt>
 File: TheoryBasis/Chapter1Figs/semanticspan.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/semanticspan.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/semanticspan.png used on input line 110.
 (pdftex.def)             Requested size: 340.56923pt x 225.84164pt.
- <TheoryBasis/Chapter1Figs/kanseisynthesis.png, id=285, 478.78876pt x 182.6825pt>
+ <TheoryBasis/Chapter1Figs/kanseisynthesis.png, id=307, 478.78876pt x 182.6825pt>
 File: TheoryBasis/Chapter1Figs/kanseisynthesis.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/kanseisynthesis.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseisynthesis.png used on input line 131.
 (pdftex.def)             Requested size: 430.9059pt x 164.4127pt.
- [8 <./TheoryBasis/Chapter1Figs/semanticspan.png>]
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./TheoryBasis/Chapter1Figs/semanticspan.png>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 155.
@@ -1546,7 +1609,13 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 155.
 
-[9 <./TheoryBasis/Chapter1Figs/kanseisynthesis.png>] <TheoryBasis/Chapter1Figs/cat.png, id=297, 703.62875pt x 500.87125pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9 <./TheoryBasis/Chapter1Figs/kanseisynthesis.png>] <TheoryBasis/Chapter1Figs/cat.png, id=320, 703.62875pt x 500.87125pt>
 File: TheoryBasis/Chapter1Figs/cat.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/cat.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/cat.png used on input line 162.
@@ -1620,22 +1689,35 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 183.
 
-[10 <./TheoryBasis/Chapter1Figs/cat.png>] <TheoryBasis/Chapter1Figs/firebasedb.png, id=304, 469.755pt x 249.5724pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <./TheoryBasis/Chapter1Figs/cat.png>] <TheoryBasis/Chapter1Figs/firebasedb.png, id=326, 469.755pt x 249.5724pt>
 File: TheoryBasis/Chapter1Figs/firebasedb.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/firebasedb.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb.png used on input line 197.
 (pdftex.def)             Requested size: 422.7756pt x 224.61307pt.
- <TheoryBasis/Chapter1Figs/firebasedb2.png, id=305, 469.755pt x 249.5724pt>
+ <TheoryBasis/Chapter1Figs/firebasedb2.png, id=327, 469.755pt x 249.5724pt>
 File: TheoryBasis/Chapter1Figs/firebasedb2.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/firebasedb2.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb2.png used on input line 210.
 (pdftex.def)             Requested size: 422.7756pt x 224.61307pt.
- <TheoryBasis/Chapter1Figs/scrapy.png, id=306, 469.755pt x 240.9pt>
+ <TheoryBasis/Chapter1Figs/scrapy.png, id=328, 469.755pt x 240.9pt>
 File: TheoryBasis/Chapter1Figs/scrapy.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/scrapy.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/scrapy.png used on input line 227.
 (pdftex.def)             Requested size: 422.7756pt x 216.80798pt.
- [11 <./TheoryBasis/Chapter1Figs/firebasedb.png>]
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11 <./TheoryBasis/Chapter1Figs/firebasedb.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 236.
@@ -1653,7 +1735,20 @@ Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 236.
 
-[12 <./TheoryBasis/Chapter1Figs/firebasedb2.png> <./TheoryBasis/Chapter1Figs/scrapy.png>]) [13]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12 <./TheoryBasis/Chapter1Figs/firebasedb2.png> <./TheoryBasis/Chapter1Figs/scrapy.png>])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
 \openout2 = `DesignAnalysis/chapter1.aux'.
 
  (./DesignAnalysis/chapter1.tex
@@ -1733,7 +1828,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 
 
-] <DesignAnalysis/Chapter1Figs/appflow.png, id=330, 879.285pt x 575.14874pt>
+] <DesignAnalysis/Chapter1Figs/appflow.png, id=352, 879.285pt x 575.14874pt>
 File: DesignAnalysis/Chapter1Figs/appflow.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/appflow.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/appflow.png used on input line 42.
@@ -1774,7 +1869,13 @@ Package hyperref Warning: Composite letter `\textasciigrave+\ohorn'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ohorn' on input line 51.
 
-[15 <./DesignAnalysis/Chapter1Figs/appflow.png>] <DesignAnalysis/Chapter1Figs/userprofile.png, id=336, 584.1825pt x 258.9675pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15 <./DesignAnalysis/Chapter1Figs/appflow.png>] <DesignAnalysis/Chapter1Figs/userprofile.png, id=358, 584.1825pt x 258.9675pt>
 File: DesignAnalysis/Chapter1Figs/userprofile.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/userprofile.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/userprofile.png used on input line 58.
@@ -1815,76 +1916,331 @@ Package hyperref Warning: Composite letter `\textasciigrave+\ohorn'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ohorn' on input line 67.
 
-[16 <./DesignAnalysis/Chapter1Figs/userprofile.png>] [17] <DesignAnalysis/Chapter1Figs/cat.png, id=352, 574.145pt x 443.6575pt>
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16 <./DesignAnalysis/Chapter1Figs/userprofile.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17] <DesignAnalysis/Chapter1Figs/cat.png, id=374, 574.145pt x 443.6575pt>
 File: DesignAnalysis/Chapter1Figs/cat.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/cat.png>
-Package pdftex.def Info: DesignAnalysis/Chapter1Figs/cat.png used on input line 126.
+Package pdftex.def Info: DesignAnalysis/Chapter1Figs/cat.png used on input line 131.
 (pdftex.def)             Requested size: 459.31662pt x 354.92647pt.
 
-Overfull \hbox (18.29889pt too wide) in paragraph at lines 126--130
+Overfull \hbox (18.29889pt too wide) in paragraph at lines 131--135
  [] 
  []
 
+LaTeX Font Info:    Try loading font information for T5+cmtt on input line 142.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/vntex/t5cmtt.fd
+File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18 <./DesignAnalysis/Chapter1Figs/cat.png>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 141.
+(hyperref)                removing `\dj' on input line 159.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+i'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 141.
+(hyperref)                removing `\textdotbelow' on input line 159.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 141.
+(hyperref)                removing `\textdotbelow' on input line 159.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 141.
+(hyperref)                removing `\ecircumflex' on input line 159.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+o'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 141.
+(hyperref)                removing `\textdotbelow' on input line 159.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 141.
+(hyperref)                removing `\uhorn' on input line 159.
 
 
 Package hyperref Warning: Composite letter `\textasciigrave+\ohorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 141.
+(hyperref)                removing `\textasciigrave' on input line 159.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 141.
+(hyperref)                removing `\ohorn' on input line 159.
 
 
-Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19] (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+
+Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 142.
+(hyperref)                removing `\textdotbelow' on input line 177.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 142.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+a'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 142.
-
-
-Package hyperref Warning: Composite letter `\textasciigrave+\uhorn'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 142.
+(hyperref)                removing `\acircumflex' on input line 177.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 142.
+(hyperref)                removing `\h' on input line 177.
 
-) [18 <./DesignAnalysis/Chapter1Figs/cat.png>] [19]
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 177.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 177.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 177.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+o'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 177.
+
+
+Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 177.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 177.
+
+<DesignAnalysis/Chapter1Figs/dataprocess.png, id=393, 671.50874pt x 236.885pt>
+File: DesignAnalysis/Chapter1Figs/dataprocess.png Graphic file (type png)
+ <use DesignAnalysis/Chapter1Figs/dataprocess.png>
+Package pdftex.def Info: DesignAnalysis/Chapter1Figs/dataprocess.png used on input line 185.
+(pdftex.def)             Requested size: 470.05292pt x 165.81836pt.
+
+Overfull \hbox (29.03519pt too wide) in paragraph at lines 185--189
+ [] 
+ []
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 194.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 194.
+
+
+Package hyperref Warning: Composite letter `\texttilde+\uhorn'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\texttilde' on input line 194.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 194.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 194.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 194.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20 <./DesignAnalysis/Chapter1Figs/dataprocess.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22]
+Overfull \hbox (55.55661pt too wide) in paragraph at lines 286--287
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (55.55661pt too wide) in paragraph at lines 289--290
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[23]
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 296.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 296.
+
+
+Package hyperref Warning: Composite letter `\texttilde+\uhorn'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\texttilde' on input line 296.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 296.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 296.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 296.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24]
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\dj' on input line 369.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 369.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 369.
+
+
+Package hyperref Warning: Composite letter `\textacute+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 369.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 369.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 369.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 369.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+o'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 369.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\dj' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 371.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 371.
+
+
+Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 371.
+
+
+Package hyperref Warning: Composite letter `\textacute+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 371.
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]
 \openout2 = `Result/chapter1.aux'.
 
  (./Result/chapter1.tex
@@ -1920,7 +2276,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 7.
 
-) [20
+) [26
 
 
 
@@ -1968,7 +2324,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 2.
 
-) [21
+) [27
 
 
 
@@ -2000,8 +2356,8 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 1.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
- [22
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
+ [28
 
 
 
@@ -2017,28 +2373,28 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
  (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/ProblemState/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/TheoryBasis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/DesignAnalysis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Result/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `uitthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 98B5B74FA9109730F33BD5CFA2BE7E78;5094.
 Package rerunfilecheck Info: File `uitthesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 8798497306A83C77067422B364A3B07F;838.
  ) 
 Here is how much of TeX's memory you used:
- 13674 strings out of 493014
- 203657 string characters out of 6133351
- 419158 words of memory out of 5000000
- 16763 multiletter control sequences out of 15000+600000
- 27067 words of font info for 64 fonts, out of 8000000 for 9000
+ 14592 strings out of 493014
+ 213925 string characters out of 6133351
+ 567126 words of memory out of 5000000
+ 17522 multiletter control sequences out of 15000+600000
+ 29494 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,9n,50p,1148b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/vntex/t5.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/urwvn/uhvr8v.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (30 pages, 1199057 bytes).
+ 43i,13n,51p,1564b,1982s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/vntex/t5.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/urwvn/uhvr8v.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (36 pages, 1271434 bytes).
 PDF statistics:
- 436 PDF objects out of 1000 (max. 8388607)
- 367 compressed objects within 4 object streams
- 84 named destinations out of 1000 (max. 500000)
- 328 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 656 PDF objects out of 1000 (max. 8388607)
+ 574 compressed objects within 6 object streams
+ 220 named destinations out of 1000 (max. 500000)
+ 365 words of extra memory for PDF output out of 10000 (max. 10000000)
 

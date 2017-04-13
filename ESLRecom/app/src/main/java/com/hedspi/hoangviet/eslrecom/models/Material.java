@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import com.google.gson.annotations.SerializedName;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -13,7 +14,6 @@ import java.util.List;
  * Created by viet on 1/3/17.
  */
 
-@DatabaseTable(tableName = "materials")
 public class Material implements Serializable {
     public static final String ID = "id";
     public static final String NAME = "name";
@@ -36,54 +36,52 @@ public class Material implements Serializable {
     public static final String ONLINE_LINK ="onlineLink";
     public static final String TAG = "tag";
 
-    @DatabaseField(generatedId = true, columnName = ID)
-    private int id;
-    @DatabaseField(columnName = NAME)
+    @SerializedName(NAME)
     private String name;
-    @DatabaseField(columnName = COVER_LINK)
+    @SerializedName(COVER_LINK)
     private String coverLink;
-    @DatabaseField(columnName = AUTHOR)
+    @SerializedName(AUTHOR)
     private String author;
-    @DatabaseField(columnName = PUBLISHER)
+    @SerializedName(PUBLISHER)
     private String publisher;
-    @DatabaseField(columnName = EDITION_FORMAT)
+    @SerializedName(EDITION_FORMAT)
     private String edition_format;
-    @DatabaseField(columnName = SUMMARY)
+    @SerializedName(SUMMARY)
     private String summary;
-    @DatabaseField(columnName = SUBJECTS)
+    @SerializedName(SUBJECTS)
     private String subjects;
-    @DatabaseField(columnName = ABSTRACT)
+    @SerializedName(ABSTRACT)
     private String abstractString;
-    @DatabaseField(columnName = CONTENT)
+    @SerializedName(CONTENT)
     private String content;
-    @DatabaseField(columnName = DESCRIPTION)
+    @SerializedName(DESCRIPTION)
     private String description;
-    @DatabaseField(columnName = DOCTYPE)
+    @SerializedName(DOCTYPE)
     private String documentType;
-    @DatabaseField(columnName = GENRE_FORM)
+    @SerializedName(GENRE_FORM)
     private String genre_form;
-    @DatabaseField(columnName = NOTE)
+    @SerializedName(NOTE)
     private String note;
-    @DatabaseField(columnName = SELLER_LINK)
+    @SerializedName(SELLER_LINK)
     private String sellerLink;
-    @DatabaseField(columnName = SELLER_NAME)
+    @SerializedName(SELLER_NAME)
     private String sellerName;
-    @DatabaseField(columnName = SELLER_PRICE)
+    @SerializedName(SELLER_PRICE)
     private String sellerPrice;
-    @DatabaseField(columnName = ONLINE_NAME)
+    @SerializedName(ONLINE_NAME)
     private String onlineName;
-    @DatabaseField(columnName = ONLINE_LINK)
+    @SerializedName(ONLINE_LINK)
     private String onlineLink;
-    @DatabaseField(columnName = TAG)
+    @SerializedName(TAG)
     private String tag;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;

@@ -39,6 +39,7 @@ dependencies {
     compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'com.google.firebase:firebase-database:10.0.1'
     compile "com.splitwise:tokenautocomplete:2.0.8@aar"
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
     testCompile 'junit:junit:4.12'
 }
 

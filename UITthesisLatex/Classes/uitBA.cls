@@ -41,7 +41,9 @@
 \usepackage{setspace}
 \usepackage{tocbibind}
 \usepackage{amssymb}
+\usepackage{pbox}
 
+\usepackage{makecell}
 \usepackage{subfigure}
 \usepackage{fancyhdr}
 \usepackage{eucal}
@@ -442,3 +444,21 @@ language=Java,
 {\newpage\renewcommand{\thepage}{\arabic{page}}}
 %{\newpage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
 
+
+\newcounter{choice}
+\renewcommand\thechoice{\Alph{choice}}
+\newcommand\choicelabel{\thechoice.}
+
+\newenvironment{choices}%
+  {\list{\choicelabel}%
+     {\usecounter{choice}\def\makelabel##1{\hss\llap{##1}}%
+       \settowidth{\leftmargin}{W.\hskip\labelsep\hskip 2.5em}%
+       \def\choice{%
+         \item
+       } % choice
+       \labelwidth\leftmargin\advance\labelwidth-\labelsep
+       \topsep=0pt
+       \partopsep=0pt
+     }%
+  }%
+  {\endlist}

@@ -129,7 +129,7 @@ public class SetBookProfileFragment extends Fragment {
         }
 
         final BookProfile bookProfile = new BookProfile();
-        bookProfile.setId(book.getId());
+//        bookProfile.setId(book.getId());
         bookProfile.setBook(book);
         final RadioGroup levelGroup1 = (RadioGroup) view.findViewById(R.id.levelanswerGroup1);
         final RadioGroup levelGroup2 = (RadioGroup) view.findViewById(R.id.levelanswerGroup2);
@@ -324,11 +324,11 @@ public class SetBookProfileFragment extends Fragment {
                     DatabaseReference database = FirebaseDatabase.getInstance().getReference();
                     long booksProfileCount = DatabaseManager.getBookProfilesCount();
 
-                    database.child("book-profiles").child(""+book.getId()).setValue(bookProfile);
-                    database.child("books").child(""+book.getId()).removeValue();
-                    booksProfileCount = booksProfileCount + 1;
-                    database.child("books-count").child(""+book.getId()).removeValue();
-                    database.child("bookProfiles-count").child(""+booksProfileCount).setValue(book.getId());
+//                    database.child("book-profiles").child(""+book.getId()).setValue(bookProfile);
+//                    database.child("books").child(""+book.getId()).removeValue();
+//                    booksProfileCount = booksProfileCount + 1;
+//                    database.child("books-count").child(""+book.getId()).removeValue();
+//                    database.child("bookProfiles-count").child(""+booksProfileCount).setValue(book.getId());
                     getActivity().finish();
                 }
             }

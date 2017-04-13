@@ -87,22 +87,27 @@ Nguyên lý căn bản nằm bên trong mô hình này là xác suất hợp lý
 Trong bài kiểm tra CAT, với câu hỏi bất kì phù hợp trình độ được chọn ra trong tập câu hỏi đưa cho thí sinh. Quan sát trả lời của thí sinh, xác suất khả năng trình độ sẽ được tính bằng:
 
 \begin{equation}
-PR = \dfrac{P_m^s(1-P_m)^f}{P_m^s(1-P_m)^f}
+PR = \dfrac{P_m^t(1-P_m)^f}{P_m^t(1-P_m)^f}
 \end{equation}
 trong đó $P_m = $ khả năng thí sinh trình độ xuất sắc trả lời đúng câu hỏi
 
 $P_n = $ khả năng thí sinh trình độ thấp trả lời đúng câu hỏi
 
-$s = $ tổng số câu hỏi thí sinh trả lời đúng 
+$t = $ tổng số câu hỏi thí sinh trả lời đúng 
 
 $f = $ tổng số câu hỏi thí sinh trả lời sai 
 
 Giá trị $PR$ sau đó sẽ được đem so sánh với tập luật:
+
+\begin{center}
+\fbox{\begin{minipage}{0.9\textwidth}
 \begin{itemize}
 	\item Nếu $PR > UBN$ (Upper Bound Nonmastery: giá trị ngưỡng trên của độ không thuần thục) -> trình độ người dùng thấp hơn câu hỏi hiện tại, chọn câu hỏi tiếp theo ở trình độ thấp hơn để tiếp tục đánh giá .
 	\item Nếu $PR < LBM$ (Lower Bound Mastery: giá trị ngưỡng dưới của độ thuần thục) -> trình độ người dùng nằm trên câu hỏi hiện tại, chọn câu hỏi tiếp theo ở trình độ cao hơn để tiếp tục đánh giá. 
 	\item Nếu $UBN < PR < LBM$, kết quả hiện tại chưa đủ để đánh giá trình độ người dùng, chọn câu hỏi tiếp theo ở cùng trình độ để tiếp tục đánh giá.  
 \end{itemize}
+\end{minipage}}
+\end{center}
 
 
 Trình độ của thí sinh được xác định khi $PR$ lớn hơn giá trị $UBN$ hoặc nhỏ hơn giá trị $LBM$. Tuy nhiên, xét trong trường hợp thực tế có khả năng xảy ra việc số lượng câu hỏi thí sinh trả lời sai bằng với số lượng câu hỏi thí sinh trả lời đúng. Điều này dẫn đến tình trạng thí sinh trả lời một số lượng lớn câu hỏi nhưng vẫn không xác định được trình độ. Điều kiện dừng sẽ được đưa vào để giải quyết trường hợp đó.
@@ -110,8 +115,8 @@ Trình độ của thí sinh được xác định khi $PR$ lớn hơn giá tr�
 Hệ thống sẽ dừng bài kiểm tra đánh giá nếu như:
 \begin{itemize}
 	\item Nếu $PR > UBN$ và \textit{"độ khó hiện tại là thấp nhất"}
-	\item Nếu $PR < LBM$ \textit{"độ khó hiện tại là cao nhất"}
-	\item Nếu $UBN < PR < LBM$, số lượng câu hỏi hiện tại vượt \textit{ngưỡng câu hỏi}
+	\item Nếu $PR < LBM$ và \textit{"độ khó hiện tại là cao nhất"}
+	\item Nếu $UBN < PR < LBM$ và số lượng câu hỏi hiện tại vượt \textit{ngưỡng câu hỏi}
 \end{itemize}
 
 Sau dây là mô hình đánh giá trình độ người dùng sử dụng trong đề tài:
@@ -129,13 +134,237 @@ Sau dây là mô hình đánh giá trình độ người dùng sử dụng trong
   \end{center}
 \end{figure}
 
-Trước tiên, trình độ ban đầu của người dùng sẽ được xác định qua câu hỏi "Bạn đã học tiếng Anh được bao lâu rồi". Trình độ của một người nào đó thường tỉ lệ thuận với thời gian họ bỏ ra để học.  do vậy ta có thể phần nào phán đoán được thông qua thông tin thời gian học. Đây là bước tiền đề trước khi đi vào thực hiện bài thi.
+Trước tiên, trình độ ban đầu của người dùng sẽ được xác định qua câu hỏi "Bạn đã học tiếng Anh được bao lâu rồi". Trình độ của một người nào đó thường tỉ lệ thuận với thời gian họ bỏ ra để học.  do vậy ta có thể phần nào phán đoán được thông qua thông tin thời gian học. Đây là bước tiền đề trước khi đi vào thực hiện bài thi.\\
 
-Tập câu hỏi đánh giá trình độ ban đầu, gồm hơn 70 câu hỏi lấy từ trang $EnglishJet$. Chúng được phân loại vào từng tập câu hỏi khác nhau theo các \textit{chủ đề}\{\textit{đọc hiểu, từ vựng, ngữ pháp}\} và \textit{trình độ}\{\textit{nhập môn, cơ bản, trung bình, khá, cao cấp}\}. Dựa trên trình độ hiện tại của người dùng, hệ thống sẽ chọn bất kì một câu hỏi trong tập câu hỏi cùng trình độ ra để kiểm tra. Sau khi kết thúc một chủ đề, trình độ hiện tại của người dùng sẽ được sử dụng làm trình độ ban đầu trong đánh giá chủ đề tiếp theo.
+Tập câu hỏi đánh giá trình độ ban đầu, gồm hơn 70 câu hỏi lấy từ trang \url{http://www.englishjet.com/}. Hình thức của câu hỏi ở dạng trắc nghiệm với 4 đáp án. Chúng được phân loại vào từng tập câu hỏi khác nhau theo các \textit{chủ đề}\{\textit{đọc hiểu, từ vựng, ngữ pháp}\} và \textit{trình độ}\{\textit{nhập môn, cơ bản, trung bình, khá, cao cấp}\}. Dựa trên trình độ hiện tại của người dùng, hệ thống sẽ chọn bất kì một câu hỏi trong tập câu hỏi cùng trình độ ra để kiểm tra. Sau khi kết thúc một chủ đề, trình độ hiện tại của người dùng sẽ được sử dụng làm trình độ ban đầu trong đánh giá chủ đề tiếp theo. \\
 
- Việc đánh giá kết quả được thực hiện theo tập luật đã đề cập ở phía trên. Dựa vào quan sát thử nghiệm trong thực tế, hệ thống đề xuất trong đề tài sử dụng các giá trị $UBN = 0.02$, $LBM = 7$ và \textit{ngưỡng câu hỏi} $= 5$.
+\textbf{You can exchange the gift ......}\\
+  \begin{choices}
+    \choice so long that
+    \choice while
+    \choice as long as
+    \choice meanwhile
+    \choice whether
+  \end{choices}
+\begin{flushright}{\textbf{...... it is returned within seven days.}}\\	
+\end{flushright}
+
+ Việc đánh giá kết quả được thực hiện theo tập luật đã đề cập ở phía trên. Dựa vào quan sát thử nghiệm trong thực tế, hệ thống đề xuất trong đề tài sử dụng các giá trị $UBN = 0.02$, $LBM = 7$ và \textit{ngưỡng câu hỏi} $= 5$.\\
+ 
+ Ví dụ, một thí sinh học tiếng Anh được 4 năm làm bài kiểm tra trình độ. Hệ thống sẽ dự đoán trình độ của anh ta nằm ở mức trung bình và đưa ra câu hỏi ở mức trình độ đó. Bắt đầu với chủ đề \textit{từ vựng}, thí sinh này trả lời đúng liên tiếp 3 câu hỏi. $PR$ của anh ta lúc đó sẽ là $\dfrac{0.85^3(1-0.85)^0}{0.35^3(1-0.35)^0}\: \approx \: 14.3236 > LBM = 7$. Điều kiện tăng trình độ thoả mãn, trình độ thí sinh được nâng lên mức khá. Tiếp tục quá trình đánh giá, lần này với câu hỏi trình độ khá, thí sinh lần lượt đạt kết quả Đúng-Sai-Đúng-Đúng-Sai, tương ứng với $PR = \dfrac{0.85^3(1-0.85)^2}{0.35^3(1-0.35)^2}\: \approx \: 3.305 $. Do $ UBN < PR < LBM $ và số lượng câu hỏi đã trả lời đạt ngưỡng, việc đánh giá trình độ \textit\textbf{từ vựng} của thí sinh kết thúc. Kết quả là thí sinh đạt trình độ \textbf{\textit{khá}} về \textit{từ vựng}. Lấy trình độ \textit{khá} làm trình độ ban đầu, hệ thống tiếp tục đánh giá chủ đề tiếp theo. Kết quả thu được là \textbf{\textit{trung bình}} về \textit{ngữ pháp} và \textbf{\textit{cao cấp}} về \textit{đọc hiểu}. Lấy trung bình 3 kết quả thu được, hệ thống kết luận trình độ tiếng Anh của thí sinh là \textbf{\textit{khá}}. 
  
  \subsection{Xác định nguyện vọng người dùng}
-\section{Xây dựng mạng từ khoá}
+ 
+ Nguyện vọng người dùng được xác định một cách đơn giản bằng việc người dùng trực tiếp nhập nội dung mình muốn học. Hệ thống sẽ cung cấp cho người dùng một giao diện nhập dữ liệu đơn giản. Người dùng sử dụng bàn phím sẽ nhập nguyện vọng của mình vào dưới dạng các keyword, phân tách nhau bởi dấu cách. \\
+ 
+ Để hỗ trợ xác định nguyện vọng, hệ thống sẽ đưa ra các keyword gợi ý dựa trên nội dung người dùng nhập vào. Các keyword gợi ý này được tổng hợp bằng việc phân tích keyword các tài liệu Tiếng Anh sử dụng thuật toán $tf-idf$. Nội dung của công đoạn phân tích keyword sẽ được trình bày cụ thể ở phần sau.\\
+ 
+Sau hai bước trên, một user profile như ví dụ sau được xây dựng.
+
+\begin{lstlisting}[style=pythoncode]
+'userProfile': {
+        'id': 1,
+        'vocabProfi': 'upper-intermediate',
+        'grammarProfi': 'intermediate',
+        'readingProfi': 'advanced',
+        'overallProfi': 'upper-intermediate',
+        'preference': ['ietls', 'grammar', 'advanced']
+    }
+\end{lstlisting}
+\section{Thu thập và xử lý tài liệu học tiếng Anh}
+
+Đây là bước tiền xử lý trước khi đi vào xây dựng hệ thống.
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.7]{dataprocess}
+    \else
+      \includegraphics[scale=0.7]{dataprocess}
+    \fi
+    \caption{Mô hình thu thập và xử lý tài liệu học tiếng Anh}
+    \label{DataProcess}
+  \end{center}
+\end{figure}
+
+\subsection{Thu thập dữ liệu}
+
+Tài liệu học tiếng Anh hệ thống sử dụng được lấy từ \:\url{www.worldcat.org}\:. WorldCat được biết đến như là một CSDL liên hợp toàn cầu. Là một thư viện điện tử chứa đựng dữ liệu từ 72,000 thư viện ở hơn 170 quốc gia và vùng lãnh thổ, WorldCat chứa một lượng dữ liệu khổng lồ gồm hơn 330 triệu bản ghi, với số lượng ngôn ngữ cực kỳ đa dạng, gồm gần 500 ngôn ngữ trên toàn thế giới, trong đó tiếng Anh chiếm khoảng 38\%, tiếng Đức khoảng 13\%, tiếng Pháp khoảng 9\%, ngoài ra là các ngôn ngữ khác như tiếng Tây Ban Nha, tiếng Trung, tiếng Nhật, tiếng Hàn, và bao gồm cả tiếng Việt (cho dù chỉ là một tỷ lệ nhỏ). Nhiều chuyên gia đánh giá rằng WorldCat có thể bao gồm tới trên 70\% lượng tài liệu có trên toàn cầu, và là bộ CSDL thư mục toàn diện nhất thế giới từ trước tới giờ.
+
+Sử dụng framework \textbf{\textit{Scrapy}}, function sau đây được viết để trích xuất dữ liệu từ WorldCat.
+
+\begin{lstlisting}[style=pythoncode, breaklines=true]
+import scrapy
+from book_crawler.items import BookItem
+
+class BooksSpider(scrapy.Spider):
+  name = "books"
+  page = 0
+
+  def start_requests(self):
+	url = 'http://www.worldcat.org/search?q=kw%3Aenglish&fq=yr%3A2014..2017+%3E+%3E+-mt%3Afic+%3E+ln%3Aeng&qt=advanced&dblist=638'
+	yield scrapy.Request(url=url, callback=self.parse)
+
+  def parse(self, response):
+	for detail in response.css("td.result.details"):
+		yield scrapy.Request(response.urljoin(detail.css("div.name a::attr(href)").extract_first()), callback=self.parse_detail)
+	next_page = response.xpath("//td[@align='right']/a[text()='Next']/@href").extract_first()
+	BooksSpider.page += 1
+	if next_page is not None and BooksSpider.page <= 500:
+		next_page = "http://www.worldcat.org/"+next_page
+		yield scrapy.Request(next_page, callback=self.parse)
+
+  def parse_detail(self, response):
+	item = BookItem()
+	item['name'] = response.css('div#bibdata h1.title::text').extract_first()
+	item['coverLink'] = 'http:'+response.css('div#bib-cont div#cover img.cover::attr(src)').extract_first()
+	item['author'] = response.css('td#bib-author-cell a::text').extract_first()
+	item['publisher'] = response.css('td#bib-publisher-cell::text').extract_first()	 
+	
+	edition_format = response.xpath("//span[@id='editionFormatType']/span")
+	item['edition_format'] = edition_format.xpath("text()").extract_first() + edition_format.xpath("following-sibling::text()").extract_first()
+	item['summary'] = response.css('td#bib-summary-cell div#summary::text').extract_first()
+	item['subjects'] = ""
+	for subject in response.css('ul#subject-terms-detailed li.subject-term'):
+		item['subjects'] += subject.css('a::text').extract_first()+"\n"
+	item['genre_form'] = response.css('tr#details-genre td::text').extract_first()
+	item['docType'] = response.css('tr#details-doctype td::text').extract_first()
+	item['note'] = response.css('tr#details-notes td::text').extract_first()
+	item['description'] = response.css('tr#details-description td::text').extract_first()
+	item['content'] = response.css('tr#details-contents td::text').extract_first()
+	item['abstract'] = response.css('div.abstracttxt::text').extract_first()
+	item['onlineName'] = response.css('div#links-all856 p a::text').extract_first()
+	item['onlineLink'] = response.css('div#links-all856 p a::attr(title)').extract_first()
+	oclcno = response.css('tr#details-oclcno td::text').extract_first()
+	if oclcno is not None:
+		request = scrapy.Request('http://www.worldcat.org/wcpa/servlet/org.oclc.lac.ui.buying.AjaxBuyingLinksServlet?serviceCommand=getBuyingLinks&oclcno='+oclcno, callback=self.parse_seller)
+		request.meta['item'] = item
+		yield request
+
+  def parse_seller(self, response):
+	item = response.meta['item']
+	item['sellerName'] = response.css('td.seller a::text').extract_first()
+	item['sellerLink'] = response.css('td.seller a::attr(href)').extract_first()
+	item['sellerPrice'] = response.css('td.price::text').extract_first()		
+	yield item
+\end{lstlisting}
+
+Để phục vụ cho quy mô thử nghiệm thuật toán, 5000 tài liệu tiếng Anh phát hành trong thời điểm từ năm 2014 đến 2017 được thu thập. Chúng bao gồm sách, e-book, bản ghi âm, file audio, video..v..v... có nội dung nằm trong các chủ đề đa dạng khác nhau:
+
+\begin{itemize}
+	\item Đọc hiểu
+	\item Nghe hiểu
+	\item Hội thoại, giao tiếp
+	\item Viết văn
+	\item IETLS
+	\item TOEIC
+	\item Chuyên ngành pháp luật
+	\item Chuyên ngành y tế
+	\item Chuyên ngành toán học
+\end{itemize}
+
+.....\\
+
+Tài liệu trích xuất được lưu trữ dưới định dạng json:
+
+\begin{lstlisting}[style=pythoncode]
+{
+	"abstract": "Approximately 500 words and their definitions...", 
+	"author": "Steven J Matthiesen", 
+	"content": "Success on the TOEFL --", 
+	"coverLink": "http://coverart.oclc.org/ImageWebSvc/oclc/...", 
+	"description": "1 online resource (vii, 344 pages)", 
+	"docType": "Internet Resource, Computer File", 
+	"edition_format": "eBook : Document : English : 6th edition", 
+	"genre_form": "Electronic books", 
+	"name": "Barron's essential words for the TOEFL : test...", 
+	"note": "Previous edition: 2011.", 
+	"onlineLink": "https://www.overdrive.com/search?q=D2F0C4CD-...", 
+	"onlineName": "OverDrive", 
+	"publisher": "Hauppauge : Barron's, 2014.", 
+	"sellerLink": "https://www.amazon.com/Essential-Words-TOEFL...", 
+	"sellerName": "Amazon.com", 
+	"sellerPrice": "$9.59", 
+	"subjects": "Test of English as a Foreign Language -- Study..."
+}
+\end{lstlisting}
+
+\subsection{Xử lý dữ liệu}
+
+Dữ liệu thu thập được xử lý bằng thuật toán $tf-idf$ để xác định các từ khoá tiêu biểu đại diện cho nội dung của tài liệu. Văn bản đầu vào của thuật toán $tf-idf$ bao gồm nội dung của các trường $"name"$, $"abstract"$ và $"subject"$. 
+
+\begin{lstlisting}[style=pythoncode]
+import math
+import json
+import jsonpickle
+from textblob import TextBlob as tb
+
+def tf(word, blob):
+    return blob.words.count(word) / len(blob.words)
+
+def n_containing(word, bloblist):
+    return sum(1 for blob in bloblist if word in blob.words)
+
+def idf(word, bloblist):
+    return math.log(len(bloblist) / (1 + n_containing(word, bloblist)))
+
+def tfidf(word, blob, bloblist):
+    return tf(word, blob) * idf(word, bloblist)
+\end{lstlisting}
+
+Kết quả thu được là tập từ khoá ứng với mỗi tài liệu như sau:
+
+\begin{center}
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Tài liệu} & \textbf{Tags} \\
+\hline
+Dictionary of medical terms & medicine, terms, dictionary, zymotic, surgery,  specialisations, pathology, anatomical, euphemistic, diagnosis\\
+\hline
+\pbox{5cm}{Pronouncing and defining dictionary of music} & musicians, music, bio-bibliography, pronouncing, defining, dictionary\\
+\hline
+Teaching reading vocabulary & reading, comprehension, lecture, subjects, vocabulary, english, curriculum\\
+\hline
+\pbox{5cm}{TOEFL reading and writing workout} & examination, guides, test, toefl, foreign, ability, testing, question\\
+\hline
+.... & ....\\
+\hline
+\end{tabular}
+\end{center}
+
+Để thu được những tag tiêu biểu nhất, hệ thống áp dụng điều kiện ràng buộc \{\textit{mỗi từ khoá phải xuất hiện ít nhất trong 5 tài liệu}\} để loại đi các từ khoá thiểu số. 
+
+Sau bước xử lý dữ liệu, ta xây dựng được profile của tài liều tiếng Anh như ví dụ sau: 
+
+\begin{lstlisting}[style=pythoncode, breaklines = true]
+'documentProfile': {
+        'id': 12,
+        'author': 'John S Kwan',
+        'name' : 'English spelling',
+        'abtract': '...',
+        'content': '...',
+        ....
+        'tags': ['spelling', 'punctuation', 'orthography', 'rules', 'self-study']
+    }
+\end{lstlisting}
+
+Ngoài ra, một bảng chứa các từ khoá sắp xếp theo thứ tần xuất xuất hiện giảm dần cũng được xây dựng để hỗ trợ người dùng trong bước xác định nguyện vọng như đã đề cập ở bên trên. Chúng sẽ được lưu trữ trong CSDL của Firebase và trả về client mỗi khi có request gửi lên.
+
+\begin{lstlisting}[style=pythoncode, breaklines = true]
+'tagList': [
+	{'name': 'teaching', 'score': 429},
+	{'name': 'writing', 'score': 389},
+	{'name': 'vocabulary', 'score': 383},
+	{'name': 'juvenile', 'score': 351},
+	{'name': 'problems', 'score': 313},
+	{'name': 'exercises', 'score': 304},
+ ...
+]
+\end{lstlisting}
+
+\section{So sánh và đưa ra tư vấn tài liệu học }
 
 
+
+\section{Áp dụng Kansei Engineering để cải thiện kết quả tư vấn}

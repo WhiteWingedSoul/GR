@@ -189,6 +189,14 @@ public class MainFragment extends Fragment {
                     progress.hide();
                 }
             });
+        }else{
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction().setCustomAnimations(
+                    R.anim.slide_in_right, R.anim.slide_out_left,
+                    R.anim.slide_in_left, R.anim.slide_out_right)
+                    .replace(R.id.fragment, Survey1Fragment.newInstance())
+                    .addToBackStack(null)
+                    .commit();
         }
     }
 

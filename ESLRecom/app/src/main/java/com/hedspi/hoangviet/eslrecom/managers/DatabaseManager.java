@@ -30,7 +30,7 @@ import java.util.List;
 public class DatabaseManager {
     private static DatabaseManager mInstance = null;
     private Context mContext;
-    private DatabaseHelper dbHelper;
+//    private DatabaseHelper dbHelper;
 
     private static DatabaseReference database = null;
     private static long materialCount;
@@ -45,7 +45,7 @@ public class DatabaseManager {
 
     private DatabaseManager(Context context){
         mContext = context;
-        dbHelper = new DatabaseHelper(mContext);
+//        dbHelper = new DatabaseHelper(mContext);
     }
 
     public static DatabaseReference getDatabase() {
@@ -94,144 +94,157 @@ public class DatabaseManager {
         return mInstance;
     }
 
-    public ArrayList<Material> getListLevelTest(){
-        ArrayList<Material> list = new ArrayList<Material>();
+//    public ArrayList<Material> getListLevelTest(){
+//        ArrayList<Material> list = new ArrayList<Material>();
+//        try {
+//            list = (ArrayList) dbHelper.getMaterialDao().queryForAll();
+//        }catch (SQLException e){
+//            e.printStackTrace();
+//        }
+//        return list;
+//    }
+
+    public String readJSONFromAsset(String jsonName) {
+        String json = null;
         try {
-            list = (ArrayList) dbHelper.getMaterialDao().queryForAll();
-        }catch (SQLException e){
-            e.printStackTrace();
+            InputStream is = mContext.getAssets().open(jsonName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            return null;
         }
-        return list;
+        return json;
     }
 
 
-    //***************** HELPER ***********************//
-
-    class DatabaseHelper extends OrmLiteSqliteOpenHelper{
-        private Dao<Material, Integer> materialDao;
-
-        public DatabaseHelper(Context context){
-            super(context, DB_NAME, null, DB_VERSION);
-
-            checkDatabase();
-
-            /*File dbFile = mContext.getDatabasePath(DB_NAME);
-            File out = new File(mContext.getExternalFilesDir(null)+"/output");
-            Log.d("DB", out.getAbsolutePath());
-            copyFile(dbFile, out, false);
-            dataEncryptHelper = AESCodeManager.getInstance();*/
-        }
-
-        public void copyFile(File srcFile, File destFile, boolean append) {
-            InputStream in = null;
-            FileOutputStream out = null;
-
-            if (!srcFile.exists()) return;
-
-            try {
-                in = new FileInputStream(srcFile);
-
-                File parentFile = destFile.getParentFile();
-                if (!destFile.exists()) {
-                    if (!parentFile.exists()) parentFile.mkdirs();
-                    destFile.createNewFile();
-                }
-
-                out = new FileOutputStream(destFile, append);
-                byte data[] = new byte[1024];
-                int length = -1;
-                while ((length = in.read(data)) != -1) {
-                    out.write(data, 0, length);
-                }
-                out.flush();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    if (in != null) in.close();
-                    if (out != null) out.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        @Override
-        public void onCreate(SQLiteDatabase database, ConnectionSource source){
-            /*try {
-                TableUtils.createTable(source, UserCurrentPosition.class);
-
-                //encryptDatabase(database);
-
-            }catch (SQLException e){
-                e.printStackTrace();
-            }*/
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase database, ConnectionSource source, int oldVersion, int newVersion){
-            copyDatabase();
-            onCreate(database, source);
-            Log.d("LOG","Database updated!");
-        }
-
-        public Dao<Material, Integer> getMaterialDao() throws SQLException{
-            if(materialDao == null)
-                materialDao = getDao(Material.class);
-            return materialDao;
-        }
-
-        @Override
-        public void close(){
-            super.close();
-            materialDao = null;
-        }
-
-        public void checkDatabase(){
-            File dbFile = mContext.getDatabasePath(DB_NAME);
-            if(!dbFile.exists()){
-                copyDatabase();
-                Log.d("LOG:","DB path: "+dbFile.toString());
-                Log.d("LOG:", "successfully init database");
-            }
-            else{
-                Log.d("LOG:", "already exist database");
-            }
-        }
-
-        public void copyDatabase(){
-            try {
-                InputStream input = mContext.getAssets().open(DB_FILE);
-                File destFile = mContext.getDatabasePath(DB_NAME);
-
-                File parentFile = destFile.getParentFile();
-                if (!destFile.exists()) {
-                    if (!parentFile.exists()) parentFile.mkdirs();
-                    destFile.createNewFile();
-                }
-
-                FileOutputStream output = new FileOutputStream(destFile);
-
-                Log.d("LOG:","parentDir: "+parentFile.toString()+" - "+parentFile.exists());
-                Log.d("LOG:","destDir: "+destFile.toString() + " - "+ destFile.exists());
-
-                byte[] mBuffer = new byte[1024];
-                int mLength;
-                while ((mLength = input.read(mBuffer))>0)
-                {
-                    output.write(mBuffer, 0, mLength);
-                }
-                output.flush();
-                input.close();
-                output.close();
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        }
-
-
-    }
-
+//    //***************** HELPER ***********************//
+//
+//    class DatabaseHelper extends OrmLiteSqliteOpenHelper{
+//        private Dao<Material, Integer> materialDao;
+//
+//        public DatabaseHelper(Context context){
+//            super(context, DB_NAME, null, DB_VERSION);
+//
+//            checkDatabase();
+//
+//            /*File dbFile = mContext.getDatabasePath(DB_NAME);
+//            File out = new File(mContext.getExternalFilesDir(null)+"/output");
+//            Log.d("DB", out.getAbsolutePath());
+//            copyFile(dbFile, out, false);
+//            dataEncryptHelper = AESCodeManager.getInstance();*/
+//        }
+//
+//        public void copyFile(File srcFile, File destFile, boolean append) {
+//            InputStream in = null;
+//            FileOutputStream out = null;
+//
+//            if (!srcFile.exists()) return;
+//
+//            try {
+//                in = new FileInputStream(srcFile);
+//
+//                File parentFile = destFile.getParentFile();
+//                if (!destFile.exists()) {
+//                    if (!parentFile.exists()) parentFile.mkdirs();
+//                    destFile.createNewFile();
+//                }
+//
+//                out = new FileOutputStream(destFile, append);
+//                byte data[] = new byte[1024];
+//                int length = -1;
+//                while ((length = in.read(data)) != -1) {
+//                    out.write(data, 0, length);
+//                }
+//                out.flush();
+//
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } finally {
+//                try {
+//                    if (in != null) in.close();
+//                    if (out != null) out.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//
+//        @Override
+//        public void onCreate(SQLiteDatabase database, ConnectionSource source){
+//            /*try {
+//                TableUtils.createTable(source, UserCurrentPosition.class);
+//
+//                //encryptDatabase(database);
+//
+//            }catch (SQLException e){
+//                e.printStackTrace();
+//            }*/
+//        }
+//
+//        @Override
+//        public void onUpgrade(SQLiteDatabase database, ConnectionSource source, int oldVersion, int newVersion){
+//            copyDatabase();
+//            onCreate(database, source);
+//            Log.d("LOG","Database updated!");
+//        }
+//
+//        public Dao<Material, Integer> getMaterialDao() throws SQLException{
+//            if(materialDao == null)
+//                materialDao = getDao(Material.class);
+//            return materialDao;
+//        }
+//
+//        @Override
+//        public void close(){
+//            super.close();
+//            materialDao = null;
+//        }
+//
+//        public void checkDatabase(){
+//            File dbFile = mContext.getDatabasePath(DB_NAME);
+//            if(!dbFile.exists()){
+//                copyDatabase();
+//                Log.d("LOG:","DB path: "+dbFile.toString());
+//                Log.d("LOG:", "successfully init database");
+//            }
+//            else{
+//                Log.d("LOG:", "already exist database");
+//            }
+//        }
+//
+//        public void copyDatabase(){
+//            try {
+//                InputStream input = mContext.getAssets().open(DB_FILE);
+//                File destFile = mContext.getDatabasePath(DB_NAME);
+//
+//                File parentFile = destFile.getParentFile();
+//                if (!destFile.exists()) {
+//                    if (!parentFile.exists()) parentFile.mkdirs();
+//                    destFile.createNewFile();
+//                }
+//
+//                FileOutputStream output = new FileOutputStream(destFile);
+//
+//                Log.d("LOG:","parentDir: "+parentFile.toString()+" - "+parentFile.exists());
+//                Log.d("LOG:","destDir: "+destFile.toString() + " - "+ destFile.exists());
+//
+//                byte[] mBuffer = new byte[1024];
+//                int mLength;
+//                while ((mLength = input.read(mBuffer))>0)
+//                {
+//                    output.write(mBuffer, 0, mLength);
+//                }
+//                output.flush();
+//                input.close();
+//                output.close();
+//
+//            }catch (Exception e){
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 }

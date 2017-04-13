@@ -1,0 +1,1185 @@
+[
+ {
+   "question": "Where do you live?",
+   "trueAnswer": "I live in London.",
+   "wrongAnswers": "I am live in London.;My live is London.;I lives in London.",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "He has two brothers.",
+   "wrongAnswers": "I has two brothers.;He got two brothers.;He two brothers.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "They are Italian.",
+   "wrongAnswers": "They is Italian.;They is Italy.;They Italian.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "My name is Margaret",
+   "wrongAnswers": "My name are Margaret.;Margaret are my name.;Margaret be my name.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Are you German?",
+   "trueAnswer": "No. I am American.",
+   "wrongAnswers": "No. My is American.;No. My are American.;No. I is American",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "I like coffee.",
+   "wrongAnswers": "Me like coffee.;I like the coffee.;Me don't like coffee.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "She lives on your street.",
+   "wrongAnswers": "She live on your street.;She do on your street.;She does on your street.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Do you like music?",
+   "trueAnswer": "Yes, i do.",
+   "wrongAnswers": "Yes, i does.;Yes, i like.;Yes, I am.",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "She was born in Paris.",
+   "wrongAnswers": "She be born in Paris.;She is born in Paris.;She born in Paris.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "Their mother's name is Karen.",
+   "wrongAnswers": "Their mother's name are Karen.;Their mother are Karen.;Their mother's from Karen.",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "cat",
+   "wrongAnswers": "man;boy",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "horse",
+   "wrongAnswers": "doctor;dentis",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "cheese",
+   "wrongAnswers": "milk;coffee",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "Norway",
+   "wrongAnswers": "Spanish;Greek",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "police station",
+   "wrongAnswers": "kitchen;bathroom",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "market",
+   "wrongAnswers": "airport;train station",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "chair",
+   "wrongAnswers": "yellow;pink",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "pencil",
+   "wrongAnswers": "telephone;fax",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Spot the different one:",
+   "trueAnswer": "umbrella",
+   "wrongAnswers": "jacket;dress",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Peter and Sidney are ...... Australia.",
+   "trueAnswer": "from",
+   "wrongAnswers": "for",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "We walk ...... work every day.",
+   "trueAnswer": "to",
+   "wrongAnswers": "by",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "We don't go ...... train.",
+   "trueAnswer": "by",
+   "wrongAnswers": "to",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "My birthday is ...... the third of March.",
+   "trueAnswer": "on",
+   "wrongAnswers": "at",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Do you go to the beach ...... summer?",
+   "trueAnswer": "in",
+   "wrongAnswers": "on",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "I live ...... Rosemary Road.",
+   "trueAnswer": "on",
+   "wrongAnswers": "at",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "I got a dog ...... my birthday!",
+   "trueAnswer": "for",
+   "wrongAnswers": "from",
+   "type": "vocabulary",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "She is married ...... a doctor.",
+   "trueAnswer": "to",
+   "wrongAnswers": "with",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "You can come ...... me.",
+   "trueAnswer": "with",
+   "wrongAnswers": "to",
+   "type": "reading",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "We always eat chicken ...... Christmas.",
+   "trueAnswer": "at",
+   "wrongAnswers": "on",
+   "type": "grammar",
+   "difficulty": "beginner"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "Do you live in Madrid?",
+   "wrongAnswers": "Does you live in Madrid?;You does live in Madrid?;Live you in Madrid?",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "There isn't any money in the pot.",
+   "wrongAnswers": "There isn't money in the pot.;There aren't money in the pot.;There are money in the pot.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "Is this your book?",
+   "wrongAnswers": "Are this your book?;Is these your book?;Is these your?",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "He doesn't have a car.",
+   "wrongAnswers": "He haven't got a car.;He doesn't have got a car.;He don't have a car.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "They never eat chocolate at bed time.",
+   "wrongAnswers": "They eat never chocolate at bed time.;Never they eat chocolate at bed time.;At bed time, they eat chocolate, never.",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "I like walking in the park.",
+   "wrongAnswers": "I like walking at the park.;I like walk at the park.;I like to walking in the park.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Yesterday, ......",
+   "trueAnswer": "she had lunch with my mother.",
+   "wrongAnswers": "she does lunch with my mother.;she eat lunch with my mother.;she have lunch with my mother.",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Your sister ......",
+   "trueAnswer": "is older than you.",
+   "wrongAnswers": "is older as you.;is older like you.;is old than you.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "They usually go to work ......",
+   "trueAnswer": "by train.",
+   "wrongAnswers": "under train.;in train.;on train.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "That is ......",
+   "trueAnswer": "the best restaurant in town.",
+   "wrongAnswers": "better restaurant in town.;a better restaurant in town.;a best restaurant in town.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "How much ......",
+   "trueAnswer": "does an ice cream cost?",
+   "wrongAnswers": "eggs are in the fridge?;people are coming to the party?",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Can you ......",
+   "trueAnswer": "help me, please?",
+   "wrongAnswers": "ask me the time please?;swim, please?",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "...... is it from Paris to London?   ",
+   "trueAnswer": "How far",
+   "wrongAnswers": "How long;How much distance",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "...... is your father?   ",
+   "trueAnswer": "How tall",
+   "wrongAnswers": "How high;How big",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "...... a cup of tea? ",
+   "trueAnswer": "Would you like",
+   "wrongAnswers": "How do you like;Do you like",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which sentence has the correct word order?",
+   "trueAnswer": "She has long black hair.",
+   "wrongAnswers": "She has black long hair.;She has hair, long and black.",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which sentence has the correct word order?",
+   "trueAnswer": "They are very good at languages.",
+   "wrongAnswers": "They are very good with languages.;With languages, they are very good.",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which sentence has the correct word order?",
+   "trueAnswer": "How long have you lived in Madrid?",
+   "wrongAnswers": "How long are you living in Madrid?;How long did you lived in Madrid?",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which sentence has the correct word order?",
+   "trueAnswer": "I have many things to do.",
+   "wrongAnswers": "I have to do things many.;I many things have to do.",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which sentence has the correct word order?",
+   "trueAnswer": "We always have lunch at two o'clock.",
+   "wrongAnswers": "We have lunch always at two o'clock.;Always we have lunch at two o'clock.",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which one is different?",
+   "trueAnswer": "dog",
+   "wrongAnswers": "aunt;cousin",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which one is different?",
+   "trueAnswer": "desk",
+   "wrongAnswers": "trousers;shoes",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which one is different?",
+   "trueAnswer": "tree",
+   "wrongAnswers": "purple;orange",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which one is different?",
+   "trueAnswer": "aeroplane",
+   "wrongAnswers": "supermarket;hospital",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Which one is different?",
+   "trueAnswer": "policeman",
+   "wrongAnswers": "brother;father",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "The sofa is ...... the fireplace.",
+   "trueAnswer": "in front of",
+   "wrongAnswers": "front",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "The book isn't on the table. It's ...... the table.",
+   "trueAnswer": "under",
+   "wrongAnswers": "over",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Where is my lipstick? Oh, it's ...... my bag.",
+   "trueAnswer": "in",
+   "wrongAnswers": "inside",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "The bakery is ...... the library and the shoe store.",
+   "trueAnswer": "between",
+   "wrongAnswers": "near",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Come and sit ...... me, on the sofa.",
+   "trueAnswer": "next to",
+   "wrongAnswers": "under",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "I haven't seen him ......",
+   "trueAnswer": "since yesterday.",
+   "wrongAnswers": "for yesterday.; ;until yesterday.",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Have you ever ......to Mallorca?",
+   "trueAnswer": "been",
+   "wrongAnswers": "gone;went;was",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "We used to live in Paris.",
+   "wrongAnswers": "We are using to live in Paris.;We usually live in Paris.;We are use to live in Paris.",
+   "type": "reading",
+   "difficulty": "basic"
+ },
+ {
+   "question": "I wouldn't do that ......",
+   "trueAnswer": "if I were you.",
+   "wrongAnswers": "if I was you.;if I would be you.;if I would you.",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "...... at the hotel, last week.",
+   "trueAnswer": "They didn't see him",
+   "wrongAnswers": "They hadn't see him;They can't see him;They weren't see him",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "They are ......to Brazil tomorrow.",
+   "trueAnswer": "going to fly",
+   "wrongAnswers": "going flying;fly;to fly",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "I have never ...... Indian food.",
+   "trueAnswer": "eaten",
+   "wrongAnswers": "ate;eat;to eat",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Robert's from New York,",
+   "trueAnswer": "isn't he?",
+   "wrongAnswers": "doesn't he?;does he?;is he?",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "...... to collect me after the concert.    ",
+   "trueAnswer": "You don't need",
+   "wrongAnswers": "You don't might;You don't must;You don't should",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Find the synonym of 'Intelligent'",
+   "trueAnswer": "clever",
+   "wrongAnswers": "elegant",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Find the synonym of 'Beautiful'",
+   "trueAnswer": "pretty",
+   "wrongAnswers": "stupid",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Find the synonym of 'Amusing'",
+   "trueAnswer": "funny",
+   "wrongAnswers": "boring",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Find the synonym of 'Industrious'",
+   "trueAnswer": "hard working",
+   "wrongAnswers": "beautiful",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Find the synonym of 'Incredible'",
+   "trueAnswer": "not believable",
+   "wrongAnswers": "truly",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Find the synonym of 'Generous'",
+   "trueAnswer": "kind",
+   "wrongAnswers": "humorous",
+   "type": "vocabulary",
+   "difficulty": "basic"
+ },
+ {
+   "question": "Find the synonym of 'Tidy'",
+   "trueAnswer": "orderly",
+   "wrongAnswers": "elegant",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "We landed ...... Dublin airport, very late.",
+   "trueAnswer": "at",
+   "wrongAnswers": "in;on;by",
+   "type": "grammar",
+   "difficulty": "basic"
+ },
+ {
+   "question": "If we miss the flight, there isn't another ...... three hours!",
+   "trueAnswer": "for",
+   "wrongAnswers": "about",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "We stayed ...... a really nice hotel near the beach.",
+   "trueAnswer": "at",
+   "wrongAnswers": "on;with;of",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "This sweater is made ...... the softest wool!",
+   "trueAnswer": "of",
+   "wrongAnswers": "from;by",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "They are really looking forward ...... our visit.",
+   "trueAnswer": "to",
+   "wrongAnswers": "for",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I hope you are coming to the party ...... my birthday!",
+   "trueAnswer": "on",
+   "wrongAnswers": "in;at",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I have been living in Madrid ......",
+   "trueAnswer": "for ten years.",
+   "wrongAnswers": "ten years ago.;since ten years.;ten years.",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "This is the ......thing I have ever done.",
+   "trueAnswer": "hardest",
+   "wrongAnswers": "harder;hard;more hard",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Have you finished with the newspaper ......",
+   "trueAnswer": "yet?",
+   "wrongAnswers": "still?;already?;now?",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "If I want to pass my exam, I ..... study harder.",
+   "trueAnswer": "will have to",
+   "wrongAnswers": "would have to;had to;want to",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Michael is ...... his sister.",
+   "trueAnswer": "not as clever as",
+   "wrongAnswers": "not so clever than;not as clever than;not as clever as",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "...... people eat very healthy food.",
+   "trueAnswer": "Very few",
+   "wrongAnswers": "Very least;Very less;Very little",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "We told him to go to the doctor.",
+   "wrongAnswers": "We told him going to the doctor.;We told him he go to the doctor.;We told that he goes to the doctor.",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "What ...... now?",
+   "trueAnswer": "will you do",
+   "wrongAnswers": "does you;do you do;do you",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "He hasn't got ...... time for a coffee.",
+   "trueAnswer": "much",
+   "wrongAnswers": "a lot;many;few",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I have arranged .... dinner with Barbara on Thursday.",
+   "trueAnswer": "to have",
+   "wrongAnswers": "having;have had;had",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I have never been in Scotland.",
+   "trueAnswer": "false",
+   "wrongAnswers": "correct",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "We are going to Brazil in the summer.",
+   "trueAnswer": "correct",
+   "wrongAnswers": "FALSE",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I can swim when I was five.",
+   "trueAnswer": "false",
+   "wrongAnswers": "correct",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "What are you doing next weekend?",
+   "trueAnswer": "correct",
+   "wrongAnswers": "FALSE",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "He must finish the job yesterday.",
+   "trueAnswer": "false",
+   "wrongAnswers": "correct",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "You shouldn't collect me from the office, it isn't necessary.",
+   "trueAnswer": "false",
+   "wrongAnswers": "correct",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "She's married to a doctor, doesn't she?",
+   "trueAnswer": "false",
+   "wrongAnswers": "correct",
+   "type": "reading",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "There's a woman ...... handbag was stolen.",
+   "trueAnswer": "whose",
+   "wrongAnswers": "who's",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "The guy ...... we met at the concert is a friend of my brother.",
+   "trueAnswer": "who",
+   "wrongAnswers": "that",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "A social networking site is ...... you can meet new people.",
+   "trueAnswer": "where",
+   "wrongAnswers": "when",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "...... one do you want? The red one or the blue one?",
+   "trueAnswer": "Which",
+   "wrongAnswers": "What",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "They invited us to dinner ...... is very nice of them.",
+   "trueAnswer": "which",
+   "wrongAnswers": "that",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "He's that famous actor ...... is always on TV.",
+   "trueAnswer": "who",
+   "wrongAnswers": "which",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "..... book is this?",
+   "trueAnswer": "Whose",
+   "wrongAnswers": "Who's",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "..... to the theatre for ages.",
+   "trueAnswer": "I haven't been",
+   "wrongAnswers": "I haven't gone;I didn't been;I didn't gone",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "A motorbike ..... a car.",
+   "trueAnswer": "doesn't cost as much as",
+   "wrongAnswers": "doesn't cost so much as;doesn't cost much as;doesn't cost much than",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "I told him ......",
+   "trueAnswer": "not to go there.",
+   "wrongAnswers": "don't go there.;don't to go there.;that he doesn't go there.",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I wish ......",
+   "trueAnswer": "you hadn't said that.",
+   "wrongAnswers": "you haven't said that.;you didn't said that.;you don't say that.",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "..... after the accident. ",
+   "trueAnswer": "He had his car repaired",
+   "wrongAnswers": "He had repaired his car;He repairs his car;He did his car repaired",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Don't forget ..... on her birthday!",
+   "trueAnswer": "to call your mother",
+   "wrongAnswers": "calling your mother;call your mother;calling to your mother",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "If you had asked me ....to the cinema with you.",
+   "trueAnswer": "I might have gone",
+   "wrongAnswers": "I might had gone;I might have been;I might would have",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "...... very early.",
+   "trueAnswer": "They are used to going to bed",
+   "wrongAnswers": "They are use to go to bed;They usually to go to bed;They are used to go to bed",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "What's her new boyfriend like?",
+   "wrongAnswers": "What's like her new boyfriend?;How is her new boyfriend?;How her new boyfriend is?",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "After we had had dinner at home, we went to the theatre.",
+   "wrongAnswers": "After we had dinner at home, we went to the theatre.;After dinner at home, we went to the theatre.;After diinner at home, we had gone to the theatre.",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": " While we ...... on the high street, a man came up to us.",
+   "trueAnswer": "were walking",
+   "wrongAnswers": "walking",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "I ...... know him, a very long time ago.",
+   "trueAnswer": "used to",
+   "wrongAnswers": "use to",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "When they lived in Paris, they ...... to work every day.",
+   "trueAnswer": "would walk",
+   "wrongAnswers": "walking;walked;walker",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Don't forget ...... him to come to dinner on Friday.",
+   "trueAnswer": "to tell",
+   "wrongAnswers": "telling",
+   "type": "grammar",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Marbella is a beautiful town ...... the sea.",
+   "trueAnswer": "beside",
+   "wrongAnswers": "besides;behind;behinds",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "I need your decision ...... eight o'clock.",
+   "trueAnswer": "by",
+   "wrongAnswers": "until;for;while",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "The ...... of the newspapers were full of the scandal.",
+   "trueAnswer": "headlines",
+   "wrongAnswers": "titles;names;threads",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Luggage ...... at the airport is impossible these days.",
+   "trueAnswer": "inspection",
+   "wrongAnswers": "check,set up;filtering",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "The government is planning to ...... taxes again soon.",
+   "trueAnswer": "raise",
+   "wrongAnswers": "rise, reach; grow",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Which word doesn't fit?",
+   "trueAnswer": "food mixture",
+   "wrongAnswers": "box office;stage;footlights",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Which word doesn't fit?",
+   "trueAnswer": "sleeve",
+   "wrongAnswers": "branch;leaf;twig",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Which word doesn't fit?",
+   "trueAnswer": "root",
+   "wrongAnswers": "cooker;fridge;dishwasher",
+   "type": "vocabulary",
+   "difficulty": "intermediate"
+ },
+ {
+   "question": "Which word doesn't fit?",
+   "trueAnswer": "sink",
+   "wrongAnswers": "collar;cuff;lape",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "Which word doesn't fit?",
+   "trueAnswer": "trunk",
+   "wrongAnswers": "clinic;ward;x-ray",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "If ...... you were coming, I would have baked a cafe! ",
+   "trueAnswer": "I had known",
+   "wrongAnswers": "I would know;I would have known;I had had known",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "The flight to London was ......expensive than I thought.",
+   "trueAnswer": "much less",
+   "wrongAnswers": "more less;more or less;least",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "You .... exhausted after your exam yesterday.",
+   "trueAnswer": "must have been",
+   "wrongAnswers": "must been;must be;should be",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "It ...... ages since the last time I ..... Indian food.",
+   "trueAnswer": "has been & ate",
+   "wrongAnswers": "was be & eat;must been & have ate;must have been & have eaten",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "I .... that we arrive on time. I don't want to miss the beginning.",
+   "trueAnswer": "hope",
+   "wrongAnswers": "await;expect;wait",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "If we had told the truth, we could have ....",
+   "trueAnswer": "avoided",
+   "wrongAnswers": "escaped;lost;missed",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "I had never seen it before, and ..... I knew exactly what to do.  ",
+   "trueAnswer": "yet",
+   "wrongAnswers": "still;just;even",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "I asked my sister if ..... a bottle of perfume for me at the airport.",
+   "trueAnswer": "she had brought",
+   "wrongAnswers": "she had buy;she would brought;she bought",
+   "type": "grammar",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Form the correct compund noun 'behaviour'",
+   "trueAnswer": "outrageous",
+   "wrongAnswers": "infectious;tremendous;religious",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Form the correct compund noun 'drug'",
+   "trueAnswer": "dangerous",
+   "wrongAnswers": "luxurious;incurable;tremendous",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Form the correct compund noun 'request'",
+   "trueAnswer": "unreasonable",
+   "wrongAnswers": "portable;luxurious;enviable",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Form the correct compund noun 'deeds'",
+   "trueAnswer": "courageus",
+   "wrongAnswers": "horrendous;enviable;infectious",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "Form the correct compund noun 'food'",
+   "trueAnswer": "nutritious",
+   "wrongAnswers": "industrious;incurable;foreseeable",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "Form the correct compund noun 'position'",
+   "trueAnswer": "enviable",
+   "wrongAnswers": "fashionable;uncontrollable;interminable",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "I am going to buy something for dinner from the Chinese take ......",
+   "trueAnswer": "away",
+   "wrongAnswers": "off;around;with",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "There have been a lot of break ...... in our neighbourhood recently.",
+   "trueAnswer": "ins",
+   "wrongAnswers": "ups;outs;balls",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "His car was a total write ...... after the accident.",
+   "trueAnswer": "off",
+   "wrongAnswers": "up;on;in",
+   "type": "vocabulary",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "We had a 20 minute delay at the airport before take .....",
+   "trueAnswer": "off",
+   "wrongAnswers": "on;up;away",
+   "type": "reading",
+   "difficulty": "upper-intermediate"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "That's an attractive brown leather coat.",
+   "wrongAnswers": "That's an attractive leather brown coat.;That's a brown leather coat attractive.;That's a brown, attractive leather coat.",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "\"We'll never be able to do it\" said the man to nobody .....",
+   "trueAnswer": "in particular",
+   "wrongAnswers": "especially;specially;himself",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "Choose the correct phrase:",
+   "trueAnswer": "The bride wore a dark cream velvet dress.",
+   "wrongAnswers": "The bride wore a dark dress in cream velvet.;The bride wore a cream dark velvet dress.;The bride wore a dark velvet cream dress.",
+   "type": "",
+   "difficulty": ""
+ },
+ {
+   "question": " As stubborn as ......",
+   "trueAnswer": "a mule",
+   "wrongAnswers": "a fish;a toad;a lion",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "As quick as ....",
+   "trueAnswer": "a flash",
+   "wrongAnswers": "rain;wind;hedgehog",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "As smooth as .....",
+   "trueAnswer": "silk",
+   "wrongAnswers": "velvet;rock;pine",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "A interloper is .....",
+   "trueAnswer": "someone who enters a place where they have no right to be.",
+   "wrongAnswers": " someone who maintains the proper conduct of a test.;a person who deliberately damages public or private property.;person who commits a felony.",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "A punter is ....",
+   "trueAnswer": "someone who bets money on horse or dog races.",
+   "wrongAnswers": "a person who does not wish to engage in any type of sexual behavior.;someone who enters and lives in an unoccupied building.;someone who's able to keep on going even when things get hard.",
+   "type": "reading",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "A ........ is a person who has very strong and often unreasonable opinions, but is very intolerant of other people's opinions.",
+   "trueAnswer": "pigot",
+   "wrongAnswers": "boor;stalwart;squatter",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "A ...... is a person who lives in a foreign country.",
+   "trueAnswer": "expatriate",
+   "wrongAnswers": "executor;tyrant;interpolar",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "A ...... is a person who is very rich and powerful, especially in industry.",
+   "trueAnswer": "magnet",
+   "wrongAnswers": "invigilator;vandal;squatter",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "A ...... is a person who enters and lives in an unoccupied building.",
+   "trueAnswer": "squatter",
+   "wrongAnswers": "punter;prude;stalwart",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "As please as ...",
+   "trueAnswer": "punch",
+   "wrongAnswers": "poker;a cat;water",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "As thin as ....",
+   "trueAnswer": "a rake",
+   "wrongAnswers": "a sheet;a blanket;a floor",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "\"I know it's late, so I shall not .......... you any longer\" said the sales manager to his sales team participants",
+   "trueAnswer": "detain",
+   "wrongAnswers": "hold up;withhold;retard",
+   "type": "vocabulary",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "The Acropolis is the greatest building ...... in ancient times.",
+   "trueAnswer": "to have been built",
+   "wrongAnswers": "to be built;to have built;built",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "I blame the Government .... the increase in crime.",
+   "trueAnswer": "for",
+   "wrongAnswers": "on;about;over",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "I didn't understand at first, but then .... and the answer was clear.",
+   "trueAnswer": "he explained it to me",
+   "wrongAnswers": "he explained me;he explained it me; he explained me it",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": ".... but I realised what he had done",
+   "trueAnswer": "Little did he know",
+   "wrongAnswers": "Little known;Little he knew;Little knowing",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "'You should stop smoking'",
+   "trueAnswer": "He advised her to stop smoking.",
+   "wrongAnswers": "He demanded her to stop smoking.;He threatened her to stop smoking.;He said her to stop smoking.",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "We'll ..... my sister to babysit on Friday.",
+   "trueAnswer": "get",
+   "wrongAnswers": "be having;have;getting",
+   "type": "grammar",
+   "difficulty": "advanced"
+ },
+ {
+   "question": "You can exchange the gift ... it is returned within seven days.",
+   "trueAnswer": "as long as",
+   "wrongAnswers": "so long that;while;meanwhile",
+   "type": "grammar",
+   "difficulty": "advanced"
+ }
+]

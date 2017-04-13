@@ -28,7 +28,11 @@
 \contentsline {section}{\numberline {3.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng h\IeC {\`\ocircumflex } s\IeC {\ohorn } ng\IeC {\uhorn }\IeC {\`\ohorn }i d\IeC {\`u}ng}{16}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}X\IeC {\'a}c \IeC {\dj }\IeC {\d i}nh tr\IeC {\`\i }nh \IeC {\dj }\IeC {\d \ocircumflex } ng\IeC {\uhorn }\IeC {\`\ohorn }i d\IeC {\`u}ng}{16}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}X\IeC {\'a}c \IeC {\dj }\IeC {\d i}nh nguy\IeC {\d \ecircumflex }n v\IeC {\d o}ng ng\IeC {\uhorn }\IeC {\`\ohorn }i d\IeC {\`u}ng}{19}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}X\IeC {\^a}y d\IeC {\d \uhorn }ng m\IeC {\d a}ng t\IeC {\`\uhorn } kho\IeC {\'a}}{19}{section.3.3}
-\contentsline {chapter}{\numberline {4} K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n }{20}{chapter.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{21}{chapter.5}
-\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{22}{appendix*.14}
+\contentsline {section}{\numberline {3.3}Thu th\IeC {\d \acircumflex }p v\IeC {\`a} x\IeC {\h \uhorn } l\IeC {\'y} t\IeC {\`a}i li\IeC {\d \ecircumflex }u h\IeC {\d o}c ti\IeC {\'\ecircumflex }ng Anh}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Thu th\IeC {\d \acircumflex }p d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u}{20}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}X\IeC {\h \uhorn } l\IeC {\'y} d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u}{24}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}So s\IeC {\'a}nh v\IeC {\`a} \IeC {\dj }\IeC {\uhorn }a ra t\IeC {\uhorn } v\IeC {\'\acircumflex }n t\IeC {\`a}i li\IeC {\d \ecircumflex }u h\IeC {\d o}c }{25}{section.3.4}
+\contentsline {section}{\numberline {3.5}\IeC {\'A}p d\IeC {\d u}ng Kansei Engineering \IeC {\dj }\IeC {\h \ecircumflex } c\IeC {\h a}i thi\IeC {\d \ecircumflex }n k\IeC {\'\ecircumflex }t qu\IeC {\h a} t\IeC {\uhorn } v\IeC {\'\acircumflex }n}{25}{section.3.5}
+\contentsline {chapter}{\numberline {4} K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n }{26}{chapter.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{27}{chapter.5}
+\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{28}{appendix*.15}

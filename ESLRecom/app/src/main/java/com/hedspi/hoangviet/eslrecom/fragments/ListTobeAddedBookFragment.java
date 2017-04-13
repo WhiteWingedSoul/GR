@@ -76,43 +76,43 @@ public class ListTobeAddedBookFragment extends Fragment {
     private void letDoTheGodWork() throws IOException{
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
-        database.child(Common.MATERIAL_COUNT).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() != null) {
+//        database.child(Common.MATERIAL_COUNT).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                if (dataSnapshot.getValue() != null) {
+////                    adapter.clearData();
+////                    ArrayList<Long> bookIDsList = new ArrayList<Long>();
+////
+////                    for(DataSnapshot child : dataSnapshot.getChildren()){
+////                        bookIDsList.add((long)child.getValue());
+////                    }
+////
+////                    //GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
+////                    //bookIDsList.clear();
+////                    //bookIDsList.addAll(dataSnapshot.getValue(t));
+////
+////                    DatabaseManager.setMaterialCount(bookIDsList.size());
+////                    for (int i=0;i<bookIDsList.size();i++) {
+////                        database.child(Common.MATERIAL).child("" + bookIDsList.get(i)).removeEventListener(readBookData);
+////                        database.child(Common.MATERIAL).child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
+////                    }
+////                    progress.hide();
+//
 //                    adapter.clearData();
-//                    ArrayList<Long> bookIDsList = new ArrayList<Long>();
-//
 //                    for(DataSnapshot child : dataSnapshot.getChildren()){
-//                        bookIDsList.add((long)child.getValue());
-//                    }
-//
-//                    //GenericTypeIndicator<ArrayList<Long>> t = new GenericTypeIndicator<ArrayList<Long>>() {};
-//                    //bookIDsList.clear();
-//                    //bookIDsList.addAll(dataSnapshot.getValue(t));
-//
-//                    DatabaseManager.setMaterialCount(bookIDsList.size());
-//                    for (int i=0;i<bookIDsList.size();i++) {
-//                        database.child(Common.MATERIAL).child("" + bookIDsList.get(i)).removeEventListener(readBookData);
-//                        database.child(Common.MATERIAL).child("" + bookIDsList.get(i)).addValueEventListener(readBookData);
+//                        final Material book = child.getValue(Material.class);
+//                        if (book!=null)
+//                            adapter.updateAdapter(book);
 //                    }
 //                    progress.hide();
-
-                    adapter.clearData();
-                    for(DataSnapshot child : dataSnapshot.getChildren()){
-                        final Material book = child.getValue(Material.class);
-                        if (book!=null)
-                            adapter.updateAdapter(book);
-                    }
-                    progress.hide();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     @Override
@@ -166,7 +166,8 @@ public class ListTobeAddedBookFragment extends Fragment {
 
         public void updateAdapter(Material book){
             mList.add(book);
-            notifyItemInserted(book.getId());
+//            notifyItemInserted(book.getId());
+            notifyDataSetChanged();
         }
 
         public void clearData(){
