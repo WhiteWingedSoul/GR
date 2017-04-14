@@ -163,10 +163,10 @@ public class SetBookProfileFragment extends Fragment {
                     levelGroup1.setOnCheckedChangeListener(levelListener1);
                     /*switch (i) {
                         case R.id.l_answer_d:
-                            bookProfile.setLevelPreference(Preference.ADVANCE);
+                            bookProfile.setLevelPreference(Preference.UPPER_INTERMEDIATE);
                             break;
                         case R.id.l_answer_e:
-                            bookProfile.setLevelPreference(Preference.MASTER);
+                            bookProfile.setLevelPreference(Preference.ADVANCED);
                             break;
                     }*/
                 }

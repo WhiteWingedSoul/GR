@@ -11,7 +11,7 @@ import java.util.List;
  * Created by viet on 4/13/17.
  */
 
-public class Question implements Serializable{
+public class Question extends AdapterItem implements Serializable{
     @SerializedName("question")
     private String question;
     @SerializedName("trueAnswer")
@@ -39,12 +39,16 @@ public class Question implements Serializable{
         this.trueAnswer = trueAnswer;
     }
 
-    public List<String> getWrongAnswers() {
+    public List<String> formWrongAnswerList() {
         List<String> list = new ArrayList<>();
         for(String answer:wrongAnswersStr.split(";")){
             list.add(answer);
         }
         return list;
+    }
+
+    public String getWrongAnswersStr() {
+        return wrongAnswersStr;
     }
 
     public void setWrongAnswersStr(String wrongAnswersStr) {

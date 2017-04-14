@@ -11,7 +11,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.hedspi.hoangviet.eslrecom.R;
-import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 /**
@@ -62,10 +61,10 @@ public class Survey1Fragment extends Fragment {
                         profile.setLearnTimeScore(UserProfile.INTERMEDIATE);
                         break;
                     case R.id.answer_d:
-                        profile.setLearnTimeScore(UserProfile.ADVANCE);
+                        profile.setLearnTimeScore(UserProfile.UPPER_INTERMEDIATE);
                         break;
                     case R.id.answer_e:
-                        profile.setLearnTimeScore(UserProfile.MASTER);
+                        profile.setLearnTimeScore(UserProfile.ADVANCED);
                         break;
                 }
             }
@@ -78,9 +77,9 @@ public class Survey1Fragment extends Fragment {
                 if(radioGroup.getCheckedRadioButtonId() != -1){
                     if (radioGroup.getCheckedRadioButtonId() == R.id.answer_a){
                         profile.setReadingScore(0);
-                        profile.setListeningScore(0);
-                        profile.setWrittingScore(0);
-                        profile.setSpeakingScore(0);
+//                        profile.setListeningScore(0);
+//                        profile.setWrittingScore(0);
+//                        profile.setSpeakingScore(0);
 //                        profile.setTestPreference(Preference.NONE);
                         getActivity().getSupportFragmentManager()
                                 .beginTransaction().setCustomAnimations(

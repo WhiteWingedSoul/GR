@@ -6,10 +6,15 @@ package com.hedspi.hoangviet.eslrecom.commons;
 
 public class Preference {
     public static final String BEGINNER = "beginner";
-    public static final String ELEMENTARY = "elementary";
+    public static final String ELEMENTARY = "basic";
     public static final String INTERMEDIATE = "intermediate";
+    public static final String UPPER_INTERMEDIATE = "upper-intermediate";
     public static final String ADVANCE = "advanced";
     public static final String MASTER = "very advanced";
+
+    public static final String TEST_VOCAB = "vocabulary";
+    public static final String TEST_GRAMMAR = "grammar";
+    public static final String TEST_READING = "reading";
 
     public static final int NONE = 1;
     public static final int IELTS = 2;

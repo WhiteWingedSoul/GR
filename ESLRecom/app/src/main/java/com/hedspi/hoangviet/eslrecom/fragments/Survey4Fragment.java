@@ -54,21 +54,21 @@ public class Survey4Fragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
-                    case R.id.answer_a:
-                        profile.setSpeakingScore(UserProfile.BEGINNER);
-                        break;
-                    case R.id.answer_b:
-                        profile.setSpeakingScore(UserProfile.BASIC);
-                        break;
-                    case R.id.answer_c:
-                        profile.setSpeakingScore(UserProfile.INTERMEDIATE);
-                        break;
-                    case R.id.answer_d:
-                        profile.setSpeakingScore(UserProfile.ADVANCE);
-                        break;
-                    case R.id.answer_e:
-                        profile.setSpeakingScore(UserProfile.MASTER);
-                        break;
+//                    case R.id.answer_a:
+//                        profile.setSpeakingScore(UserProfile.BEGINNER);
+//                        break;
+//                    case R.id.answer_b:
+//                        profile.setSpeakingScore(UserProfile.BASIC);
+//                        break;
+//                    case R.id.answer_c:
+//                        profile.setSpeakingScore(UserProfile.INTERMEDIATE);
+//                        break;
+//                    case R.id.answer_d:
+//                        profile.setSpeakingScore(UserProfile.UPPER_INTERMEDIATE);
+//                        break;
+//                    case R.id.answer_e:
+//                        profile.setSpeakingScore(UserProfile.ADVANCED);
+//                        break;
                 }
             }
         });

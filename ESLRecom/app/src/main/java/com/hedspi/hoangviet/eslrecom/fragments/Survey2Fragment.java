@@ -64,10 +64,10 @@ public class Survey2Fragment extends Fragment {
                         profile.setReadingScore(UserProfile.INTERMEDIATE);
                         break;
                     case R.id.answer_d:
-                        profile.setReadingScore(UserProfile.ADVANCE);
+                        profile.setReadingScore(UserProfile.UPPER_INTERMEDIATE);
                         break;
                     case R.id.answer_e:
-                        profile.setReadingScore(UserProfile.MASTER);
+                        profile.setReadingScore(UserProfile.ADVANCED);
                         break;
                 }
             }

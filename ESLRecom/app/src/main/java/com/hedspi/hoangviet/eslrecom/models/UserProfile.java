@@ -10,12 +10,12 @@ import java.util.List;
  * Created by hoangviet on 11/21/16.
  */
 
-public class UserProfile implements Serializable {
+public class UserProfile extends AdapterItem implements Serializable {
     private double learnTimeScore;
     private double readingScore;
-    private double writtingScore;
-    private double listeningScore;
-    private double speakingScore;
+    private double grammarScore;
+    private double vocabularyScore;
+
     private double overallScore;
 //    private int timeCanSpend;
 //    private int testPreference;
@@ -24,8 +24,8 @@ public class UserProfile implements Serializable {
     public static final double BEGINNER = 0;
     public static final double BASIC = 0.3;
     public static final double INTERMEDIATE = 0.5;
-    public static final double ADVANCE = 0.8;
-    public static final double MASTER = 1;
+    public static final double UPPER_INTERMEDIATE = 0.8;
+    public static final double ADVANCED = 1;
 
     public static final double MATCH_SCORE_OVERALL = 0.37;
     public static final double MATCH_SCORE_LEARNLIST = 0.78;
@@ -40,32 +40,84 @@ public class UserProfile implements Serializable {
         this.readingScore = readingScore;
     }
 
-    public double getWrittingScore() {
-        return writtingScore;
+    public void setReadingScore(String level) {
+        switch (level){
+            case Preference.BEGINNER:
+                readingScore = BEGINNER;
+                break;
+            case Preference.ELEMENTARY:
+                readingScore = BASIC;
+                break;
+            case Preference.INTERMEDIATE:
+                readingScore = INTERMEDIATE;
+                break;
+            case Preference.UPPER_INTERMEDIATE:
+                readingScore = UPPER_INTERMEDIATE;
+                break;
+            case Preference.ADVANCE:
+                readingScore = ADVANCED;
+                break;
+        }
     }
 
-    public void setWrittingScore(double writtingScore) {
-        this.writtingScore = writtingScore;
+    public double getGrammarScore() {
+        return grammarScore;
     }
 
-    public double getListeningScore() {
-        return listeningScore;
+    public void setGrammarScore(double grammarScore) {
+        this.grammarScore = grammarScore;
     }
 
-    public void setListeningScore(double listeningScore) {
-        this.listeningScore = listeningScore;
+    public void setGrammarScore(String level) {
+        switch (level){
+            case Preference.BEGINNER:
+                grammarScore = BEGINNER;
+                break;
+            case Preference.ELEMENTARY:
+                grammarScore = BASIC;
+                break;
+            case Preference.INTERMEDIATE:
+                grammarScore = INTERMEDIATE;
+                break;
+            case Preference.UPPER_INTERMEDIATE:
+                grammarScore = UPPER_INTERMEDIATE;
+                break;
+            case Preference.ADVANCE:
+                grammarScore = ADVANCED;
+                break;
+        }
     }
 
-    public double getSpeakingScore() {
-        return speakingScore;
+    public double getVocabularyScore() {
+        return vocabularyScore;
     }
 
-    public void setSpeakingScore(double speakingScore) {
-        this.speakingScore = speakingScore;
+    public void setVocabularyScore(double vocabularyScore) {
+        this.vocabularyScore = vocabularyScore;
+    }
+
+    public void setVocabularyScore(String level) {
+        switch (level){
+            case Preference.BEGINNER:
+                vocabularyScore = BEGINNER;
+                break;
+            case Preference.ELEMENTARY:
+                vocabularyScore = BASIC;
+                break;
+            case Preference.INTERMEDIATE:
+                vocabularyScore = INTERMEDIATE;
+                break;
+            case Preference.UPPER_INTERMEDIATE:
+                vocabularyScore = UPPER_INTERMEDIATE;
+                break;
+            case Preference.ADVANCE:
+                vocabularyScore = ADVANCED;
+                break;
+        }
     }
 
     public double getOverallScore() {
-        overallScore = learnTimeScore*0.1 + readingScore*0.225 + listeningScore*0.225 + writtingScore*0.225 + speakingScore *0.225;
+        overallScore = (readingScore + vocabularyScore + getGrammarScore())/3;
         return overallScore;
     }
 

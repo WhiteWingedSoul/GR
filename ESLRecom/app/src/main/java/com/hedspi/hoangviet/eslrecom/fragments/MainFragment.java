@@ -1,6 +1,7 @@
 package com.hedspi.hoangviet.eslrecom.fragments;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -8,6 +9,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,8 +28,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.DetailActivity;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
+import com.hedspi.hoangviet.eslrecom.TestActivity;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
@@ -140,6 +144,8 @@ public class MainFragment extends Fragment {
 //                                .replace(R.id.fragment, ExperFragment.newInstance())
 //                                .addToBackStack(null)
 //                                .commit();
+
+                        ((MainActivity)getActivity()).startTestActivity(MainActivity.ADDED, new Bundle());
                     }
 
                     @Override
@@ -153,8 +159,20 @@ public class MainFragment extends Fragment {
         recommendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getTagListFromServer();
-
+                UserProfile profile = DatabaseManager.getUserProfile();
+                if (profile.getOverallScore() == 0){
+                    new AlertDialog.Builder(getActivity())
+                            .setTitle("Error")
+                            .setMessage("We need to know your English proficiency first!")
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    ((MainActivity)getActivity()).startTestActivity(MainActivity.ADDED, new Bundle());
+                                }
+                            })
+                            .show();
+                }else{
+                    getTagListFromServer();
+                }
             }
         });
 
@@ -178,7 +196,7 @@ public class MainFragment extends Fragment {
                                 .beginTransaction().setCustomAnimations(
                                 R.anim.slide_in_right, R.anim.slide_out_left,
                                 R.anim.slide_in_left, R.anim.slide_out_right)
-                                .replace(R.id.fragment, Survey1Fragment.newInstance())
+                                .replace(R.id.fragment, Survey8Fragment.newInstance(DatabaseManager.getUserProfile()))
                                 .addToBackStack(null)
                                 .commit();
                     }
@@ -194,7 +212,7 @@ public class MainFragment extends Fragment {
                     .beginTransaction().setCustomAnimations(
                     R.anim.slide_in_right, R.anim.slide_out_left,
                     R.anim.slide_in_left, R.anim.slide_out_right)
-                    .replace(R.id.fragment, Survey1Fragment.newInstance())
+                    .replace(R.id.fragment, Survey8Fragment.newInstance(DatabaseManager.getUserProfile()))
                     .addToBackStack(null)
                     .commit();
         }

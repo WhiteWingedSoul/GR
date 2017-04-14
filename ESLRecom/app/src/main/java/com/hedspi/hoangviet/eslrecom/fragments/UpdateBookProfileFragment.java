@@ -141,10 +141,10 @@ public class UpdateBookProfileFragment extends Fragment {
             case Preference.INTERMEDIATE:
                 ((RadioButton)view.findViewById(R.id.l_answer_c)).setChecked(true);
                 break;
-            case Preference.ADVANCE:
+            case Preference.UPPER_INTERMEDIATE:
                 ((RadioButton)view.findViewById(R.id.l_answer_d)).setChecked(true);
                 break;
-            case Preference.MASTER:
+            case Preference.ADVANCED:
                 ((RadioButton)view.findViewById(R.id.l_answer_e)).setChecked(true);
                 break;
 
@@ -179,10 +179,10 @@ public class UpdateBookProfileFragment extends Fragment {
                     levelGroup1.setOnCheckedChangeListener(levelListener1);
                     /*switch (i) {
                         case R.id.l_answer_d:
-                            bookProfile.setLevelPreference(Preference.ADVANCE);
+                            bookProfile.setLevelPreference(Preference.UPPER_INTERMEDIATE);
                             break;
                         case R.id.l_answer_e:
-                            bookProfile.setLevelPreference(Preference.MASTER);
+                            bookProfile.setLevelPreference(Preference.ADVANCED);
                             break;
                     }*/
                 }
