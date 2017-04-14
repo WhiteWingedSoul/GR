@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  11 APR 2017 19:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  14 APR 2017 20:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1205,6 +1205,17 @@ Package hyperref Warning: Composite letter `\texttilde+e'
  [7
 
 ]
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 53.
+
+(/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.lot)
+\tf@lot=\write8
+\openout8 = `uitthesis.lot'.
+
+ [8
+
+]
 \openout2 = `ProblemState/chapter1.aux'.
 
  (./ProblemState/chapter1.tex
@@ -1452,7 +1463,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 28.
 
-<TheoryBasis/Chapter1Figs/contextmatch.png, id=277, 457.71pt x 198.0198pt>
+<TheoryBasis/Chapter1Figs/contextmatch.png, id=304, 457.71pt x 198.0198pt>
 File: TheoryBasis/Chapter1Figs/contextmatch.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/contextmatch.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/contextmatch.png used on input line 37.
@@ -1480,60 +1491,60 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Warning: Composite letter `\textdotbelow+i'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 49.
+(hyperref)                removing `\textdotbelow' on input line 50.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 49.
+(hyperref)                removing `\h' on input line 50.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 49.
+(hyperref)                removing `\uhorn' on input line 50.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 49.
+(hyperref)                removing `\textdotbelow' on input line 50.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 60.
+(hyperref)                removing `\uhorn' on input line 61.
 
 
 Package hyperref Warning: Composite letter `\textacute+\ohorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 60.
+(hyperref)                removing `\textacute' on input line 61.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 60.
+(hyperref)                removing `\ohorn' on input line 61.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 60.
+(hyperref)                removing `\textdotbelow' on input line 61.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 60.
+(hyperref)                removing `\uhorn' on input line 61.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 60.
+(hyperref)                removing `\textdotbelow' on input line 61.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 60.
+(hyperref)                removing `\ecircumflex' on input line 61.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 60.
+(hyperref)                removing `\textdotbelow' on input line 61.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 60.
+(hyperref)                removing `\acircumflex' on input line 61.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1545,29 +1556,29 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 Package hyperref Warning: Composite letter `\texttilde+y'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\texttilde' on input line 70.
+(hyperref)                removing `\texttilde' on input line 71.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 70.
+(hyperref)                removing `\textdotbelow' on input line 71.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 70.
+(hyperref)                removing `\acircumflex' on input line 71.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 72.
+(hyperref)                removing `\h' on input line 73.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 72.
+(hyperref)                removing `\ocircumflex' on input line 73.
 
-<TheoryBasis/Chapter1Figs/kanseimodel.png, id=292, 349.305pt x 381.425pt>
+<TheoryBasis/Chapter1Figs/kanseimodel.png, id=320, 349.305pt x 381.425pt>
 File: TheoryBasis/Chapter1Figs/kanseimodel.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/kanseimodel.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseimodel.png used on input line 89.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseimodel.png used on input line 90.
 (pdftex.def)             Requested size: 314.37158pt x 343.27931pt.
 
 
@@ -1583,15 +1594,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./TheoryBasis/Chapter1Figs/kanseimodel.png>] <TheoryBasis/Chapter1Figs/semanticspan.png, id=305, 378.41376pt x 250.9375pt>
+[7 <./TheoryBasis/Chapter1Figs/kanseimodel.png>] <TheoryBasis/Chapter1Figs/semanticspan.png, id=333, 378.41376pt x 250.9375pt>
 File: TheoryBasis/Chapter1Figs/semanticspan.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/semanticspan.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/semanticspan.png used on input line 110.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/semanticspan.png used on input line 111.
 (pdftex.def)             Requested size: 340.56923pt x 225.84164pt.
- <TheoryBasis/Chapter1Figs/kanseisynthesis.png, id=307, 478.78876pt x 182.6825pt>
+ <TheoryBasis/Chapter1Figs/kanseisynthesis.png, id=335, 478.78876pt x 182.6825pt>
 File: TheoryBasis/Chapter1Figs/kanseisynthesis.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/kanseisynthesis.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseisynthesis.png used on input line 131.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseisynthesis.png used on input line 132.
 (pdftex.def)             Requested size: 430.9059pt x 164.4127pt.
 
 
@@ -1603,11 +1614,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [8 <./TheoryBasis/Chapter1Figs/semanticspan.png>]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 155.
+(hyperref)                removing `\h' on input line 156.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 155.
+(hyperref)                removing `\ocircumflex' on input line 156.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1615,79 +1626,79 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <./TheoryBasis/Chapter1Figs/kanseisynthesis.png>] <TheoryBasis/Chapter1Figs/cat.png, id=320, 703.62875pt x 500.87125pt>
+[9 <./TheoryBasis/Chapter1Figs/kanseisynthesis.png>] <TheoryBasis/Chapter1Figs/cat.png, id=347, 703.62875pt x 500.87125pt>
 File: TheoryBasis/Chapter1Figs/cat.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/cat.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/cat.png used on input line 162.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/cat.png used on input line 163.
 (pdftex.def)             Requested size: 351.8135pt x 250.435pt.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\UHORN' on input line 180.
+(hyperref)                removing `\UHORN' on input line 181.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 180.
+(hyperref)                removing `\dj' on input line 181.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 180.
+(hyperref)                removing `\h' on input line 181.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 180.
+(hyperref)                removing `\ecircumflex' on input line 181.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 183.
+(hyperref)                removing `\ohorn' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 183.
+(hyperref)                removing `\h' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 183.
+(hyperref)                removing `\ohorn' on input line 184.
 
 
 Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 183.
+(hyperref)                removing `\textacute' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 183.
+(hyperref)                removing `\ecircumflex' on input line 184.
 
 
 Package hyperref Warning: Composite letter `\textasciigrave+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciigrave' on input line 183.
+(hyperref)                removing `\textasciigrave' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 183.
+(hyperref)                removing `\ecircumflex' on input line 184.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 183.
+(hyperref)                removing `\textdotbelow' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 183.
+(hyperref)                removing `\ecircumflex' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 183.
+(hyperref)                removing `\h' on input line 184.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 183.
+(hyperref)                removing `\uhorn' on input line 184.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 183.
+(hyperref)                removing `\textdotbelow' on input line 184.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1695,20 +1706,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10 <./TheoryBasis/Chapter1Figs/cat.png>] <TheoryBasis/Chapter1Figs/firebasedb.png, id=326, 469.755pt x 249.5724pt>
+[10 <./TheoryBasis/Chapter1Figs/cat.png>] <TheoryBasis/Chapter1Figs/firebasedb.png, id=354, 469.755pt x 249.5724pt>
 File: TheoryBasis/Chapter1Figs/firebasedb.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/firebasedb.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb.png used on input line 197.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb.png used on input line 198.
 (pdftex.def)             Requested size: 422.7756pt x 224.61307pt.
- <TheoryBasis/Chapter1Figs/firebasedb2.png, id=327, 469.755pt x 249.5724pt>
+ <TheoryBasis/Chapter1Figs/firebasedb2.png, id=355, 469.755pt x 249.5724pt>
 File: TheoryBasis/Chapter1Figs/firebasedb2.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/firebasedb2.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb2.png used on input line 210.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb2.png used on input line 211.
 (pdftex.def)             Requested size: 422.7756pt x 224.61307pt.
- <TheoryBasis/Chapter1Figs/scrapy.png, id=328, 469.755pt x 240.9pt>
+ <TheoryBasis/Chapter1Figs/scrapy.png, id=356, 469.755pt x 240.9pt>
 File: TheoryBasis/Chapter1Figs/scrapy.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/scrapy.png>
-Package pdftex.def Info: TheoryBasis/Chapter1Figs/scrapy.png used on input line 227.
+Package pdftex.def Info: TheoryBasis/Chapter1Figs/scrapy.png used on input line 228.
 (pdftex.def)             Requested size: 422.7756pt x 216.80798pt.
 
 
@@ -1720,20 +1731,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [11 <./TheoryBasis/Chapter1Figs/firebasedb.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 237.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 236.
+(hyperref)                removing `math shift' on input line 237.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 236.
+(hyperref)                removing `\textdotbelow' on input line 237.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 236.
+(hyperref)                removing `\acircumflex' on input line 237.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1828,7 +1839,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 
 
-] <DesignAnalysis/Chapter1Figs/appflow.png, id=352, 879.285pt x 575.14874pt>
+] <DesignAnalysis/Chapter1Figs/appflow.png, id=379, 879.285pt x 575.14874pt>
 File: DesignAnalysis/Chapter1Figs/appflow.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/appflow.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/appflow.png used on input line 42.
@@ -1875,7 +1886,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15 <./DesignAnalysis/Chapter1Figs/appflow.png>] <DesignAnalysis/Chapter1Figs/userprofile.png, id=358, 584.1825pt x 258.9675pt>
+[15 <./DesignAnalysis/Chapter1Figs/appflow.png>] <DesignAnalysis/Chapter1Figs/userprofile.png, id=385, 584.1825pt x 258.9675pt>
 File: DesignAnalysis/Chapter1Figs/userprofile.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/userprofile.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/userprofile.png used on input line 58.
@@ -1929,7 +1940,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17] <DesignAnalysis/Chapter1Figs/cat.png, id=374, 574.145pt x 443.6575pt>
+[17] <DesignAnalysis/Chapter1Figs/cat.png, id=401, 574.145pt x 443.6575pt>
 File: DesignAnalysis/Chapter1Figs/cat.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/cat.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/cat.png used on input line 131.
@@ -2035,7 +2046,7 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 177.
 
-<DesignAnalysis/Chapter1Figs/dataprocess.png, id=393, 671.50874pt x 236.885pt>
+<DesignAnalysis/Chapter1Figs/dataprocess.png, id=420, 671.50874pt x 236.885pt>
 File: DesignAnalysis/Chapter1Figs/dataprocess.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/dataprocess.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/dataprocess.png used on input line 185.
@@ -2136,6 +2147,11 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 296.
 
 
+Overfull \hbox (16.20149pt too wide) in paragraph at lines 323--336
+ [] 
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
@@ -2144,81 +2160,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [24]
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 369.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 369.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 369.
-
-
-Package hyperref Warning: Composite letter `\textacute+\acircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 369.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 369.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 369.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 369.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+o'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 369.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+u'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 371.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\dj' on input line 371.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 371.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 371.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 371.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 371.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 371.
-
-
-Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 371.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 371.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 371.
+(hyperref)                removing `\uhorn' on input line 371.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
@@ -2233,7 +2179,30 @@ Package hyperref Warning: Composite letter `\textacute+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 371.
 
-)
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 371.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 371.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+o'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 371.
+
+<DesignAnalysis/Chapter1Figs/contextmatching.png, id=548, 494.84875pt x 214.8025pt>
+File: DesignAnalysis/Chapter1Figs/contextmatching.png Graphic file (type png)
+ <use DesignAnalysis/Chapter1Figs/contextmatching.png>
+Package pdftex.def Info: DesignAnalysis/Chapter1Figs/contextmatching.png used on input line 381.
+(pdftex.def)             Requested size: 445.35977pt x 193.32045pt.
+
+Overfull \hbox (4.34204pt too wide) in paragraph at lines 381--385
+ [] 
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -2241,6 +2210,132 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [25]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 390.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 390.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+i'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 390.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26 <./DesignAnalysis/Chapter1Figs/contextmatching.png>]
+
+Package hyperref Warning: Composite letter `\textdotbelow+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 428.
+
+
+Package hyperref Warning: Composite letter `\textacute+\ohorn'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 428.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ohorn' on input line 428.
+
+<DesignAnalysis/Chapter1Figs/inputoutputexample.png, id=582, 698.61pt x 252.945pt>
+File: DesignAnalysis/Chapter1Figs/inputoutputexample.png Graphic file (type png)
+ <use DesignAnalysis/Chapter1Figs/inputoutputexample.png>
+Package pdftex.def Info: DesignAnalysis/Chapter1Figs/inputoutputexample.png used on input line 436.
+(pdftex.def)             Requested size: 489.02367pt x 177.06029pt.
+
+Overfull \hbox (48.00594pt too wide) in paragraph at lines 436--440
+ [] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27]
+Overfull \hbox (9.34532pt too wide) in paragraph at lines 451--461
+ [] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28 <./DesignAnalysis/Chapter1Figs/inputoutputexample.png>]
+
+Package hyperref Warning: Composite letter `\textdotbelow+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\dj' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 501.
+
+
+Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textdotbelow' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 501.
+
+
+Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\ecircumflex' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\h' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\uhorn' on input line 501.
+
+
+Package hyperref Warning: Composite letter `\textacute+\acircumflex'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textacute' on input line 501.
+
+
+Package hyperref Warning: Glyph not defined in PD1 encoding,
+(hyperref)                removing `\acircumflex' on input line 501.
+
+)
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29]
 \openout2 = `Result/chapter1.aux'.
 
  (./Result/chapter1.tex
@@ -2276,7 +2371,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 7.
 
-) [26
+) [30
 
 
 
@@ -2324,7 +2419,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 2.
 
-) [27
+) [31
 
 
 
@@ -2338,8 +2433,8 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 \openout2 = `Appendix3/appendix3.aux'.
 
  (./Appendix3/appendix3.tex) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.bbl (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.brf)
-\tf@brf=\write8
-\openout8 = `uitthesis.brf'.
+\tf@brf=\write9
+\openout9 = `uitthesis.brf'.
 
 
 
@@ -2356,8 +2451,8 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\h' on input line 1.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
- [28
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
+ [32
 
 
 
@@ -2373,28 +2468,28 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.aux (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Phieubangiao/Phieubangiao.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Acknowledgement/acknowledgement.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Abstract/abstract.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/ProblemState/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/TheoryBasis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/DesignAnalysis/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Result/chapter1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Conclusions/conclusions.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix1/appendix1.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix2/appendix2.aux) (/Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/Appendix3/appendix3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `uitthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 98B5B74FA9109730F33BD5CFA2BE7E78;5094.
 Package rerunfilecheck Info: File `uitthesis.brf' has not changed.
 (rerunfilecheck)             Checksum: 8798497306A83C77067422B364A3B07F;838.
  ) 
 Here is how much of TeX's memory you used:
- 14592 strings out of 493014
- 213925 string characters out of 6133351
- 567126 words of memory out of 5000000
- 17522 multiletter control sequences out of 15000+600000
+ 14632 strings out of 493014
+ 214896 string characters out of 6133351
+ 567483 words of memory out of 5000000
+ 17541 multiletter control sequences out of 15000+600000
  29494 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,13n,51p,1564b,1982s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/vntex/t5.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/urwvn/uhvr8v.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (36 pages, 1271434 bytes).
+ 43i,16n,51p,1564b,1982s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/vntex/t5.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/urwvn/uhvr8v.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
+Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (41 pages, 1331282 bytes).
 PDF statistics:
- 656 PDF objects out of 1000 (max. 8388607)
- 574 compressed objects within 6 object streams
- 220 named destinations out of 1000 (max. 500000)
- 365 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 720 PDF objects out of 1000 (max. 8388607)
+ 627 compressed objects within 7 object streams
+ 236 named destinations out of 1000 (max. 500000)
+ 399 words of extra memory for PDF output out of 10000 (max. 10000000)
 

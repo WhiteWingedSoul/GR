@@ -43,6 +43,7 @@ Mô hình thuật toán được biểu diễn ở hình sau :
   \end{center}
 \end{figure}
 \subsection{Tổng quan}	
+\label{ContextMatchingTheory}
 Cấu trúc cơ bản của thuật toán là ${ON <event> IF <condition> THEN <action>}$. Trong đó $<event>$ có thể là context data cần tính (event khởi động), hoặc là kết quả trả về của một lần so sánh ở phía trên, $<condition>$ là cách so sánh giữa một input context property với một output context property sẽ được báo cáo dưới đây, $<action>$ là kết quả của việc đánh giá trên $<condition>$ và nó có thể là việc tiếp tục so sánh input và output tiếp theo hoặc là giá trị Boolean quyết định độ phù hợp của context (action cuối cùng).
 \subsection{Input context và output context }	
 Input context là nguyên mẫu để so sánh, các kết quả phù hợp là những kết quả phải có độ match với input context lớn nhất định. Output context là giải pháp tiềm năng cho vấn đề cần giải quyết trong bài toán, là một số lượng những thực thể đem so sánh với input context, được trích xuất từ cấu trúc dữ liệu. Từ input và output context, cần xây dựng một bộ các context properties là những thuộc tính bên trong quyết định context. Việc so sánh sẽ là so sánh giữa các context property.

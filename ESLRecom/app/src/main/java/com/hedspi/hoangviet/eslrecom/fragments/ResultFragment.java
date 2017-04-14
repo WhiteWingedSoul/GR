@@ -147,8 +147,6 @@ public class ResultFragment extends Fragment {
             }
         });
 
-
-
     }
 
     private double contextMatching(Material material){

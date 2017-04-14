@@ -315,6 +315,7 @@ def tfidf(word, blob, bloblist):
 
 Kết quả thu được là tập từ khoá ứng với mỗi tài liệu như sau:
 
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|l|p{10cm}|}
 \hline
@@ -326,12 +327,13 @@ Dictionary of medical terms & medicine, terms, dictionary, zymotic, surgery,  sp
 \hline
 Teaching reading vocabulary & reading, comprehension, lecture, subjects, vocabulary, english, curriculum\\
 \hline
-\pbox{5cm}{TOEFL reading and writing workout} & examination, guides, test, toefl, foreign, ability, testing, question\\
-\hline
 .... & ....\\
 \hline
 \end{tabular}
+\caption{Ví dụ kết quả phân tích dữ liệu}
+\label{DataProcessResult}
 \end{center}
+\end{table}
 
 Để thu được những tag tiêu biểu nhất, hệ thống áp dụng điều kiện ràng buộc \{\textit{mỗi từ khoá phải xuất hiện ít nhất trong 5 tài liệu}\} để loại đi các từ khoá thiểu số. 
 
@@ -351,7 +353,7 @@ Sau bước xử lý dữ liệu, ta xây dựng được profile của tài li�
 
 Ngoài ra, một bảng chứa các từ khoá sắp xếp theo thứ tần xuất xuất hiện giảm dần cũng được xây dựng để hỗ trợ người dùng trong bước xác định nguyện vọng như đã đề cập ở bên trên. Chúng sẽ được lưu trữ trong CSDL của Firebase và trả về client mỗi khi có request gửi lên.
 
-\begin{lstlisting}[style=pythoncode, breaklines = true]
+\begin{lstlisting}[style=pythoncode, breaklines = true, label = PopularValue]
 'tagList': [
 	{'name': 'teaching', 'score': 429},
 	{'name': 'writing', 'score': 389},
@@ -365,6 +367,132 @@ Ngoài ra, một bảng chứa các từ khoá sắp xếp theo thứ tần xu�
 
 \section{So sánh và đưa ra tư vấn tài liệu học }
 
+Sau khi có được \textit{User Profile} người dùng, kết hợp với \textit{Document Profile} đã xử lý trước lấy từ cơ sở tri thức Firebase. Hệ thống sẽ thực hiện so sánh sử dụng thuật toán Context Matching như đã trình bày ở (\ref{ContextMatchingTheory}) để đưa ra kết quả tư vấn. \\
+
+Cụ thể, với bài toán tư vấn tài liệu Tiếng Anh dựa vào trình độ và nguyện vọng của người dùng, \textit{Input Context} và \textit{Output Context} được sử dụng là \textit{User Profile} và \textit{Document Profile}. Các thuộc tính được quan tâm đến tương ứng gồm \{\textit{"trình độ"}, \textit{"nguyện vọng"}\} và \{\textit{"tên tài liệu"}, \textit{"mô tả"}, \textit{"tập từ khoá"}\}.
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.9]{contextmatching}
+    \else
+      \includegraphics[scale=0.9]{contextmatching}
+    \fi
+    \caption{So sánh độ tương đồng giữa người dùng và tài liệu}
+    \label{ContextMatchingModel}
+  \end{center}
+\end{figure}
+
+\subsection{Tính giá trị match $e$}
+
+Do đặc thù bài toán với số lượng thuộc tính của \textit{User Profile} và \textit{Document Profile} không tương đồng, cộng với việc số liên kết được xét đến trong quá trình Context-Matching là ít, việc áp dụng hoàn toàn cách tính của thuật toán được đề xuất sẽ cho ra kết quả có độ chính xác và độ đa dạng tương đối thấp. 
+
+Cụ thể là với cách tính giá trị $e$ truyền thống, $e$ chỉ có thể mang một trong hai giá trị $1$ - phù hợp, $0$ - không phù hợp. Xét một ví dụ có input context là \textit{User profile} \{\textit{"Intermediate"}, \textit{"grammar, ielts, video"}\} và các output context cần so sánh gồm:
+
+\begin{enumerate}
+	\item \textit{\textbf{DP1}} \{\textit{"Study English - Intermediate Level. [Series 1], Episode 25"}, \textit{"video interviews with native speakers on topics with relevance to IELTS"},  \textit{"grammar, ielts, video"}\} 
+	\item \textit{\textbf{DP2}} \{\textit{"Funny phonics \& silly spelling."}, \textit{"For English learners of intermediate proficiency"},  \textit{"grammar, ielts, video, funny, phonetic, spelling, literature, conversation"}\}
+	\item \textit{\textbf{DP3}} \{\textit{"6 IELTS Grammar Tests."}, \textit{"For English learners of intermediate proficiency"},  \textit{"grammar, ielts, test"}\}
+\end{enumerate} 
+
+Dễ thấy, nếu áp dụng đúng nguyên mẫu thuật toán.
+
+Ta có $e_{DP1}(1) = e_{DP2}(1) = e_{DP3}(1) = 1 $ (do cả 3 tài liệu đều thuộc trình độ Intermediate) và $e_{DP1}(2) = e_{DP2}(2) = 1 $ , $e_{DP3}(2) = 0$ ($DP1$ và $DP2$ chứa đủ từ khoá nguyện vọng của người dùng, trong khi $DP3$ thiếu mất \textit{"video"})
+	  
+Sau khi kết thúc tính toán, ta sẽ có độ khớp của 3 tài liệu trên với người dùng là : $rv_{DP1} = rv_{DP2} > rv_{DP3}$. Kết quả này có 2 nhược điểm:
+
+\begin{itemize}
+	\item Nội dung tài liệu $DP1$ chắc chắn sẽ phù hợp hơn so với $DP2$ do tập từ khoá của $DP1$ trùng khớp hoàn toàn với nguyện vọng người dùng, trong khi của $DP2$ chỉ khớp một phần. Tuy nhiên, giá trị khớp $rv$ của 2 tài liệu này lại là như nhau.
+	\item Tài liệu $DP3$ tương đối phù hợp với nguyện vọng của người dùng, thậm chí có thể còn phù hợp hơn $DP2$ thì lại có $rv$ thấp hơn. Tuy thiếu mất từ khoá \textit{"video"}, nhưng trong tình huống này, nguyện vọng chính của người dùng học là học ngữ pháp IELTS. Dù hình thức học không phải là video đi chăng nữa thì nó vẫn là kết quả phù hợp với nguyện vọng chấp nhận được.
+\end{itemize}
+
+Vì vậy, để giải quyết các nhược điểm trên, đề tài đề xuất một cách tính giá trị $e$ mới phù hợp với điều kiện bài toán hơn như sau:\\
+
+\textbf{Khi so sánh proficiency - name/abstract}: Giữ nguyên cách tính như cũ. Tìm xem từ khoá trình độ người dùng có trong tên hoặc miêu tả của tài liệu hay không \: -> $e(1) = 1 | 0$. Thông thường, giá trị trình độ tổng thể sẽ được dùng để so sánh. Trong trường hợp người dùng muốn tìm kiếm về tài liệu liên quan đến từ vựng, ngữ pháp và đọc hiểu thì sẽ sử dụng giá trị trình độ tương ứng để so sánh.\\
+
+\textbf{Khi so sánh preference - tags}: Giá trị $e \:[0.00...1.00]$ được tính bằng trung bình cộng của (Số nguyện vọng khớp/Tổng số nguyện vọng) và (Giá trị phổ biến của các từ khoá khớp/Tổng giá trị phổ biến của tập từ khoá trong tài liệu):
+
+\begin{equation}
+e = \dfrac{1}{2}\:\Big(\dfrac{|P \cap T|}{|P|}\:+\:\dfrac{\sum\limits_{P \cap T}{ts}}{\sum\limits_{T}{ts}}\Big) 
+\end{equation}
+trong đó $P = $ tập nguyện vọng người dùng
+
+$T = $ tập từ khoá của tài liệu
+
+$ts = $ giá trị phổ biến của từ khoá, là số lần xuất hiện của từ khoá đó trên tất cả tài liệu (\ref{PopularValue})
+
+\subsection{Ví dụ với case study}
+
+Một người dùng thực hiện bài kiểm tra và đạt kết quả trình độ cao cấp (\textit{advanced}). Anh ta có nhu cầu học từ vựng tiếng Anh văn phòng. Hệ thống sẽ thử matching User Profile này với cuốn sách "\textit{Oxford business English dictionary : for learners of English}".
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.7]{inputoutputexample}
+    \else
+      \includegraphics[scale=0.7]{inputoutputexample}
+    \fi
+    \caption{Input context \& Output context}
+    \label{InputOutputExample}
+  \end{center}
+\end{figure}
+
+Quá trình Context-Matching sẽ diễn ra như sau:\\
+
+\textbf{Bước 1: Đánh giá match và xác định $e$}\\
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|p{4cm}|p{8cm}|c|}
+\hline
+\textbf{ No } & \textbf{Input} & \textbf{Output} & \textbf{\textit{\: e \:}} \\
+\hline
+1 & advanced & \pbox{8cm}{Oxford business English dictionary : for advanced learners\\words used in Financy, Marketing, 
+HR, etc.} & 1\\
+\hline
+2 & vocabulary, business, conversation & business, vocabulary, financy, pronounciation & 0.6788\\
+\hline
+\end{tabular}
+\caption{Xác định $e$}
+\label{CaculateE}
+\end{center}
+\end{table}
+
+Ta có $e_1 = 1$,
 
 
+Giá trị phổ biến của "vocabulary", "business", "conversation", "financy", "pronounciation" lần lượt là 383, 288, 158, 52, 248.\\ 
+
+=> $e_2 = \dfrac{1}{2}\:\Big(\dfrac{2}{3}\:+\:\dfrac{383+288}{383+288+52+248}\Big)$ $~=$ 0.6788 \\
+
+\textbf{Bước 2: Xác định $w$}\\
+
+Giá trị $w$ được chuyên gia quy định sẵn trong hệ thống, trong ví dụ này, chúng có gía trị $w_1 = 0.37$ \:\&\: $w_2 = 0.78$\\
+
+\textbf{Bước 3: Tính giá trị $av$}\\
+
+$\>$$\>$$\>$ $av_1 = e_1 * w_1 = 0.37$
+
+$\>$$\>$$\>$ $av_2 = e_2 * w_2 = 0.5294$\\
+
+\textbf{Bước 4: Tổng $sav$}\\
+
+$\>$$\>$$\>$ $sav = av_1 + av_2 = 0.8994$\\
+
+\textbf{Bước 5: Tính giá trị match lớn nhất $mpv$}\\
+
+$\>$$\>$$\>$ $mpv = w_1 + w_2 = 1.15 $\\
+
+\textbf{Bước 6: Tính độ phù hợp $rv$}\\
+
+$\>$$\>$$\>$ $rv = \dfrac{sav}{mpv} = \dfrac{0.8994}{1.15} = 0.782 $\\
+
+\textbf{Bước 7: So sánh với giá trị ngưỡng $t$}\\
+
+Giá trị ngưỡng $t$ được chuyên gia quy định sẵn trong hệ thống, trong ví dụ này, nó có giá trị $t = 0.65$.
+
+Do $rv = 0.782 > t$ => Kết quả là tài liệu được xét có phù hợp với nguyện vọng và trình độ người dùng.
+	
 \section{Áp dụng Kansei Engineering để cải thiện kết quả tư vấn}
