@@ -163,7 +163,7 @@ public class ResultFragment extends Fragment {
     }
 
     private double matchOverall(Material material){
-        String level = profile.getOverallPreference();
+        String level = profile.returnOverallPreference();
         if (material.getName().contains(level) || material.getTag().contains(level))
             return DatabaseManager.getPreference().getOverallScore();
         else

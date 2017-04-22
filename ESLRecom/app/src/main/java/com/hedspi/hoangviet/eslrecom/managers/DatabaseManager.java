@@ -1,33 +1,21 @@
 package com.hedspi.hoangviet.eslrecom.managers;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
-import com.hedspi.hoangviet.eslrecom.fragments.Survey1Fragment;
 import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.Question;
 import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
-import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.support.ConnectionSource;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -121,9 +109,11 @@ public class DatabaseManager {
         return list;
     }
 
+    public static void setUserProfile(UserProfile userProfile) {
+        DatabaseManager.userProfile = userProfile;
+    }
+
     public static UserProfile getUserProfile(){
-        if (userProfile==null)
-            userProfile = new UserProfile();
         return userProfile;
     }
 

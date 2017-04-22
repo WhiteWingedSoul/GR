@@ -11,15 +11,77 @@ import java.util.List;
  */
 
 public class UserProfile extends AdapterItem implements Serializable {
-    private double learnTimeScore;
     private double readingScore;
     private double grammarScore;
     private double vocabularyScore;
-
     private double overallScore;
-//    private int timeCanSpend;
-//    private int testPreference;
     private List<String> learnList = new ArrayList<>();
+    private String role;
+    private String uid;
+    private String name;
+    private String email;
+    private String avatarLink;
+    private boolean testProf = false;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAvatarLink() {
+        return avatarLink;
+    }
+
+    public void setAvatarLink(String avatarLink) {
+        this.avatarLink = avatarLink;
+    }
+
+    public boolean isTestProf() {
+        return testProf;
+    }
+
+    public void setTestProf(boolean testProf) {
+        this.testProf = testProf;
+    }
+
+    public void setReadingScore(double readingScore) {
+        this.readingScore = readingScore;
+    }
+
+    public void setGrammarScore(double grammarScore) {
+        this.grammarScore = grammarScore;
+    }
+
+    public double getOverallScore() {
+        return overallScore;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     public static final double BEGINNER = 0;
     public static final double BASIC = 0.3;
@@ -36,11 +98,11 @@ public class UserProfile extends AdapterItem implements Serializable {
         return readingScore;
     }
 
-    public void setReadingScore(double readingScore) {
+    public void calculateReadingScore(double readingScore) {
         this.readingScore = readingScore;
     }
 
-    public void setReadingScore(String level) {
+    public void calculateReadingScore(String level) {
         switch (level){
             case Preference.BEGINNER:
                 readingScore = BEGINNER;
@@ -64,11 +126,11 @@ public class UserProfile extends AdapterItem implements Serializable {
         return grammarScore;
     }
 
-    public void setGrammarScore(double grammarScore) {
+    public void calculateGrammarScore(double grammarScore) {
         this.grammarScore = grammarScore;
     }
 
-    public void setGrammarScore(String level) {
+    public void calculateGrammarScore(String level) {
         switch (level){
             case Preference.BEGINNER:
                 grammarScore = BEGINNER;
@@ -96,7 +158,7 @@ public class UserProfile extends AdapterItem implements Serializable {
         this.vocabularyScore = vocabularyScore;
     }
 
-    public void setVocabularyScore(String level) {
+    public void calculateVocabularyScore(String level) {
         switch (level){
             case Preference.BEGINNER:
                 vocabularyScore = BEGINNER;
@@ -116,7 +178,7 @@ public class UserProfile extends AdapterItem implements Serializable {
         }
     }
 
-    public double getOverallScore() {
+    public double calculateOverallScore() {
         overallScore = (readingScore + vocabularyScore + getGrammarScore())/3;
         return overallScore;
     }
@@ -149,25 +211,17 @@ public class UserProfile extends AdapterItem implements Serializable {
         this.learnList = learnList;
     }
 
-    public double getLearnTimeScore() {
-        return learnTimeScore;
-    }
-
-    public void setLearnTimeScore(double learnTimeScore) {
-        this.learnTimeScore = learnTimeScore;
-    }
-
-    public String getOverallPreference(){
-        if(getOverallScore() == 0)
+    public String returnOverallPreference(){
+        if(calculateOverallScore() == 0)
             return Preference.BEGINNER;
-        else if(getOverallScore()<=0.3)
+        else if(calculateOverallScore()<=0.3)
             return Preference.ELEMENTARY;
-        else if (getOverallScore()<=0.75)
+        else if (calculateOverallScore()<=0.75)
             return Preference.INTERMEDIATE;
         else return Preference.ADVANCE;
     }
 
-    public double getBestMatch(){
+    public double calculateBestMatch(){
         return MATCH_SCORE_LEARNLIST+MATCH_SCORE_OVERALL; //+MATCH_SCORE_TIMESPEND+MATCH_SCORE_TESTPREFER;
     }
 }

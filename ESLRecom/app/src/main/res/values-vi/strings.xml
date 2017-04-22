@@ -38,7 +38,7 @@
     <string name="profile1c1">" Mới học"</string>
     <string name="profile1c2">" Cơ bản"</string>
     <string name="profile1c3">" Trung bình"</string>
-    <string name="profile1c4">" Nâng cao"</string>
+    <string name="profile1c4">" Khá"</string>
     <string name="profile1c5">" Thành thạo"</string>
     <string name="profile2t">"Chủ đề về đề thi:"</string>
     <string name="profile2c1">" Không"</string>
@@ -108,5 +108,8 @@
     <string name="survey8a6">"\tNgữ pháp"</string>
     <string name="survey8a7">"\tViết văn"</string>
 
+    <string name="reading">"Đọc hiểu"</string>
+    <string name="grammar">"Ngữ pháp"</string>
+    <string name="vocabulary">"Từ vựng"</string>
 
 </resources>

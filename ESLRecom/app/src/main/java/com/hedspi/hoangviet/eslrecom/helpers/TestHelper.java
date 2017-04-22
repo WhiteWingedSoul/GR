@@ -23,6 +23,7 @@ public class TestHelper {
     public static String upperAchivedDifficulty;
     public static String currentType;
     public static double currentPR;
+    public static int questionNum = 1;
 
     public static final double UBN = 0.02;
     public static final double LBM = 7;
@@ -41,6 +42,7 @@ public class TestHelper {
         currentType = type;
         rightAnsweredQuestionNum = 0;
         wrongAnsweredQuestionNum = 0;
+        questionNum = 0;
         lowerAchivedDifficulty = null;
         upperAchivedDifficulty = null;
     }
@@ -61,6 +63,8 @@ public class TestHelper {
         }else{
             wrongAnsweredQuestionNum++;
         }
+
+        questionNum++;
 
         caculatePR();
 
@@ -158,6 +162,10 @@ public class TestHelper {
 
     public static String getCurrentType() {
         return currentType;
+    }
+
+    public static int getQuestionNum() {
+        return questionNum;
     }
 
     private static void caculatePR(){

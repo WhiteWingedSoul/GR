@@ -40,8 +40,8 @@
     <string name="profile1c1">" Beginner"</string>
     <string name="profile1c2">" Basic"</string>
     <string name="profile1c3">" Average"</string>
-    <string name="profile1c4">" Advance"</string>
-    <string name="profile1c5">" Master"</string>
+    <string name="profile1c4">" Upper-Intermediate"</string>
+    <string name="profile1c5">" Advanced"</string>
     <string name="profile2t">"Test theme:"</string>
     <string name="profile2c1">" None"</string>
     <string name="profile2c2">" IELTS"</string>
@@ -109,6 +109,10 @@
     <string name="survey8a5">"\tVocabulary"</string>
     <string name="survey8a6">"\tGrammar"</string>
     <string name="survey8a7">"\tWritting"</string>
+    
+    <string name="reading">Reading</string>
+    <string name="grammar">Grammar</string>
+    <string name="vocabulary">Vocabulary</string>
 
 
     <string-array name="language">

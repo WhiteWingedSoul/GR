@@ -3,11 +3,15 @@ package com.hedspi.hoangviet.eslrecom.managers;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Handler;
+import android.support.v7.widget.CardView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.Transformation;
 
 public class AnimationHelper {
     public static void playNotifyAnimation(View view){
@@ -102,6 +106,23 @@ public class AnimationHelper {
         set.setStartDelay(delay);
 
         set.start();
+    }
+
+    public void expandCardView(final CardView cardView, int height) {
+
+        ValueAnimator anim = ValueAnimator.ofInt(cardView.getMeasuredHeightAndState(),
+                height);
+        anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                int val = (Integer) valueAnimator.getAnimatedValue();
+                ViewGroup.LayoutParams layoutParams = cardView.getLayoutParams();
+                layoutParams.height = val;
+                cardView.setLayoutParams(layoutParams);
+            }
+        });
+        anim.start();
+
     }
 
 }

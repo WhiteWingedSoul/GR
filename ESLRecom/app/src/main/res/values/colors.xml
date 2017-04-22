@@ -3,7 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3F51B5</color>
-    <color name="colorBolderText">#bf6f31</color>
+    <color name="colorBolderText">#373E46</color>
     <color name="colorBlue">#2f80c3</color>
     <color name="colorYellow">#f8dc2d</color>
     <color name="colorOrange">#fab84b</color>
@@ -11,4 +11,12 @@
     <color name="colorRed">#E35342</color>
     <color name="colorSmoothText">#CABBBBBB</color>
     <color name="colorDefaultText">#555555</color>
+    <color name="colorWrong">#BE4D46</color>
+    <color name="colorChooseRight">#63A34B</color>
+    <color name="colorProgressColor">#EB9546</color>
+    <color name="blue">#3F51B5</color>
+    <color name="red">#F44336</color>
+    <color name="colorToolbar">#607D8B</color>
+    <color name="defaultLayoutColor">#EEEEEE</color>
+    <color name="white">#fff</color>
 </resources>

@@ -7,7 +7,8 @@ public class MyFirebaseApp extends android.app.Application {
     @Override
     public void onCreate() {
         super.onCreate();
-    /* Enable disk persistence  */
+    /* Enable disk persisaddListenerForSingleValueEventtence  */
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        FirebaseDatabase.getInstance().getReference().keepSynced(true);
     }
 }

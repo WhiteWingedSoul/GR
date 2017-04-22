@@ -8,7 +8,6 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -28,10 +27,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.hedspi.hoangviet.eslrecom.DetailActivity;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
-import com.hedspi.hoangviet.eslrecom.TestActivity;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
@@ -49,6 +46,7 @@ import java.util.Locale;
 public class MainFragment extends Fragment {
     private View view;
     private UserProfile profile;
+    private AlertDialog dialog;
 
     private SharedPreferences setting;
 
@@ -77,6 +75,20 @@ public class MainFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final SharedPreferences.Editor editor = setting.edit();
+
+        UserProfile profile = DatabaseManager.getUserProfile();
+        if (!profile.isTestProf()) {
+            dialog = new AlertDialog.Builder(getActivity())
+                    .setTitle("Error")
+                    .setMessage("We need to know your English proficiency first!")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            ((MainActivity) getActivity()).startTestActivity(MainActivity.ADDED, new Bundle());
+                        }
+                    })
+                    .create();
+            dialog.show();
+        }
 
         ImageView configButton = (ImageView) view.findViewById(R.id.configButton);
         Button recommendButton = (Button) view.findViewById(R.id.recommendButton);
@@ -160,16 +172,8 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 UserProfile profile = DatabaseManager.getUserProfile();
-                if (profile.getOverallScore() == 0){
-                    new AlertDialog.Builder(getActivity())
-                            .setTitle("Error")
-                            .setMessage("We need to know your English proficiency first!")
-                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    ((MainActivity)getActivity()).startTestActivity(MainActivity.ADDED, new Bundle());
-                                }
-                            })
-                            .show();
+                if (!profile.isTestProf()){
+                    dialog.show();
                 }else{
                     getTagListFromServer();
                 }

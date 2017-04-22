@@ -1,12 +1,11 @@
 package com.hedspi.hoangviet.eslrecom;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -29,41 +28,35 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
-import com.hedspi.hoangviet.eslrecom.commons.Preference;
-import com.hedspi.hoangviet.eslrecom.fragments.MainFragment;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.Material;
-import com.hedspi.hoangviet.eslrecom.models.Question;
-import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class SplashActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CallbackManager callbackManager;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private SharedPreferences.Editor editor;
+    private FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
+        SharedPreferences profile = getSharedPreferences("profile", 0);
+        editor = profile.edit();
         callbackManager = CallbackManager.Factory.create();
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
+                    mUser = user;
                     // User is signed in
                     Log.d("LOG", "User Login:"+user.getUid());
                 } else {
@@ -74,27 +67,32 @@ public class SplashActivity extends AppCompatActivity {
             }
         };
 
-        loginButton = (LoginButton) findViewById(R.id.loginButton);
-        loginButton.setReadPermissions("email", "public_profile");
+        String uid = profile.getString("uid", null);
+        if (uid!=null){
+            getUserProfile(uid);
+        }else {
 
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                Log.d("FB Login Successed:", loginResult.getAccessToken().getToken());
-                handleFacebookAccessToken(loginResult.getAccessToken());
+            loginButton = (LoginButton) findViewById(R.id.loginButton);
+            loginButton.setReadPermissions("email", "public_profile");
 
-            }
+            loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+                @Override
+                public void onSuccess(LoginResult loginResult) {
+                    Log.d("FB Login Successed:", loginResult.getAccessToken().getToken());
+                    handleFacebookAccessToken(loginResult.getAccessToken());
+                }
 
-            @Override
-            public void onCancel() {
-                // App code
-            }
+                @Override
+                public void onCancel() {
+                    // App code
+                }
 
-            @Override
-            public void onError(FacebookException exception) {
-                Log.d("FB Login Failed: ",exception.getMessage());
-            }
-        });
+                @Override
+                public void onError(FacebookException exception) {
+                    Log.d("FB Login Failed: ", exception.getMessage());
+                }
+            });
+        }
     }
 
     private void handleFacebookAccessToken(AccessToken token) {
@@ -112,9 +110,50 @@ public class SplashActivity extends AppCompatActivity {
                             Log.w("LOG", "Firebase signInWithCredential", task.getException());
                             Toast.makeText(SplashActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                        }else {
+                            FirebaseUser user = task.getResult().getUser();
+                            mUser = user;
+                            getUserProfile(user.getUid());
                         }
                     }
                 });
+    }
+
+    private void getUserProfile(final String uid){
+        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        database.child(Common.USERS).orderByChild("uid").equalTo(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Log.d("LOG","ahihi");
+                UserProfile profile;
+                if (dataSnapshot.getValue() == null){
+                    profile = new UserProfile();
+                    profile.setName(mUser.getDisplayName());
+                    profile.setAvatarLink(mUser.getPhotoUrl().toString());
+                    profile.setEmail(mUser.getEmail());
+                    profile.setRole(Common.ROLE_USER);
+                    profile.setUid(uid);
+                    editor.putString("uid", uid);
+                    editor.commit();
+
+                    database.child(Common.USERS).child(uid).setValue(profile);
+//                    DatabaseReference key = database.child(Common.USERS).push();
+//                    profile.setKeyId(key.getKey());
+//                    key.setValue(profile);
+                }else{
+                    profile = dataSnapshot.getChildren().iterator().next().getValue(UserProfile.class);
+                }
+
+                DatabaseManager.setUserProfile(profile);
+                startMainActivity();
+                SplashActivity.this.finish();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -157,7 +196,6 @@ public class SplashActivity extends AppCompatActivity {
         Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
         SplashActivity.this.startActivity(mainIntent);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        SplashActivity.this.finish();
     }
 
 }

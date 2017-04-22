@@ -55,19 +55,19 @@ public class Survey2Fragment extends Fragment {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
                     case R.id.answer_a:
-                        profile.setReadingScore(UserProfile.BEGINNER);
+                        profile.calculateReadingScore(UserProfile.BEGINNER);
                         break;
                     case R.id.answer_b:
-                        profile.setReadingScore(UserProfile.BASIC);
+                        profile.calculateReadingScore(UserProfile.BASIC);
                         break;
                     case R.id.answer_c:
-                        profile.setReadingScore(UserProfile.INTERMEDIATE);
+                        profile.calculateReadingScore(UserProfile.INTERMEDIATE);
                         break;
                     case R.id.answer_d:
-                        profile.setReadingScore(UserProfile.UPPER_INTERMEDIATE);
+                        profile.calculateReadingScore(UserProfile.UPPER_INTERMEDIATE);
                         break;
                     case R.id.answer_e:
-                        profile.setReadingScore(UserProfile.ADVANCED);
+                        profile.calculateReadingScore(UserProfile.ADVANCED);
                         break;
                 }
             }

@@ -59,8 +59,6 @@ public class TestFragment extends Fragment {
         List<String> answers = new ArrayList<>();
         answers.add(question.getTrueAnswer());
         answers.addAll(question.formWrongAnswerList());
-        TextView questionTextView = (TextView) view.findViewById(R.id.question);
-        questionTextView.setText(question.getQuestion());
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());

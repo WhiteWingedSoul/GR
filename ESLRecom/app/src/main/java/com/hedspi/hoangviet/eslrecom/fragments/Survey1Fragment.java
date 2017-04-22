@@ -51,21 +51,21 @@ public class Survey1Fragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch(i) {
-                    case R.id.answer_a:
-                        profile.setLearnTimeScore(UserProfile.BEGINNER);
-                        break;
-                    case R.id.answer_b:
-                        profile.setLearnTimeScore(UserProfile.BASIC);
-                        break;
-                    case R.id.answer_c:
-                        profile.setLearnTimeScore(UserProfile.INTERMEDIATE);
-                        break;
-                    case R.id.answer_d:
-                        profile.setLearnTimeScore(UserProfile.UPPER_INTERMEDIATE);
-                        break;
-                    case R.id.answer_e:
-                        profile.setLearnTimeScore(UserProfile.ADVANCED);
-                        break;
+//                    case R.id.answer_a:
+//                        profile.setLearnTimeScore(UserProfile.BEGINNER);
+//                        break;
+//                    case R.id.answer_b:
+//                        profile.setLearnTimeScore(UserProfile.BASIC);
+//                        break;
+//                    case R.id.answer_c:
+//                        profile.setLearnTimeScore(UserProfile.INTERMEDIATE);
+//                        break;
+//                    case R.id.answer_d:
+//                        profile.setLearnTimeScore(UserProfile.UPPER_INTERMEDIATE);
+//                        break;
+//                    case R.id.answer_e:
+//                        profile.setLearnTimeScore(UserProfile.ADVANCED);
+//                        break;
                 }
             }
         });
@@ -76,7 +76,7 @@ public class Survey1Fragment extends Fragment {
             public void onClick(View view) {
                 if(radioGroup.getCheckedRadioButtonId() != -1){
                     if (radioGroup.getCheckedRadioButtonId() == R.id.answer_a){
-                        profile.setReadingScore(0);
+                        profile.calculateReadingScore(0);
 //                        profile.setListeningScore(0);
 //                        profile.setWrittingScore(0);
 //                        profile.setSpeakingScore(0);
