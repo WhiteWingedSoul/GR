@@ -56,42 +56,25 @@ public class AnimationHelper {
         view.startAnimation(animation);
     }
 
-    public static void playHelperAnimation(final View helper, final View text1Layout, final View text2Layout){
-
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                playHelperSpeakAnimation(helper, 250);
-                playDisappearAnimation(text1Layout, 0);
-                playAppearAnimation(text2Layout, 250);
-
-                playHelperSpeakAnimation(helper, 4250);
-                playDisappearAnimation(text2Layout, 4000);
-                playAppearAnimation(text1Layout, 4250);
-
-                handler.postDelayed(this, 8000);
-            }
-        }, 1000);
-
-    }
-
-    public static void playAppearAnimation(View view, long delay){
+    public static void playAppearAnimation(View view, long delay, Animator.AnimatorListener listener){
         ObjectAnimator animator2 = ObjectAnimator.ofFloat(view, "alpha", 0, 1);
         AnimatorSet set = new AnimatorSet();
         set.playTogether(animator2);
         set.setDuration(700);
         set.setStartDelay(delay);
+        if (listener!=null)
+            set.addListener(listener);
 
         set.start();
     }
 
-    public static void playDisappearAnimation(View view, long delay){
+    public static void playDisappearAnimation(View view, long delay, Animator.AnimatorListener listener){
         ObjectAnimator animator2 = ObjectAnimator.ofFloat(view, "alpha", 1, 0);
         AnimatorSet set = new AnimatorSet();
         set.playTogether(animator2);
-        set.setDuration(350);
+        set.setDuration(450);
         set.setStartDelay(delay);
+        set.addListener(listener);
 
         set.start();
 

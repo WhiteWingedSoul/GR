@@ -1,6 +1,7 @@
 package com.hedspi.hoangviet.eslrecom.managers;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -117,7 +118,7 @@ public class DatabaseManager {
         return userProfile;
     }
 
-    public static List<Question> getQuestionListFromServer(){
+    public static List<Question> getQuestionListFromServer(final Context context){
         if (questionList == null || questionList.size() == 0) {
             DatabaseReference database = FirebaseDatabase.getInstance().getReference();
             database.child(Common.QUESTION).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -127,6 +128,8 @@ public class DatabaseManager {
                         for (DataSnapshot child : dataSnapshot.getChildren()) {
                             questionList.add(child.getValue(Question.class));
                         }
+
+                        Toast.makeText(context, "Data loaded!", Toast.LENGTH_LONG);
                     }
                 }
 
