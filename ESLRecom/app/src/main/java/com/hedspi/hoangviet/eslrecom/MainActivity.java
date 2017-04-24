@@ -202,4 +202,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
+
+    public void startResultActivity(int type, Bundle bundle){
+        Intent intent = new Intent(this, ResultActivity.class);
+        bundle.putInt("type", type);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
 }

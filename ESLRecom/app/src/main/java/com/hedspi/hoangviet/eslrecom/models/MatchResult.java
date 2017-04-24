@@ -4,7 +4,7 @@ package com.hedspi.hoangviet.eslrecom.models;
  * Created by hoangviet on 11/21/16.
  */
 
-public class MatchResult {
+public class MatchResult extends AdapterItem{
     private Material material;
     private double matchScore;
 

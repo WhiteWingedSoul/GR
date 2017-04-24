@@ -174,11 +174,12 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 UserProfile profile = DatabaseManager.getUserProfile();
-                if (!profile.isTestProf()){
-                    dialog.show();
-                }else{
-                    getTagListFromServer();
-                }
+                ((MainActivity) getActivity()).startResultActivity(MainActivity.ADDED, new Bundle());
+//                if (!profile.isTestProf()){
+//                    dialog.show();
+//                }else{
+//                    getTagListFromServer();
+//                }
             }
         });
 
