@@ -24,8 +24,10 @@ import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.ChildTag;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.Material;
+import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 import com.squareup.picasso.Picasso;
 
@@ -34,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by hoangviet on 11/20/16.
@@ -127,12 +130,41 @@ public class ResultFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getValue()!=null) {
 
-                    for(DataSnapshot child : dataSnapshot.getChildren()){
-                        listMaterialProfile.add(child.getValue(Material.class));
+                    Map<String, Object> datas = (Map<String, Object>) dataSnapshot.getValue();
+                    for (Map.Entry<String, Object> entry : datas.entrySet()) {
+                        //Get user map
+                        Map singleData = (Map) entry.getValue();
+                        Material material = new Material();
+                        material.setName((String) singleData.get("name"));
+                        material.setAbstractString((String) singleData.get("abstractString"));
+                        material.setAuthor((String) singleData.get("author"));
+                        material.setContent((String) singleData.get("content"));
+                        material.setCoverLink((String) singleData.get("coverLink"));
+                        material.setDescription((String) singleData.get("description"));
+                        material.setDocumentType((String) singleData.get("documentType"));
+                        material.setEdition_format((String) singleData.get("edition_format"));
+                        material.setGenre_form((String) singleData.get("genre_form"));
+                        material.setNote((String) singleData.get("note"));
+                        material.setOnlineLink((String) singleData.get("onlineLink"));
+                        material.setOnlineName((String) singleData.get("onlineName"));
+                        material.setPublisher((String) singleData.get("publisher"));
+                        material.setSellerLink((String) singleData.get("sellerLink"));
+                        material.setSellerName((String) singleData.get("sellerName"));
+                        material.setSellerPrice((String) singleData.get("sellerPrice"));
+                        material.setSubjects((String) singleData.get("subjects"));
+                        material.setSummary((String) singleData.get("summary"));
+                        material.setTag((String) singleData.get("tag"));
+
+                        listMaterialProfile.add(material);
                     }
+//
+//                    for(DataSnapshot child : dataSnapshot.getChildren()){
+//                        listMaterialProfile.add(child.getValue(Material.class));
+//                    }
 
                     runFirstMatching();
 
+                    String a = "hihi";
                     //TODO
                     //for now let's just focus on kansei on the tags
                     // build User Preference: Material class with List<Object> attributes

@@ -77,7 +77,7 @@ public class Survey7Fragment extends Fragment {
 //                            .beginTransaction().setCustomAnimations(
 //                            R.anim.slide_in_right, R.anim.slide_out_left,
 //                            R.anim.slide_in_left, R.anim.slide_out_right)
-//                            .replace(R.id.fragment, Survey8Fragment.newInstance(profile))
+//                            .replace(R.id.fragment, PreferenceInquiryFragment.newInstance(profile))
 //                            .addToBackStack(null)
 //                            .commit();
 //                }

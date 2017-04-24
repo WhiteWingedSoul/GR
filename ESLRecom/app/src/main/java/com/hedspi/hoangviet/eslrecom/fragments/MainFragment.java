@@ -32,12 +32,14 @@ import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.ChildTag;
 import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * Created by hoangviet on 11/20/16.
@@ -191,16 +193,35 @@ public class MainFragment extends Fragment {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.getValue() != null) {
                         List<Tag> list = new ArrayList<>();
-                        for (DataSnapshot child : dataSnapshot.getChildren()) {
-                            list.add(child.getValue(Tag.class));
+                        Map<String, Object> datas = (Map<String, Object>) dataSnapshot.getValue();
+                        for (Map.Entry<String, Object> entry : datas.entrySet()){
+                            //Get user map
+                            Map singleData = (Map) entry.getValue();
+                            Tag tag = new Tag();
+                            tag.setName((String)singleData.get("name"));
+                            tag.setScore((long)singleData.get("score"));
+                            List<ChildTag> listChilds = new ArrayList<ChildTag>();
+                            for(Map relevantTag : (ArrayList<Map>)singleData.get("relevantTag")){
+                                ChildTag childTag = new ChildTag();
+                                childTag.setName((String)relevantTag.get("name"));
+                                childTag.setScore((long)relevantTag.get("score"));
+                                childTag.setRealScore((long)relevantTag.get("realScore"));
+                                listChilds.add(childTag);
+                            }
+                            tag.setRelevantTag(listChilds);
+                            list.add(tag);
                         }
+
+//                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+//                            list.add(child.getValue(Tag.class));
+//                        }
                         DatabaseManager.setTagList(list);
                         progress.hide();
                         getActivity().getSupportFragmentManager()
                                 .beginTransaction().setCustomAnimations(
                                 R.anim.slide_in_right, R.anim.slide_out_left,
                                 R.anim.slide_in_left, R.anim.slide_out_right)
-                                .replace(R.id.fragment, Survey8Fragment.newInstance(DatabaseManager.getUserProfile()))
+                                .replace(R.id.fragment, PreferenceInquiryFragment.newInstance(DatabaseManager.getUserProfile()))
                                 .addToBackStack(null)
                                 .commit();
                     }
@@ -216,7 +237,7 @@ public class MainFragment extends Fragment {
                     .beginTransaction().setCustomAnimations(
                     R.anim.slide_in_right, R.anim.slide_out_left,
                     R.anim.slide_in_left, R.anim.slide_out_right)
-                    .replace(R.id.fragment, Survey8Fragment.newInstance(DatabaseManager.getUserProfile()))
+                    .replace(R.id.fragment, PreferenceInquiryFragment.newInstance(DatabaseManager.getUserProfile()))
                     .addToBackStack(null)
                     .commit();
         }

@@ -4,16 +4,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.hedspi.hoangviet.eslrecom.R;
@@ -23,18 +19,17 @@ import com.hedspi.hoangviet.eslrecom.models.Tag;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
  * Created by hoangviet on 11/20/16.
  */
 
-public class Survey8Fragment extends Fragment {
+public class PreferenceInquiryFragment extends Fragment {
     private UserProfile profile;
 
-    public static Survey8Fragment newInstance(UserProfile profile){
-        Survey8Fragment fragment = new Survey8Fragment();
+    public static PreferenceInquiryFragment newInstance(UserProfile profile){
+        PreferenceInquiryFragment fragment = new PreferenceInquiryFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("profile", profile);
         fragment.setArguments(bundle);

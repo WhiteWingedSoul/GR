@@ -12,9 +12,9 @@ public class ChildTag  implements Serializable{
     @SerializedName("name")
     private String name;
     @SerializedName("score")
-    private int score;
+    private long score;
     @SerializedName("realScore")
-    private int realScore;
+    private long realScore;
 
     public String getName() {
         return name;
@@ -24,19 +24,19 @@ public class ChildTag  implements Serializable{
         this.name = name;
     }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(long score) {
         this.score = score;
     }
 
-    public int getRealScore() {
+    public long getRealScore() {
         return realScore;
     }
 
-    public void setRealScore(int realScore) {
+    public void setRealScore(long realScore) {
         this.realScore = realScore;
     }
 }

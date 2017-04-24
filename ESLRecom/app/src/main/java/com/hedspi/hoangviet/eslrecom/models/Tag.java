@@ -16,7 +16,7 @@ public class Tag implements Serializable{
     @SerializedName("relevantTag")
     private List<ChildTag> relevantTag;
     @SerializedName("score")
-    private int score;
+    private long score;
 
     public String getName() {
         return name;
@@ -34,11 +34,11 @@ public class Tag implements Serializable{
         this.relevantTag = relevantTag;
     }
 
-    public int getScore() {
+    public long getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    public void setScore(long score) {
         this.score = score;
     }
 }
