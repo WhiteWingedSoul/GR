@@ -8,8 +8,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
+import com.hedspi.hoangviet.eslrecom.fragments.PreferenceInquiryFragment;
+import com.hedspi.hoangviet.eslrecom.models.ChildTag;
 import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.Question;
 import com.hedspi.hoangviet.eslrecom.models.Tag;
@@ -21,6 +24,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by hoangviet on 1/8/16.
@@ -89,25 +93,41 @@ public class DatabaseManager {
     }
 
     public static List<Tag> getTagListFromServer(){
-        final List<Tag> list = new ArrayList<>();
-
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child(Common.TAG).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() != null) {
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        list.add(child.getValue(Tag.class));
+        if (tagList == null || tagList.size() == 0) {
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child(Common.TAG).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.getValue() != null) {
+                        Map<String, Object> datas = (Map<String, Object>) dataSnapshot.getValue();
+                        for (Map.Entry<String, Object> entry : datas.entrySet()) {
+                            //Get user map
+                            Map singleData = (Map) entry.getValue();
+                            Tag tag = new Tag();
+                            tag.setName((String) singleData.get("name"));
+                            tag.setScore((long) singleData.get("score"));
+                            List<ChildTag> listChilds = new ArrayList<ChildTag>();
+                            for (Map relevantTag : (ArrayList<Map>) singleData.get("relevantTag")) {
+                                ChildTag childTag = new ChildTag();
+                                childTag.setName((String) relevantTag.get("name"));
+                                childTag.setScore((long) relevantTag.get("score"));
+                                childTag.setRealScore((long) relevantTag.get("realScore"));
+                                listChilds.add(childTag);
+                            }
+                            tag.setRelevantTag(listChilds);
+                            tagList.add(tag);
+                        }
                     }
                 }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-        return list;
+                }
+            });
+        }
+
+        return tagList;
     }
 
     public static void setUserProfile(UserProfile userProfile) {
@@ -125,8 +145,17 @@ public class DatabaseManager {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if (dataSnapshot.getValue() != null) {
-                        for (DataSnapshot child : dataSnapshot.getChildren()) {
-                            questionList.add(child.getValue(Question.class));
+                        Map<String, Object> datas = (Map<String, Object>) dataSnapshot.getValue();
+                        for (Map.Entry<String, Object> entry : datas.entrySet()) {
+                            //Get user map
+                            Map singleData = (Map) entry.getValue();
+                            Question question = new Question();
+                            question.setQuestion((String) singleData.get("question"));
+                            question.setDifficulty((String) singleData.get("difficulty"));
+                            question.setType((String) singleData.get("type"));
+                            question.setTrueAnswer((String) singleData.get("trueAnswer"));
+                            question.setWrongAnswersStr((String) singleData.get("wrongAnswersStr"));
+                            questionList.add(question);
                         }
 
                         Toast.makeText(context, "Data loaded!", Toast.LENGTH_LONG);
@@ -144,25 +173,53 @@ public class DatabaseManager {
     }
 
     public static List<Material> getMaterialListFromServer(){
-        final List<Material> list = new ArrayList<>();
+        if (materialList == null || materialList.size() == 0) {
+            DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child(Common.MATERIAL).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.getValue() != null) {
 
-        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child(Common.MATERIAL).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() != null) {
-                    for (DataSnapshot child : dataSnapshot.getChildren()) {
-                        list.add(child.getValue(Material.class));
+                        Map<String, Object> datas = (Map<String, Object>) dataSnapshot.getValue();
+                        for (Map.Entry<String, Object> entry : datas.entrySet()) {
+                            //Get user map
+                            Map singleData = (Map) entry.getValue();
+                            Material material = new Material();
+                            material.setName((String) singleData.get("name"));
+                            material.setAbstractString((String) singleData.get("abstractString"));
+                            material.setAuthor((String) singleData.get("author"));
+                            material.setContent((String) singleData.get("content"));
+                            material.setCoverLink((String) singleData.get("coverLink"));
+                            material.setDescription((String) singleData.get("description"));
+                            material.setDocumentType((String) singleData.get("documentType"));
+                            material.setEdition_format((String) singleData.get("edition_format"));
+                            material.setGenre_form((String) singleData.get("genre_form"));
+                            material.setNote((String) singleData.get("note"));
+                            material.setOnlineLink((String) singleData.get("onlineLink"));
+                            material.setOnlineName((String) singleData.get("onlineName"));
+                            material.setPublisher((String) singleData.get("publisher"));
+                            material.setSellerLink((String) singleData.get("sellerLink"));
+                            material.setSellerName((String) singleData.get("sellerName"));
+                            material.setSellerPrice((String) singleData.get("sellerPrice"));
+                            material.setSubjects((String) singleData.get("subjects"));
+                            material.setSummary((String) singleData.get("summary"));
+                            material.setTag((String) singleData.get("tag"));
+
+                            materialList.add(material);
+                        }
+
                     }
                 }
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
 
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-        return list;
+                }
+            });
+
+        }
+
+        return materialList;
     }
 
     public static DatabaseManager getInstance(Context context){

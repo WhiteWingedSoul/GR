@@ -111,5 +111,10 @@
     <string name="reading">"Đọc hiểu"</string>
     <string name="grammar">"Ngữ pháp"</string>
     <string name="vocabulary">"Từ vựng"</string>
+    <string name="rating">Đánh giá</string>
+    <string name="buyNow">Đặt mua</string>
+    <string name="viewOnline">Xem online</string>
+    <string name="love">Thích</string>
+    <string name="hate">Ghét</string>
 
 </resources>

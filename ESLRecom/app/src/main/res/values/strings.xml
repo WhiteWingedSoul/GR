@@ -113,6 +113,11 @@
     <string name="reading">Reading</string>
     <string name="grammar">Grammar</string>
     <string name="vocabulary">Vocabulary</string>
+    <string name="rating">Rate it</string>
+    <string name="buyNow">Buy now</string>
+    <string name="viewOnline">View online</string>
+    <string name="love">Love</string>
+    <string name="hate">Hate</string>
 
 
     <string-array name="language">

@@ -30,6 +30,8 @@ import com.hedspi.hoangviet.eslrecom.models.Question;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 import com.squareup.picasso.Picasso;
 
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,16 +42,39 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.grantland.widget.AutofitTextView;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity implements DataDownloadListener {
     private List<Material> listMaterialProfile;
     private List<MatchResult> listMatchResult;
-    private List<AdapterItem> mItems;
+    private List<AdapterItem> mItems = new ArrayList<>();
     private UserProfile profile;
     private ProgressDialog progress;
 
     private NonSwipeableViewPager viewPager;
     private ResultViewPagerAdapter adapter;
     private View viewLayout;
+
+    private View detailLayout;
+    private View buyerLayout;
+    private View subjectLayout;
+    private View contentLayout;
+    private TextView title;
+    private TextView author;
+    private TextView publisher;
+    private TextView editionformat;
+    private TextView priceTag;
+    private TextView genreform;
+    private TextView docType;
+    private TextView content;
+    private TextView summary;
+    private TextView subjects;
+    private TextView buyerName;
+    private TextView buyerPrice;
+    private TextView buyerLink;
+    private DiscreteSeekBar kanseiScale;
+    private Button buyButton;
+    private Button viewOnlineButton;
+
+    private Button rateButton;
 
 
     @Override
@@ -61,6 +86,38 @@ public class ResultActivity extends AppCompatActivity {
 
         viewLayout = findViewById(R.id.viewLayout);
         viewPager = (NonSwipeableViewPager) findViewById(R.id.viewPager);
+        detailLayout = findViewById(R.id.detailLayout);
+        buyerLayout = findViewById(R.id.buyerLayout);
+        subjectLayout = findViewById(R.id.subjectLayout);
+        contentLayout = findViewById(R.id.contentLayout);
+
+        title = (TextView) findViewById(R.id.title);
+        author = (TextView) findViewById(R.id.author);
+        publisher = (TextView) findViewById(R.id.publisher);
+        editionformat = (TextView) findViewById(R.id.editionformat);
+        priceTag = (TextView) findViewById(R.id.priceTag);
+        genreform = (TextView) findViewById(R.id.genreform);
+        docType = (TextView) findViewById(R.id.docType);
+        content = (TextView) findViewById(R.id.content);
+        summary = (TextView) findViewById(R.id.summary);
+        subjects = (TextView) findViewById(R.id.subjects);
+        buyerName = (TextView) findViewById(R.id.buyerName);
+        buyerPrice = (TextView) findViewById(R.id.buyerPrice);
+        buyerLink = (TextView) findViewById(R.id.buyerLink);
+
+        kanseiScale = (DiscreteSeekBar) findViewById(R.id.kanseiScale);
+        rateButton = (Button) findViewById(R.id.rateButton);
+        buyButton = (Button) findViewById(R.id.buyButton);
+        viewOnlineButton = (Button) findViewById(R.id.viewOnlineButton);
+
+        rateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //TODO
+                toNextFragment();
+            }
+        });
 
         new AsyncTask<Void, Void, Void>(){
             @Override
@@ -75,7 +132,84 @@ public class ResultActivity extends AppCompatActivity {
             }
         }.execute();
 
+    }
 
+    @Override
+    public void onDataDownloaded(String result) {
+
+    }
+
+    private void updateViews(Material newMaterial){
+
+        AnimationHelper.playAppearAnimation(detailLayout,0,null);
+
+        if (newMaterial.getName() == null || newMaterial.getName().equals("")){
+            title.setText("");
+        }else{
+            title.setText(newMaterial.getName());
+        }
+        if (newMaterial.getAuthor() == null || newMaterial.getAuthor().equals("")){
+            author.setText("");
+        }else{
+            author.setText(getResources().getString(R.string.by)+ newMaterial.getAuthor());
+        }
+        if (newMaterial.getPublisher() == null || newMaterial.getPublisher().equals("")){
+            publisher.setText("");
+        }else{
+            publisher.setText(newMaterial.getPublisher());
+        }
+        if (newMaterial.getEdition_format() == null || newMaterial.getEdition_format().equals("")){
+            editionformat.setText("");
+        }else{
+            editionformat.setText(newMaterial.getEdition_format());
+        }
+
+        //TODO FORMAT
+        if (newMaterial.getGenre_form() == null || newMaterial.getGenre_form().equals("")){
+            genreform.setText("");
+        }else{
+            genreform.setText(getResources().getString(R.string.genreform)+ newMaterial.getGenre_form());
+        }
+        if (newMaterial.getDocumentType() == null || newMaterial.getDocumentType().equals("")){
+            docType.setText("");
+        }else{
+            docType.setText(getResources().getString(R.string.docType)+ newMaterial.getDocumentType());
+        }
+        // -------------------
+
+        if (newMaterial.getContent() == null || newMaterial.getContent().equals("")){
+            contentLayout.setVisibility(View.GONE);
+        }else{
+            contentLayout.setVisibility(View.VISIBLE);
+            content.setText(newMaterial.getContent());
+        }
+        if (newMaterial.getSummary() == null || newMaterial.getSummary().equals("")){
+            summary.setText("");
+        }else{
+            summary.setText(getResources().getString(R.string.summary)+ newMaterial.getSummary());
+        }
+        if (newMaterial.getSubjects() == null || newMaterial.getSubjects().equals("")){
+            subjectLayout.setVisibility(View.GONE);
+        }else{
+            subjectLayout.setVisibility(View.VISIBLE);
+            subjects.setText(newMaterial.getSubjects());
+        }
+        if (newMaterial.getSellerName() == null || newMaterial.getSellerName().equals("")){
+            buyerLayout.setVisibility(View.GONE);
+            priceTag.setVisibility(View.GONE);
+            buyButton.setVisibility(View.GONE);
+        }else{
+            buyerLayout.setVisibility(View.VISIBLE);
+            priceTag.setVisibility(View.VISIBLE);
+            buyButton.setVisibility(View.VISIBLE);
+            buyerName.setText(newMaterial.getSellerName());
+            buyerPrice.setText(newMaterial.getSellerPrice());
+            buyerLink.setText(newMaterial.getSellerLink());
+            priceTag.setText(newMaterial.getSellerPrice());
+
+        }
+
+        //TODO Online Link
     }
 
     private void runFirstMatching() {
@@ -104,8 +238,9 @@ public class ResultActivity extends AppCompatActivity {
 
 //                adapter.updateAdapter(listMatchResult);
 //                adapter.notifyDataSetChanged();
+                List<MatchResult> first5 = listMatchResult.size() > 5 ? listMatchResult.subList(0,5) : listMatchResult;
 
-                mItems.addAll(listMatchResult);
+                mItems.addAll(first5);
                 adapter = new ResultViewPagerAdapter(getSupportFragmentManager(), mItems);
                 viewPager.setAdapter(adapter);
                 viewLayout.setVisibility(View.VISIBLE);
@@ -217,7 +352,8 @@ public class ResultActivity extends AppCompatActivity {
         double learnlistScore = 0;
         int userLearnListCount = profile.getLearnList().size();
         int matchCount = 0;
-        learnlistScore = ((double)matchCount/userLearnListCount);
+        if (learnlistScore != 0)
+            learnlistScore = ((double)matchCount/userLearnListCount);
         for(String userLearnType : profile.getLearnList()){
             if (material.getName().contains(userLearnType) || material.getTag().contains(userLearnType)) {
                 matchCount++;
