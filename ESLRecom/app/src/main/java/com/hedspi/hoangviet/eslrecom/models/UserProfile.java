@@ -91,6 +91,7 @@ public class UserProfile extends AdapterItem implements Serializable {
 
     public static final double MATCH_SCORE_OVERALL = 0.37;
     public static final double MATCH_SCORE_LEARNLIST = 0.78;
+    public static final double MATCH_SCORE_DOCTYPE = 0.24;
 //    public static final double MATCH_SCORE_TIMESPEND = 0.2;
 //    public static final double MATCH_SCORE_TESTPREFER = 0.33;
 

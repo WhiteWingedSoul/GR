@@ -235,6 +235,10 @@ public class Material implements Serializable {
         this.tag = tag;
     }
 
+    public List<String> retrieveTagList(){
+        return Arrays.asList(tag.trim().split(","));
+    }
+
     public double getKeywordImportantScore(String keyword){
         List<Tag> tagList = DatabaseManager.getTagList();
         List<String> materialTagString = Arrays.asList(tag.trim().split(","));

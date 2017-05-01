@@ -8,6 +8,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.DataDownloadListener;
 import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
@@ -92,7 +93,7 @@ public class DatabaseManager {
         DatabaseManager.bookProfilesCount = bookProfilesCount;
     }
 
-    public static List<Tag> getTagListFromServer(){
+    public static List<Tag> getTagListFromServer(final DataDownloadListener listener){
         if (tagList == null || tagList.size() == 0) {
             DatabaseReference database = FirebaseDatabase.getInstance().getReference();
             database.child(Common.TAG).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -117,12 +118,14 @@ public class DatabaseManager {
                             tag.setRelevantTag(listChilds);
                             tagList.add(tag);
                         }
+
+                        listener.onDataDownloaded(Common.SUCCESS);
                     }
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
+                    listener.onDataDownloaded(Common.FAIL);
                 }
             });
         }
@@ -138,7 +141,7 @@ public class DatabaseManager {
         return userProfile;
     }
 
-    public static List<Question> getQuestionListFromServer(final Context context){
+    public static List<Question> getQuestionListFromServer(final DataDownloadListener listener){
         if (questionList == null || questionList.size() == 0) {
             DatabaseReference database = FirebaseDatabase.getInstance().getReference();
             database.child(Common.QUESTION).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -158,13 +161,13 @@ public class DatabaseManager {
                             questionList.add(question);
                         }
 
-                        Toast.makeText(context, "Data loaded!", Toast.LENGTH_LONG);
+                        listener.onDataDownloaded(Common.SUCCESS);
                     }
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
+                    listener.onDataDownloaded(Common.FAIL);
                 }
             });
         }
@@ -172,7 +175,7 @@ public class DatabaseManager {
         return questionList;
     }
 
-    public static List<Material> getMaterialListFromServer(){
+    public static List<Material> getMaterialListFromServer(final DataDownloadListener listener){
         if (materialList == null || materialList.size() == 0) {
             DatabaseReference database = FirebaseDatabase.getInstance().getReference();
             database.child(Common.MATERIAL).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -208,12 +211,13 @@ public class DatabaseManager {
                             materialList.add(material);
                         }
 
+                        listener.onDataDownloaded(Common.SUCCESS);
                     }
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
+                    listener.onDataDownloaded(Common.SUCCESS);
                 }
             });
 

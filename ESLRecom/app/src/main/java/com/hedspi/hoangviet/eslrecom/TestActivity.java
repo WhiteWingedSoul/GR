@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -31,7 +32,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.grantland.widget.AutofitTextView;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity implements DataDownloadListener{
     private NonSwipeableViewPager viewPager;
     private TestViewPagerAdapter adapter;
     private List<AdapterItem> mItems;
@@ -55,6 +56,16 @@ public class TestActivity extends AppCompatActivity {
     private View testProfile;
 
     boolean inited =false;
+
+    @Override
+    public void onDataDownloaded(String result) {
+        switch (result){
+            case Common.SUCCESS:
+            case Common.FAIL:
+                Toast.makeText(this,"Data dowload: "+result, Toast.LENGTH_LONG);
+                break;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

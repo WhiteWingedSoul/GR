@@ -13,4 +13,7 @@ public class Common {
     public static final String USERS = "users_data";
     public static final String ROLE_USER = "user";
     public static final String ROLE_ADMIN = "admin";
+
+    public static final String SUCCESS = "success";
+    public static final String FAIL = "fail";
 }

@@ -7,6 +7,15 @@ package com.hedspi.hoangviet.eslrecom.models;
 public class MatchResult extends AdapterItem{
     private Material material;
     private double matchScore;
+    private double kanseiScore;
+
+    public double getKanseiScore() {
+        return kanseiScore;
+    }
+
+    public void setKanseiScore(double kanseiScore) {
+        this.kanseiScore = kanseiScore;
+    }
 
     public double getMatchScore() {
         return matchScore;

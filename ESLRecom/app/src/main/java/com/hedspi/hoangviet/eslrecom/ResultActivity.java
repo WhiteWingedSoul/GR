@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import com.hedspi.hoangviet.eslrecom.adapters.ResultViewPagerAdapter;
 import com.hedspi.hoangviet.eslrecom.adapters.TestViewPagerAdapter;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
+import com.hedspi.hoangviet.eslrecom.helpers.ResultHelper;
 import com.hedspi.hoangviet.eslrecom.helpers.TestHelper;
 import com.hedspi.hoangviet.eslrecom.libraries.NonSwipeableViewPager;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
@@ -46,13 +48,11 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private List<Material> listMaterialProfile;
     private List<MatchResult> listMatchResult;
     private List<AdapterItem> mItems = new ArrayList<>();
-    private UserProfile profile;
     private ProgressDialog progress;
 
     private NonSwipeableViewPager viewPager;
     private ResultViewPagerAdapter adapter;
     private View viewLayout;
-
     private View detailLayout;
     private View buyerLayout;
     private View subjectLayout;
@@ -82,7 +82,6 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         progress = ProgressDialog.show(this, "", getResources().getString(R.string.caculating), false);
-        profile = DatabaseManager.getUserProfile();
 
         viewLayout = findViewById(R.id.viewLayout);
         viewPager = (NonSwipeableViewPager) findViewById(R.id.viewPager);
@@ -115,28 +114,47 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
             public void onClick(View v) {
 
                 //TODO
-                toNextFragment();
+
+                reevalute(kanseiScale.getProgress());
+//                toNextFragment();
             }
         });
 
-        new AsyncTask<Void, Void, Void>(){
-            @Override
-            protected Void doInBackground(Void... voids) {
-                try{
-                    getAllMaterials();
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
 
-                return null;
-            }
-        }.execute();
+        ResultHelper.initResultHelper(DatabaseManager.getMaterialListFromServer(this), DatabaseManager.getUserProfile());
 
     }
 
     @Override
     public void onDataDownloaded(String result) {
+        Log.d("LOG data downloaded: ", result);
+        progress.hide();
+        if (result == Common.SUCCESS){
+            List<MatchResult> first5 = ResultHelper.initFirstMatching();
 
+            mItems.addAll(first5);
+            adapter = new ResultViewPagerAdapter(getSupportFragmentManager(), mItems);
+            viewPager.setAdapter(adapter);
+            viewLayout.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void reevalute(int score){
+        switch (ResultHelper.reevaluate((double)score/10)){
+            case ResultHelper.STATUS_CONTINUE:
+                toNextFragment();
+                break;
+            case ResultHelper.STATUS_END:
+                startMatchingKansei();
+                toNextFragment();
+                break;
+        }
+    }
+
+    private void startMatchingKansei(){
+        List<MatchResult> next5 = ResultHelper.matchingWithKansei();
+        mItems.addAll(next5);
+        adapter.notifyDataSetChanged();
     }
 
     private void updateViews(Material newMaterial){
@@ -215,7 +233,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private void runFirstMatching() {
         listMatchResult = new ArrayList<>();
         for (Material material : listMaterialProfile) {
-            double matchScore = contextMatching(material);
+            double matchScore =0; //= contextMatching(material);
             if (matchScore > DatabaseManager.getPreference().getDecisionBoundary()) {
                 MatchResult matchResult = new MatchResult();
                 matchResult.setMaterial(material);
@@ -310,61 +328,6 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         });
 
     }
-
-    private double contextMatching(Material material){
-        double matchRate = 0;
-
-        double levelMatchScore = matchOverall(material);
-//        double testMatchScore = matchTestPrefer(bookProfile);
-//        double timeMatchScore = matchTimeSpend(bookProfile);
-        double learnListMatchScore = matchLearnList(material);
-
-        matchRate = levelMatchScore + learnListMatchScore; //+ testMatchScore + timeMatchScore ;
-
-        return matchRate/DatabaseManager.getPreference().getBestMatch();
-    }
-
-    private double matchOverall(Material material){
-        String level = profile.returnOverallPreference();
-        if (material.getName().contains(level) || material.getTag().contains(level))
-            return DatabaseManager.getPreference().getOverallScore();
-        else
-            return 0;
-    }
-
-    /*private double matchTestPrefer(BookProfile bookProfile){
-        if(bookProfile.getTestPreference() == profile.getTestPreference())
-            return DatabaseManager.getPreference().getTestScore();
-        else
-            return 0;
-    }
-
-    private double matchTimeSpend(BookProfile bookProfile){
-        if(bookProfile.getTimePreference() == profile.getTimeCanSpend())
-            return DatabaseManager.getPreference().getTimeScore();
-        else
-            return 0;
-    }*/
-
-    private double matchLearnList(Material material){
-        //First test try: use only word people input to compare
-        // if word exists in material tag or name -> its matched!
-        double learnlistScore = 0;
-        int userLearnListCount = profile.getLearnList().size();
-        int matchCount = 0;
-        if (learnlistScore != 0)
-            learnlistScore = ((double)matchCount/userLearnListCount);
-        for(String userLearnType : profile.getLearnList()){
-            if (material.getName().contains(userLearnType) || material.getTag().contains(userLearnType)) {
-                matchCount++;
-                learnlistScore += material.getKeywordImportantScore(userLearnType);
-            }
-        }
-
-        learnlistScore = learnlistScore* DatabaseManager.getPreference().getLearnPreferenceScore()/2;
-        return learnlistScore;
-    }
-
 
     @Override
     protected void onResume() {
