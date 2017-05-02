@@ -135,6 +135,10 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
             mItems.addAll(first5);
             adapter = new ResultViewPagerAdapter(getSupportFragmentManager(), mItems);
             viewPager.setAdapter(adapter);
+
+            Material material = ((MatchResult)mItems.get(0)).getMaterial();
+            updateViews(material);
+
             viewLayout.setVisibility(View.VISIBLE);
         }
     }
@@ -341,7 +345,6 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
     }
 
-
     private void toPreviousFragment() {
         int currentPosition = viewPager.getCurrentItem();
 
@@ -358,6 +361,9 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         if ((currentPosition + 1) == mItems.size()) {
             finish();
         } else {
+            Material newMaterial = ((MatchResult)mItems.get(currentPosition+1)).getMaterial();
+            updateViews(newMaterial);
+
             viewPager.setCurrentItem(currentPosition + 1, true);
         }
     }

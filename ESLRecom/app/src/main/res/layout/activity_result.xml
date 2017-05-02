@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/viewLayout"
-        android:visibility="gone"
+
 
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -100,21 +100,23 @@
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                        <TextView
-                            android:id="@+id/title"
+                        <me.grantland.widget.AutofitTextView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Read and Write a letter by English"
+                            android:layout_height="60dp"
+                            android:text="Read and Write a letter by English with a scamlll askdj ewajiew ewjqe kwqe jqwe kweqwe"
+                            android:maxLines="3"
+                            android:id="@+id/title"
                             android:layout_marginTop="20dp"
                             android:paddingBottom="5dp"
+                            android:textSize="16dp"
+                            autofit:minTextSize="16dp"
                             android:textColor="@color/colorDefaultText"
-                            android:textStyle="bold"
-                            android:textSize="16dp"/>
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/author"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="19dp"
                             android:text="by Alex Wong"
                             android:textSize="13dp"
                             android:textColor="@color/colorDefaultText"
@@ -124,7 +126,7 @@
                         <TextView
                             android:id="@+id/publisher"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="38dp"
                             android:text="Oxford ; New York, NY : Oxford University Press, 2016."
                             android:textSize="13dp"
                             android:paddingBottom="5dp"
@@ -133,7 +135,7 @@
                         <TextView
                             android:id="@+id/editionformat"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="38dp"
                             android:text="Print material : English : First edition"
                             android:textSize="13dp"
                             android:paddingBottom="5dp"
@@ -145,7 +147,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="100dp">
 
                         <FrameLayout
                             android:layout_width="match_parent"
