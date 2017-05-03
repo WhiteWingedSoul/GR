@@ -1,14 +1,24 @@
 package com.hedspi.hoangviet.eslrecom;
 
 import android.animation.Animator;
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,12 +30,13 @@ import com.hedspi.hoangviet.eslrecom.adapters.ResultViewPagerAdapter;
 import com.hedspi.hoangviet.eslrecom.adapters.TestViewPagerAdapter;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
 import com.hedspi.hoangviet.eslrecom.commons.Preference;
-import com.hedspi.hoangviet.eslrecom.helpers.ResultHelper;
+import com.hedspi.hoangviet.eslrecom.helpers.ResultHelper2Test;
 import com.hedspi.hoangviet.eslrecom.helpers.TestHelper;
 import com.hedspi.hoangviet.eslrecom.libraries.NonSwipeableViewPager;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.hedspi.hoangviet.eslrecom.models.AdapterItem;
+import com.hedspi.hoangviet.eslrecom.models.KanseiPreferences;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.Material;
 import com.hedspi.hoangviet.eslrecom.models.Question;
@@ -49,14 +60,18 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private List<MatchResult> listMatchResult;
     private List<AdapterItem> mItems = new ArrayList<>();
     private ProgressDialog progress;
+    private Material currentMaterial;
 
     private NonSwipeableViewPager viewPager;
     private ResultViewPagerAdapter adapter;
     private View viewLayout;
+    private View smallInfoLayout;
     private View detailLayout;
     private View buyerLayout;
     private View subjectLayout;
     private View contentLayout;
+    private View externalLinkLayout;
+
     private TextView title;
     private TextView author;
     private TextView publisher;
@@ -78,6 +93,23 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
 
     @Override
+    public void onBackPressed() {
+        KanseiPreferences userKanseiPreference;
+        if ((userKanseiPreference = ResultHelper2Test.getUserKanseiPreferences()) != null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View dialogView = inflater.inflate(R.layout.dialog_test, null);
+            final Dialog dialog = builder.setView(dialogView).create();
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            dialog.show();
+            TextView testText = (TextView) dialogView.findViewById(R.id.testText);
+            testText.setText(Html.fromHtml(userKanseiPreference.retrieveKanseiTagResultTest()));
+
+        }
+//        super.onBackPressed();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
@@ -89,6 +121,8 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         buyerLayout = findViewById(R.id.buyerLayout);
         subjectLayout = findViewById(R.id.subjectLayout);
         contentLayout = findViewById(R.id.contentLayout);
+        smallInfoLayout = findViewById(R.id.smallInfoLayout);
+        externalLinkLayout = findViewById(R.id.externalLinkLayout);
 
         title = (TextView) findViewById(R.id.title);
         author = (TextView) findViewById(R.id.author);
@@ -113,15 +147,13 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
             @Override
             public void onClick(View v) {
 
-                //TODO
-
                 reevalute(kanseiScale.getProgress());
 //                toNextFragment();
             }
         });
 
 
-        ResultHelper.initResultHelper(DatabaseManager.getMaterialListFromServer(this), DatabaseManager.getUserProfile());
+        ResultHelper2Test.initResultHelper(DatabaseManager.getMaterialListFromServer(this), DatabaseManager.getUserProfile());
 
     }
 
@@ -130,108 +162,140 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         Log.d("LOG data downloaded: ", result);
         progress.hide();
         if (result == Common.SUCCESS){
-            List<MatchResult> first5 = ResultHelper.initFirstMatching();
+            startInitialMatching();
 
-            mItems.addAll(first5);
-            adapter = new ResultViewPagerAdapter(getSupportFragmentManager(), mItems);
-            viewPager.setAdapter(adapter);
-
-            Material material = ((MatchResult)mItems.get(0)).getMaterial();
-            updateViews(material);
+            currentMaterial = ((MatchResult)mItems.get(0)).getMaterial();
+            buyButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    goToUrl(currentMaterial.getSellerLink());
+                }
+            });
+            viewOnlineButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    goToUrl(currentMaterial.getOnlineLink());
+                }
+            });
+            updateViews();
 
             viewLayout.setVisibility(View.VISIBLE);
         }
     }
 
     private void reevalute(int score){
-        switch (ResultHelper.reevaluate((double)score/10)){
-            case ResultHelper.STATUS_CONTINUE:
+        switch (ResultHelper2Test.reevaluate((double)score/10)){
+            case ResultHelper2Test.STATUS_CONTINUE:
                 toNextFragment();
                 break;
-            case ResultHelper.STATUS_END:
+            case ResultHelper2Test.STATUS_END:
                 startMatchingKansei();
                 toNextFragment();
                 break;
         }
     }
 
+    private void startInitialMatching(){
+        List<MatchResult> first5 = ResultHelper2Test.initFirstMatching();
+
+        mItems.addAll(first5);
+        adapter = new ResultViewPagerAdapter(getSupportFragmentManager(), mItems);
+        viewPager.setAdapter(adapter);
+    }
+
     private void startMatchingKansei(){
-        List<MatchResult> next5 = ResultHelper.matchingWithKansei();
+        List<MatchResult> next5 = ResultHelper2Test.matchingWithKansei();
         mItems.addAll(next5);
         adapter.notifyDataSetChanged();
     }
 
-    private void updateViews(Material newMaterial){
+    private void updateViews(){
 
-        AnimationHelper.playAppearAnimation(detailLayout,0,null);
+        AnimationHelper.playAppearAnimation(detailLayout, 0, null);
+        AnimationHelper.playAppearAnimation(smallInfoLayout, 0, null);
+        AnimationHelper.playAppearAnimation(externalLinkLayout, 0, null);
 
-        if (newMaterial.getName() == null || newMaterial.getName().equals("")){
+        if (currentMaterial.getName() == null || currentMaterial.getName().equals("")){
             title.setText("");
         }else{
-            title.setText(newMaterial.getName());
+            title.setText(currentMaterial.getName());
         }
-        if (newMaterial.getAuthor() == null || newMaterial.getAuthor().equals("")){
+        if (currentMaterial.getAuthor() == null || currentMaterial.getAuthor().equals("")){
             author.setText("");
         }else{
-            author.setText(getResources().getString(R.string.by)+ newMaterial.getAuthor());
+            author.setText(getResources().getString(R.string.by)+ currentMaterial.getAuthor());
         }
-        if (newMaterial.getPublisher() == null || newMaterial.getPublisher().equals("")){
+        if (currentMaterial.getPublisher() == null || currentMaterial.getPublisher().equals("")){
             publisher.setText("");
         }else{
-            publisher.setText(newMaterial.getPublisher());
+            publisher.setText(currentMaterial.getPublisher());
         }
-        if (newMaterial.getEdition_format() == null || newMaterial.getEdition_format().equals("")){
+        if (currentMaterial.getEdition_format() == null || currentMaterial.getEdition_format().equals("")){
             editionformat.setText("");
         }else{
-            editionformat.setText(newMaterial.getEdition_format());
+            editionformat.setText(currentMaterial.getEdition_format());
         }
 
         //TODO FORMAT
-        if (newMaterial.getGenre_form() == null || newMaterial.getGenre_form().equals("")){
+        if (currentMaterial.getGenre_form() == null || currentMaterial.getGenre_form().equals("")){
             genreform.setText("");
         }else{
-            genreform.setText(getResources().getString(R.string.genreform)+ newMaterial.getGenre_form());
+            genreform.setText(getResources().getString(R.string.genreform)+ currentMaterial.getGenre_form());
         }
-        if (newMaterial.getDocumentType() == null || newMaterial.getDocumentType().equals("")){
+        if (currentMaterial.getDocumentType() == null || currentMaterial.getDocumentType().equals("")){
             docType.setText("");
         }else{
-            docType.setText(getResources().getString(R.string.docType)+ newMaterial.getDocumentType());
+            docType.setText(getResources().getString(R.string.docType)+ currentMaterial.getDocumentType());
         }
         // -------------------
 
-        if (newMaterial.getContent() == null || newMaterial.getContent().equals("")){
+        if (currentMaterial.getContent() == null || currentMaterial.getContent().equals("")){
             contentLayout.setVisibility(View.GONE);
         }else{
             contentLayout.setVisibility(View.VISIBLE);
-            content.setText(newMaterial.getContent());
+            content.setText(currentMaterial.getContent());
         }
-        if (newMaterial.getSummary() == null || newMaterial.getSummary().equals("")){
+        if (currentMaterial.getSummary() == null || currentMaterial.getSummary().equals("")){
             summary.setText("");
         }else{
-            summary.setText(getResources().getString(R.string.summary)+ newMaterial.getSummary());
+            summary.setText(getResources().getString(R.string.summary)+ currentMaterial.getSummary());
         }
-        if (newMaterial.getSubjects() == null || newMaterial.getSubjects().equals("")){
+        if (currentMaterial.getSubjects() == null || currentMaterial.getSubjects().equals("")){
             subjectLayout.setVisibility(View.GONE);
         }else{
             subjectLayout.setVisibility(View.VISIBLE);
-            subjects.setText(newMaterial.getSubjects());
+            subjects.setText(currentMaterial.getSubjects());
         }
-        if (newMaterial.getSellerName() == null || newMaterial.getSellerName().equals("")){
+        if (currentMaterial.getSellerName() == null || currentMaterial.getSellerName().equals("")){
             buyerLayout.setVisibility(View.GONE);
-            priceTag.setVisibility(View.GONE);
             buyButton.setVisibility(View.GONE);
+
+            if (currentMaterial.getOnlineName() == null || currentMaterial.getOnlineName().equals("")){
+                viewOnlineButton.setVisibility(View.GONE);
+            }else{
+                priceTag.setVisibility(View.VISIBLE);
+                viewOnlineButton.setVisibility(View.VISIBLE);
+                priceTag.setText(currentMaterial.getOnlineName());
+
+            }
         }else{
+            viewOnlineButton.setVisibility(View.GONE);
             buyerLayout.setVisibility(View.VISIBLE);
             priceTag.setVisibility(View.VISIBLE);
             buyButton.setVisibility(View.VISIBLE);
-            buyerName.setText(newMaterial.getSellerName());
-            buyerPrice.setText(newMaterial.getSellerPrice());
-            buyerLink.setText(newMaterial.getSellerLink());
-            priceTag.setText(newMaterial.getSellerPrice());
+            buyerName.setText(currentMaterial.getSellerName());
+            buyerPrice.setText(currentMaterial.getSellerPrice());
+            buyerLink.setText(currentMaterial.getSellerLink());
+            priceTag.setText(currentMaterial.getSellerPrice());
 
         }
 
-        //TODO Online Link
+    }
+
+    private void goToUrl (String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+        startActivity(launchBrowser);
     }
 
     private void runFirstMatching() {
@@ -361,8 +425,8 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         if ((currentPosition + 1) == mItems.size()) {
             finish();
         } else {
-            Material newMaterial = ((MatchResult)mItems.get(currentPosition+1)).getMaterial();
-            updateViews(newMaterial);
+            currentMaterial = ((MatchResult)mItems.get(currentPosition+1)).getMaterial();
+            updateViews();
 
             viewPager.setCurrentItem(currentPosition + 1, true);
         }

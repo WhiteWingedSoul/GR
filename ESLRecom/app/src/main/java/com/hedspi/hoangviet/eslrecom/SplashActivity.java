@@ -124,7 +124,6 @@ public class SplashActivity extends AppCompatActivity {
         database.child(Common.USERS).orderByChild("uid").equalTo(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d("LOG","ahihi");
                 UserProfile profile;
                 if (dataSnapshot.getValue() == null){
                     profile = new UserProfile();

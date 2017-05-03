@@ -39,9 +39,10 @@ public class DatabaseManager {
     private static long materialCount;
     private static long bookProfilesCount;
     private static Preference preference;
-    private static List<Tag> tagList;
+    private static List<Tag> tagList = new ArrayList<>();
     private static List<Question> questionList = new ArrayList<>();
     private static List<Material> materialList = new ArrayList<>();
+    private static List<String> tagStringList = new ArrayList<>();
     private static UserProfile userProfile;
 
     DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -63,6 +64,10 @@ public class DatabaseManager {
 
     public static List<Tag> getTagList() {
         return tagList;
+    }
+
+    public static List<String> getTagStringList() {
+        return tagStringList;
     }
 
     public static void setTagList(List<Tag> tagList) {
@@ -117,6 +122,7 @@ public class DatabaseManager {
                             }
                             tag.setRelevantTag(listChilds);
                             tagList.add(tag);
+                            tagStringList.add(tag.getName());
                         }
 
                         listener.onDataDownloaded(Common.SUCCESS);
@@ -128,6 +134,8 @@ public class DatabaseManager {
                     listener.onDataDownloaded(Common.FAIL);
                 }
             });
+        }else {
+            listener.onDataDownloaded(Common.SUCCESS);
         }
 
         return tagList;
@@ -170,6 +178,8 @@ public class DatabaseManager {
                     listener.onDataDownloaded(Common.FAIL);
                 }
             });
+        }else {
+            listener.onDataDownloaded(Common.SUCCESS);
         }
 
         return questionList;
@@ -221,6 +231,8 @@ public class DatabaseManager {
                 }
             });
 
+        }else {
+            listener.onDataDownloaded(Common.SUCCESS);
         }
 
         return materialList;

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.libraries.TagCompletionView;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
@@ -41,7 +42,7 @@ public class PreferenceInquiryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        profile = (UserProfile) getArguments().getSerializable("profile");
+        profile = DatabaseManager.getUserProfile();
     }
 
     @Override
@@ -87,13 +88,15 @@ public class PreferenceInquiryFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 profile.setLearnList(autoCompleteTextView.getObjects());
-                getActivity().getSupportFragmentManager()
-                        .beginTransaction().setCustomAnimations(
-                        R.anim.slide_in_right, R.anim.slide_out_left,
-                        R.anim.slide_in_left, R.anim.slide_out_right)
-                        .replace(R.id.fragment, ResultFragment.newInstance(profile))
-                        .addToBackStack(null)
-                        .commit();
+                DatabaseManager.setUserProfile(profile);
+                ((MainActivity) getActivity()).startResultActivity(MainActivity.ADDED, new Bundle());
+//                getActivity().getSupportFragmentManager()
+//                        .beginTransaction().setCustomAnimations(
+//                        R.anim.slide_in_right, R.anim.slide_out_left,
+//                        R.anim.slide_in_left, R.anim.slide_out_right)
+//                        .replace(R.id.fragment, ResultFragment.newInstance(profile))
+//                        .addToBackStack(null)
+//                        .commit();
             }
         });
 

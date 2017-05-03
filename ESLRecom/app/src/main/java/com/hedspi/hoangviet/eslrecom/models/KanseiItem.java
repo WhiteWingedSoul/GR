@@ -6,8 +6,15 @@ package com.hedspi.hoangviet.eslrecom.models;
 
 public class KanseiItem {
     private String name;
-    private double value;
+    private double value = 0;
     private int totalTimeRated = 0;
+
+    private double goodScore = 0;
+    private int totalGoodRated = 0;
+    private double badScore = 0;
+    private int totalBadRated = 0;
+
+    private static final int CURVE_RATE = 1;
 
     public String getName() {
         return name;
@@ -26,18 +33,48 @@ public class KanseiItem {
     }
 
     public void addValue(double value){
-        this.value = value;
+        this.value += value;
         totalTimeRated ++;
     }
 
-    public Double retrieveValue(){
-        if (totalTimeRated != 0)
-            return value/totalTimeRated;
+    public void addGoodScore(double value){
+        this.goodScore += value;
+        totalGoodRated ++;
+    }
+
+    public void addBadScore(double value){
+        this.badScore += value;
+        totalBadRated ++;
+    }
+
+    public Double retrieveGoodScore(){
+        if (totalGoodRated != 0)
+            return (goodScore/totalGoodRated)* (1/(1+CURVE_RATE*Math.exp(-totalGoodRated)));
         else return 0.0;
     }
 
-    public int getTotalTimeRated() {
-        return totalTimeRated;
+    public Double retrieveBadScore(){
+        if (totalBadRated != 0)
+            return (badScore/totalBadRated)* (1/(1+CURVE_RATE*Math.exp(-totalBadRated)));
+        else return 0.0;
     }
+
+    public Double retrieveValue(){
+        //TODO TESTING
+        if (Math.abs(retrieveGoodScore())>=Math.abs(retrieveBadScore()))
+            return retrieveGoodScore();
+        else
+            return retrieveBadScore();
+        // GOOD CODE
+//        if (totalTimeRated != 0)
+//            return (value/totalTimeRated)* (1/(1+CURVE_RATE*Math.exp(-totalTimeRated)));
+//        else return 0.0;
+    }
+
+    public int getTotalTimeRated() {
+        return totalBadRated+totalGoodRated;
+    }
+
+
 
 }

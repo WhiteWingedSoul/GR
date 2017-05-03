@@ -13,13 +13,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.jar.Pack200;
 
 /**
  * Created by viet on 4/24/17.
  */
 
-public class ResultHelper {
+public class ResultHelper2Test {
     private static List<Material> materialBank;
     private static List<MatchResult> sortedMatchResults;
     private static KanseiPreferences userKanseiPreferences;
@@ -123,28 +122,42 @@ public class ResultHelper {
         if (docType == null){
             docType = new KanseiItem();
             docType.setName(currentMaterial.getDocumentType());
-            docType.addValue(score);
+            if (score>=0)
+                docType.addGoodScore(score);
+            else
+                docType.addBadScore(score);
             kanseiDocType.add(docType);
         }else{
-            docType.addValue(score);
+            if (score>=0)
+                docType.addGoodScore(score);
+            else
+                docType.addBadScore(score);
             kanseiDocType.set(kanseiDocType.indexOf(docType), docType);
         }
 
         for (String tagName : currentMaterial.retrieveTagList()){
-            if (!profile.getLearnList().contains(tagName)) {
-                KanseiItem tag = userKanseiPreferences.retrieveTag(tagName);
+            if (DatabaseManager.getTagStringList().contains(tagName)) {
+                if (!profile.getLearnList().contains(tagName)) {
+                    KanseiItem tag = userKanseiPreferences.retrieveTag(tagName);
 
-                if (tag == null) {
-                    tag = new KanseiItem();
-                    tag.setName(tagName);
-                    tag.addValue(score);
-                    kanseiTag.add(tag);
+                    if (tag == null) {
+                        tag = new KanseiItem();
+                        tag.setName(tagName);
+                        if (score>=0)
+                            tag.addGoodScore(score);
+                        else
+                            tag.addBadScore(score);
+                        kanseiTag.add(tag);
+                    } else {
+                        if (score>=0)
+                            tag.addGoodScore(score);
+                        else
+                            tag.addBadScore(score);
+                        kanseiTag.set(kanseiTag.indexOf(tag), tag);
+                    }
                 } else {
-                    tag.addValue(score);
-                    kanseiTag.set(kanseiTag.indexOf(tag), tag);
+                    Log.d("ahihi", "hihi");
                 }
-            }else {
-                Log.d("ahihi","hihi");
             }
         }
     }

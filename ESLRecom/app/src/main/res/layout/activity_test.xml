@@ -19,7 +19,7 @@
 
             <LinearLayout
                 android:id="@+id/testProfile"
-
+                android:visibility="gone"
                 android:paddingTop="20dp"
                 android:paddingBottom="10dp"
                 android:orientation="vertical"

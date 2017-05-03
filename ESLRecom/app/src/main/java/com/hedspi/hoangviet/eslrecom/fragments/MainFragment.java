@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hedspi.hoangviet.eslrecom.DataDownloadListener;
 import com.hedspi.hoangviet.eslrecom.MainActivity;
 import com.hedspi.hoangviet.eslrecom.R;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
@@ -45,10 +47,12 @@ import java.util.Map;
  * Created by hoangviet on 11/20/16.
  */
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements DataDownloadListener{
     private View view;
     private UserProfile profile;
     private AlertDialog dialog;
+
+    private ProgressDialog progress;
 
     private SharedPreferences setting;
 
@@ -63,6 +67,8 @@ public class MainFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         setting = getActivity().getSharedPreferences("setting", 0);
+        progress = ProgressDialog.show(getActivity(), "", getResources().getString(R.string.loading), false);
+        progress.hide();
     }
 
     @Override
@@ -174,20 +180,38 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 UserProfile profile = DatabaseManager.getUserProfile();
-                ((MainActivity) getActivity()).startResultActivity(MainActivity.ADDED, new Bundle());
-//                if (!profile.isTestProf()){
-//                    dialog.show();
-//                }else{
+//                ((MainActivity) getActivity()).startResultActivity(MainActivity.ADDED, new Bundle());
+                if (!profile.isTestProf()){
+                    dialog.show();
+                }else{
+                    progress.show();
+                    DatabaseManager.getTagListFromServer(MainFragment.this);
 //                    getTagListFromServer();
-//                }
+                }
             }
         });
 
     }
 
+    @Override
+    public void onDataDownloaded(String result) {
+        Log.d("LOG data downloaded: ", result);
+        if (progress!=null)
+            progress.hide();
+        if (result == Common.SUCCESS) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction().setCustomAnimations(
+                    R.anim.slide_in_right, R.anim.slide_out_left,
+                    R.anim.slide_in_left, R.anim.slide_out_right)
+                    .replace(R.id.fragment, PreferenceInquiryFragment.newInstance(DatabaseManager.getUserProfile()))
+                    .addToBackStack(null)
+                    .commit();
+        }
+    }
+
     private void getTagListFromServer(){
         if (DatabaseManager.getTagList() == null) {
-            final ProgressDialog progress = ProgressDialog.show(getActivity(), "", getResources().getString(R.string.loading), false);
+
             DatabaseReference database = FirebaseDatabase.getInstance().getReference();
             database.child(Common.TAG).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override

@@ -1,5 +1,7 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -76,5 +78,27 @@ public class KanseiPreferences {
             }
         }
         return null;
+    }
+
+    public String retrieveKanseiTagResultTest(){
+        String result = "";
+
+        Collections.sort(tags, new Comparator<KanseiItem>() {
+            @Override
+            public int compare(KanseiItem result2, KanseiItem result1) {
+                return Double.compare(result1.retrieveValue(), result2.retrieveValue());
+            }
+        });
+
+        for(KanseiItem item:tags){
+            if (item.getTotalTimeRated()>1) {
+                String name = item.getName();
+                String score = item.retrieveValue() > 0 ? "<font color='blue'>" + item.retrieveValue() + "</font>" : "<font color='red'>" + item.retrieveValue() + "</font>";
+                String number = "" + item.getTotalTimeRated();
+                result += name + " - " + score + " - " + number + "<br>";
+            }
+        }
+
+        return result;
     }
 }

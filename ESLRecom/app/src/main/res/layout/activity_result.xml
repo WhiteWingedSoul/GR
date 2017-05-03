@@ -46,45 +46,53 @@
                         </com.hedspi.hoangviet.eslrecom.libraries.NonSwipeableViewPager>
                     </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/priceTag"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100$"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
-                        android:ellipsize="end" />
+                    <LinearLayout
+                        android:id="@+id/externalLinkLayout"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                    <Button
-                        android:id="@+id/buyButton"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="5dp"
-                        android:backgroundTint="@color/colorProgressColor"
-                        android:fontFamily="serif"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="@string/buyNow"
-                        android:textColor="@color/white" />
+                        <TextView
+                            android:id="@+id/priceTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100$"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="20dp"
+                            android:ellipsize="end" />
 
-                    <Button
-                        android:id="@+id/viewOnlineButton"
-                        android:visibility="gone"
-                        android:layout_width="130dp"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="5dp"
-                        android:backgroundTint="@color/colorRed"
-                        android:fontFamily="serif"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="@string/viewOnline"
-                        android:textColor="@color/white" />
+                        <Button
+                            android:id="@+id/buyButton"
+                            android:layout_width="130dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:backgroundTint="@color/colorProgressColor"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="@string/buyNow"
+                            android:textColor="@color/white" />
 
+                        <Button
+                            android:id="@+id/viewOnlineButton"
+                            android:visibility="gone"
+                            android:layout_width="130dp"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="5dp"
+                            android:backgroundTint="@color/colorRed"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:text="@string/viewOnline"
+                            android:textColor="@color/white" />
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -96,6 +104,7 @@
                     android:paddingLeft="20dp">
 
                     <LinearLayout
+                        android:id="@+id/smallInfoLayout"
                         android:layout_weight="1"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
