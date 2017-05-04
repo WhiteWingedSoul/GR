@@ -94,19 +94,22 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
     @Override
     public void onBackPressed() {
-        KanseiPreferences userKanseiPreference;
-        if ((userKanseiPreference = ResultHelper2Test.getUserKanseiPreferences()) != null) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View dialogView = inflater.inflate(R.layout.dialog_test, null);
-            final Dialog dialog = builder.setView(dialogView).create();
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-            dialog.show();
-            TextView testText = (TextView) dialogView.findViewById(R.id.testText);
-            testText.setText(Html.fromHtml(userKanseiPreference.retrieveKanseiTagResultTest()));
+        //TODO DEBUG CODE PART
+//        KanseiPreferences userKanseiPreference;
+//        if ((userKanseiPreference = ResultHelper2Test.getUserKanseiPreferences()) != null) {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            View dialogView = inflater.inflate(R.layout.dialog_test, null);
+//            final Dialog dialog = builder.setView(dialogView).create();
+//            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//            dialog.show();
+//            TextView testText = (TextView) dialogView.findViewById(R.id.testText);
+//            testText.setText(Html.fromHtml(userKanseiPreference.retrieveKanseiTagResultTest()));
+//
+//        }
 
-        }
-//        super.onBackPressed();
+        // COMMENT THE LINE BELOW WHEN DEBUG //
+        super.onBackPressed();
     }
 
     @Override

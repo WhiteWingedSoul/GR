@@ -14,7 +14,7 @@ public class KanseiItem {
     private double badScore = 0;
     private int totalBadRated = 0;
 
-    private static final int CURVE_RATE = 1;
+    private static final int CURVE_RATE = 2;
 
     public String getName() {
         return name;
