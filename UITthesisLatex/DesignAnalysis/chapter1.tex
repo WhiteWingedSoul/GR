@@ -3,6 +3,9 @@
 % \pagebreak[4]
 % \hspace*{1cm}
 % \pagebreak[4]
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
 
 \chapter{Phân tích thiết kế xây dựng hệ thống} \label{design-analysis}
 
@@ -496,3 +499,122 @@ Giá trị ngưỡng $t$ được chuyên gia quy định sẵn trong hệ thố
 Do $rv = 0.782 > t$ => Kết quả là tài liệu được xét có phù hợp với nguyện vọng và trình độ người dùng.
 	
 \section{Áp dụng Kansei Engineering để cải thiện kết quả tư vấn}
+
+Bước Context-matching trả về cho người dùng kết quả tư vấn đã phù hợp với \textit{trình độ} và \textit{nguyện vọng} của họ. Tuy nhiên, ta dễ dàng thấy được với một đối tượng người dùng bất kỳ ( cùng \textit{trình độ} và cùng \textit{nguyện vọng} ) sẽ luôn cho ra tập kết quả y hệt nhau. Trong khi đó, mục tiêu cuối cùng mà đề tài này hướng đến không phải là các kết quả tư vấn chung cho một đối tượng người dùng mà phải là kết quả tư vấn phù hợp với \textit{cá nhân} từng người dùng khác nhau.\\
+
+ Cụ thể, nó phải phù hợp với thói quen, sở thích cá nhân của người dùng - những yếu tố mà có thể hoặc không thể thể diễn đạt qua từ khoá nguyện vọng. (Vd: Cả 2 người dùng đều muốn học từ vựng tiếng Anh, nhưng người dùng A thích học qua video có ví dụ minh hoạ dễ nhớ, người dùng B thích đọc sách, có giải nghĩa cụ thể chi tiết..v..v...)
+
+ Bởi vậy, bước đánh giá Kansei được thực hiện để cá nhân hoá kết quả tư vấn cho người dùng.
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.6]{kansei}
+    \else
+      \includegraphics[scale=0.6]{kansei}
+    \fi
+    \caption{Mồ hình đánh giá Kansei}
+    \label{KanseiModel}
+  \end{center}
+\end{figure}
+
+Mô hình thuật toán thể hiện như hình vẽ bên trên là một chu trình tuần hoàn, bắt đầu từ tập kết quả nhận được từ bước Context-matching. Kết quả đầu tiên - tài liệu có độ phù hợp cao nhất với người dùng, được lấy ra để người dùng đánh giá theo cảm nhận của họ. Người dùng sẽ chọn mức độ ưa thích của mình đối với đối tượng bằng cách điều chỉnh thanh đo \textit{Ghét - Thích}. Tuỳ theo kết quả đánh giá mà ta sẽ có được các thuộc tính người dùng thích (\textit{likeAttributes}), hoặc các thuộc tính mà người dùng ghét (\textit{hateAttributes}) và điểm số tương ứng của chúng. Sử dụng các thuộc tính này để đánh giá lại độ ưu tiên của các kết quả còn lại, rồi lại tiếp tục chọn ra kết quả đầu tiên tiếp theo, và bắt đầu một chu kì mới tương tự. 
+
+
+\begin{algorithm}[H]
+\caption{Cải thiện kết quả tư vấn với Kansei Engineering}\label{kansei}
+\begin{algorithmic}[1]
+\Procedure{KANSEI}{$contextMatchingResult$}
+\State $firstItem \gets contextMatchingResults[0]$ Lấy item đầu tiên 
+\State $contextMatchingResults \gets contextMatchingResults[1,+]$
+\State Người dùng đánh giá thang cảm xúc Ghét-Thích
+\If {$score >= 0$}
+\State $likeAttributes \gets addAll(firstItem.attributes, score)$
+\State $kanseiPreference \gets add(likeAttributes)$
+\Else
+\State $hateAttributes \gets addAll(firstItem.attributes, score)$
+\State $kanseiPreference \gets add(hateAttributes)$
+\EndIf
+\State $contextMatchingResult \gets reevaluate(contextMatchingResults, kanseiPreference)$
+\State KANSEI($contextMatchingResults$).
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Đánh giá Kansei}
+
+Như đã trình bày ở phần Tổng quan Kansei Engineering (\ref{KanseiTheory}), Kansei là mô hình thể hiện nguyện vọng bên trong của con người biểu hiện qua cảm xúc. Bằng cách đánh giá Kansei, ta có thể xác định được các yếu tố ưu tiên của sản phẩm tuỳ theo cá nhân từng người dùng khác nhau.\\
+
+Đối tượng cần đánh giá, tài liệu học tiếng anh có độ phù hợp với \textit{trình độ} và \textit{nguyện vọng} của người dùng cao nhất hiện tại, được hiển thị đầy đủ thông tin cho người dùng. Người dùng sau đó sẽ dựa vào những thông tin được cung cấp và đánh giá \textit{độ thoả mãn} của họ về đối tượng. Việc đánh giá được thực hiện bằng việc điều chỉnh thanh gía trị đến khoảng mà người dùng cảm thấy phù hợp nhất. Giá trị mà người dùng có thể chọn tương ứng với khoảng $[-1, 1 ]$.\\
+
+\textit{tag} và \textit{docType} của tài liệu được trích xuất sau khi đánh gía để xây dựng Kansei Preference của người dùng. 2 thuộc tính trên được lựa chọn để đánh giá vì qua đánh giá đó là những thuộc tính có ảnh hưởng lớn nhất đến cảm nhận của người dùng. Tuỳ theo giá trị mà người dùng đánh giá, hệ thống sẽ có được các thuộc tính người dùng thích hoặc thuộc tính người dùng ghét.
+
+\begin{figure}[H]
+  \begin{center}
+    %\leavevmode
+    \ifpdf
+      \includegraphics[scale=0.75]{kanseiex}
+    \else
+      \includegraphics[scale=0.75]{kanseiex}
+    \fi
+    \caption{Ví dụ đánh giá}
+    \label{KanseiModelEx}
+  \end{center}
+\end{figure}
+
+\subsection{Kansei Preference Model}
+
+Kansei Preference là tập thuộc tính ảnh hưởng tích cực hoặc tiêu cực đến cảm nhận của người dùng về tài liệu mà họ được tư vấn.\\
+
+Do quá trình đánh giá Kansei đánh giá từng sản phẩm một, các thuộc tính có trong sản phẩm này mà người dùng thích đồng thời có thể tồn tại trong một sản phẩm khác mà người dùng đánh giá là ghét. Bởi vậy, để xác định được chính xác thuộc tính ảnh hưởng như thế nào đến người dùng. Mô hình Kansei Preference là danh sách chứa đựng các $KanseiItem$ như sau được xây dựng:
+
+\begin{lstlisting}[style=javacode, breaklines=true]
+
+public class KanseiItem {
+    private String name;
+
+    private double goodScore = 0;
+    private int totalGoodRated = 0;
+    private double badScore = 0;
+    private int totalBadRated = 0;
+    
+    ...
+}
+\end{lstlisting}
+
+Mỗi khi có thuộc tính được đánh giá gửi đến, hệ thống sẽ kiểm tra xem thuộc tính đó có tồn tại trong Kansei Preference hay không. Nếu không tồn tại, thuộc tính đó sẽ được thêm vào, nếu nó tồn tại, giá trị của thuộc tính đó sẽ được thay đổi.
+
+Nếu như người dùng đánh giá gần "\textit{Thích}", biến đếm $totalGoodRated$ được cộng thêm 1, giá trị $goodScore$ được cộng dồn, ngược lại, $totalBadRated$ cũng sẽ được cộng thêm 1 và $badScore$ được cộng dồn nếu người dùng đánh giá gần "\textit{Ghét}" hơn.\\
+
+Giá trị kansei thực sự của thuộc tính được tính theo công thức: 
+
+\begin{equation}
+r_s = score \times \dfrac{1}{1+2e^{-s}} 
+\end{equation}
+
+trong đó $r_s$ : giá trị kansei thực sự (thích/ghét)
+
+$score$ : tổng giá trị người dùng đánh giá ($goodScore$/$badScore$)
+
+$s$ : biến đếm số lần người dùng đánh giá ($totalGoodRated$/$totalBadRated$)\\
+
+Nếu thuộc tính có $r_s$ thích $>$ $r_s$ ghét, thuộc tính đó là thuộc tính $likeAttribute$ và $hateAttribute$ trong trường hợp ngược lại và giá trị $r_s$ tương ứng sẽ là giá trị Kansei của thuộc tính, sử dụng để đánh giá lại Context-matching trong bước tiếp theo.  
+\subsection{Đánh giá lại kết quả Context-matching}
+
+Sau khi xác định Kansei Preference, hệ thống tiến hành đánh giá lại toàn bộ kết quả context-matching chưa được xét đến.
+
+Với mỗi thuộc tính của tài liệu có trong Kansei Preference, ta có : 
+
+\begin{equation}
+kanseiScore += attribute_{score} * attribute_{av} 
+\end{equation}
+
+Độ phù hợp mới của tài liệu sẽ bằng: 
+
+\begin{equation}
+matchScore = contextMatchingScore + kanseiScore
+\end{equation}
+
+Với tài liệu có chứa thuộc tính mà người dùng ghét, giá trị $matchScore$ sẽ giảm đi, ngược lại với tài liệu mà hợp với người dùng , giá trị $matchScore$ sẽ tăng lên. Tập kết quả sẽ được sắp xếp lại độ phù hợp mới và lấy ra kết quả phù hợp nhất đầu tiên đưa cho người dùng, bắt đầu một chu kỳ tiếp theo.

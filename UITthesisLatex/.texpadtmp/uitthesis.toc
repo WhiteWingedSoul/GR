@@ -36,6 +36,9 @@
 \contentsline {subsection}{\numberline {3.4.1}T\IeC {\'\i }nh gi\IeC {\'a} tr\IeC {\d i} match $e$}{26}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}V\IeC {\'\i } d\IeC {\d u} v\IeC {\'\ohorn }i case study}{27}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}\IeC {\'A}p d\IeC {\d u}ng Kansei Engineering \IeC {\dj }\IeC {\h \ecircumflex } c\IeC {\h a}i thi\IeC {\d \ecircumflex }n k\IeC {\'\ecircumflex }t qu\IeC {\h a} t\IeC {\uhorn } v\IeC {\'\acircumflex }n}{29}{section.3.5}
-\contentsline {chapter}{\numberline {4} K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n }{30}{chapter.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{31}{chapter.5}
-\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{32}{appendix*.20}
+\contentsline {subsection}{\numberline {3.5.1}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} Kansei}{31}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Kansei Preference Model}{32}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} l\IeC {\d a}i k\IeC {\'\ecircumflex }t qu\IeC {\h a} Context-matching}{33}{subsection.3.5.3}
+\contentsline {chapter}{\numberline {4} K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c hi\IeC {\d \ecircumflex }n }{34}{chapter.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n v\IeC {\`a} h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{35}{chapter.5}
+\contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{36}{appendix*.22}

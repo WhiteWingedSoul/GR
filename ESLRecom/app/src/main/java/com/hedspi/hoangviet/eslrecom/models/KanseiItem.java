@@ -7,7 +7,7 @@ package com.hedspi.hoangviet.eslrecom.models;
 public class KanseiItem {
     private String name;
     private double value = 0;
-    private int totalTimeRated = 0;
+    private int totalTimeRated;
 
     private double goodScore = 0;
     private int totalGoodRated = 0;

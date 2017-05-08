@@ -43,6 +43,10 @@
 \usepackage{amssymb}
 \usepackage{pbox}
 
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
 \usepackage{makecell}
 \usepackage{subfigure}
 \usepackage{fancyhdr}
