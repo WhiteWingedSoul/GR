@@ -61,7 +61,8 @@ public class KanseiItem {
 
     public Double retrieveValue(){
         //TODO TESTING
-        if (Math.abs(retrieveGoodScore())>=Math.abs(retrieveBadScore()))
+
+        if (Math.abs(retrieveGoodScore()*totalGoodRated)>=Math.abs(retrieveBadScore()*totalBadRated))
             return retrieveGoodScore();
         else
             return retrieveBadScore();

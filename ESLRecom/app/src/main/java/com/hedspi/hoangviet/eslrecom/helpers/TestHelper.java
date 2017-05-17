@@ -42,7 +42,7 @@ public class TestHelper {
         currentType = type;
         rightAnsweredQuestionNum = 0;
         wrongAnsweredQuestionNum = 0;
-        questionNum = 0;
+        questionNum = 1;
         lowerAchivedDifficulty = null;
         upperAchivedDifficulty = null;
     }

@@ -226,3 +226,5 @@ tf(t, d) * idf(t, D) = \dfrac{f_d(t)}{\max_{w \in d} f_d(w)} * \log{\dfrac{|D|}{
 \end{equation}
 
 Lấy ví dụ một văn bản chứa 100 từ, trong đó từ "cat" xuất hiện 3 lần. Giá trị $tf$ của "cat" sẽ là   $\dfrac{3}{100} = 0.03$. Tiếp theo, giả dụ có 10 triệu văn bản và từ "cat" xuất hiện ở 1000 văn bản trong đó. Giá trị $idf$ sẽ là $\log{\dfrac{10,000,000}{1,000}} = 4$. Vậy trọng số $tf-idf$ của từ khoá "cat" sẽ là $0.03 * 4 = 0.12$.
+
+

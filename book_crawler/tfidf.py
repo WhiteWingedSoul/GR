@@ -32,11 +32,11 @@ with open('data.json') as json_data:
 			# blob = tb("")
 		# else:
 			# blob = tb(jsonStr['subjects'])
-		query = ''+jsonStr['name']
+		query = ''+jsonStr['name'].lower()
 		if jsonStr['summary'] is not None:
-			query += ' '+jsonStr['summary']
-		if jsonStr['subjects'] is not None:
-			query += ' '+jsonStr['subjects']
+			query += ' '+jsonStr['summary'].lower()
+		# if jsonStr['subjects'] is not None:
+		# 	query += ' '+jsonStr['subjects']
 		if query is not None:
 			blob = tb(""+query)
 			bloblist.append(blob)
@@ -52,7 +52,7 @@ with open('data.json') as json_data:
 				tagJson.tag += ', '+word
 			print("Word: {}, TF-IDF: {}".format(word, round(score, 5)))
 		tagList.append(jsonpickle.encode(tagJson, unpicklable=False))
-	with open('data_tag_nocontent.json', 'w+') as outfile:
+	with open('test_tfidf.json', 'w+') as outfile:
 		json.dump(tagList, outfile)
 
 

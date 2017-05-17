@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().add(R.id.fragment, MainFragment.newInstance(), ""+FRAG_MAIN).commit();
 
 
-//        ////         DUMP DATA TO FIREBASE
+        ////         DUMP DATA TO FIREBASE
 //        new AsyncTask<Void, Void, Void>(){
 //            @Override
 //            protected Void doInBackground(Void... params) {
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 //
 //            }
 //        }.execute();
-//        /////////////////////////////////////////////
+        /////////////////////////////////////////////
 
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         database.child("preference").addValueEventListener(new ValueEventListener() {

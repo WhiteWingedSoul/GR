@@ -91,7 +91,7 @@ public class KanseiPreferences {
         });
 
         for(KanseiItem item:tags){
-            if (item.getTotalTimeRated()>1) {
+            if (item.getTotalTimeRated()>1 ) {
                 String name = item.getName();
                 String score = item.retrieveValue() > 0 ? "<font color='blue'>" + item.retrieveValue() + "</font>" : "<font color='red'>" + item.retrieveValue() + "</font>";
                 String number = "" + item.getTotalTimeRated();

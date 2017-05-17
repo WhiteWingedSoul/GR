@@ -35,7 +35,7 @@ def extract_time(json):
     except KeyError:
         return 0
 
-with open('data_book_tag.json') as json_data:
+with open('test_tfidf.json') as json_data:
 	jsonArray = json.load(json_data)
 	for index, jsonStr in enumerate(jsonArray):
 		#For each tag found
@@ -131,7 +131,7 @@ with open('data_book_tag.json') as json_data:
 
 	# TODO limit(=5) relevant tag, unlimit childTag, delete unimportant one
 	# phan biet childTag (score<TagScore) va relevant Tag (score > TagScore)
-	with open('tag_network_test_withdependency.json', 'w+') as outfile:
+	with open('test_tag_network.json', 'w+') as outfile:
 		sortedList = sorted(itemTagList, key=lambda items: items.score, reverse = True)
 		sortedJson = jsonpickle.encode(sortedList, unpicklable=False)
 		json.dump(sortedJson, outfile)
