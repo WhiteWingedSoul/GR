@@ -237,7 +237,7 @@ public class Material implements Serializable {
 
     public List<String> retrieveTagList(){
         String trimmedTags = tag.replace(", ",",");
-        return Arrays.asList(trimmedTags.split(","));
+            return Arrays.asList(trimmedTags.split(","));
     }
 
     public double getKeywordImportantScore(String keyword){

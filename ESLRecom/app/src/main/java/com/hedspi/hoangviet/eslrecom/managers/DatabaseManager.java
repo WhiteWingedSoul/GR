@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * Created by hoangviet on 1/8/16.
  */
-public class DatabaseManager {
+    public class DatabaseManager {
     private static DatabaseManager mInstance = null;
     private Context mContext;
 //    private DatabaseHelper dbHelper;
