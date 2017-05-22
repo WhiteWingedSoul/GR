@@ -24,6 +24,7 @@ public class ResultHelper2Test {
     private static KanseiPreferences userKanseiPreferences;
     private static List<String> showedMaterialTitles;
     private static List<String> likedMaterialTitles;
+    private static List<String> likedTags = new ArrayList<>();
     private static UserProfile profile;
 
     private static int currentItemPos = 0;
@@ -95,6 +96,26 @@ public class ResultHelper2Test {
         sortedMatchResults = sortedMatchResults.subList(5, sortedMatchResults.size());
 
         return list;
+    }
+
+    public static String highLightMatchTags(Material material) {
+        String tagsString = new String();
+        KanseiItem tagKansei;
+        for (String tagName : material.retrieveTagList()) {
+            if (DatabaseManager.getTagStringList().contains(tagName)) {
+                if (profile.getLearnList().contains(tagName)) {
+                    tagsString += "<font color='blue'>" + tagName+ "</font>, ";
+                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() >= 0.4){
+                    tagsString += "<font color='blue'>" + tagName+ "</font>, ";
+                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() < -0.4){
+                    tagsString += "<font color='red'>" + tagName+ "</font>, ";
+                }else{
+                    tagsString += tagName+ ", ";
+                }
+            }
+        }
+
+        return tagsString;
     }
 
     public static int reevaluate(double score){

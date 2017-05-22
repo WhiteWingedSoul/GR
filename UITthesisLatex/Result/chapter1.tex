@@ -102,7 +102,7 @@ Dựa vào chức năng mà hệ thống sẽ xây dựng sẽ cung cấp, ngư�
 \begin{itemize}
 	\item Hệ điều hành: OS X El Capitan.
 	\item Môi trường phát triển: Android Studio
-	\item Cơ sở dữ liệu: SQLite, Firebase.
+	\item Cơ sở dữ liệu: Firebase.
 	\item Framework: Android SDK.
 	\item Ngôn ngữ: Java.
 \end{itemize}
@@ -134,8 +134,12 @@ Các thành phần chính của hệ thống:
 	\item \textbf{Models: } Bao gồm các lớp chứa dữ liệu được tổ chức có cấu trúc, mỗi lớp đặc trưng cho một đối tượng cụ thể mà Controller hoặc các thành phần khác sẽ gọi đến để sử dụng trong xử lý bài toán. Dữ liệu lưu trữ trong cơ sở dữ liệu đều được lưu dưới dạng các đối tượng của lớp Model.
 	\item \textbf{Views: } Bao gồm các file .xml đặc tả cấu trúc, cách bố trí và sự xuất hiện của giao diện ứng dụng, trong đó có layout, drawable, animation, value về màu sắc, style, font chữ ..v..v...Mỗi Activity và Fragment sẽ có một layout tương ứng với chúng.	 
 \end{itemize}
-
+\pagebreak
 \subsection{Biểu đồ lớp theo ca sử dụng}
+
+\begin{itemize}
+	\item \textbf{Đăng nhập:}
+\end{itemize}
 
 \begin{figure}[H]
   \begin{center}
@@ -150,6 +154,11 @@ Các thành phần chính của hệ thống:
   \end{center}
 \end{figure}
 
+\pagebreak
+\begin{itemize}
+	\item \textbf{Kiểm tra trình độ:}
+\end{itemize}
+
 \begin{figure}[H]
   \begin{center}
     %\leavevmode
@@ -162,6 +171,11 @@ Các thành phần chính của hệ thống:
     \caption{Biểu đồ lớp theo ca sử dụng: kiểm tra trình độ}
   \end{center}
 \end{figure}
+
+\pagebreak
+\begin{itemize}
+	\item \textbf{Tư vấn tài liệu:}
+\end{itemize}
 
 \begin{figure}[H]
   \begin{center}
@@ -176,6 +190,7 @@ Các thành phần chính của hệ thống:
   \end{center}
 \end{figure}
 
+\pagebreak
 \subsection{Mô hình cơ sở dữ liệu}
 
 Dữ liệu lưu trữ trên Firebase được lưu trữ dưới dạng NoSQL, khác với các mô hình RDBMS thông thường. Trong NoSQL, dữ liệu được lưu trữ dưới dạng JSON, mô hình dưới dạng mà hệ thống có thể sử dụng trực tiếp, loại bỏ các ràng buộc liên kết giữa bảng với bảng. Các thuộc tính trong một đối tượng được trải đều ra và không khuyến khích phân tầng, truy xuất dựa trên các cặp "key" và "value". Nhờ vậy, NoSQL cho ra hiệu năng cao hơn khi cần truy xuất tập dữ liệu lớn so với các mô hình RDBMS thông thường.
@@ -194,8 +209,147 @@ Dữ liệu lưu trữ trên Firebase được lưu trữ dưới dạng NoSQL, 
   \end{center}
 \end{figure}
 
-
+\pagebreak
 \section{Kết quả cài đặt}
 
-2
+Sử dụng các kiến thức và phân tích trong đề tài, sau khi cài đặt thử nghiệm, ứng dụng xây dựng được có kết quả như sau:\\
 
+\textbf{Màn hình đăng nhập:}
+\vskip 0.1in
+
+Màn hình đầu tiên được hiển thị khi bắt đầu sử dụng ứng dụng, người dùng cần đăng nhập (hoặc đăng ký nếu chưa là thành viên) qua tài khoản Facebook trước khi bắt đầu sử dụng. Sau khi đã đăng nhập (hoặc đăng ký) thành công, hệ thống sẽ tự động phát hiện người dùng đã đăng nhập và hiển thị màn hình chính của ứng dụng trong các lần khởi động tiếp theo. Thông tin người dùng trên Firebase sẽ được tải về (hoặc cập nhập) sau khi đăng nhập.\\
+
+\begin{figure}[H]
+  \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{splash_screen}
+    \else
+      \includegraphics[scale=0.5]{splash_screen}
+    \fi  	
+  \end{minipage}
+    \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{login_screen}
+    \else
+      \includegraphics[scale=0.5]{login_screen}
+    \fi  	
+  \end{minipage}
+    %\leavevmode
+    \caption{Giao diện màn hình đăng nhập}
+    \label{LoginScreen}
+\end{figure}
+
+\pagebreak 
+Với người dùng sử dụng ứng dụng lần đầu tiên, hệ thống sẽ yêu cầu người dùng phải thực hiện kiểm tra trình độ trước khi sử dụng chức năng tư vấn. \\	
+
+\begin{figure}[H]
+  \begin{minipage}[b]{1\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{test_require_screen}
+    \else
+      \includegraphics[scale=0.5]{test_require_screen}
+    \fi  	
+  \end{minipage}
+    %\leavevmode
+    \captionsetup{justification=centering, margin=2cm}
+    \caption{Người dùng được yêu cầu làm bài kiểm tra trình độ trong lần sử dụng đầu tiên}
+    \label{RequireTestScreen}
+\end{figure}
+
+\textbf{Màn hình kiểm tra trình độ:}
+\vskip 0.1in
+
+Sau khi ấn OK. Ứng dụng sẽ chuyển sang màn hình thực hiện kiểm tra trình độ. Người dùng sẽ trải qua lần lượt 3 bài kiểm tra về kiến thức Từ vựng, Ngữ pháp và Đọc hiểu tiếng Anh với các câu hỏi có độ khó thay đổi tuỳ biến vào kết quả trả lời của người dùng. Mỗi bài kiểm tra dài khoảng từ 5~15 câu hỏi tuỳ thuộc vào kết quả trả lời của người dùng.
+
+Sau khi đã hoàn tất bài kiểm tra, trình độ của người dùng về từng lĩnh vực được hiển thị lên trên màn hình, người dùng chọn Hoàn Tất để quay trở lại màn hình chính.
+
+\begin{figure}[H]
+    \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{begin_test_screen}
+    \else
+      \includegraphics[scale=0.5]{begin_test_screen}
+    \fi  	
+  \end{minipage}
+      \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{test_screen}
+    \else
+      \includegraphics[scale=0.5]{test_screen}
+    \fi  	
+  \end{minipage}
+      \begin{minipage}[b]{1\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{result_test_screen}
+    \else
+      \includegraphics[scale=0.5]{result_test_screen}
+    \fi  	
+  \end{minipage}
+    %\leavevmode
+    \caption{Giao diện kiểm tra trình độ}
+    \label{TestScreen}
+\end{figure}
+
+\pagebreak
+\textbf{Màn hình nhập nguyện vọng học tiếng Anh:}
+\vskip 0.1in
+
+Trong màn hình chính, khi ấn chọn tư vấn, ứng dụng sẽ chuyển sang giao diện nhập nguyện vọng. Người dùng sẽ nhập nguyện vọng về một kĩ năng hoặc lĩnh vực nào đó mà họ cần tư vấn vào ô nhập liệu, các kết quả gợi ý sẽ xuất hiện để gợi ý cho người dùng. Sau khi nhập xong, người dùng ấn "Finish" để bắt đầu thực hiện tư vấn.\\  
+
+\begin{figure}[H]
+  \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{main_screen}
+    \else
+      \includegraphics[scale=0.5]{main_screen}
+    \fi  	
+  \end{minipage}
+    \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{choose_prefer_screen}
+    \else
+      \includegraphics[scale=0.5]{choose_prefer_screen}
+    \fi  	
+  \end{minipage}
+    %\leavevmode
+    \caption{Giao diện nhập nguyện vọng học của người dùng}
+    \label{PreferenceInquiryScreen}
+\end{figure}
+
+\pagebreak
+\textbf{Màn hình kết quả và đánh giá kết quả tư vấn:}
+\vskip 0.1in
+
+Sau khi kết thúc tính toán, ứng dụng sẽ hiển thị lần lượt các kết quả tư vấn theo giao diện hình bên trái phía dưới. Trang bìa tài liệu, tên tác giả, thể loại, giá cả là các thông tin quan trọng, được bố cục nổi bật lên trên đầu, phía dưới là các thông tin cụ thể khác về tài liệu. Ngoài ra, trên giao diện còn có 2 nút, người dùng ấn "Rate it" để đánh giá tài liệu xem họ có thích hay không. Sau đánh giá, tiêu chí ưa thích của người dùng được cập nhập và ứng dụng chuyển sang hiển thị kết quả tiếp theo, phù hợp hơn với các tiêu chí đó.
+
+Ngoài ra, trên giao diện còn có nút "Buy now" (hoặc "View Online" nếu tài liệu có link xem online), người dùng có thể ấn vào đó và chuyển hướng đến Amazon để đặt mua tài liệu.	\\    
+
+\begin{figure}[H]
+  \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{match_result_screen}
+    \else
+      \includegraphics[scale=0.5]{match_result_screen}
+    \fi  	
+  \end{minipage}
+    \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{buy_now_screen}
+    \else
+      \includegraphics[scale=0.5]{buy_now_screen}
+    \fi  	
+  \end{minipage}
+    %\leavevmode
+    \caption{Giao diện kết quả tư vấn}
+    \label{RecommendedResultScreen}
+\end{figure}

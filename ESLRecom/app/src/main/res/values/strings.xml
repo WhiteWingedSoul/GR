@@ -118,6 +118,7 @@
     <string name="viewOnline">View online</string>
     <string name="love">Love</string>
     <string name="hate">Hate</string>
+    <string name="detail">Detail</string>
 
 
     <string-array name="language">

@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -46,6 +47,7 @@ import com.squareup.picasso.Picasso;
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -61,6 +63,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private List<AdapterItem> mItems = new ArrayList<>();
     private ProgressDialog progress;
     private Material currentMaterial;
+    private MatchResult currentMatchReult;
 
     private NonSwipeableViewPager viewPager;
     private ResultViewPagerAdapter adapter;
@@ -73,6 +76,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private View externalLinkLayout;
 
     private TextView title;
+    private TextView title2;
     private TextView author;
     private TextView publisher;
     private TextView editionformat;
@@ -85,31 +89,36 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private TextView buyerName;
     private TextView buyerPrice;
     private TextView buyerLink;
+    private TextView tag;
     private DiscreteSeekBar kanseiScale;
     private Button buyButton;
     private Button viewOnlineButton;
 
     private Button rateButton;
 
+    private TextView contextMatch;
+    private TextView kanseiMatch;
+    private TextView matchDetail;
+    private View matchScoreLayout;
 
     @Override
     public void onBackPressed() {
         //TODO DEBUG CODE PART
-        KanseiPreferences userKanseiPreference;
-        if ((userKanseiPreference = ResultHelper2Test.getUserKanseiPreferences()) != null) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View dialogView = inflater.inflate(R.layout.dialog_test, null);
-            final Dialog dialog = builder.setView(dialogView).create();
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-            dialog.show();
-            TextView testText = (TextView) dialogView.findViewById(R.id.testText);
-            testText.setText(Html.fromHtml(userKanseiPreference.retrieveKanseiTagResultTest()));
-
-        }
+//        KanseiPreferences userKanseiPreference;
+//        if ((userKanseiPreference = ResultHelper2Test.getUserKanseiPreferences()) != null) {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            View dialogView = inflater.inflate(R.layout.dialog_test, null);
+//            final Dialog dialog = builder.setView(dialogView).create();
+//            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//            dialog.show();
+//            TextView testText = (TextView) dialogView.findViewById(R.id.testText);
+//            testText.setText(Html.fromHtml(userKanseiPreference.retrieveKanseiTagResultTest()));
+//
+//        }
 
         // COMMENT THE LINE BELOW WHEN DEBUG //
-//        super.onBackPressed();
+        super.onBackPressed();
     }
 
     @Override
@@ -128,6 +137,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         externalLinkLayout = findViewById(R.id.externalLinkLayout);
 
         title = (TextView) findViewById(R.id.title);
+        title2 = (TextView) findViewById(R.id.title2);
         author = (TextView) findViewById(R.id.author);
         publisher = (TextView) findViewById(R.id.publisher);
         editionformat = (TextView) findViewById(R.id.editionformat);
@@ -140,11 +150,28 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         buyerName = (TextView) findViewById(R.id.buyerName);
         buyerPrice = (TextView) findViewById(R.id.buyerPrice);
         buyerLink = (TextView) findViewById(R.id.buyerLink);
+        tag = (TextView) findViewById(R.id.tag);
+
+        contextMatch = (TextView) findViewById(R.id.contextMatchScore);
+        kanseiMatch = (TextView) findViewById(R.id.kanseiMatchScore);
+        matchDetail = (TextView) findViewById(R.id.matchDetail);
+        matchDetail.setPaintFlags(matchDetail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        //TODO
+        matchDetail.setVisibility(View.GONE);
+
+        matchScoreLayout = findViewById(R.id.matchScoreLayout);
 
         kanseiScale = (DiscreteSeekBar) findViewById(R.id.kanseiScale);
         rateButton = (Button) findViewById(R.id.rateButton);
         buyButton = (Button) findViewById(R.id.buyButton);
         viewOnlineButton = (Button) findViewById(R.id.viewOnlineButton);
+
+        matchScoreLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO
+            }
+        });
 
         rateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,7 +194,8 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         if (result == Common.SUCCESS){
             startInitialMatching();
 
-            currentMaterial = ((MatchResult)mItems.get(0)).getMaterial();
+            currentMatchReult = (MatchResult)mItems.get(0);
+            currentMaterial = currentMatchReult.getMaterial();
             buyButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -218,10 +246,25 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         AnimationHelper.playAppearAnimation(smallInfoLayout, 0, null);
         AnimationHelper.playAppearAnimation(externalLinkLayout, 0, null);
 
+        String score = "<font color='blue'> " + new DecimalFormat("##.#### %").format(currentMatchReult.getMatchScore())+ "</font>" ;
+        contextMatch.setText(Html.fromHtml("Context match: "+score));
+
+        score = currentMatchReult.getKanseiScore() >= 0 ? "<font color='blue'> +" + new DecimalFormat("##.#### %").format(currentMatchReult.getKanseiScore())+ "</font>" : "<font color='red'> -" + new DecimalFormat("##.#### %").format(currentMatchReult.getKanseiScore()) + "</font>";
+        kanseiMatch.setText(Html.fromHtml("Kansei match: "+score));
+
+        if (currentMaterial.getTag() == null || currentMaterial.getTag().equals("")){
+            tag.setText("");
+        }else{
+            String tagString = ResultHelper2Test.highLightMatchTags(currentMaterial);
+            tag.setText(Html.fromHtml("Tags: "+tagString));
+        }
+
         if (currentMaterial.getName() == null || currentMaterial.getName().equals("")){
             title.setText("");
+            title2.setText("");
         }else{
             title.setText(currentMaterial.getName());
+            title2.setText(currentMaterial.getName());
         }
         if (currentMaterial.getAuthor() == null || currentMaterial.getAuthor().equals("")){
             author.setText("");
@@ -428,7 +471,8 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         if ((currentPosition + 1) == mItems.size()) {
             finish();
         } else {
-            currentMaterial = ((MatchResult)mItems.get(currentPosition+1)).getMaterial();
+            currentMatchReult = (MatchResult)mItems.get(currentPosition+1);
+            currentMaterial = currentMatchReult.getMaterial();
             updateViews();
 
             viewPager.setCurrentItem(currentPosition + 1, true);
