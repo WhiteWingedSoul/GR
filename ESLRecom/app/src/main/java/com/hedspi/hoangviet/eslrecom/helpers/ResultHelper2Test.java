@@ -3,7 +3,7 @@ package com.hedspi.hoangviet.eslrecom.helpers;
 import android.util.Log;
 
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
-import com.hedspi.hoangviet.eslrecom.models.KanseiItem;
+import com.hedspi.hoangviet.eslrecom.models.KanseiKeyword;
 import com.hedspi.hoangviet.eslrecom.models.KanseiPreferences;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.Material;
@@ -38,8 +38,8 @@ public class ResultHelper2Test {
         profile = pf;
 
         userKanseiPreferences = new KanseiPreferences();
-        userKanseiPreferences.setDocTypes(new ArrayList<KanseiItem>());
-        userKanseiPreferences.setTags(new ArrayList<KanseiItem>());
+        userKanseiPreferences.setDocTypes(new ArrayList<KanseiKeyword>());
+        userKanseiPreferences.setTags(new ArrayList<KanseiKeyword>());
 
     }
 
@@ -81,6 +81,12 @@ public class ResultHelper2Test {
             Material material = matchResult.getMaterial();
             double kanseiScore = kanseiMatching(material);
 
+            if (kanseiScore <0 ){
+                Log.d("test","ahihi");
+            }else{
+                Log.d("test","ahihi");
+            }
+
             matchResult.setKanseiScore(kanseiScore);
         }
 
@@ -100,7 +106,7 @@ public class ResultHelper2Test {
 
     public static String highLightMatchTags(Material material) {
         String tagsString = new String();
-        KanseiItem tagKansei;
+        KanseiKeyword tagKansei;
         for (String tagName : material.retrieveTagList()) {
             if (DatabaseManager.getTagStringList().contains(tagName)) {
                 if (profile.getLearnList().contains(tagName)) {
@@ -131,17 +137,17 @@ public class ResultHelper2Test {
 
     private static void updateKanseiPreference(double score){
         Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
-        List<KanseiItem> kanseiDocType = userKanseiPreferences.getDocTypes();
-        List<KanseiItem> kanseiTag = userKanseiPreferences.getTags();
+        List<KanseiKeyword> kanseiDocType = userKanseiPreferences.getDocTypes();
+        List<KanseiKeyword> kanseiTag = userKanseiPreferences.getTags();
 
         if (score > 0){
             likedMaterialTitles.add(currentMaterial.getName());
         }
 
 
-        KanseiItem docType = userKanseiPreferences.retrieveDocType(currentMaterial.getName());
+        KanseiKeyword docType = userKanseiPreferences.retrieveDocType(currentMaterial.getName());
         if (docType == null){
-            docType = new KanseiItem();
+            docType = new KanseiKeyword();
             docType.setName(currentMaterial.getDocumentType());
             if (score>=0)
                 docType.addGoodScore(score);
@@ -159,10 +165,10 @@ public class ResultHelper2Test {
         for (String tagName : currentMaterial.retrieveTagList()){
             if (DatabaseManager.getTagStringList().contains(tagName)) {
                 if (!profile.getLearnList().contains(tagName)) {
-                    KanseiItem tag = userKanseiPreferences.retrieveTag(tagName);
+                    KanseiKeyword tag = userKanseiPreferences.retrieveTag(tagName);
 
                     if (tag == null) {
-                        tag = new KanseiItem();
+                        tag = new KanseiKeyword();
                         tag.setName(tagName);
                         if (score>=0)
                             tag.addGoodScore(score);
@@ -191,6 +197,12 @@ public class ResultHelper2Test {
 
         kanseiScore = kanseiTagScore + kanseiDocTypeScore;
 
+        if (kanseiScore <0 ){
+            Log.d("test","ahihi");
+        }else{
+            Log.d("test","ahihi");
+        }
+
         return kanseiScore/DatabaseManager.getPreference().getBestMatch();
     }
 
@@ -200,7 +212,7 @@ public class ResultHelper2Test {
         if (userKanseiPreferences.getTags().size() != 0){
             List<String> profileTags = material.retrieveTagList();
             for (String tag : profileTags){
-                for (KanseiItem item : userKanseiPreferences.getTags()){
+                for (KanseiKeyword item : userKanseiPreferences.getTags()){
                     if (item.getName().equals(tag)){
                         int n = item.getTotalTimeRated();
                         double itemScore = material.getKeywordImportantScore(tag) * item.retrieveValue();
@@ -223,7 +235,7 @@ public class ResultHelper2Test {
         if (userKanseiPreferences.getDocTypes().size() != 0){
             String docType = material.getDocumentType();
 
-            for (KanseiItem item: userKanseiPreferences.getDocTypes()){
+            for (KanseiKeyword item: userKanseiPreferences.getDocTypes()){
                 if (item.getName().equals(docType)){
                     int n = item.getTotalTimeRated();
                     double itemScore = item.retrieveValue();

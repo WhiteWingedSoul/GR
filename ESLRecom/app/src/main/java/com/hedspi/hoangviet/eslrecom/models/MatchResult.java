@@ -12,8 +12,6 @@ public class MatchResult extends AdapterItem{
     private double matchScore;
     private double kanseiScore;
 
-    private List<KanseiItem> kanseiMatchTags = new ArrayList<>();
-
     public double getKanseiScore() {
         return kanseiScore;
     }
@@ -38,7 +36,5 @@ public class MatchResult extends AdapterItem{
         this.material = material;
     }
 
-    public List<KanseiItem> getLegitTags() {
-        return kanseiMatchTags;
-    }
+
 }
