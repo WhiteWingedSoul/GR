@@ -3,6 +3,7 @@ package com.hedspi.hoangviet.eslrecom.helpers;
 import android.util.Log;
 
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
+import com.hedspi.hoangviet.eslrecom.models.KanseiItem;
 import com.hedspi.hoangviet.eslrecom.models.KanseiKeyword;
 import com.hedspi.hoangviet.eslrecom.models.KanseiPreferences;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
@@ -38,8 +39,7 @@ public class ResultHelper2Test {
         profile = pf;
 
         userKanseiPreferences = new KanseiPreferences();
-        userKanseiPreferences.setDocTypes(new ArrayList<KanseiKeyword>());
-        userKanseiPreferences.setTags(new ArrayList<KanseiKeyword>());
+        userKanseiPreferences.initAttributes();
 
     }
 
@@ -66,9 +66,9 @@ public class ResultHelper2Test {
             }
         });
 
-        list.addAll(sortedMatchResults.subList(0, 5));
+        list.addAll(sortedMatchResults.subList(0, 1));
 
-        sortedMatchResults = sortedMatchResults.subList(5, sortedMatchResults.size());
+        sortedMatchResults = sortedMatchResults.subList(1, sortedMatchResults.size());
 
         return list;
     }
@@ -79,7 +79,8 @@ public class ResultHelper2Test {
 
         for (MatchResult matchResult : sortedMatchResults){
             Material material = matchResult.getMaterial();
-            double kanseiScore = kanseiMatching(material);
+            matchResult = kanseiMatching(material, matchResult);
+            double kanseiScore = matchResult.getKanseiScore();
 
             if (kanseiScore <0 ){
                 Log.d("test","ahihi");
@@ -87,7 +88,6 @@ public class ResultHelper2Test {
                 Log.d("test","ahihi");
             }
 
-            matchResult.setKanseiScore(kanseiScore);
         }
 
         Collections.sort(sortedMatchResults, new Comparator<MatchResult>() {
@@ -97,9 +97,9 @@ public class ResultHelper2Test {
             }
         });
 
-        list.addAll(sortedMatchResults.subList(0, 5));
+        list.addAll(sortedMatchResults.subList(0, 1));
 
-        sortedMatchResults = sortedMatchResults.subList(5, sortedMatchResults.size());
+        sortedMatchResults = sortedMatchResults.subList(1, sortedMatchResults.size());
 
         return list;
     }
@@ -111,10 +111,10 @@ public class ResultHelper2Test {
             if (DatabaseManager.getTagStringList().contains(tagName)) {
                 if (profile.getLearnList().contains(tagName)) {
                     tagsString += "<font color='blue'>" + tagName+ "</font>, ";
-                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() >= 0.4){
-                    tagsString += "<font color='blue'>" + tagName+ "</font>, ";
-                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() < -0.4){
-                    tagsString += "<font color='red'>" + tagName+ "</font>, ";
+//                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() >= 0.4){
+//                    tagsString += "<font color='blue'>" + tagName+ "</font>, ";
+//                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() < -0.4){
+//                    tagsString += "<font color='red'>" + tagName+ "</font>, ";
                 }else{
                     tagsString += tagName+ ", ";
                 }
@@ -124,142 +124,398 @@ public class ResultHelper2Test {
         return tagsString;
     }
 
-    public static int reevaluate(double score){
-        updateKanseiPreference(score);
+    public static int reevaluate(double interestingScore, double understandableScore, double satisfyScore, double affordableScore){
+//        updateKanseiPreference(score);
+        updateKanseiInteresting(interestingScore);
+        updateKanseiUnderstandable(understandableScore);
+        updateKanseiSatisfy(satisfyScore);
+        updateKanseiAffordable(affordableScore);
+
         ratedCount++;
         currentItemPos++;
-        if (ratedCount == 5){
+        if (ratedCount == 1){
             return STATUS_END;
         }else{
             return STATUS_CONTINUE;
         }
     }
 
-    private static void updateKanseiPreference(double score){
+    private static void updateKanseiInteresting(double score){
         Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
-        List<KanseiKeyword> kanseiDocType = userKanseiPreferences.getDocTypes();
-        List<KanseiKeyword> kanseiTag = userKanseiPreferences.getTags();
+        KanseiItem interesting = updateKanseiTag(score, userKanseiPreferences.getInteresting(), currentMaterial);
+        interesting.addScore(score);
+        userKanseiPreferences.setInteresting(interesting);
+    }
+    private static void updateKanseiSatisfy(double score){
+        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+        KanseiItem satisfy = updateKanseiTag(score, userKanseiPreferences.getSatisfy(), currentMaterial);
+        satisfy.addScore(score);
+        userKanseiPreferences.setSatisfy(satisfy);
+    }
+    private static void updateKanseiUnderstandable(double score){
+        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+        KanseiItem understandable = updateKanseiTag(score, userKanseiPreferences.getUnderstandable(), currentMaterial);
+        understandable.addScore(score);
+        userKanseiPreferences.setUnderstandable(understandable);
+    }
 
-        if (score > 0){
-            likedMaterialTitles.add(currentMaterial.getName());
-        }
-
-
-        KanseiKeyword docType = userKanseiPreferences.retrieveDocType(currentMaterial.getName());
-        if (docType == null){
-            docType = new KanseiKeyword();
-            docType.setName(currentMaterial.getDocumentType());
-            if (score>=0)
-                docType.addGoodScore(score);
-            else
-                docType.addBadScore(score);
-            kanseiDocType.add(docType);
-        }else{
-            if (score>=0)
-                docType.addGoodScore(score);
-            else
-                docType.addBadScore(score);
-            kanseiDocType.set(kanseiDocType.indexOf(docType), docType);
-        }
-
+    private static KanseiItem updateKanseiTag(double score, KanseiItem inputItem, Material currentMaterial){
+        KanseiItem item = inputItem;
         for (String tagName : currentMaterial.retrieveTagList()){
             if (DatabaseManager.getTagStringList().contains(tagName)) {
                 if (!profile.getLearnList().contains(tagName)) {
-                    KanseiKeyword tag = userKanseiPreferences.retrieveTag(tagName);
+                    KanseiKeyword tag = item.retrieveKeyword(tagName);
 
                     if (tag == null) {
-                        tag = new KanseiKeyword();
-                        tag.setName(tagName);
-                        if (score>=0)
-                            tag.addGoodScore(score);
-                        else
-                            tag.addBadScore(score);
-                        kanseiTag.add(tag);
+                        if (score!=0) {
+                            tag = new KanseiKeyword();
+                            tag.setName(tagName);
+                            if (score >= 0)
+                                tag.addGoodScore(score);
+                            else
+                                tag.addBadScore(score);
+                            item.getKeywords().add(tag);
+                        }
                     } else {
-                        if (score>=0)
-                            tag.addGoodScore(score);
-                        else
-                            tag.addBadScore(score);
-                        kanseiTag.set(kanseiTag.indexOf(tag), tag);
+                        if (score!=0) {
+                            if (score >= 0)
+                                tag.addGoodScore(score);
+                            else
+                                tag.addBadScore(score);
+                            item.getKeywords().set(item.getKeywords().indexOf(tag), tag);
+                        }
                     }
                 } else {
                     Log.d("ahihi", "hihi");
                 }
             }
         }
+
+        return item;
     }
 
-    private static double kanseiMatching(Material material){
+//    private static void updateKanseiAcceptable(double score){
+//        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+//        KanseiItem acceptable = updateKanseiName(score, userKanseiPreferences.getAcceptable(), currentMaterial);
+//
+//        acceptable.addScore(score);
+//        userKanseiPreferences.setAcceptable(acceptable);
+//    }
+
+//    private static KanseiItem updateKanseiName(double score, KanseiItem inputItem, Material currentMaterial){
+//        KanseiItem item = inputItem;
+//
+//        for (String keyWordName : currentMaterial.retrieveKeywordsInName()){
+//            KanseiKeyword keyword = item.retrieveKeyword(keyWordName);
+//
+//            if (keyword == null) {
+//                keyword = new KanseiKeyword();
+//                keyword.setName(keyWordName);
+//                if (score>=0)
+//                    keyword.addGoodScore(score);
+//                else
+//                    keyword.addBadScore(score);
+//                item.getKeywords().add(keyword);
+//            } else {
+//                if (score>=0)
+//                    keyword.addGoodScore(score);
+//                else
+//                    keyword.addBadScore(score);
+//                item.getKeywords().set(item.getKeywords().indexOf(keyword), keyword);
+//            }
+//        }
+//
+//        return item;
+//    }
+
+    //TODO
+    private static void updateKanseiAffordable(double score){
+        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+        KanseiItem affordable = userKanseiPreferences.getAffordable();
+
+        if (currentMaterial.getSellerPrice() != null) {
+            double priceValue = Double.valueOf(currentMaterial.getSellerPrice().replace("$",""));
+            if (affordable.getKeywords().size()==0){
+                if (score!=0) {
+                    KanseiKeyword price = new KanseiKeyword();
+                    price.setName("price");
+                    price.addValue(priceValue * Math.abs(score));
+
+                    affordable.getKeywords().add(price);
+                }
+            }else{
+                if (score>0) {
+                    KanseiKeyword price = affordable.getKeywords().get(0);
+                    price.addValue(priceValue * Math.abs(score));
+
+                    affordable.getKeywords().set(0, price);
+                }
+            }
+        }
+
+        affordable.addScore(score);
+        userKanseiPreferences.setAffordable(affordable);
+    }
+
+//    private static void updateKanseiPreference(double score){
+//        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+//        List<KanseiKeyword> kanseiDocType = userKanseiPreferences.getDocTypes();
+//        List<KanseiKeyword> kanseiTag = userKanseiPreferences.getTags();
+//
+//        if (score > 0){
+//            likedMaterialTitles.add(currentMaterial.getName());
+//        }
+//
+//
+//        KanseiKeyword docType = userKanseiPreferences.retrieveDocType(currentMaterial.getName());
+//        if (docType == null){
+//            docType = new KanseiKeyword();
+//            docType.setName(currentMaterial.getDocumentType());
+//            if (score>=0)
+//                docType.addGoodScore(score);
+//            else
+//                docType.addBadScore(score);
+//            kanseiDocType.add(docType);
+//        }else{
+//            if (score>=0)
+//                docType.addGoodScore(score);
+//            else
+//                docType.addBadScore(score);
+//            kanseiDocType.set(kanseiDocType.indexOf(docType), docType);
+//        }
+//
+//        for (String tagName : currentMaterial.retrieveTagList()){
+//            if (DatabaseManager.getTagStringList().contains(tagName)) {
+//                if (!profile.getLearnList().contains(tagName)) {
+//                    KanseiKeyword tag = userKanseiPreferences.retrieveTag(tagName);
+//
+//                    if (tag == null) {
+//                        tag = new KanseiKeyword();
+//                        tag.setName(tagName);
+//                        if (score>=0)
+//                            tag.addGoodScore(score);
+//                        else
+//                            tag.addBadScore(score);
+//                        kanseiTag.add(tag);
+//                    } else {
+//                        if (score>=0)
+//                            tag.addGoodScore(score);
+//                        else
+//                            tag.addBadScore(score);
+//                        kanseiTag.set(kanseiTag.indexOf(tag), tag);
+//                    }
+//                } else {
+//                    Log.d("ahihi", "hihi");
+//                }
+//            }
+//        }
+//    }
+
+//    private static double kanseiMatching(Material material){
+//        double kanseiScore = 0;
+//
+//        for(KanseiItem attribute : userKanseiPreferences.allAttributes()){
+//            switch (attribute.getTarget()){
+//                case KanseiPreferences.TARGET_NAME:
+//                    double kanseiNameScore = matchKanseiName(material);
+//            }
+//        }
+//
+//        double kanseiDocTypeScore = matchKanseiDocType(material);
+//        double kanseiTagScore = matchKanseiTag(material);
+//
+//        kanseiScore = kanseiTagScore + kanseiDocTypeScore;
+//
+//        if (kanseiScore <0 ){
+//            Log.d("test","ahihi");
+//        }else{
+//            Log.d("test","ahihi");
+//        }
+//
+//        return kanseiScore/DatabaseManager.getPreference().getBestMatch();
+//    }
+
+    private static MatchResult kanseiMatching(Material material, MatchResult result){
+        MatchResult matchResult = result;
+        double mauso = DatabaseManager.getPreference().getBestMatch()+userKanseiPreferences.getAllWeights();
         double kanseiScore = 0;
+        matchResult = matchInteresting(material, matchResult);
+        matchResult.setInterestingScore(matchResult.getInterestingScore()/mauso);
+        matchResult = matchUnderstandable(material, matchResult);
+        matchResult.setUnderstandableScore(matchResult.getUnderstandableScore()/mauso);
+        matchResult = matchSatisfy(material, matchResult);
+        matchResult.setSatisfyScore(matchResult.getSatisfyScore()/mauso);
+        matchResult = matchAffordable(material, matchResult);
+        matchResult.setAffordableScore(matchResult.getAffordableScore()/mauso);
 
-        double kanseiDocTypeScore = matchKanseiDocType(material);
-        double kanseiTagScore = matchKanseiTag(material);
-
-        kanseiScore = kanseiTagScore + kanseiDocTypeScore;
+        kanseiScore = matchResult.getAffordableScore() + matchResult.getUnderstandableScore()+ matchResult.getSatisfyScore()+ matchResult.getInterestingScore();
 
         if (kanseiScore <0 ){
             Log.d("test","ahihi");
         }else{
             Log.d("test","ahihi");
         }
+        matchResult.setKanseiScore(kanseiScore);
+        return matchResult;
 
-        return kanseiScore/DatabaseManager.getPreference().getBestMatch();
     }
 
-    private static double matchKanseiTag(Material material) {
+    private static MatchResult matchInteresting(Material material, MatchResult result){
+        MatchResult matchResult = result;
+        KanseiItem matchItem = userKanseiPreferences.getInteresting();
+        matchResult = matchKanseiTag(material, matchItem.getKeywords(), matchResult);
+        matchResult.setInterestingScore(matchResult.getKanseiScore()*matchItem.retrieveWeight());
+        matchResult.setInterestingItems(matchResult.getKanseiItems());
+
+        return matchResult;
+    }
+
+    private static MatchResult matchSatisfy(Material material, MatchResult result){
+        MatchResult matchResult = result;
+        KanseiItem matchItem = userKanseiPreferences.getSatisfy();
+        matchResult = matchKanseiTag(material, matchItem.getKeywords(), matchResult);
+        matchResult.setSatisfyScore(matchResult.getKanseiScore()*matchItem.retrieveWeight());
+        matchResult.setSatisfyItems(matchResult.getKanseiItems());
+
+        return matchResult;
+    }
+
+    private static MatchResult matchUnderstandable(Material material, MatchResult result){
+        MatchResult matchResult = result;
+        KanseiItem matchItem = userKanseiPreferences.getUnderstandable();
+        matchResult = matchKanseiTag(material, matchItem.getKeywords(), matchResult);
+        matchResult.setUnderstandableScore(matchResult.getKanseiScore()*matchItem.retrieveWeight());
+        matchResult.setUnderstandableItems(matchResult.getKanseiItems());
+
+        return matchResult;
+    }
+
+    // PRICE DIFFERENT
+
+    private static MatchResult matchAffordable(Material material, MatchResult result) {
+        MatchResult matchResult = result;
+        KanseiItem matchItem = userKanseiPreferences.getAffordable();
+        if (matchItem.getKeywords().size()!=0) {
+            KanseiKeyword matchPrice = matchItem.getKeywords().get(0);
+            double matchPriceValue = matchPrice.getValue() / matchPrice.getTotalTimeRated();
+            matchResult.setAffordableItem(matchPrice);
+            double looseRate;
+            if (material.getOnlineLink() != null) {
+                matchResult.setAffordableScore(matchItem.retrieveWeight());
+                return matchResult;
+            }
+            if (material.getSellerPrice() != null) {
+                double priceValue = Double.valueOf(material.getSellerPrice().replace("$", ""));
+                if (priceValue <= matchPriceValue) {
+                    matchResult.setAffordableScore(matchItem.retrieveWeight());
+                    return matchResult;
+                }
+                else if ((looseRate = Math.abs(matchPriceValue - priceValue) / matchPriceValue) < 0.3) {
+                    matchResult.setAffordableScore(matchItem.retrieveWeight()* (1 - looseRate));
+                    return matchResult;
+                }
+                else {
+                    matchResult.setAffordableScore(-matchItem.retrieveWeight());
+                    return matchResult;
+                }
+            }
+        }
+        matchResult.setAffordableScore(0);
+        return matchResult;
+    }
+
+    private static MatchResult matchKanseiTag(Material material, List<KanseiKeyword> keywords, MatchResult result) {
+        MatchResult matchResult = result;
+        List<KanseiKeyword> items = new ArrayList<>();
         double kanseiScore = 0;
 
-        if (userKanseiPreferences.getTags().size() != 0){
+
+        if (keywords.size() != 0){
             List<String> profileTags = material.retrieveTagList();
             for (String tag : profileTags){
-                for (KanseiKeyword item : userKanseiPreferences.getTags()){
+                for (KanseiKeyword item : keywords){
                     if (item.getName().equals(tag)){
                         int n = item.getTotalTimeRated();
-                        double itemScore = material.getKeywordImportantScore(tag) * item.retrieveValue();
+                        double importantScore = material.getKeywordImportantScore(tag);
+                        double value = item.retrieveValue();
+                        double itemScore =  importantScore * value;
+
 
                         kanseiScore += itemScore;
+                        KanseiKeyword mItem = new KanseiKeyword();
+                        mItem.setName(item.getName());
+                        mItem.setValue(itemScore);
+                        mItem.setTotalBadRated(item.getTotalBadRated());
+                        mItem.setTotalGoodRated(item.getTotalGoodRated());
+
+                        items.add(mItem);
                         break;
                     }
                 }
             }
 
-            kanseiScore = kanseiScore * DatabaseManager.getPreference().getLearnPreferenceScore() / 2;
+//            kanseiScore = kanseiScore * DatabaseManager.getPreference().getLearnPreferenceScore() / 2;
         }
 
-        return kanseiScore;
+
+        matchResult.setKanseiScore(kanseiScore);
+        matchResult.setKanseiItems(items);
+
+        return matchResult;
     }
 
-    private static double matchKanseiDocType(Material material){
-        double kanseiScore = 0;
+//    private static double matchKanseiTag(Material material) {
+//        double kanseiScore = 0;
+//
+//        if (userKanseiPreferences.getTags().size() != 0){
+//            List<String> profileTags = material.retrieveTagList();
+//            for (String tag : profileTags){
+//                for (KanseiKeyword item : userKanseiPreferences.getTags()){
+//                    if (item.getName().equals(tag)){
+//                        int n = item.getTotalTimeRated();
+//                        double itemScore = material.getKeywordImportantScore(tag) * item.retrieveValue();
+//
+//                        kanseiScore += itemScore;
+//                        break;
+//                    }
+//                }
+//            }
+//
+//            kanseiScore = kanseiScore * DatabaseManager.getPreference().getLearnPreferenceScore() / 2;
+//        }
 
-        if (userKanseiPreferences.getDocTypes().size() != 0){
-            String docType = material.getDocumentType();
+//        return kanseiScore;
+//    }
 
-            for (KanseiKeyword item: userKanseiPreferences.getDocTypes()){
-                if (item.getName().equals(docType)){
-                    int n = item.getTotalTimeRated();
-                    double itemScore = item.retrieveValue();
-
-                    kanseiScore += itemScore;
-                    break;
-                }
-            }
-
-            kanseiScore = kanseiScore * UserProfile.MATCH_SCORE_DOCTYPE;
-        }
-
-        return kanseiScore;
-    }
+//    private static double matchKanseiDocType(Material material){
+//        double kanseiScore = 0;
+//
+//        if (userKanseiPreferences.getDocTypes().size() != 0){
+//            String docType = material.getDocumentType();
+//
+//            for (KanseiKeyword item: userKanseiPreferences.getDocTypes()){
+//                if (item.getName().equals(docType)){
+//                    int n = item.getTotalTimeRated();
+//                    double itemScore = item.retrieveValue();
+//
+//                    kanseiScore += itemScore;
+//                    break;
+//                }
+//            }
+//
+//            kanseiScore = kanseiScore * UserProfile.MATCH_SCORE_DOCTYPE;
+//        }
+//
+//        return kanseiScore;
+//    }
 
     private static double contextMatching(Material material){
         double matchRate = 0;
 
         double levelMatchScore = matchOverall(material);
-//        double testMatchScore = matchTestPrefer(bookProfile);
-//        double timeMatchScore = matchTimeSpend(bookProfile);
         double learnListMatchScore = matchLearnList(material);
 
-        matchRate = levelMatchScore + learnListMatchScore; //+ testMatchScore + timeMatchScore ;
+        matchRate = levelMatchScore + learnListMatchScore;
 
         return matchRate/DatabaseManager.getPreference().getBestMatch();
     }
@@ -271,20 +527,6 @@ public class ResultHelper2Test {
         else
             return 0;
     }
-
-    /*private static double matchTestPrefer(BookProfile bookProfile){
-        if(bookProfile.getTestPreference() == profile.getTestPreference())
-            return DatabaseManager.getPreference().getTestScore();
-        else
-            return 0;
-    }
-
-    private static double matchTimeSpend(BookProfile bookProfile){
-        if(bookProfile.getTimePreference() == profile.getTimeCanSpend())
-            return DatabaseManager.getPreference().getTimeScore();
-        else
-            return 0;
-    }*/
 
     private static double matchLearnList(Material material){
         //First test try: use only word people input to compare
@@ -299,7 +541,11 @@ public class ResultHelper2Test {
             for (String userLearnType : profile.getLearnList()) {
                 if (material.getName().contains(userLearnType) || material.getTag().contains(userLearnType)) {
                     matchCount++;
-                    matchMaterialScore += material.getKeywordImportantScore(userLearnType);
+//                    if (userLearnListCount>2)
+                        matchMaterialScore += material.getKeywordImportantScore(userLearnType);
+//                    else
+//                        matchMaterialScore += 1;
+                    Log.d("ahihi","");
                 }
             }
 

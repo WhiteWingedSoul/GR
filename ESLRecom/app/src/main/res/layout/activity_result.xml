@@ -8,8 +8,6 @@
 
     <LinearLayout
         android:id="@+id/viewLayout"
-
-
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -172,38 +170,14 @@
                             android:layout_marginBottom="5dp"
                             android:background="@color/colorSmoothText" />
 
-
-                        <FrameLayout
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
 
-                            <TextView
-                                android:layout_marginLeft="10dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hate"/>
-
-                            <TextView
-                                android:layout_marginRight="10dp"
-                                android:layout_gravity="right"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/love"/>
-                        </FrameLayout>
-
-                        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/kanseiScale"
-                            app:dsb_value="0"
-                            app:dsb_min="-10"
-                            app:dsb_max="10"
-                            app:dsb_indicatorColor="@color/colorAccent"
-                            app:dsb_progressColor="@color/colorAccent"
-                            app:dsb_trackColor="@color/colorAccent" />
-
+                        </View>
                         <Button
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="15dp"
                             android:id="@+id/rateButton"
                             android:paddingRight="10dp"
                             android:paddingLeft="10dp"
@@ -211,7 +185,7 @@
                             android:layout_marginRight="20dp"
                             android:layout_width="130dp"
                             android:layout_height="50dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="center|bottom"
                             android:gravity="center"
                             android:text="@string/rating"
                             android:textColor="@color/white"

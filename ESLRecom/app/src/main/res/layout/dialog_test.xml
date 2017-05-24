@@ -17,7 +17,7 @@
             android:id="@+id/flashcardLayout"
             android:layout_width="match_parent"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"
+            android:layout_height="470dp"
             android:gravity="center"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp">
@@ -33,30 +33,140 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/testText"
+                    <LinearLayout
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:alpha="0.7"
-                        android:gravity="center"
-                        android:text="HÁNasdajsasdsakljda
-                        hdaksasjdalskdj a klad
-                        as jslkjdaslk
-                        asdjaks;d askldjas
-                        dasdjlaskdas
-                        sadajskdashdj
-                        asdsadasdasdkljasdkl
-                        asd
-                        as
-                        das
-                        d
-                        sa
-                        das
-                        das
-                    jhdasjkdhsajdhjsadhasj"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        android:fontFamily="serif" />
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="35dp"
+                            android:textSize="15dp"
+                            android:text="Kansei matching details:"/>
+
+                        <TextView
+                            android:id="@+id/interesting"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="14dp"
+                            android:text="@string/interesting"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/colorSmoothText" />
+
+                            <TextView
+                                android:id="@+id/interestingDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/understandable"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="14dp"
+                            android:text="@string/easy"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/colorSmoothText" />
+
+                            <TextView
+                                android:id="@+id/understandableDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/satisfy"
+                            android:layout_marginTop="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="14dp"
+                            android:text="@string/satisfy"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/colorSmoothText" />
+
+                            <TextView
+                                android:id="@+id/satisfyDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/affordable"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="14dp"
+                            android:text="@string/affordable"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/colorSmoothText" />
+
+                            <TextView
+                                android:id="@+id/affordableDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
 
                 </ScrollView>
             </android.support.v7.widget.CardView>

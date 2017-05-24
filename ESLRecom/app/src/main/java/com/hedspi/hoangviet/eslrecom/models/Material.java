@@ -237,12 +237,17 @@ public class Material implements Serializable {
 
     public List<String> retrieveTagList(){
         String trimmedTags = tag.replace(", ",",");
-            return Arrays.asList(trimmedTags.split(","));
+        return Arrays.asList(trimmedTags.split(","));
+    }
+
+    public List<String> retrieveKeywordsInName(){
+        return Arrays.asList(name.trim().split(""));
     }
 
     public double getKeywordImportantScore(String keyword){
         List<Tag> tagList = DatabaseManager.getTagList();
-        List<String> materialTagString = Arrays.asList(tag.trim().split(","));
+        String trimmedTags = tag.replace(", ",",");
+        List<String> materialTagString = Arrays.asList(trimmedTags.split(","));
         List<Tag> materialTagList = new ArrayList<>();
         if (tagList == null || tagList.size() == 0 || !tag.contains(keyword))
             return 0;

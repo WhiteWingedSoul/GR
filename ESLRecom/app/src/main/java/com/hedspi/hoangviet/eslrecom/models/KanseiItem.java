@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,7 +9,14 @@ import java.util.List;
 
 public class KanseiItem {
     private List<KanseiKeyword> keywords;
-    private double weight;
+    private String target;
+
+    private double totalRateScore;
+    private int totalRateTime;
+
+    public void init(){
+        keywords = new ArrayList<>();
+    }
 
     public KanseiKeyword retrieveKeyword(String name){
         if (keywords != null && keywords.size() != 0){
@@ -19,6 +27,27 @@ public class KanseiItem {
         }
         return null;
     }
+
+    public void addScore(double score){
+        totalRateScore += Math.abs(score);
+        totalRateTime++;
+    }
+
+    public double retrieveWeight(){
+        if (totalRateTime!=0)
+            return totalRateScore/totalRateTime;
+        else
+            return 0;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
     public List<KanseiKeyword> getKeywords() {
         return keywords;
     }
@@ -27,12 +56,5 @@ public class KanseiItem {
         this.keywords = keywords;
     }
 
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
 }
 

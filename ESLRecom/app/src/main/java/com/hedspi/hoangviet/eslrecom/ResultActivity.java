@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +38,8 @@ import com.hedspi.hoangviet.eslrecom.libraries.NonSwipeableViewPager;
 import com.hedspi.hoangviet.eslrecom.managers.AnimationHelper;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.hedspi.hoangviet.eslrecom.models.AdapterItem;
+import com.hedspi.hoangviet.eslrecom.models.KanseiItem;
+import com.hedspi.hoangviet.eslrecom.models.KanseiKeyword;
 import com.hedspi.hoangviet.eslrecom.models.KanseiPreferences;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.Material;
@@ -90,11 +93,12 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     private TextView buyerPrice;
     private TextView buyerLink;
     private TextView tag;
-    private DiscreteSeekBar kanseiScale;
     private Button buyButton;
     private Button viewOnlineButton;
 
     private Button rateButton;
+
+
 
     private TextView contextMatch;
     private TextView kanseiMatch;
@@ -157,11 +161,9 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         matchDetail = (TextView) findViewById(R.id.matchDetail);
         matchDetail.setPaintFlags(matchDetail.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         //TODO
-        matchDetail.setVisibility(View.GONE);
+        matchDetail.setVisibility(View.INVISIBLE);
 
         matchScoreLayout = findViewById(R.id.matchScoreLayout);
-
-        kanseiScale = (DiscreteSeekBar) findViewById(R.id.kanseiScale);
         rateButton = (Button) findViewById(R.id.rateButton);
         buyButton = (Button) findViewById(R.id.buyButton);
         viewOnlineButton = (Button) findViewById(R.id.viewOnlineButton);
@@ -170,6 +172,54 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
             @Override
             public void onClick(View v) {
                 //TODO
+                try {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ResultActivity.this);
+                    LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    View dialogView = inflater.inflate(R.layout.dialog_test, null);
+                    final Dialog dialog = builder.setView(dialogView).create();
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                    dialog.show();
+
+                    TextView interesting = (TextView) dialogView.findViewById(R.id.interesting);
+                    TextView understandable = (TextView) dialogView.findViewById(R.id.understandable);
+                    TextView satisfy = (TextView) dialogView.findViewById(R.id.satisfy);
+                    TextView affordable = (TextView) dialogView.findViewById(R.id.affordable);
+
+                    interesting.setText("Interesting: " + currentMatchReult.getInterestingScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getInteresting().retrieveWeight());
+                    understandable.setText("Understandable: " + currentMatchReult.getUnderstandableScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getUnderstandable().retrieveWeight());
+                    satisfy.setText("Satisfy: " + currentMatchReult.getSatisfyScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getSatisfy().retrieveWeight());
+                    affordable.setText("Affordable: " + currentMatchReult.getAffordableScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getAffordable().retrieveWeight());
+
+                    TextView interestingDetail = (TextView) dialogView.findViewById(R.id.interestingDetail);
+                    String detailStr = "";
+                    for (KanseiKeyword item : currentMatchReult.getInterestingItems()) {
+                        detailStr += item.getName() + ": " + item.getValue() + "(" + item.getTotalGoodRated() + "-" + item.getTotalBadRated() + ")\n";
+                    }
+                    interestingDetail.setText(detailStr);
+                    detailStr = "";
+
+                    TextView understandableDetail = (TextView) dialogView.findViewById(R.id.understandableDetail);
+                    for (KanseiKeyword item : currentMatchReult.getUnderstandableItems()) {
+                        detailStr += item.getName() + ": " + item.getValue() + "(" + item.getTotalGoodRated() + "-" + item.getTotalBadRated() + ")\n";
+                    }
+                    understandableDetail.setText(detailStr);
+                    detailStr = "";
+
+                    TextView satisfyDetail = (TextView) dialogView.findViewById(R.id.satisfyDetail);
+                    for (KanseiKeyword item : currentMatchReult.getSatisfyItems()) {
+                        detailStr += item.getName() + ": " + item.getValue() + "(" + item.getTotalGoodRated() + "-" + item.getTotalBadRated() + ")\n";
+                    }
+                    satisfyDetail.setText(detailStr);
+                    detailStr = "";
+
+                    TextView affordableDetail = (TextView) dialogView.findViewById(R.id.affordableDetail);
+                    KanseiKeyword item = currentMatchReult.getAffordableItem();
+                    detailStr += item.getName() + ": " + item.getValue() + "(" + item.getTotalGoodRated() + "-" + item.getTotalBadRated() + ")\n";
+                    affordableDetail.setText(detailStr);
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(ResultActivity.this, "Exception occured.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -177,13 +227,42 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
             @Override
             public void onClick(View v) {
 
-                reevalute(kanseiScale.getProgress());
+                AlertDialog.Builder builder = new AlertDialog.Builder(ResultActivity.this);
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View dialogView = inflater.inflate(R.layout.dialog_rating, null);
+                final Dialog dialog = builder.setView(dialogView).create();
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                dialog.show();
+
+                final DiscreteSeekBar interestingScale = (DiscreteSeekBar) dialogView.findViewById(R.id.interestingScale);
+                final DiscreteSeekBar understandableScale = (DiscreteSeekBar) dialogView.findViewById(R.id.understandableScale);
+                final DiscreteSeekBar satisfyScale = (DiscreteSeekBar) dialogView.findViewById(R.id.satisfyScale);
+                final DiscreteSeekBar affordableScale = (DiscreteSeekBar) dialogView.findViewById(R.id.priceScale);
+
+                Button realRateButton = (Button) dialogView.findViewById(R.id.rateButton);
+                realRateButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        reevalute(interestingScale.getProgress(), understandableScale.getProgress(), satisfyScale.getProgress(), affordableScale.getProgress());
+                        dialog.cancel();
+                    }
+                });
+
+//                reevalute(kanseiScale.getProgress());
+
 //                toNextFragment();
             }
         });
 
 
-        ResultHelper2Test.initResultHelper(DatabaseManager.getMaterialListFromServer(this), DatabaseManager.getUserProfile());
+        try{
+            ResultHelper2Test.initResultHelper(DatabaseManager.getMaterialListFromServer(this), DatabaseManager.getUserProfile());
+        }catch (Exception e){
+            Toast.makeText(this, "Exception occured.", Toast.LENGTH_SHORT).show();
+            progress.hide();
+
+            e.printStackTrace();
+        }
 
     }
 
@@ -214,13 +293,19 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         }
     }
 
-    private void reevalute(int score){
-        switch (ResultHelper2Test.reevaluate((double)score/10)){
+    private void reevalute(int interestingScore, int understandableScore, int satisfyScore, int affordableScore){
+
+        switch (ResultHelper2Test.reevaluate((double)interestingScore/10, (double)understandableScore/10, (double)satisfyScore/10, (double)affordableScore/10)){
             case ResultHelper2Test.STATUS_CONTINUE:
                 toNextFragment();
                 break;
             case ResultHelper2Test.STATUS_END:
-                startMatchingKansei();
+                try {
+                    startMatchingKansei();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(this, "Exception occured.", Toast.LENGTH_SHORT).show();
+                }
                 toNextFragment();
                 break;
         }
@@ -338,7 +423,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
     }
 
-    private void goToUrl (String url) {
+    private void goToUrl(String url) {
         Uri uriUrl = Uri.parse(url);
         Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
         startActivity(launchBrowser);

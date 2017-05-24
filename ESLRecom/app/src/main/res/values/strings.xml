@@ -120,6 +120,19 @@
     <string name="hate">Hate</string>
     <string name="detail">Detail</string>
 
+    <string name="howDoYou">How do you feel about this material ?</string>
+    <string name="boring">Boring</string>
+    <string name="interesting">Interesting</string>
+    <string name="satisfy">Satisfied</string>
+    <string name="unsatisfy">Unsatisfied</string>
+    <string name="easy">Easy to learn</string>
+    <string name="hard">Hard to learn</string>
+    <string name="pricy">Pricy</string>
+    <string name="affordable">Affordable</string>
+    <string name="veNoidung">Content</string>
+    <string name="veGia">Price</string>
+
+
 
     <string-array name="language">
         <item>Tiếng Việt</item>

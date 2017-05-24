@@ -41,4 +41,14 @@ public class Tag implements Serializable{
     public void setScore(long score) {
         this.score = score;
     }
+
+    public ChildTag retrieveKeyword(String name){
+        if (relevantTag != null && relevantTag.size() != 0){
+            for (ChildTag item : relevantTag){
+                if (item.getName().equals(name))
+                    return item;
+            }
+        }
+        return null;
+    }
 }

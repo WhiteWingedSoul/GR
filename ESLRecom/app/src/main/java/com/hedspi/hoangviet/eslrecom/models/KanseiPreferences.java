@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -9,51 +10,96 @@ import java.util.List;
  */
 
 public class KanseiPreferences {
+    public static final String TARGET_TAG = "tag";
+    public static final String TARGET_NAME = "name";
+    public static final String TARGET_PRICE = "price";
 
-    private KanseiKeyword interesting;
-    private KanseiKeyword satisfy;
-    private KanseiKeyword understandable;
+    private KanseiItem interesting;
+    private KanseiItem satisfy;
+    private KanseiItem understandable;
 
-    private KanseiKeyword acceptable;
-    private KanseiKeyword affordable;
+    private KanseiItem acceptable;
+    private KanseiItem affordable;
 
-    public KanseiKeyword getInteresting() {
+    private List<KanseiItem> attributes;
+
+    public void initAttributes(){
+        for (KanseiItem attribute: allAttributes()){
+            attribute.init();
+        }
+    }
+
+    public List<KanseiItem> allAttributes(){
+        if (attributes == null){
+            attributes = new ArrayList<>();
+            interesting = new KanseiItem();
+            satisfy = new KanseiItem();
+            understandable = new KanseiItem();
+            acceptable = new KanseiItem();
+            affordable = new KanseiItem();
+
+            attributes.add(interesting);
+            interesting.setTarget(TARGET_TAG);
+            attributes.add(satisfy);
+            satisfy.setTarget(TARGET_TAG);
+            attributes.add(understandable);
+            understandable.setTarget(TARGET_TAG);
+
+            attributes.add(acceptable);
+            acceptable.setTarget(TARGET_NAME);
+            attributes.add(affordable);
+            affordable.setTarget(TARGET_PRICE);
+        }
+
+        return attributes;
+    }
+
+    public double getAllWeights(){
+        double weight = 0;
+
+        for (KanseiItem attribute: allAttributes()){
+            weight += attribute.retrieveWeight();
+        }
+        return weight;
+    }
+
+    public KanseiItem getInteresting() {
         return interesting;
     }
 
-    public void setInteresting(KanseiKeyword interesting) {
+    public void setInteresting(KanseiItem interesting) {
         this.interesting = interesting;
     }
 
-    public KanseiKeyword getSatisfy() {
+    public KanseiItem getSatisfy() {
         return satisfy;
     }
 
-    public void setSatisfy(KanseiKeyword satisfy) {
+    public void setSatisfy(KanseiItem satisfy) {
         this.satisfy = satisfy;
     }
 
-    public KanseiKeyword getUnderstandable() {
+    public KanseiItem getUnderstandable() {
         return understandable;
     }
 
-    public void setUnderstandable(KanseiKeyword understandable) {
+    public void setUnderstandable(KanseiItem understandable) {
         this.understandable = understandable;
     }
 
-    public KanseiKeyword getAcceptable() {
+    public KanseiItem getAcceptable() {
         return acceptable;
     }
 
-    public void setAcceptable(KanseiKeyword acceptable) {
+    public void setAcceptable(KanseiItem acceptable) {
         this.acceptable = acceptable;
     }
 
-    public KanseiKeyword getAffordable() {
+    public KanseiItem getAffordable() {
         return affordable;
     }
 
-    public void setAffordable(KanseiKeyword affordable) {
+    public void setAffordable(KanseiItem affordable) {
         this.affordable = affordable;
     }
 

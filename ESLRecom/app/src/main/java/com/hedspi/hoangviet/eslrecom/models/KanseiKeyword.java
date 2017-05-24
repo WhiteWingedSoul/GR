@@ -14,7 +14,23 @@ public class KanseiKeyword {
     private double badScore = 0;
     private int totalBadRated = 0;
 
-    private static final int CURVE_RATE = 2;
+    private static final int CURVE_RATE = 1;
+
+    public int getTotalGoodRated() {
+        return totalGoodRated;
+    }
+
+    public void setTotalGoodRated(int totalGoodRated) {
+        this.totalGoodRated = totalGoodRated;
+    }
+
+    public int getTotalBadRated() {
+        return totalBadRated;
+    }
+
+    public void setTotalBadRated(int totalBadRated) {
+        this.totalBadRated = totalBadRated;
+    }
 
     public String getName() {
         return name;
@@ -30,6 +46,10 @@ public class KanseiKeyword {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public int getTotalTimeRated() {
+        return totalTimeRated;
     }
 
     public void addValue(double value){
@@ -72,7 +92,7 @@ public class KanseiKeyword {
 //        else return 0.0;
     }
 
-    public int getTotalTimeRated() {
+    public int retrieveTotalTimeRated() {
         return totalBadRated+totalGoodRated;
     }
 

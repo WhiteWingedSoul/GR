@@ -118,4 +118,16 @@
     <string name="hate">Ghét</string>
     <string name="detail">Chi tiết</string>
 
+    <string name="howDoYou">Bạn cảm thấy như thế nào về tài liệu này ?</string>
+    <string name="boring">Nhàm chán</string>
+    <string name="interesting">Thú vị</string>
+    <string name="satisfy">Hài lòng</string>
+    <string name="unsatisfy">Không hài lòng</string>
+    <string name="easy">Dễ hiểu</string>
+    <string name="hard">Khó hiểu</string>
+    <string name="pricy">Đắt</string>
+    <string name="affordable">Chấp nhận được</string>
+    <string name="veNoidung">Về nội dung</string>
+    <string name="veGia">Về giá</string>
+
 </resources>

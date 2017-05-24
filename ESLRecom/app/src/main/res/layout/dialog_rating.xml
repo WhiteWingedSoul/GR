@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/flashcardLayout"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="470dp"
+            android:gravity="center"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="10dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="45dp"
+                            android:textSize="15dp"
+                            android:text="@string/howDoYou"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="14dp"
+                            android:text="@string/veNoidung"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/colorSmoothText" />
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/boring"/>
+
+                                <TextView
+                                    android:layout_marginRight="10dp"
+                                    android:layout_gravity="right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/interesting"/>
+                            </FrameLayout>
+
+                            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/interestingScale"
+                                app:dsb_value="0"
+                                app:dsb_min="-10"
+                                app:dsb_max="10"
+                                app:dsb_indicatorColor="@color/colorAccent"
+                                app:dsb_progressColor="@color/colorAccent"
+                                app:dsb_trackColor="@color/colorAccent" />
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/hard"/>
+
+                                <TextView
+                                    android:layout_marginRight="10dp"
+                                    android:layout_gravity="right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/easy"/>
+                            </FrameLayout>
+
+                            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/understandableScale"
+                                app:dsb_value="0"
+                                app:dsb_min="-10"
+                                app:dsb_max="10"
+                                app:dsb_indicatorColor="@color/colorAccent"
+                                app:dsb_progressColor="@color/colorAccent"
+                                app:dsb_trackColor="@color/colorAccent" />
+
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/unsatisfy"/>
+
+                                <TextView
+                                    android:layout_marginRight="10dp"
+                                    android:layout_gravity="right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/satisfy"/>
+                            </FrameLayout>
+
+                            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/satisfyScale"
+                                app:dsb_value="0"
+                                app:dsb_min="-10"
+                                app:dsb_max="10"
+                                app:dsb_indicatorColor="@color/colorAccent"
+                                app:dsb_progressColor="@color/colorAccent"
+                                app:dsb_trackColor="@color/colorAccent" />
+
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="14dp"
+                            android:text="@string/veGia"/>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1px"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/colorSmoothText" />
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/pricy"/>
+
+                                <TextView
+                                    android:layout_marginRight="10dp"
+                                    android:layout_gravity="right"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/affordable"/>
+                            </FrameLayout>
+
+                            <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/priceScale"
+                                app:dsb_value="0"
+                                app:dsb_min="-10"
+                                app:dsb_max="10"
+                                app:dsb_indicatorColor="@color/colorAccent"
+                                app:dsb_progressColor="@color/colorAccent"
+                                app:dsb_trackColor="@color/colorAccent" />
+
+
+                        </LinearLayout>
+
+                        <Button
+                            android:layout_marginBottom="5dp"
+                            android:id="@+id/rateButton"
+                            android:paddingRight="10dp"
+                            android:paddingLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_width="130dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/rating"
+                            android:textColor="@color/white"
+                            android:backgroundTint="@color/blue"
+                            android:fontFamily="serif" />
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+            </android.support.v7.widget.CardView>
+
+        </FrameLayout>
+    </FrameLayout>
+
+
+</LinearLayout>
