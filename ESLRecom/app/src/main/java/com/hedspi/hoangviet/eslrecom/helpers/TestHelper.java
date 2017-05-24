@@ -45,6 +45,7 @@ public class TestHelper {
         questionNum = 1;
         lowerAchivedDifficulty = null;
         upperAchivedDifficulty = null;
+        usedQuestion = new ArrayList<>();
     }
 
     private static void resetProperties(){
@@ -80,12 +81,12 @@ public class TestHelper {
     }
 
     private static int downSituation(){
-        if (currentTestDifficulty.equals(Preference.BEGINNER) || upperAchivedDifficulty!=null) {
-            currentUserProficiency = upperAchivedDifficulty;
+        if (currentTestDifficulty.equals(Preference.BEGINNER) || lowerAchivedDifficulty !=null) {
+            currentUserProficiency = currentTestDifficulty;
             return STATUS_END;
         }
         else{
-            lowerAchivedDifficulty = currentTestDifficulty;
+            upperAchivedDifficulty = currentTestDifficulty;
             degradeLevel();
             resetProperties();
             return STATUS_CONTINUE;
@@ -93,12 +94,12 @@ public class TestHelper {
     }
 
     private static int upSituation(){
-        if (currentTestDifficulty.equals(Preference.ADVANCE) || lowerAchivedDifficulty!=null) {
+        if (currentTestDifficulty.equals(Preference.ADVANCE) || upperAchivedDifficulty!=null) {
             currentUserProficiency = currentTestDifficulty;
             return STATUS_END;
         }
         else{
-            upperAchivedDifficulty = currentTestDifficulty;
+            lowerAchivedDifficulty = currentTestDifficulty;
             upgradeLevel();
             resetProperties();
             return STATUS_CONTINUE;
@@ -182,7 +183,10 @@ public class TestHelper {
         }
 
         Random random = new Random();
-        Question randomQuestion = usableQuestion.get(random.nextInt(usableQuestion.size()));
+        int randomPosition = 0;
+        if (usableQuestion.size()>1)
+             randomPosition = random.nextInt(usableQuestion.size());
+        Question randomQuestion = usableQuestion.get(randomPosition);
         usedQuestion.add(randomQuestion);
 
         return randomQuestion;

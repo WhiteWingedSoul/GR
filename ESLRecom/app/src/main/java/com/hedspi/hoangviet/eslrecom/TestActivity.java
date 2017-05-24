@@ -192,10 +192,20 @@ public class TestActivity extends AppCompatActivity implements DataDownloadListe
     public void reevalute(Boolean result){
         switch (TestHelper.reevaluate(result)){
             case TestHelper.STATUS_CONTINUE:
-                askQuestion();
+                try {
+                    askQuestion();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(this, "Exception occured.", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case TestHelper.STATUS_END:
-                startNextTest();
+                try {
+                    startNextTest();
+                }catch (Exception e){
+                    e.printStackTrace();
+                    Toast.makeText(this, "Exception occured.", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }

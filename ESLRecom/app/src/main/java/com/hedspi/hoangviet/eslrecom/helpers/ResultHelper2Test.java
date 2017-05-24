@@ -66,9 +66,9 @@ public class ResultHelper2Test {
             }
         });
 
-        list.addAll(sortedMatchResults.subList(0, 1));
+        list.addAll(sortedMatchResults.subList(0, 5));
 
-        sortedMatchResults = sortedMatchResults.subList(1, sortedMatchResults.size());
+        sortedMatchResults = sortedMatchResults.subList(5, sortedMatchResults.size());
 
         return list;
     }
@@ -97,9 +97,9 @@ public class ResultHelper2Test {
             }
         });
 
-        list.addAll(sortedMatchResults.subList(0, 1));
+        list.addAll(sortedMatchResults.subList(0, 5));
 
-        sortedMatchResults = sortedMatchResults.subList(1, sortedMatchResults.size());
+        sortedMatchResults = sortedMatchResults.subList(5, sortedMatchResults.size());
 
         return list;
     }
