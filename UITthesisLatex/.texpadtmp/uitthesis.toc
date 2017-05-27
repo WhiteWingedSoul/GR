@@ -52,5 +52,4 @@
 \contentsline {section}{\numberline {5.2}Nh\IeC {\~\uhorn }ng h\IeC {\d a}n ch\IeC {\'\ecircumflex } c\IeC {\`o}n t\IeC {\`\ocircumflex }n \IeC {\dj }\IeC {\d o}ng}{51}{section.5.2}
 \contentsline {section}{\numberline {5.3}\IeC {\DJ }\IeC {\d i}nh h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n trong t\IeC {\uhorn }\IeC {\ohorn }ng lai}{52}{section.5.3}
 \contentsline {chapter}{T\`ai li\d \ecircumflex u tham kh\h {a}o}{53}{appendix*.38}
-\contentsline {chapter}{PH\IeC {\d U} L\IeC {\d U}C 1: Qu\IeC {\h a}n l\IeC {\'y} d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u tr\IeC {\^e}n Firebase}{54}{appendix*.39}
-\contentsline {chapter}{PH\IeC {\d U} L\IeC {\d U}C 2 : T\IeC {\'\i }ch h\IeC {\d \ohorn }p \IeC {\dj }\IeC {\u a}ng nh\IeC {\d \acircumflex }p qua Facebook v\IeC {\`a}o h\IeC {\d \ecircumflex } th\IeC {\'\ocircumflex }ng}{55}{appendix*.40}
+\contentsline {chapter}{PH\IeC {\d U} L\IeC {\d U}C 1: Qu\IeC {\h a}n l\IeC {\'y} d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u tr\IeC {\^e}n Firebase }{54}{appendix*.39}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  27 MAY 2017 19:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.19)  28 MAY 2017 00:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1517,7 +1517,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 28.
 
-<TheoryBasis/Chapter1Figs/contextmatch.png, id=420, 457.71pt x 198.0198pt>
+<TheoryBasis/Chapter1Figs/contextmatch.png, id=415, 457.71pt x 198.0198pt>
 File: TheoryBasis/Chapter1Figs/contextmatch.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/contextmatch.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/contextmatch.png used on input line 37.
@@ -1629,7 +1629,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 73.
 
-<TheoryBasis/Chapter1Figs/kanseimodel.png, id=437, 349.305pt x 381.425pt>
+<TheoryBasis/Chapter1Figs/kanseimodel.png, id=432, 349.305pt x 381.425pt>
 File: TheoryBasis/Chapter1Figs/kanseimodel.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/kanseimodel.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseimodel.png used on input line 90.
@@ -1648,12 +1648,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7 <./TheoryBasis/Chapter1Figs/kanseimodel.png>] <TheoryBasis/Chapter1Figs/semanticspan.png, id=450, 378.41376pt x 250.9375pt>
+[7 <./TheoryBasis/Chapter1Figs/kanseimodel.png>] <TheoryBasis/Chapter1Figs/semanticspan.png, id=445, 378.41376pt x 250.9375pt>
 File: TheoryBasis/Chapter1Figs/semanticspan.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/semanticspan.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/semanticspan.png used on input line 111.
 (pdftex.def)             Requested size: 340.56923pt x 225.84164pt.
- <TheoryBasis/Chapter1Figs/kanseisynthesis.png, id=452, 478.78876pt x 182.6825pt>
+ <TheoryBasis/Chapter1Figs/kanseisynthesis.png, id=447, 478.78876pt x 182.6825pt>
 File: TheoryBasis/Chapter1Figs/kanseisynthesis.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/kanseisynthesis.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/kanseisynthesis.png used on input line 132.
@@ -1680,7 +1680,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9 <./TheoryBasis/Chapter1Figs/kanseisynthesis.png>] <TheoryBasis/Chapter1Figs/cat.png, id=464, 703.62875pt x 500.87125pt>
+[9 <./TheoryBasis/Chapter1Figs/kanseisynthesis.png>] <TheoryBasis/Chapter1Figs/cat.png, id=459, 703.62875pt x 500.87125pt>
 File: TheoryBasis/Chapter1Figs/cat.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/cat.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/cat.png used on input line 163.
@@ -1760,17 +1760,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10 <./TheoryBasis/Chapter1Figs/cat.png>] <TheoryBasis/Chapter1Figs/firebasedb.png, id=474, 469.755pt x 249.5724pt>
+[10 <./TheoryBasis/Chapter1Figs/cat.png>] <TheoryBasis/Chapter1Figs/firebasedb.png, id=468, 469.755pt x 249.5724pt>
 File: TheoryBasis/Chapter1Figs/firebasedb.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/firebasedb.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb.png used on input line 198.
 (pdftex.def)             Requested size: 422.7756pt x 224.61307pt.
- <TheoryBasis/Chapter1Figs/firebasedb2.png, id=475, 469.755pt x 249.5724pt>
+ <TheoryBasis/Chapter1Figs/firebasedb2.png, id=469, 469.755pt x 249.5724pt>
 File: TheoryBasis/Chapter1Figs/firebasedb2.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/firebasedb2.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/firebasedb2.png used on input line 211.
 (pdftex.def)             Requested size: 422.7756pt x 224.61307pt.
- <TheoryBasis/Chapter1Figs/scrapy.png, id=476, 469.755pt x 240.9pt>
+ <TheoryBasis/Chapter1Figs/scrapy.png, id=470, 469.755pt x 240.9pt>
 File: TheoryBasis/Chapter1Figs/scrapy.png Graphic file (type png)
  <use TheoryBasis/Chapter1Figs/scrapy.png>
 Package pdftex.def Info: TheoryBasis/Chapter1Figs/scrapy.png used on input line 228.
@@ -1876,7 +1876,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 
 
-] <DesignAnalysis/Chapter1Figs/appflow.png, id=501, 879.285pt x 575.14874pt>
+] <DesignAnalysis/Chapter1Figs/appflow.png, id=496, 879.285pt x 575.14874pt>
 File: DesignAnalysis/Chapter1Figs/appflow.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/appflow.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/appflow.png used on input line 45.
@@ -1923,7 +1923,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15 <./DesignAnalysis/Chapter1Figs/appflow.png>] <DesignAnalysis/Chapter1Figs/userprofile.png, id=507, 584.1825pt x 258.9675pt>
+[15 <./DesignAnalysis/Chapter1Figs/appflow.png>] <DesignAnalysis/Chapter1Figs/userprofile.png, id=502, 584.1825pt x 258.9675pt>
 File: DesignAnalysis/Chapter1Figs/userprofile.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/userprofile.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/userprofile.png used on input line 61.
@@ -1977,7 +1977,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[17] <DesignAnalysis/Chapter1Figs/cat.png, id=523, 574.145pt x 443.6575pt>
+[17] <DesignAnalysis/Chapter1Figs/cat.png, id=518, 574.145pt x 443.6575pt>
 File: DesignAnalysis/Chapter1Figs/cat.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/cat.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/cat.png used on input line 133.
@@ -2083,7 +2083,7 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 179.
 
-<DesignAnalysis/Chapter1Figs/dataprocess.png, id=542, 671.50874pt x 236.885pt>
+<DesignAnalysis/Chapter1Figs/dataprocess.png, id=537, 671.50874pt x 236.885pt>
 File: DesignAnalysis/Chapter1Figs/dataprocess.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/dataprocess.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/dataprocess.png used on input line 187.
@@ -2226,7 +2226,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[25] <DesignAnalysis/Chapter1Figs/contextmatching.png, id=695, 494.84875pt x 214.8025pt>
+[25] <DesignAnalysis/Chapter1Figs/contextmatching.png, id=689, 494.84875pt x 214.8025pt>
 File: DesignAnalysis/Chapter1Figs/contextmatching.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/contextmatching.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/contextmatching.png used on input line 385.
@@ -2276,7 +2276,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[27] <DesignAnalysis/Chapter1Figs/inputoutputexample.png, id=711, 698.61pt x 252.945pt>
+[27] <DesignAnalysis/Chapter1Figs/inputoutputexample.png, id=706, 698.61pt x 252.945pt>
 File: DesignAnalysis/Chapter1Figs/inputoutputexample.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/inputoutputexample.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/inputoutputexample.png used on input line 440.
@@ -2354,7 +2354,7 @@ Package hyperref Warning: Composite letter `\textacute+\acircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\acircumflex' on input line 509.
 
-<DesignAnalysis/Chapter1Figs/kansei.png, id=718, 773.89125pt x 384.43625pt>
+<DesignAnalysis/Chapter1Figs/kansei.png, id=713, 773.89125pt x 384.43625pt>
 File: DesignAnalysis/Chapter1Figs/kansei.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/kansei.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/kansei.png used on input line 521.
@@ -2383,7 +2383,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[30 <./DesignAnalysis/Chapter1Figs/kansei.png>] <DesignAnalysis/Chapter1Figs/kanseiex.png, id=732, 627.34375pt x 367.3725pt>
+[30 <./DesignAnalysis/Chapter1Figs/kansei.png>] <DesignAnalysis/Chapter1Figs/kanseiex.png, id=727, 627.34375pt x 367.3725pt>
 File: DesignAnalysis/Chapter1Figs/kanseiex.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/kanseiex.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/kanseiex.png used on input line 565.
@@ -2408,7 +2408,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32] <DesignAnalysis/Chapter1Figs/kansei_value.png, id=762, 334.24875pt x 250.9375pt>
+[32] <DesignAnalysis/Chapter1Figs/kansei_value.png, id=757, 334.24875pt x 250.9375pt>
 File: DesignAnalysis/Chapter1Figs/kansei_value.png Graphic file (type png)
  <use DesignAnalysis/Chapter1Figs/kansei_value.png>
 Package pdftex.def Info: DesignAnalysis/Chapter1Figs/kansei_value.png used on input line 644.
@@ -2495,7 +2495,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 15.
 
-<KetQua/Chapter1Figs/use_case_diagram.png, id=785, 442.65375pt x 392.46625pt>
+<KetQua/Chapter1Figs/use_case_diagram.png, id=780, 442.65375pt x 392.46625pt>
 File: KetQua/Chapter1Figs/use_case_diagram.png Graphic file (type png)
  <use KetQua/Chapter1Figs/use_case_diagram.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/use_case_diagram.png used on input line 23.
@@ -2658,7 +2658,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\abreve'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\abreve' on input line 109.
 
-<KetQua/Chapter1Figs/system_diagram.png, id=825, 726.715pt x 593.21625pt>
+<KetQua/Chapter1Figs/system_diagram.png, id=820, 726.715pt x 593.21625pt>
 File: KetQua/Chapter1Figs/system_diagram.png Graphic file (type png)
  <use KetQua/Chapter1Figs/system_diagram.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/system_diagram.png used on input line 117.
@@ -2725,7 +2725,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 138.
 
-<KetQua/Chapter1Figs/class_login.png, id=836, 451.6875pt x 361.35pt>
+<KetQua/Chapter1Figs/class_login.png, id=831, 451.6875pt x 361.35pt>
 File: KetQua/Chapter1Figs/class_login.png Graphic file (type png)
  <use KetQua/Chapter1Figs/class_login.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/class_login.png used on input line 148.
@@ -2737,7 +2737,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41 <./KetQua/Chapter1Figs/class_login.png>] <KetQua/Chapter1Figs/class_testprof.png, id=841, 587.19376pt x 496.85625pt>
+[41 <./KetQua/Chapter1Figs/class_login.png>] <KetQua/Chapter1Figs/class_testprof.png, id=836, 587.19376pt x 496.85625pt>
 File: KetQua/Chapter1Figs/class_testprof.png Graphic file (type png)
  <use KetQua/Chapter1Figs/class_testprof.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/class_testprof.png used on input line 166.
@@ -2753,7 +2753,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42 <./KetQua/Chapter1Figs/class_testprof.png>] <KetQua/Chapter1Figs/class_recommendation.png, id=846, 605.26125pt x 677.53125pt>
+[42 <./KetQua/Chapter1Figs/class_testprof.png>] <KetQua/Chapter1Figs/class_recommendation.png, id=841, 605.26125pt x 677.53125pt>
 File: KetQua/Chapter1Figs/class_recommendation.png Graphic file (type png)
  <use KetQua/Chapter1Figs/class_recommendation.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/class_recommendation.png used on input line 184.
@@ -2800,7 +2800,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 194.
 
-<KetQua/Chapter1Figs/database_diagram.png, id=851, 540.21825pt x 465.23813pt>
+<KetQua/Chapter1Figs/database_diagram.png, id=846, 540.21825pt x 465.23813pt>
 File: KetQua/Chapter1Figs/database_diagram.png Graphic file (type png)
  <use KetQua/Chapter1Figs/database_diagram.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/database_diagram.png used on input line 203.
@@ -2843,12 +2843,12 @@ Package hyperref Warning: Composite letter `\textdotbelow+\abreve'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\abreve' on input line 213.
 
-<KetQua/Chapter1Figs/splash_screen.png, id=857, 420.57124pt x 693.59125pt>
+<KetQua/Chapter1Figs/splash_screen.png, id=852, 420.57124pt x 693.59125pt>
 File: KetQua/Chapter1Figs/splash_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/splash_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/splash_screen.png used on input line 226.
 (pdftex.def)             Requested size: 210.28511pt x 346.79477pt.
- <KetQua/Chapter1Figs/login_screen.png, id=858, 422.57875pt x 692.5875pt>
+ <KetQua/Chapter1Figs/login_screen.png, id=853, 422.57875pt x 692.5875pt>
 File: KetQua/Chapter1Figs/login_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/login_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/login_screen.png used on input line 234.
@@ -2864,22 +2864,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[45 <./KetQua/Chapter1Figs/splash_screen.png> <./KetQua/Chapter1Figs/login_screen.png>] <KetQua/Chapter1Figs/test_require_screen.png, id=865, 423.5825pt x 696.6025pt>
+[45 <./KetQua/Chapter1Figs/splash_screen.png> <./KetQua/Chapter1Figs/login_screen.png>] <KetQua/Chapter1Figs/test_require_screen.png, id=860, 423.5825pt x 696.6025pt>
 File: KetQua/Chapter1Figs/test_require_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/test_require_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/test_require_screen.png used on input line 251.
 (pdftex.def)             Requested size: 211.79073pt x 348.3004pt.
- <KetQua/Chapter1Figs/begin_test_screen.png, id=866, 420.57124pt x 697.60625pt>
+ <KetQua/Chapter1Figs/begin_test_screen.png, id=861, 420.57124pt x 697.60625pt>
 File: KetQua/Chapter1Figs/begin_test_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/begin_test_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/begin_test_screen.png used on input line 273.
 (pdftex.def)             Requested size: 210.28511pt x 348.80226pt.
- <KetQua/Chapter1Figs/test_screen.png, id=867, 419.5675pt x 694.595pt>
+ <KetQua/Chapter1Figs/test_screen.png, id=862, 419.5675pt x 694.595pt>
 File: KetQua/Chapter1Figs/test_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/test_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/test_screen.png used on input line 281.
 (pdftex.def)             Requested size: 209.78323pt x 347.29665pt.
- <KetQua/Chapter1Figs/result_test_screen.png, id=868, 422.57875pt x 695.59875pt>
+ <KetQua/Chapter1Figs/result_test_screen.png, id=863, 422.57875pt x 695.59875pt>
 File: KetQua/Chapter1Figs/result_test_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/result_test_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/result_test_screen.png used on input line 289.
@@ -2905,12 +2905,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47 <./KetQua/Chapter1Figs/begin_test_screen.png> <./KetQua/Chapter1Figs/test_screen.png> <./KetQua/Chapter1Figs/result_test_screen.png>] <KetQua/Chapter1Figs/main_screen.png, id=882, 422.57875pt x 696.6025pt>
+[47 <./KetQua/Chapter1Figs/begin_test_screen.png> <./KetQua/Chapter1Figs/test_screen.png> <./KetQua/Chapter1Figs/result_test_screen.png>] <KetQua/Chapter1Figs/main_screen.png, id=877, 422.57875pt x 696.6025pt>
 File: KetQua/Chapter1Figs/main_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/main_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/main_screen.png used on input line 309.
 (pdftex.def)             Requested size: 211.28885pt x 348.3004pt.
- <KetQua/Chapter1Figs/choose_prefer_screen.png, id=883, 421.575pt x 695.59875pt>
+ <KetQua/Chapter1Figs/choose_prefer_screen.png, id=878, 421.575pt x 695.59875pt>
 File: KetQua/Chapter1Figs/choose_prefer_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/choose_prefer_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/choose_prefer_screen.png used on input line 317.
@@ -2926,12 +2926,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48 <./KetQua/Chapter1Figs/main_screen.png> <./KetQua/Chapter1Figs/choose_prefer_screen.png>] <KetQua/Chapter1Figs/match_result_screen.png, id=890, 421.575pt x 694.595pt>
+[48 <./KetQua/Chapter1Figs/main_screen.png> <./KetQua/Chapter1Figs/choose_prefer_screen.png>] <KetQua/Chapter1Figs/match_result_screen.png, id=885, 421.575pt x 694.595pt>
 File: KetQua/Chapter1Figs/match_result_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/match_result_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/match_result_screen.png used on input line 337.
 (pdftex.def)             Requested size: 210.78697pt x 347.29665pt.
- <KetQua/Chapter1Figs/rate_screen.png, id=891, 421.575pt x 694.595pt>
+ <KetQua/Chapter1Figs/rate_screen.png, id=886, 421.575pt x 694.595pt>
 File: KetQua/Chapter1Figs/rate_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/rate_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/rate_screen.png used on input line 345.
@@ -2947,12 +2947,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[49 <./KetQua/Chapter1Figs/match_result_screen.png> <./KetQua/Chapter1Figs/rate_screen.png>] <KetQua/Chapter1Figs/next_result_screen.png, id=898, 422.57875pt x 694.595pt>
+[49 <./KetQua/Chapter1Figs/match_result_screen.png> <./KetQua/Chapter1Figs/rate_screen.png>] <KetQua/Chapter1Figs/next_result_screen.png, id=893, 422.57875pt x 694.595pt>
 File: KetQua/Chapter1Figs/next_result_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/next_result_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/next_result_screen.png used on input line 365.
 (pdftex.def)             Requested size: 211.28885pt x 347.29665pt.
- <KetQua/Chapter1Figs/buy_now_screen.png, id=899, 420.57124pt x 695.59875pt>
+ <KetQua/Chapter1Figs/buy_now_screen.png, id=894, 420.57124pt x 695.59875pt>
 File: KetQua/Chapter1Figs/buy_now_screen.png Graphic file (type png)
  <use KetQua/Chapter1Figs/buy_now_screen.png>
 Package pdftex.def Info: KetQua/Chapter1Figs/buy_now_screen.png used on input line 373.
@@ -3172,101 +3172,101 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 
 Package hyperref Warning: Composite letter `\textdotbelow+U'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 6.
+(hyperref)                removing `\textdotbelow' on input line 11.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+U'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 6.
+(hyperref)                removing `\textdotbelow' on input line 11.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\h' on input line 6.
+(hyperref)                removing `\h' on input line 11.
 
 
 Package hyperref Warning: Composite letter `\texttilde+\uhorn'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\texttilde' on input line 6.
+(hyperref)                removing `\texttilde' on input line 11.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\uhorn' on input line 6.
+(hyperref)                removing `\uhorn' on input line 11.
 
 
 Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 6.
+(hyperref)                removing `\textdotbelow' on input line 11.
 
 
 Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 6.
+(hyperref)                removing `\ecircumflex' on input line 11.
 
-) [54
+[54
 
 
-]
+] <Appendix1/afterlogin.png, id=933, 1284.8pt x 677.53125pt>
+File: Appendix1/afterlogin.png Graphic file (type png)
+ <use Appendix1/afterlogin.png>
+Package pdftex.def Info: Appendix1/afterlogin.png used on input line 33.
+(pdftex.def)             Requested size: 423.98532pt x 223.586pt.
+ <Appendix1/consoledashboard.png, id=934, 1284.8pt x 673.51625pt>
+File: Appendix1/consoledashboard.png Graphic file (type png)
+ <use Appendix1/consoledashboard.png>
+Package pdftex.def Info: Appendix1/consoledashboard.png used on input line 35.
+(pdftex.def)             Requested size: 423.98532pt x 222.26105pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[55 <./Appendix1/afterlogin.png> <./Appendix1/consoledashboard.png>] <Appendix1/firebase_authentication.png, id=942, 1011.78pt x 581.17125pt>
+File: Appendix1/firebase_authentication.png Graphic file (type png)
+ <use Appendix1/firebase_authentication.png>
+Package pdftex.def Info: Appendix1/firebase_authentication.png used on input line 51.
+(pdftex.def)             Requested size: 455.2968pt x 261.52464pt.
+
+Overfull \hbox (14.27907pt too wide) in paragraph at lines 51--52
+ [] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[56 <./Appendix1/firebase_authentication.png>] <Appendix1/firebase_database.png, id=949, 940.51375pt x 555.07375pt>
+File: Appendix1/firebase_database.png Graphic file (type png)
+ <use Appendix1/firebase_database.png>
+Package pdftex.def Info: Appendix1/firebase_database.png used on input line 67.
+(pdftex.def)             Requested size: 423.22728pt x 249.78087pt.
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[57 <./Appendix1/firebase_database.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[58])
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[59]
 \openout2 = `Appendix2/appendix2.aux'.
 
- (./Appendix2/appendix2.tex
-
-Package hyperref Warning: Composite letter `\textdotbelow+U'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 1.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+U'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 1.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\ohorn'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 1.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ohorn' on input line 1.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\dj' on input line 1.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\u' on input line 1.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\acircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 1.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\acircumflex' on input line 1.
-
-
-Package hyperref Warning: Composite letter `\textdotbelow+\ecircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textdotbelow' on input line 1.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ecircumflex' on input line 1.
-
-
-Package hyperref Warning: Composite letter `\textacute+\ocircumflex'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textacute' on input line 1.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\ocircumflex' on input line 1.
-
-) [55
-
-
-
-]
+ (./Appendix2/appendix2.tex)
 \openout2 = `Appendix3/appendix3.aux'.
 
  (./Appendix3/appendix3.tex)
@@ -3285,18 +3285,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 15630 strings out of 493014
- 231754 string characters out of 6133351
- 629426 words of memory out of 5000000
- 18377 multiletter control sequences out of 15000+600000
+ 15748 strings out of 493014
+ 233900 string characters out of 6133351
+ 629621 words of memory out of 5000000
+ 18431 multiletter control sequences out of 15000+600000
  31273 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,16n,51p,1564b,1997s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/vntex/t5.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/urwvn/uhvr8v.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnbxti10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vncsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (64 pages, 2513470 bytes).
+Output written on /Users/viet/Documents/Work/GR/UITthesisLatex/.texpadtmp/uitthesis.pdf (68 pages, 2742924 bytes).
 PDF statistics:
- 1077 PDF objects out of 1200 (max. 8388607)
- 915 compressed objects within 10 object streams
- 350 named destinations out of 1000 (max. 500000)
- 624 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1166 PDF objects out of 1200 (max. 8388607)
+ 992 compressed objects within 10 object streams
+ 409 named destinations out of 1000 (max. 500000)
+ 636 words of extra memory for PDF output out of 10000 (max. 10000000)
 
