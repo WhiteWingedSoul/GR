@@ -1,5 +1,16 @@
 \begin{thebibliography}{1}
 
+\bibitem{kornferry}
+kornferry: A guide to aspects ability.
+\newblock \url{https://www.trytalentq.com/how-to-complete/aspects-ability/}.
+\newblock last visited: March 2017.
+
+\bibitem{tf-idf}
+stevenloria: Finding important words in text using tf-idf.
+\newblock
+  \url{http://stevenloria.com/finding-important-words-in-a-document-using-tf-idf/}.
+\newblock last visited: April 2017.
+
 \bibitem{ishihira98}
 Ishihara~K. Ishihara, S. and M.~Nagamachi.
 \newblock Hierarchical kansei analysis of beer can using neural network.
@@ -9,6 +20,19 @@ Ishihara~K. Ishihara, S. and M.~Nagamachi.
 \bibitem{osgood}
 G.J.~Suci Osgood, C.E. and P.H. Tannenbaum.
 \newblock The measurement of meaning.
+
+\bibitem{moore11}
+Hai V.~Pham Philip~Moore.
+\newblock Personalization and rule strategies in data intensive intelligent
+  context-aware systems.
+\newblock {\em The Knowledge Engineering Review, Vol. 00:0,c 2011, Cambridge
+  University Press}, pages 1--24, 2011.
+
+\bibitem{haipv12}
+Hai V.~Pham Philip~Moore.
+\newblock Intelligent context with decision support under uncertainty.
+\newblock {\em 2012 Sixth International Conference on Complex, Intelligent, and
+  Software Intensive Systems}, 2012.
 
 \bibitem{welchfrick}
 Theodore W~Frick R.~Edwin~Welch.

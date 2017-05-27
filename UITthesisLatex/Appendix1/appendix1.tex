@@ -1,0 +1,7 @@
+\let\svaddcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{%
+  \ifthenelse{\equal{#1}{lof}}{}%
+  {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
+
+\chapter{PHỤ LỤC 1: Quản lý dữ liệu trên Firebase}
+\textbf{Giới thiệu về mạng neural nhân tạo }

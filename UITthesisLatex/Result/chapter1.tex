@@ -200,9 +200,9 @@ Dữ liệu lưu trữ trên Firebase được lưu trữ dưới dạng NoSQL, 
   \begin{center}
     %\leavevmode
     \ifpdf
-      \includegraphics[scale=0.58]{database_diagram}
+      \includegraphics[scale=0.88]{database_diagram}
     \else
-      \includegraphics[scale=0.58]{database_diagram}
+      \includegraphics[scale=0.88]{database_diagram}
     \fi
     \caption{Mô hình cơ sở dữ liệu}
     \label{DatabaseDiagram}
@@ -328,9 +328,7 @@ Trong màn hình chính, khi ấn chọn tư vấn, ứng dụng sẽ chuyển s
 \textbf{Màn hình kết quả và đánh giá kết quả tư vấn:}
 \vskip 0.1in
 
-Sau khi kết thúc tính toán, ứng dụng sẽ hiển thị lần lượt các kết quả tư vấn theo giao diện hình bên trái phía dưới. Trang bìa tài liệu, tên tác giả, thể loại, giá cả là các thông tin quan trọng, được bố cục nổi bật lên trên đầu, phía dưới là các thông tin cụ thể khác về tài liệu. Ngoài ra, trên giao diện còn có 2 nút, người dùng ấn "Rate it" để đánh giá tài liệu xem họ có thích hay không. Sau đánh giá, tiêu chí ưa thích của người dùng được cập nhập và ứng dụng chuyển sang hiển thị kết quả tiếp theo, phù hợp hơn với các tiêu chí đó.
-
-Ngoài ra, trên giao diện còn có nút "Buy now" (hoặc "View Online" nếu tài liệu có link xem online), người dùng có thể ấn vào đó và chuyển hướng đến Amazon để đặt mua tài liệu.	\\    
+Sau khi kết thúc tính toán, ứng dụng sẽ hiển thị lần lượt các kết quả tư vấn theo giao diện hình bên trái phía dưới. Trang bìa tài liệu, tên tác giả, thể loại, giá cả là các thông tin quan trọng, được bố cục nổi bật lên trên đầu, phía dưới là các thông tin cụ thể khác về tài liệu. Để chuyển sang tài liệu tiếp theo, người dùng ấn vào nút "Rate it" để đánh giá tài liệu. Các tiêu chí đánh giá bao gồm \textit{Độ thú vị}, \textit{Độ khó}, \textit{Độ thoả mãn} và \textit{Giá cả phù hợp} được hệ thống đưa ra nhằm tìm ra các ưu tiên của người dùng.\\
 
 \begin{figure}[H]
   \begin{minipage}[b]{0.50\linewidth}
@@ -344,12 +342,41 @@ Ngoài ra, trên giao diện còn có nút "Buy now" (hoặc "View Online" nếu
     \begin{minipage}[b]{0.50\linewidth}
   	\centering
       \ifpdf
+      \includegraphics[scale=0.5]{rate_screen}
+    \else
+      \includegraphics[scale=0.5]{rate_screen}
+    \fi  	
+  \end{minipage}
+    %\leavevmode
+    \caption{Giao diện kết quả tư vấn và đánh giá Kansei}
+    \label{RecommendedResultScreen}
+\end{figure}
+
+\pagebreak
+
+ Sau đánh giá, tiêu chí ưa thích của người dùng được cập nhập. Các kết quả tư vấn chưa hiển thị được đánh giá lại một lần nữa, sau đó kết quả tư vấn mới phù hợp nhất được lấy ra và hiển thị lên màn hình. \\
+
+Ngoài ra, trên giao diện còn có nút "Buy now" (hoặc "View Online" nếu tài liệu có link xem online), người dùng có thể ấn vào đó và chuyển hướng đến thư viện hoặc trang mua hàng để đặt mua tài liệu. \\    
+
+\begin{figure}[H]
+  \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
+      \includegraphics[scale=0.5]{next_result_screen}
+    \else
+      \includegraphics[scale=0.5]{next_result_screen}
+    \fi  	
+  \end{minipage}
+    \begin{minipage}[b]{0.50\linewidth}
+  	\centering
+      \ifpdf
       \includegraphics[scale=0.5]{buy_now_screen}
     \else
       \includegraphics[scale=0.5]{buy_now_screen}
     \fi  	
   \end{minipage}
     %\leavevmode
-    \caption{Giao diện kết quả tư vấn}
+    \caption{Kết quả sau khi đánh giá Kansei và giao diện mua hàng Amazon}
     \label{RecommendedResultScreen}
 \end{figure}
+

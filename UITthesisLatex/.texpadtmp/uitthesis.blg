@@ -9,63 +9,65 @@ A level-1 auxiliary file: TheoryBasis/chapter1.aux
 A level-1 auxiliary file: DesignAnalysis/chapter1.aux
 A level-1 auxiliary file: Result/chapter1.aux
 A level-1 auxiliary file: Conclusions/conclusions.aux
+The style file: plain.bst
 A level-1 auxiliary file: Appendix1/appendix1.aux
 A level-1 auxiliary file: Appendix2/appendix2.aux
 A level-1 auxiliary file: Appendix3/appendix3.aux
-The style file: plain.bst
 Database file #1: ../security.bib
 I was expecting a `,' or a `}'---line 14 of file ../security.bib
  :  
  :  year = {1957},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in kornferry
 Name 1 in "Osgood, C.E., G.J. Suci, and P.H. Tannenbaum" has a comma at the end for entry osgood
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Ishihara, S., Ishihara, K. and Nagamachi, M." for entry ishihira98
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in tf-idf
 Too many commas in name 1 of "Ishihara, S., Ishihara, K. and Nagamachi, M." for entry ishihira98
 while executing---line 1090 of file plain.bst
 Name 1 in "Osgood, C.E., G.J. Suci, and P.H. Tannenbaum" has a comma at the end for entry osgood
 while executing---line 1090 of file plain.bst
-You've used 4 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            532 strings with 4978 characters,
-and the built_in function-call counts, 1402 in all, are:
-= -- 144
-> -- 40
-< -- 3
-+ -- 17
-- -- 12
-* -- 69
-:= -- 211
-add.period$ -- 11
-call.type$ -- 4
-change.case$ -- 18
+            550 strings with 5647 characters,
+and the built_in function-call counts, 2263 in all, are:
+= -- 233
+> -- 56
+< -- 4
++ -- 25
+- -- 16
+* -- 103
+:= -- 338
+add.period$ -- 23
+call.type$ -- 8
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 66
-empty$ -- 122
-format.name$ -- 12
-if$ -- 316
+cite$ -- 10
+duplicate$ -- 106
+empty$ -- 212
+format.name$ -- 16
+if$ -- 513
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 22
-num.names$ -- 8
-pop$ -- 25
+int.to.str$ -- 8
+missing$ -- 5
+newline$ -- 42
+num.names$ -- 12
+pop$ -- 53
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 24
 quote$ -- 0
-skip$ -- 64
+skip$ -- 94
 stack$ -- 0
-substring$ -- 101
-swap$ -- 28
-text.length$ -- 3
+substring$ -- 140
+swap$ -- 37
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 0
-while$ -- 17
-width$ -- 5
-write$ -- 42
+type$ -- 32
+warning$ -- 2
+while$ -- 24
+width$ -- 9
+write$ -- 81
 (There were 5 error messages)

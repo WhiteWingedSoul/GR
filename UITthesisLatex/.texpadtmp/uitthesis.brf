@@ -1,4 +1,9 @@
+\backcite {kornferry}{{vii}{(document)}{Doc-Start}}
+\backcite {moore11}{{4}{2.2}{section.2.2}}
+\backcite {haipv12}{{4}{2.2}{section.2.2}}
 \backcite {KE05}{{6}{2.3.2}{subsection.2.3.2}}
 \backcite {osgood}{{7}{2.3.2}{figure.caption.5}}
 \backcite {ishihira98}{{8}{2.3.2}{figure.caption.6}}
+\backcite {kornferry}{{10}{2.5}{figure.caption.8}}
+\backcite {tf-idf}{{12}{2.5.3}{subsection.2.5.3}}
 \backcite {welchfrick}{{16}{3.2.1}{subsection.3.2.1}}
