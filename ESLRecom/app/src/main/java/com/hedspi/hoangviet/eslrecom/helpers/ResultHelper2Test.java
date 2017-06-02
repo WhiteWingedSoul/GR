@@ -405,7 +405,7 @@ public class ResultHelper2Test {
                 return matchResult;
             }
             if (material.getSellerPrice() != null) {
-                double priceValue = Double.valueOf(material.getSellerPrice().replace("$", ""));
+                double priceValue = Double.valueOf(material.getSellerPrice().replace("$", "").replace(",",""));
                 if (priceValue <= matchPriceValue) {
                     matchResult.setAffordableScore(matchItem.retrieveWeight());
                     return matchResult;

@@ -259,7 +259,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
             ResultHelper2Test.initResultHelper(DatabaseManager.getMaterialListFromServer(this), DatabaseManager.getUserProfile());
         }catch (Exception e){
             Toast.makeText(this, "Exception occured.", Toast.LENGTH_SHORT).show();
-            progress.hide();
+            progress.dismiss();
 
             e.printStackTrace();
         }
@@ -269,7 +269,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
     @Override
     public void onDataDownloaded(String result) {
         Log.d("LOG data downloaded: ", result);
-        progress.hide();
+        progress.dismiss();
         if (result == Common.SUCCESS){
             startInitialMatching();
 
@@ -461,7 +461,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
                 adapter = new ResultViewPagerAdapter(getSupportFragmentManager(), mItems);
                 viewPager.setAdapter(adapter);
                 viewLayout.setVisibility(View.VISIBLE);
-                progress.hide();
+                progress.dismiss();
             }
         });
     }
