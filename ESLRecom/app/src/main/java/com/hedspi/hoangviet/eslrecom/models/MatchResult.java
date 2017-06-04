@@ -14,8 +14,8 @@ public class MatchResult extends AdapterItem{
 
     private double interestingScore;
     private List<KanseiKeyword> interestingItems;
-    private double satisfyScore;
-    private List<KanseiKeyword> satisfyItems;
+//    private double satisfyScore;
+//    private List<KanseiKeyword> satisfyItems;
     private double understandableScore;
     private List<KanseiKeyword> understandableItems;
     private double affordableScore;
@@ -39,13 +39,13 @@ public class MatchResult extends AdapterItem{
         this.interestingItems = interestingItems;
     }
 
-    public List<KanseiKeyword> getSatisfyItems() {
-        return satisfyItems;
-    }
-
-    public void setSatisfyItems(List<KanseiKeyword> satisfyItems) {
-        this.satisfyItems = satisfyItems;
-    }
+//    public List<KanseiKeyword> getSatisfyItems() {
+//        return satisfyItems;
+//    }
+//
+//    public void setSatisfyItems(List<KanseiKeyword> satisfyItems) {
+//        this.satisfyItems = satisfyItems;
+//    }
 
     public List<KanseiKeyword> getUnderstandableItems() {
         return understandableItems;
@@ -71,13 +71,13 @@ public class MatchResult extends AdapterItem{
         this.interestingScore = interestingScore;
     }
 
-    public double getSatisfyScore() {
-        return satisfyScore;
-    }
-
-    public void setSatisfyScore(double satisfyScore) {
-        this.satisfyScore = satisfyScore;
-    }
+//    public double getSatisfyScore() {
+//        return satisfyScore;
+//    }
+//
+//    public void setSatisfyScore(double satisfyScore) {
+//        this.satisfyScore = satisfyScore;
+//    }
 
     public double getUnderstandableScore() {
         return understandableScore;

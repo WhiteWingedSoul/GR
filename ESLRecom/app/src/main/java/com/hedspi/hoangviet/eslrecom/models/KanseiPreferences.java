@@ -15,7 +15,7 @@ public class KanseiPreferences {
     public static final String TARGET_PRICE = "price";
 
     private KanseiItem interesting;
-    private KanseiItem satisfy;
+//    private KanseiItem satisfy;
     private KanseiItem understandable;
 
     private KanseiItem acceptable;
@@ -33,15 +33,15 @@ public class KanseiPreferences {
         if (attributes == null){
             attributes = new ArrayList<>();
             interesting = new KanseiItem();
-            satisfy = new KanseiItem();
+//            satisfy = new KanseiItem();
             understandable = new KanseiItem();
             acceptable = new KanseiItem();
             affordable = new KanseiItem();
 
             attributes.add(interesting);
             interesting.setTarget(TARGET_TAG);
-            attributes.add(satisfy);
-            satisfy.setTarget(TARGET_TAG);
+//            attributes.add(satisfy);
+//            satisfy.setTarget(TARGET_TAG);
             attributes.add(understandable);
             understandable.setTarget(TARGET_TAG);
 
@@ -71,13 +71,13 @@ public class KanseiPreferences {
         this.interesting = interesting;
     }
 
-    public KanseiItem getSatisfy() {
-        return satisfy;
-    }
-
-    public void setSatisfy(KanseiItem satisfy) {
-        this.satisfy = satisfy;
-    }
+//    public KanseiItem getSatisfy() {
+//        return satisfy;
+//    }
+//
+//    public void setSatisfy(KanseiItem satisfy) {
+//        this.satisfy = satisfy;
+//    }
 
     public KanseiItem getUnderstandable() {
         return understandable;

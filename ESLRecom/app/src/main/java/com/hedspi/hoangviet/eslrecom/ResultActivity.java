@@ -187,7 +187,7 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
                     interesting.setText("Interesting: " + currentMatchReult.getInterestingScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getInteresting().retrieveWeight());
                     understandable.setText("Understandable: " + currentMatchReult.getUnderstandableScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getUnderstandable().retrieveWeight());
-                    satisfy.setText("Satisfy: " + currentMatchReult.getSatisfyScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getSatisfy().retrieveWeight());
+//                    satisfy.setText("Satisfy: " + currentMatchReult.getSatisfyScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getSatisfy().retrieveWeight());
                     affordable.setText("Affordable: " + currentMatchReult.getAffordableScore()+"\nw: "+ResultHelper2Test.getUserKanseiPreferences().getAffordable().retrieveWeight());
 
                     TextView interestingDetail = (TextView) dialogView.findViewById(R.id.interestingDetail);
@@ -205,11 +205,11 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
                     understandableDetail.setText(detailStr);
                     detailStr = "";
 
-                    TextView satisfyDetail = (TextView) dialogView.findViewById(R.id.satisfyDetail);
-                    for (KanseiKeyword item : currentMatchReult.getSatisfyItems()) {
-                        detailStr += item.getName() + ": " + item.getValue() + "(" + item.getTotalGoodRated() + "-" + item.getTotalBadRated() + ")\n";
-                    }
-                    satisfyDetail.setText(detailStr);
+//                    TextView satisfyDetail = (TextView) dialogView.findViewById(R.id.satisfyDetail);
+//                    for (KanseiKeyword item : currentMatchReult.getSatisfyItems()) {
+//                        detailStr += item.getName() + ": " + item.getValue() + "(" + item.getTotalGoodRated() + "-" + item.getTotalBadRated() + ")\n";
+//                    }
+//                    satisfyDetail.setText(detailStr);
                     detailStr = "";
 
                     TextView affordableDetail = (TextView) dialogView.findViewById(R.id.affordableDetail);
@@ -236,14 +236,14 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
                 final DiscreteSeekBar interestingScale = (DiscreteSeekBar) dialogView.findViewById(R.id.interestingScale);
                 final DiscreteSeekBar understandableScale = (DiscreteSeekBar) dialogView.findViewById(R.id.understandableScale);
-                final DiscreteSeekBar satisfyScale = (DiscreteSeekBar) dialogView.findViewById(R.id.satisfyScale);
+//                final DiscreteSeekBar satisfyScale = (DiscreteSeekBar) dialogView.findViewById(R.id.satisfyScale);
                 final DiscreteSeekBar affordableScale = (DiscreteSeekBar) dialogView.findViewById(R.id.priceScale);
 
                 Button realRateButton = (Button) dialogView.findViewById(R.id.rateButton);
                 realRateButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        reevalute(interestingScale.getProgress(), understandableScale.getProgress(), satisfyScale.getProgress(), affordableScale.getProgress());
+                        reevalute(interestingScale.getProgress(), understandableScale.getProgress(), affordableScale.getProgress());
                         dialog.cancel();
                     }
                 });
@@ -293,9 +293,9 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         }
     }
 
-    private void reevalute(int interestingScore, int understandableScore, int satisfyScore, int affordableScore){
+    private void reevalute(int interestingScore, int understandableScore/*, int satisfyScore*/, int affordableScore){
 
-        switch (ResultHelper2Test.reevaluate((double)interestingScore/10, (double)understandableScore/10, (double)satisfyScore/10, (double)affordableScore/10)){
+        switch (ResultHelper2Test.reevaluate(currentMaterial, (double)interestingScore/10, (double)understandableScore/10/*, (double)satisfyScore/10*/, (double)affordableScore/10)){
             case ResultHelper2Test.STATUS_CONTINUE:
                 toNextFragment();
                 break;

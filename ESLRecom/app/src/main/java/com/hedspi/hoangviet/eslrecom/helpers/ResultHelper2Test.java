@@ -124,12 +124,12 @@ public class ResultHelper2Test {
         return tagsString;
     }
 
-    public static int reevaluate(double interestingScore, double understandableScore, double satisfyScore, double affordableScore){
+    public static int reevaluate(Material currentMaterial, double interestingScore, double understandableScore/*, double satisfyScore*/, double affordableScore){
 //        updateKanseiPreference(score);
-        updateKanseiInteresting(interestingScore);
-        updateKanseiUnderstandable(understandableScore);
-        updateKanseiSatisfy(satisfyScore);
-        updateKanseiAffordable(affordableScore);
+        updateKanseiInteresting(currentMaterial, interestingScore);
+        updateKanseiUnderstandable(currentMaterial, understandableScore);
+//        updateKanseiSatisfy(currentMaterial, satisfyScore);
+        updateKanseiAffordable(currentMaterial, affordableScore);
 
         ratedCount++;
         currentItemPos++;
@@ -140,20 +140,17 @@ public class ResultHelper2Test {
         }
     }
 
-    private static void updateKanseiInteresting(double score){
-        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+    private static void updateKanseiInteresting(Material currentMaterial, double score){
         KanseiItem interesting = updateKanseiTag(score, userKanseiPreferences.getInteresting(), currentMaterial);
         interesting.addScore(score);
         userKanseiPreferences.setInteresting(interesting);
     }
-    private static void updateKanseiSatisfy(double score){
-        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
-        KanseiItem satisfy = updateKanseiTag(score, userKanseiPreferences.getSatisfy(), currentMaterial);
-        satisfy.addScore(score);
-        userKanseiPreferences.setSatisfy(satisfy);
-    }
-    private static void updateKanseiUnderstandable(double score){
-        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+//    private static void updateKanseiSatisfy(Material currentMaterial, double score){
+//        KanseiItem satisfy = updateKanseiTag(score, userKanseiPreferences.getSatisfy(), currentMaterial);
+//        satisfy.addScore(score);
+//        userKanseiPreferences.setSatisfy(satisfy);
+//    }
+    private static void updateKanseiUnderstandable(Material currentMaterial, double score){
         KanseiItem understandable = updateKanseiTag(score, userKanseiPreferences.getUnderstandable(), currentMaterial);
         understandable.addScore(score);
         userKanseiPreferences.setUnderstandable(understandable);
@@ -229,8 +226,7 @@ public class ResultHelper2Test {
 //    }
 
     //TODO
-    private static void updateKanseiAffordable(double score){
-        Material currentMaterial = sortedMatchResults.get(currentItemPos).getMaterial();
+    private static void updateKanseiAffordable(Material currentMaterial, double score){
         KanseiItem affordable = userKanseiPreferences.getAffordable();
 
         if (currentMaterial.getSellerPrice() != null) {
@@ -343,12 +339,12 @@ public class ResultHelper2Test {
         matchResult.setInterestingScore(matchResult.getInterestingScore()/mauso);
         matchResult = matchUnderstandable(material, matchResult);
         matchResult.setUnderstandableScore(matchResult.getUnderstandableScore()/mauso);
-        matchResult = matchSatisfy(material, matchResult);
-        matchResult.setSatisfyScore(matchResult.getSatisfyScore()/mauso);
+//        matchResult = matchSatisfy(material, matchResult);
+//        matchResult.setSatisfyScore(matchResult.getSatisfyScore()/mauso);
         matchResult = matchAffordable(material, matchResult);
         matchResult.setAffordableScore(matchResult.getAffordableScore()/mauso);
 
-        kanseiScore = matchResult.getAffordableScore() + matchResult.getUnderstandableScore()+ matchResult.getSatisfyScore()+ matchResult.getInterestingScore();
+        kanseiScore = matchResult.getAffordableScore() + matchResult.getUnderstandableScore()/*+ matchResult.getSatisfyScore()*/+ matchResult.getInterestingScore();
 
         if (kanseiScore <0 ){
             Log.d("test","ahihi");
@@ -370,15 +366,15 @@ public class ResultHelper2Test {
         return matchResult;
     }
 
-    private static MatchResult matchSatisfy(Material material, MatchResult result){
-        MatchResult matchResult = result;
-        KanseiItem matchItem = userKanseiPreferences.getSatisfy();
-        matchResult = matchKanseiTag(material, matchItem.getKeywords(), matchResult);
-        matchResult.setSatisfyScore(matchResult.getKanseiScore()*matchItem.retrieveWeight());
-        matchResult.setSatisfyItems(matchResult.getKanseiItems());
-
-        return matchResult;
-    }
+//    private static MatchResult matchSatisfy(Material material, MatchResult result){
+//        MatchResult matchResult = result;
+//        KanseiItem matchItem = userKanseiPreferences.getSatisfy();
+//        matchResult = matchKanseiTag(material, matchItem.getKeywords(), matchResult);
+//        matchResult.setSatisfyScore(matchResult.getKanseiScore()*matchItem.retrieveWeight());
+//        matchResult.setSatisfyItems(matchResult.getKanseiItems());
+//
+//        return matchResult;
+//    }
 
     private static MatchResult matchUnderstandable(Material material, MatchResult result){
         MatchResult matchResult = result;
