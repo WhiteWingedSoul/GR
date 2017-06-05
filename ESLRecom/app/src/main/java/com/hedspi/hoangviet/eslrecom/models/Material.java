@@ -1,5 +1,7 @@
 package com.hedspi.hoangviet.eslrecom.models;
 
+import android.util.Log;
+
 import com.google.gson.annotations.SerializedName;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.j256.ormlite.field.DatabaseField;
@@ -249,7 +251,7 @@ public class Material implements Serializable {
         String trimmedTags = tag.replace(", ",",");
         List<String> materialTagString = Arrays.asList(trimmedTags.split(","));
         List<Tag> materialTagList = new ArrayList<>();
-        if (tagList == null || tagList.size() == 0 || !tag.contains(keyword))
+        if (tagList == null || tagList.size() == 0)
             return 0;
         else{
             double totalScore = 0;
@@ -266,8 +268,11 @@ public class Material implements Serializable {
             }
 
             for(Tag tag : materialTagList){
-                if (tag.getName().equals(keyword))
-                    return tag.getScore()/totalScore;
+                if (tag.getName().equals(keyword)) {
+                    if ((tag.getScore() / totalScore)==1)
+                        Log.d("","");
+                    return tag.getScore() / totalScore;
+                }
             }
 
             return 0;

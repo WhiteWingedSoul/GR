@@ -524,6 +524,9 @@ public class ResultHelper2Test {
             return 0;
     }
 
+    private static final double profileW = 1.3;
+    private static final double materialW = 0.7;
+
     private static double matchLearnList(Material material){
         //First test try: use only word people input to compare
         // if word exists in material tag or name -> its matched!
@@ -537,17 +540,14 @@ public class ResultHelper2Test {
             for (String userLearnType : profile.getLearnList()) {
                 if (material.getName().contains(userLearnType) || material.getTag().contains(userLearnType)) {
                     matchCount++;
-//                    if (userLearnListCount>2)
-                        matchMaterialScore += material.getKeywordImportantScore(userLearnType);
-//                    else
-//                        matchMaterialScore += 1;
-                    Log.d("ahihi","");
+                    matchMaterialScore += material.getKeywordImportantScore(userLearnType);
+                    Log.d("","");
                 }
             }
 
             matchProfileScore += ((double)matchCount/userLearnListCount);
 
-            learnlistScore = (matchMaterialScore + matchProfileScore) * DatabaseManager.getPreference().getLearnPreferenceScore() / 2;
+            learnlistScore = (matchMaterialScore*materialW + matchProfileScore*profileW) * DatabaseManager.getPreference().getLearnPreferenceScore() / 2;
         }else {
             learnlistScore = DatabaseManager.getPreference().getLearnPreferenceScore();
         }

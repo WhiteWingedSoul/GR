@@ -24,6 +24,8 @@ import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -125,6 +127,13 @@ import java.util.Map;
                             tagStringList.add(tag.getName());
                         }
 
+
+                        Collections.sort(tagList, new Comparator<Tag>() {
+                            @Override
+                            public int compare(Tag o1, Tag o2) {
+                                return Double.compare(o2.getScore(), o1.getScore());
+                            }
+                        });
                         listener.onDataDownloaded(Common.SUCCESS);
                     }
                 }

@@ -180,7 +180,7 @@ public class UserProfile extends AdapterItem implements Serializable {
     }
 
     public double calculateOverallScore() {
-        overallScore = (readingScore + vocabularyScore + getGrammarScore())/3;
+        overallScore = (readingScore + vocabularyScore + grammarScore)/3;
         return overallScore;
     }
 
@@ -217,7 +217,7 @@ public class UserProfile extends AdapterItem implements Serializable {
             return Preference.BEGINNER;
         else if(calculateOverallScore()<=0.3)
             return Preference.ELEMENTARY;
-        else if (calculateOverallScore()<=0.75)
+        else if (calculateOverallScore()<=0.8)
             return Preference.INTERMEDIATE;
         else return Preference.ADVANCE;
     }

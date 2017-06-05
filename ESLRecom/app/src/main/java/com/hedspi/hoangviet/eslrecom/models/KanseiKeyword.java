@@ -14,7 +14,7 @@ public class KanseiKeyword {
     private double badScore = 0;
     private int totalBadRated = 0;
 
-    private static final int CURVE_RATE = 2;
+    private static final int CURVE_RATE = 1;
 
     public int getTotalGoodRated() {
         return totalGoodRated;
