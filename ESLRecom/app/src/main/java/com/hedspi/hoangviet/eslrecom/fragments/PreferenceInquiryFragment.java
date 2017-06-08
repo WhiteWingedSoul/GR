@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,6 +29,7 @@ import java.util.List;
 
 public class PreferenceInquiryFragment extends Fragment {
     private UserProfile profile;
+    private TagCompletionView autoCompleteTextView;
 
     public static PreferenceInquiryFragment newInstance(UserProfile profile){
         PreferenceInquiryFragment fragment = new PreferenceInquiryFragment();
@@ -46,8 +48,20 @@ public class PreferenceInquiryFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+        ((MainActivity)getActivity()).switchToggle(false);
+
+        if (autoCompleteTextView!=null){
+            autoCompleteTextView.setText("");
+        }
+    }
+
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_survey8, viewGroup, false);
+        View view = inflater.inflate(R.layout.fragment_preference_inquiry, viewGroup, false);
 
         return view;
     }
@@ -56,7 +70,7 @@ public class PreferenceInquiryFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        final TagCompletionView autoCompleteTextView = (TagCompletionView) view.findViewById(R.id.autoCompleteText);
+        autoCompleteTextView = (TagCompletionView) view.findViewById(R.id.autoCompleteText);
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setSplitChar(' ');
         autoCompleteTextView.setTokenLimit(5);
@@ -82,6 +96,14 @@ public class PreferenceInquiryFragment extends Fragment {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getActivity(), android.R.layout.simple_list_item_1, tagName);
         autoCompleteTextView.setAdapter(adapter);
+
+        TextView backButton = (TextView) view.findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
 
         TextView nextButton = (TextView) view.findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new View.OnClickListener() {

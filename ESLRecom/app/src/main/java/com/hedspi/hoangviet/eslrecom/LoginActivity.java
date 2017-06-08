@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.hedspi.hoangviet.eslrecom.commons.Common;
+import com.hedspi.hoangviet.eslrecom.helpers.SettingHelper;
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
@@ -37,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private SharedPreferences.Editor editor;
     private FirebaseUser mUser;
 
     @Override
@@ -45,8 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
 
-        SharedPreferences profile = getSharedPreferences("profile", 0);
-        editor = profile.edit();
         callbackManager = CallbackManager.Factory.create();
         mAuth = FirebaseAuth.getInstance();
 
@@ -67,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        String uid = profile.getString("uid", null);
+        String uid = SettingHelper.getInstance(getApplicationContext()).getUid();
         if (uid!=null){
             getUserProfile(uid);
         }else {
@@ -132,8 +130,6 @@ public class LoginActivity extends AppCompatActivity {
                     profile.setEmail(mUser.getEmail());
                     profile.setRole(Common.ROLE_USER);
                     profile.setUid(uid);
-                    editor.putString("uid", uid);
-                    editor.commit();
 
                     database.child(Common.USERS).child(uid).setValue(profile);
 //                    DatabaseReference key = database.child(Common.USERS).push();
@@ -143,6 +139,7 @@ public class LoginActivity extends AppCompatActivity {
                     profile = dataSnapshot.getChildren().iterator().next().getValue(UserProfile.class);
                 }
 
+                SettingHelper.getInstance(getApplicationContext()).setUid(uid);
                 DatabaseManager.setUserProfile(profile);
                 startMainActivity();
                 LoginActivity.this.finish();

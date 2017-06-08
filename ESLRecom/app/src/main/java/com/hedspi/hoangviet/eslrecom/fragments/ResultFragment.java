@@ -292,7 +292,7 @@ public class ResultFragment extends Fragment {
             vh.description.setText(matchResult.getMaterial().getSummary());
 
 //            vh.matchRate.setText(getResources().getString(R.string.match)+String.format("%.3f", matchResult.getMatchScore())+" %");
-            vh.matchRate.setVisibility(View.GONE);
+            //vh.matchRate.setVisibility(View.GONE);
 
             vh.itemLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -317,7 +317,6 @@ public class ResultFragment extends Fragment {
         //public CardView frameLayout;
         public View itemLayout;
         public ImageView bookIcon;
-        public TextView matchRate;
         public TextView title;
         public TextView description;
 
@@ -329,7 +328,6 @@ public class ResultFragment extends Fragment {
             bookIcon = (ImageView) view.findViewById(R.id.bookIcon);
             title = (TextView) view.findViewById(R.id.title);
             description = (TextView) view.findViewById(R.id.description);
-            matchRate = (TextView) view.findViewById(R.id.matchRate);
         }
 
     }

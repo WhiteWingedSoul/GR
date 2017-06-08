@@ -77,6 +77,16 @@ public class Material implements Serializable {
     @SerializedName(TAG)
     private String tag;
 
+    private String firebaseKey;
+
+    public void saveFirebaseKey(String key){
+        this.firebaseKey = key;
+    }
+
+    public String retrieveFirebaseKey(){
+        return firebaseKey;
+    }
+
 //    public int getId() {
 //        return id;
 //    }

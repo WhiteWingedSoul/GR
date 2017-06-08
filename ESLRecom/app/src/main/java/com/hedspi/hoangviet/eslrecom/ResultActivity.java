@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.drawable.ColorDrawable;
@@ -60,7 +61,7 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.grantland.widget.AutofitTextView;
 
-public class ResultActivity extends AppCompatActivity implements DataDownloadListener {
+public class ResultActivity extends DrawerActivity implements DataDownloadListener {
     private List<Material> listMaterialProfile;
     private List<MatchResult> listMatchResult;
     private List<AdapterItem> mItems = new ArrayList<>();
@@ -98,8 +99,6 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
     private Button rateButton;
 
-
-
     private TextView contextMatch;
     private TextView kanseiMatch;
     private TextView matchDetail;
@@ -130,6 +129,22 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         progress = ProgressDialog.show(this, "", getResources().getString(R.string.caculating), false);
+
+        setUpNavigationDrawer();
+
+        finishButton = (TextView) findViewById(R.id.finishButton);
+
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
         viewLayout = findViewById(R.id.viewLayout);
         viewPager = (NonSwipeableViewPager) findViewById(R.id.viewPager);
@@ -266,6 +281,8 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
     }
 
+
+
     @Override
     public void onDataDownloaded(String result) {
         Log.d("LOG data downloaded: ", result);
@@ -273,29 +290,47 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
         if (result == Common.SUCCESS){
             startInitialMatching();
 
-            currentMatchReult = (MatchResult)mItems.get(0);
-            currentMaterial = currentMatchReult.getMaterial();
-            buyButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToUrl(currentMaterial.getSellerLink());
-                }
-            });
-            viewOnlineButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    goToUrl(currentMaterial.getOnlineLink());
-                }
-            });
-            updateViews();
+            try {
+                if (mItems.size()>0) {
+                    currentMatchReult = (MatchResult) mItems.get(0);
+                    currentMaterial = currentMatchReult.getMaterial();
+                    buyButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            goToUrl(currentMaterial.getSellerLink());
+                        }
+                    });
+                    viewOnlineButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            goToUrl(currentMaterial.getOnlineLink());
+                        }
+                    });
+                    updateViews();
 
-            viewLayout.setVisibility(View.VISIBLE);
+                    finishButton.setVisibility(View.VISIBLE);
+                    viewLayout.setVisibility(View.VISIBLE);
+                }else{
+                    AlertDialog alertDialog = new AlertDialog.Builder(ResultActivity.this).create();
+                    alertDialog.setMessage(getResources().getString(R.string.noresult));
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                    finish();
+                                }
+                            });
+                    alertDialog.show();
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 
     private void reevalute(int interestingScore, int understandableScore/*, int satisfyScore*/, int affordableScore){
 
-        switch (ResultHelper2Test.reevaluate(currentMaterial, (double)interestingScore/10, (double)understandableScore/10/*, (double)satisfyScore/10*/, (double)affordableScore/10)){
+        switch (ResultHelper2Test.reevaluate(currentMatchReult, (double)interestingScore/10, (double)understandableScore/10/*, (double)satisfyScore/10*/, (double)affordableScore/10)){
             case ResultHelper2Test.STATUS_CONTINUE:
                 toNextFragment();
                 break;
@@ -536,8 +571,9 @@ public class ResultActivity extends AppCompatActivity implements DataDownloadLis
 
     @Override
     protected void onPause() {
-        super.onPause();
+        ResultHelper2Test.uploadLog();
 
+        super.onPause();
     }
 
     private void toPreviousFragment() {

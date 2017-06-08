@@ -1,6 +1,8 @@
 <resources>
     <string name="facebook_app_id">800567540092300</string>
     <string name="fb_login_protocol_scheme">fb800567540092300</string>
+    <string name="navigation_drawer_open">？</string>
+    <string name="navigation_drawer_close">？</string>
     <string name="app_name">ESL Recom</string>
     <string name="back">"Back"</string>
     <string name="next">"Next"</string>
@@ -131,8 +133,15 @@
     <string name="affordable">Affordable</string>
     <string name="veNoidung">Content</string>
     <string name="veGia">Price</string>
+    <string name="noresult">Nothing fits your preference.\nPlease be more specific.</string>
+    <string name="result">results</string>
 
-
+    <string name="home_menu_title">Home</string>
+    <string name="test_menu_title">Take the test</string>
+    <string name="history_menu_title">History</string>
+    <string name="language_menu_title">"Language:  EN"</string>
+    <string name="settings_menu_title">Setting</string>
+    <string name="logout_menu_title">Logout</string>
 
     <string-array name="language">
         <item>Tiếng Việt</item>

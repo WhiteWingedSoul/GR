@@ -212,7 +212,6 @@ public class ListAddedBookFragment extends Fragment {
     class MatchResultHolder extends RecyclerView.ViewHolder{
         public View itemLayout;
         public ImageView bookIcon;
-        public TextView matchRate;
         public TextView title;
         public TextView description;
 
@@ -223,7 +222,6 @@ public class ListAddedBookFragment extends Fragment {
             bookIcon = (ImageView) view.findViewById(R.id.bookIcon);
             title = (TextView) view.findViewById(R.id.title);
             description = (TextView) view.findViewById(R.id.description);
-            matchRate = (TextView) view.findViewById(R.id.matchRate);
         }
 
     }

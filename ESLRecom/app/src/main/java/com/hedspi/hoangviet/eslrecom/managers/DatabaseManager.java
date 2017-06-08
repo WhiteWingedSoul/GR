@@ -15,8 +15,10 @@ import com.hedspi.hoangviet.eslrecom.commons.Preference;
 import com.hedspi.hoangviet.eslrecom.fragments.PreferenceInquiryFragment;
 import com.hedspi.hoangviet.eslrecom.models.ChildTag;
 import com.hedspi.hoangviet.eslrecom.models.Material;
+import com.hedspi.hoangviet.eslrecom.models.PreviewMaterial;
 import com.hedspi.hoangviet.eslrecom.models.Question;
 import com.hedspi.hoangviet.eslrecom.models.Tag;
+import com.hedspi.hoangviet.eslrecom.models.UsageLog;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 import java.io.IOException;
@@ -26,8 +28,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by hoangviet on 1/8/16.
@@ -45,6 +49,7 @@ import java.util.Map;
     private static List<Question> questionList = new ArrayList<>();
     private static List<Material> materialList = new ArrayList<>();
     private static List<String> tagStringList = new ArrayList<>();
+    private static List<UsageLog> userUsageList = new ArrayList<>();
     private static UserProfile userProfile;
 
     DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -62,6 +67,18 @@ import java.util.Map;
             database = FirebaseDatabase.getInstance().getReference();
         }
         return database;
+    }
+
+    public static List<Question> getQuestionList() {
+        return questionList;
+    }
+
+    public static List<Material> getMaterialList() {
+        return materialList;
+    }
+
+    public static List<UsageLog> getUserUsageList() {
+        return userUsageList;
     }
 
     public static List<Tag> getTagList() {
@@ -98,6 +115,82 @@ import java.util.Map;
 
     public static void setBookProfilesCount(long bookProfilesCount) {
         DatabaseManager.bookProfilesCount = bookProfilesCount;
+    }
+
+    public static void uploadLog(UsageLog log){
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+
+        database.child(Common.LOG).child(log.getCreatedTime()).setValue(log);
+    }
+
+    public static List<UsageLog> getUserUsageFromServer(final DataDownloadListener listener){
+        String uid = userProfile.getUid();
+        DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+        database.child(Common.LOG).orderByChild("uid").equalTo(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() != null){
+                    userUsageList.clear();
+                    Map<String, Object> datas = (Map<String, Object>) dataSnapshot.getValue();
+                    for (Map.Entry<String, Object> entry : datas.entrySet()) {
+                        //Get user map
+                        try {
+                            Map singleData = (Map) entry.getValue();
+                            UsageLog log = new UsageLog();
+                            log.setCreatedTime((String) singleData.get("createdTime"));
+                            log.setUid((String) singleData.get("uid"));
+                            log.setPreferences((String) singleData.get("preferences"));
+                            log.setUsername((String) singleData.get("username"));
+                            log.setAvatar((String) singleData.get("avatar"));
+
+                            List<PreviewMaterial> listMats = new ArrayList<PreviewMaterial>();
+                            for (Map map : (ArrayList<Map>) singleData.get("goodRatingMaterialIds")) {
+                                PreviewMaterial mat = new PreviewMaterial();
+                                mat.setMaterialId((String) map.get("materialId"));
+                                mat.setMaterialName((String) map.get("materialName"));
+                                mat.setMaterialIconLink((String) map.get("materialIconLink"));
+                                mat.setMaterialDescription((String) map.get("materialDescription"));
+                                Object contextValue = map.get("contextScore");
+                                if (contextValue instanceof Long)
+                                    mat.setContextScore(((Long) contextValue).doubleValue());
+                                else
+                                    mat.setContextScore((double) map.get("contextScore"));
+                                Object kanseiValue = map.get("kanseiScore");
+                                if (kanseiValue instanceof Long)
+                                    mat.setKanseiScore(((Long) kanseiValue).doubleValue());
+                                else
+                                    mat.setKanseiScore((double) map.get("kanseiScore"));
+
+                                listMats.add(mat);
+                            }
+                            log.setGoodRatingMaterialIds(listMats);
+
+                            userUsageList.add(log);
+                            listener.onDataDownloaded(Common.SUCCESS);
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                listener.onDataDownloaded(Common.FAIL);
+            }
+        });
+
+        Collections.sort(userUsageList, new Comparator<UsageLog>() {
+            @Override
+            public int compare(UsageLog o1, UsageLog o2) {
+                Date d1 = new Date(o1.getCreatedTime());
+                Date d2 = new Date(o2.getCreatedTime());
+
+                return d1.compareTo(d2);
+            }
+        });
+
+        return userUsageList;
     }
 
     public static List<Tag> getTagListFromServer(final DataDownloadListener listener){
@@ -194,6 +287,14 @@ import java.util.Map;
         return questionList;
     }
 
+    public static Material getSingleMaterialFromServer(String key){
+        for(Material material : materialList){
+            if (material.retrieveFirebaseKey().equals(key))
+                return material;
+        }
+        return null;
+    }
+
     public static List<Material> getMaterialListFromServer(final DataDownloadListener listener){
         if (materialList == null || materialList.size() == 0) {
             DatabaseReference database = FirebaseDatabase.getInstance().getReference();
@@ -226,6 +327,7 @@ import java.util.Map;
                             material.setSubjects((String) singleData.get("subjects"));
                             material.setSummary((String) singleData.get("summary"));
                             material.setTag((String) singleData.get("tag"));
+                            material.saveFirebaseKey(entry.getKey());
 
                             materialList.add(material);
                         }

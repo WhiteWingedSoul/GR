@@ -1,5 +1,6 @@
 package com.hedspi.hoangviet.eslrecom.helpers;
 
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.hedspi.hoangviet.eslrecom.managers.DatabaseManager;
@@ -8,11 +9,14 @@ import com.hedspi.hoangviet.eslrecom.models.KanseiKeyword;
 import com.hedspi.hoangviet.eslrecom.models.KanseiPreferences;
 import com.hedspi.hoangviet.eslrecom.models.MatchResult;
 import com.hedspi.hoangviet.eslrecom.models.Material;
+import com.hedspi.hoangviet.eslrecom.models.PreviewMaterial;
+import com.hedspi.hoangviet.eslrecom.models.UsageLog;
 import com.hedspi.hoangviet.eslrecom.models.UserProfile;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,27 +24,39 @@ import java.util.List;
  */
 
 public class ResultHelper2Test {
-    private static List<Material> materialBank;
     private static List<MatchResult> sortedMatchResults;
     private static KanseiPreferences userKanseiPreferences;
     private static List<String> showedMaterialTitles;
     private static List<String> likedMaterialTitles;
     private static List<String> likedTags = new ArrayList<>();
-    private static UserProfile profile;
 
     private static int currentItemPos = 0;
     private static int ratedCount = 0;
 
     public static final int STATUS_END = 1;
     public static final int STATUS_CONTINUE = 2;
+    private static UsageLog userUsageLog;
+    private static List<PreviewMaterial> likedMaterials = new ArrayList<>();
 
     public static void initResultHelper(List<Material> data, UserProfile pf){
-        materialBank = data;
-        profile = pf;
 
         userKanseiPreferences = new KanseiPreferences();
         userKanseiPreferences.initAttributes();
 
+        userUsageLog = new UsageLog();
+        userUsageLog.setUid(pf.getUid());
+        userUsageLog.setUsername(pf.getName());
+        userUsageLog.setAvatar(pf.getAvatarLink());
+        userUsageLog.setPreferences(TextUtils.join(", ", pf.getLearnList()));
+
+    }
+
+    public static void uploadLog(){
+        userUsageLog.setCreatedTime((new Date()).toString());
+        userUsageLog.setGoodRatingMaterialIds(likedMaterials);
+
+        DatabaseManager.uploadLog(userUsageLog);
+        Log.d("","");
     }
 
     public static List<MatchResult> initFirstMatching(){
@@ -48,9 +64,9 @@ public class ResultHelper2Test {
         sortedMatchResults = new ArrayList<>();
         likedMaterialTitles = new ArrayList<>();
 
-        for (Material material : materialBank) {
+        for (Material material : DatabaseManager.getMaterialList()) {
             double matchScore = contextMatching(material);
-            if (matchScore > DatabaseManager.getPreference().getDecisionBoundary()) {
+            if (matchScore > 0.3){//DatabaseManager.getPreference().getDecisionBoundary()) {
                 MatchResult matchResult = new MatchResult();
                 matchResult.setMaterial(material);
                 matchResult.setMatchScore(matchScore);
@@ -66,9 +82,11 @@ public class ResultHelper2Test {
             }
         });
 
-        list.addAll(sortedMatchResults.subList(0, 1));
+        if (sortedMatchResults.size()>0) {
+            list.addAll(sortedMatchResults.subList(0, 1));
 
-        sortedMatchResults = sortedMatchResults.subList(1, sortedMatchResults.size());
+            sortedMatchResults = sortedMatchResults.subList(1, sortedMatchResults.size());
+        }
 
         return list;
     }
@@ -109,7 +127,7 @@ public class ResultHelper2Test {
         KanseiKeyword tagKansei;
         for (String tagName : material.retrieveTagList()) {
             if (DatabaseManager.getTagStringList().contains(tagName)) {
-                if (profile.getLearnList().contains(tagName)) {
+                if (DatabaseManager.getUserProfile().getLearnList().contains(tagName)) {
                     tagsString += "<font color='blue'>" + tagName+ "</font>, ";
 //                }else if ((tagKansei =userKanseiPreferences.retrieveTag(tagName)) != null && tagKansei.retrieveValue() >= 0.4){
 //                    tagsString += "<font color='blue'>" + tagName+ "</font>, ";
@@ -124,12 +142,24 @@ public class ResultHelper2Test {
         return tagsString;
     }
 
-    public static int reevaluate(Material currentMaterial, double interestingScore, double understandableScore/*, double satisfyScore*/, double affordableScore){
+    public static int reevaluate(MatchResult currentMaterial, double interestingScore, double understandableScore/*, double satisfyScore*/, double affordableScore){
 //        updateKanseiPreference(score);
-        updateKanseiInteresting(currentMaterial, interestingScore);
-        updateKanseiUnderstandable(currentMaterial, understandableScore);
+        updateKanseiInteresting(currentMaterial.getMaterial(), interestingScore);
+        updateKanseiUnderstandable(currentMaterial.getMaterial(), understandableScore);
 //        updateKanseiSatisfy(currentMaterial, satisfyScore);
-        updateKanseiAffordable(currentMaterial, affordableScore);
+        updateKanseiAffordable(currentMaterial.getMaterial(), affordableScore);
+
+        if (((interestingScore+understandableScore+affordableScore)/3)>0){
+            PreviewMaterial preMat = new PreviewMaterial();
+            preMat.setContextScore(currentMaterial.getMatchScore());
+            preMat.setKanseiScore(currentMaterial.getKanseiScore());
+            preMat.setMaterialIconLink(currentMaterial.getMaterial().getCoverLink());
+            preMat.setMaterialDescription(currentMaterial.getMaterial().getSummary());
+            preMat.setMaterialName(currentMaterial.getMaterial().getName());
+            preMat.setMaterialId(currentMaterial.getMaterial().retrieveFirebaseKey());
+
+            likedMaterials.add(preMat);
+        }
 
         ratedCount++;
         currentItemPos++;
@@ -160,7 +190,7 @@ public class ResultHelper2Test {
         KanseiItem item = inputItem;
         for (String tagName : currentMaterial.retrieveTagList()){
             if (DatabaseManager.getTagStringList().contains(tagName)) {
-                if (!profile.getLearnList().contains(tagName)) {
+                if (!DatabaseManager.getUserProfile().getLearnList().contains(tagName)) {
                     KanseiKeyword tag = item.retrieveKeyword(tagName);
 
                     if (tag == null) {
@@ -517,27 +547,27 @@ public class ResultHelper2Test {
     }
 
     private static double matchOverall(Material material){
-        String level = profile.returnOverallPreference();
+        String level = DatabaseManager.getUserProfile().returnOverallPreference();
         if (material.getName().contains(level) || material.getTag().contains(level))
             return DatabaseManager.getPreference().getOverallScore();
         else
             return 0;
     }
 
-    private static final double profileW = 1.3;
-    private static final double materialW = 0.7;
+    private static final double profileW = 1.4;
+    private static final double materialW = 0.6;
 
     private static double matchLearnList(Material material){
         //First test try: use only word people input to compare
         // if word exists in material tag or name -> its matched!
         double learnlistScore = 0;
-        int userLearnListCount = profile.getLearnList().size();
+        int userLearnListCount = DatabaseManager.getUserProfile().getLearnList().size();
         int matchCount = 0;
 
         if (userLearnListCount != 0) {
             double matchMaterialScore = 0;
             double matchProfileScore = 0;
-            for (String userLearnType : profile.getLearnList()) {
+            for (String userLearnType : DatabaseManager.getUserProfile().getLearnList()) {
                 if (material.getName().contains(userLearnType) || material.getTag().contains(userLearnType)) {
                     matchCount++;
                     matchMaterialScore += material.getKeywordImportantScore(userLearnType);
@@ -549,7 +579,7 @@ public class ResultHelper2Test {
 
             learnlistScore = (matchMaterialScore*materialW + matchProfileScore*profileW) * DatabaseManager.getPreference().getLearnPreferenceScore() / 2;
         }else {
-            learnlistScore = DatabaseManager.getPreference().getLearnPreferenceScore();
+            learnlistScore = 0;//DatabaseManager.getPreference().getLearnPreferenceScore();
         }
         return learnlistScore;
     }

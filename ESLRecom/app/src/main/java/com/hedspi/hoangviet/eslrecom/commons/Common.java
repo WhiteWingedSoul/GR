@@ -11,6 +11,7 @@ public class Common {
     public static final String TAG = "tags";
     public static final String QUESTION = "questions";
     public static final String USERS = "users_data";
+    public static final String LOG = "usage_log";
     public static final String ROLE_USER = "user";
     public static final String ROLE_ADMIN = "admin";
 

@@ -10,6 +10,7 @@
     <color name="colorGreen">#34a866</color>
     <color name="colorRed">#E35342</color>
     <color name="colorSmoothText">#CABBBBBB</color>
+    <color name="colorSmootherDefaultText">#999999</color>
     <color name="colorDefaultText">#555555</color>
     <color name="colorWrong">#BE4D46</color>
     <color name="colorChooseRight">#63A34B</color>

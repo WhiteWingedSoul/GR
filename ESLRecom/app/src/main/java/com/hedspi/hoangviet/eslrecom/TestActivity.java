@@ -32,7 +32,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 import me.grantland.widget.AutofitTextView;
 
-public class TestActivity extends AppCompatActivity implements DataDownloadListener{
+public class TestActivity extends DrawerActivity implements DataDownloadListener{
     private NonSwipeableViewPager viewPager;
     private TestViewPagerAdapter adapter;
     private List<AdapterItem> mItems;
@@ -73,6 +73,9 @@ public class TestActivity extends AppCompatActivity implements DataDownloadListe
         FragmentManager.enableDebugLogging(true);
         setContentView(R.layout.activity_test);
 
+        activityMenuId = R.id.drawer_item_test;
+        setUpNavigationDrawer();
+
         UserProfile user = DatabaseManager.getUserProfile();
 
         userName = (TextView) findViewById(R.id.userName);
@@ -112,6 +115,7 @@ public class TestActivity extends AppCompatActivity implements DataDownloadListe
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         summaryProfile.setVisibility(View.GONE);
+                        toolbar.setVisibility(View.GONE);
                     }
 
                     @Override
@@ -242,6 +246,7 @@ public class TestActivity extends AppCompatActivity implements DataDownloadListe
                 viewPager.setVisibility(View.GONE);
                 testProfile.setVisibility(View.GONE);
                 summaryProfile.setVisibility(View.VISIBLE);
+                toolbar.setVisibility(View.VISIBLE);
                 AnimationHelper.playAppearAnimation(summaryProfile, 0 , null);
                 learnButton.setVisibility(View.GONE);
                 backButton.setVisibility(View.VISIBLE);

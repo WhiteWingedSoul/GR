@@ -6,31 +6,6 @@
     android:layout_height="match_parent"
     android:background="#fff">
 
-    <TextView
-        android:id="@+id/languageText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:text="@string/chooseLanguage"/>
-
-    <Spinner
-        android:id="@+id/languageSpinner"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Spinner>
-
-    <ImageView
-        android:id="@+id/configButton"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:src="@drawable/ic_assignment_black_48dp"
-        android:layout_gravity="right"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="12dp"
-        android:tint="@color/colorAccent"/>
-
     <ImageView
         android:layout_width="350dp"
         android:layout_height="350dp"

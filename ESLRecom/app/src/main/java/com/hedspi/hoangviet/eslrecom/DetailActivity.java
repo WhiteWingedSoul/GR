@@ -32,7 +32,7 @@ public class DetailActivity extends AppCompatActivity {
                 break;
             case MainActivity.VIEW:
                 book = (Material)getIntent().getExtras().getSerializable("book");
-                fragmentManager.beginTransaction().add(R.id.fragment, DetailBookFragment.newInstance(book)).commit();
+//                fragmentManager.beginTransaction().add(R.id.fragment, DetailBookFragment.newInstance(book)).commit();
                 break;
         }
 

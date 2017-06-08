@@ -129,5 +129,14 @@
     <string name="affordable">Chấp nhận được</string>
     <string name="veNoidung">Về nội dung</string>
     <string name="veGia">Về giá</string>
+    <string name="noresult">Không tìm được kết quả phù hợp.\nXin hãy đưa ra nguyện vọng cụ thể hơn.</string>
+    <string name="result">kết quả</string>
+
+    <string name="home_menu_title">Màn hình chính</string>
+    <string name="test_menu_title">Làm bài kiểm tra</string>
+    <string name="history_menu_title">Lịch sử</string>
+    <string name="language_menu_title">"Ngôn ngữ:  Tiếng Việt"</string>
+    <string name="settings_menu_title">Cài đặt</string>
+    <string name="logout_menu_title">Đăng xuất</string>
 
 </resources>
